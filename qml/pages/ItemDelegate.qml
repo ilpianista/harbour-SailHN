@@ -22,40 +22,22 @@
   SOFTWARE.
 */
 
-#ifndef NEWSMODEL_H
-#define NEWSMODEL_H
+import QtQuick 2.0
+import Sailfish.Silica 1.0
 
-#include <QAbstractListModel>
+BackgroundItem {
 
-#include "hackernewsapi.h"
+    Label {
+        height: Theme.itemSizeMedium
+        width: parent.width
+        x: Theme.horizontalPageMargin
+        text: title
+        font.pixelSize: Theme.fontSizeSmall
+        wrapMode: Text.WordWrap
+    }
 
-class NewsModel : public QAbstractListModel
-{
-    Q_OBJECT
-public:
-    enum NewsRoles {
-        TitleRole = Qt::UserRole + 1,
-        UrlRole = Qt::UserRole + 2
-    };
-
-    explicit NewsModel(QObject *parent = 0);
-    virtual ~NewsModel();
-
-    virtual int rowCount(const QModelIndex&) const { return backing.size(); }
-    virtual QVariant data(const QModelIndex &index, int role) const;
-
-    QHash<int, QByteArray> roleNames() const;
-
-    Q_INVOKABLE void loadNewStories();
-    Q_INVOKABLE void loadTopStories();
-
-protected Q_SLOTS:
-    void onItemFetched(QVariantMap item);
-    void loadItems(QVariantList ids);
-
-private:
-    QVector<QVariantMap> backing;
-    HackerNewsAPI* api;
-};
-
-#endif // NEWSMODEL_H
+    onClicked: {
+        console.log("Opening external browser: " + url);
+        Qt.openUrlExternally(url);
+    }
+}

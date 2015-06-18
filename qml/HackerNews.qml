@@ -28,7 +28,7 @@ import "pages"
 
 ApplicationWindow
 {
-    initialPage: Component { MainPage { } }
+    initialPage: Component { TopStoriesPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 }
 

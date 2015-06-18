@@ -27,25 +27,23 @@ import Sailfish.Silica 1.0
 import harbour.andreascarpino.hackernews 1.0
 
 Page {
-    id: page
 
     SilicaListView {
-
         anchors.fill: parent
 
-        model: NewsModel {}
+        model: NewsModel {
+            id: model
+        }
 
         header: PageHeader {
             id: header
-            title: "Hot"
+            title: "Top"
         }
 
-        delegate: BackgroundItem {
-            Label {
-                x: Theme.horizontalPageMargin
-                text: title
-                wrapMode: Text.WordWrap
-            }
-        }
+        delegate: ItemDelegate {}
+    }
+
+    Component.onCompleted: {
+        model.loadTopStories();
     }
 }

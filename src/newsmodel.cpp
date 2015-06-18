@@ -30,8 +30,6 @@ NewsModel::NewsModel(QObject *parent) :
     QAbstractListModel(parent)
   , api(new HackerNewsAPI(this))
 {
-    api->getTopStories();
-    connect(api, SIGNAL(multipleStoriesFetched(QVariantList)), this, SLOT(loadItems(QVariantList)));
 }
 
 NewsModel::~NewsModel()
@@ -42,7 +40,20 @@ NewsModel::~NewsModel()
 QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[TitleRole] = "title";
+    roles[UrlRole] = "url";
     return roles;
+}
+
+void NewsModel::loadNewStories()
+{
+    api->getNewStories();
+    connect(api, SIGNAL(multipleStoriesFetched(QVariantList)), this, SLOT(loadItems(QVariantList)));
+}
+
+void NewsModel::loadTopStories()
+{
+    api->getTopStories();
+    connect(api, SIGNAL(multipleStoriesFetched(QVariantList)), this, SLOT(loadItems(QVariantList)));
 }
 
 QVariant NewsModel::data(const QModelIndex &index, int role) const {
