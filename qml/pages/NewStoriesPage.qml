@@ -37,7 +37,7 @@ Page {
 
         header: PageHeader {
             id: header
-            title: "Newest"
+            title: qsTr("Newest")
         }
 
         delegate: ItemDelegate {}

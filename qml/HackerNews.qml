@@ -30,6 +30,10 @@ ApplicationWindow
 {
     initialPage: Component { TopStoriesPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
+
+    Component.onCompleted: {
+        pageStack.pushAttached(Qt.resolvedUrl("pages/NewStoriesPage.qml"));
+    }
 }
 
 
