@@ -46,12 +46,14 @@ QHash<int, QByteArray> NewsModel::roleNames() const {
 
 void NewsModel::loadNewStories()
 {
+    backing.clear();
     api->getNewStories();
     connect(api, SIGNAL(multipleStoriesFetched(QVariantList)), this, SLOT(loadItems(QVariantList)));
 }
 
 void NewsModel::loadTopStories()
 {
+    backing.clear();
     api->getTopStories();
     connect(api, SIGNAL(multipleStoriesFetched(QVariantList)), this, SLOT(loadItems(QVariantList)));
 }
