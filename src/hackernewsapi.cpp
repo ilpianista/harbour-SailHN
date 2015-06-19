@@ -106,7 +106,13 @@ void HackerNewsAPI::onMultipleStoriesResult()
     QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
     if (!json.isNull()) {
         qDebug() << "Got" << json.array().size() << "items";
-        emit multipleStoriesFetched(json.array().toVariantList());
+
+        QList<int> ids;
+        Q_FOREACH (const QJsonValue id, json.array()) {
+            ids.append(id.toInt());
+        }
+
+        emit multipleStoriesFetched(ids);
     }
 
     reply->deleteLater();

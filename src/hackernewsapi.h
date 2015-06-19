@@ -44,7 +44,7 @@ public:
 
 Q_SIGNALS:
     void itemFetched(QVariantMap item);
-    void multipleStoriesFetched(QVariantList ids);
+    void multipleStoriesFetched(QList<int> ids);
 
 protected Q_SLOTS:
     void onGetItemResult();

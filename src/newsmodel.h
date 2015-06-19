@@ -52,7 +52,7 @@ public:
 
 protected Q_SLOTS:
     void onItemFetched(QVariantMap item);
-    void loadItems(QVariantList ids);
+    void loadItems(QList<int> ids);
 
 private:
     QVector<QVariantMap> backing;
