@@ -36,7 +36,6 @@ Page {
         }
 
         header: PageHeader {
-            id: header
             title: qsTr("Newest")
         }
 

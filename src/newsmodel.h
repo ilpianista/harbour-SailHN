@@ -55,7 +55,7 @@ protected Q_SLOTS:
     void loadItems(QList<int> ids);
 
 private:
-    QVector<HackerNewsAPI::Item> backing;
+    QList<HackerNewsAPI::Item> backing;
     HackerNewsAPI* api;
     QList<int> order;
 };

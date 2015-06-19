@@ -49,18 +49,12 @@ QHash<int, QByteArray> NewsModel::roleNames() const {
 
 void NewsModel::loadNewStories()
 {
-    beginResetModel();
-    backing.clear();
-    endResetModel();
     api->getNewStories();
     connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
 }
 
 void NewsModel::loadTopStories()
 {
-    beginResetModel();
-    backing.clear();
-    endResetModel();
     api->getTopStories();
     connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
 }
@@ -84,7 +78,7 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
 void NewsModel::onItemFetched(HackerNewsAPI::Item item)
 {
     const int pos = order.indexOf(item.id);
-    beginInsertRows(QModelIndex(), pos, pos + 1);
+    beginInsertRows(QModelIndex(), pos, pos);
     backing.insert(pos, item);
     endInsertRows();
 }
@@ -92,6 +86,12 @@ void NewsModel::onItemFetched(HackerNewsAPI::Item item)
 void NewsModel::loadItems(QList<int> ids)
 {
     connect(api, SIGNAL(itemFetched(HackerNewsAPI::Item)), this, SLOT(onItemFetched(HackerNewsAPI::Item)));
+
+    beginResetModel();
+    backing.clear();
+    endResetModel();
+
+    order.clear();
 
     QList<int> limited = ids.mid(0, MAX_ITEMS);
     Q_FOREACH (const int id, limited) {

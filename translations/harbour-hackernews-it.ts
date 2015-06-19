@@ -5,14 +5,14 @@
     <name>NewStoriesPage</name>
     <message>
         <source>Newest</source>
-        <translation type="Ultime"></translation>
+        <translation>Ultime</translation>
     </message>
 </context>
 <context>
     <name>TopStoriesPage</name>
     <message>
         <source>Top</source>
-        <translation type="Top"></translation>
+        <translation>Top</translation>
     </message>
 </context>
 </TS>

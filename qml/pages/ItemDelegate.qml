@@ -28,9 +28,9 @@ import Sailfish.Silica 1.0
 BackgroundItem {
 
     Label {
-        height: Theme.itemSizeMedium
-        width: parent.width
         x: Theme.horizontalPageMargin
+        height: Theme.itemSizeMedium
+        width: parent.width - Theme.horizontalPageMargin
         text: title
         font.pixelSize: Theme.fontSizeSmall
         wrapMode: Text.WordWrap

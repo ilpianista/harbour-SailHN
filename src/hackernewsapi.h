@@ -50,7 +50,7 @@ public:
     void getTopStories();
 
 Q_SIGNALS:
-    void itemFetched(Item item);
+    void itemFetched(HackerNewsAPI::Item item);
     void multipleStoriesFetched(QList<int> ids);
 
 protected Q_SLOTS:
