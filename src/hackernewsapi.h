@@ -25,6 +25,7 @@
 #ifndef HACKERNEWSAPI_H
 #define HACKERNEWSAPI_H
 
+#include <QDateTime>
 #include <QObject>
 #include <QString>
 #include <QUrl>
@@ -38,6 +39,7 @@ public:
 
     struct Item {
         int id;
+        QDateTime time;
         QString title;
         QUrl url;
     };

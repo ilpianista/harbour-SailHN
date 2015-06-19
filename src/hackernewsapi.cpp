@@ -95,6 +95,9 @@ void HackerNewsAPI::onGetItemResult()
         item.id = jsonObj.value("id").toInt();
         item.title = jsonObj.value("title").toString();
         item.url = QUrl(jsonObj.value("url").toString());
+        QDateTime timestamp;
+        timestamp.setTime_t(jsonObj.value("time").toInt());
+        item.time = timestamp;
 
         emit itemFetched(item);
     }

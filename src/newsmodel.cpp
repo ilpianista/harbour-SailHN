@@ -42,6 +42,7 @@ NewsModel::~NewsModel()
 QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[IdRole] = "id";
+    roles[TimeRole] = "time";
     roles[TitleRole] = "title";
     roles[UrlRole] = "url";
     return roles;
@@ -67,6 +68,7 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
     HackerNewsAPI::Item item = backing[index.row()];
     switch (role) {
     case IdRole: return item.id;
+    case TimeRole: return item.time;
     case TitleRole: return item.title;
     case UrlRole: return item.url;
     default: qCritical() << "Role not recognized";
@@ -77,9 +79,8 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
 
 void NewsModel::onItemFetched(HackerNewsAPI::Item item)
 {
-    const int pos = order.indexOf(item.id);
-    beginInsertRows(QModelIndex(), pos, pos);
-    backing.insert(pos, item);
+    beginInsertRows(QModelIndex(), backing.size(), backing.size());
+    backing.append(item);
     endInsertRows();
 }
 
@@ -91,11 +92,8 @@ void NewsModel::loadItems(QList<int> ids)
     backing.clear();
     endResetModel();
 
-    order.clear();
-
     QList<int> limited = ids.mid(0, MAX_ITEMS);
     Q_FOREACH (const int id, limited) {
-        order.append(id);
         api->getItem(id);
     }
 }
