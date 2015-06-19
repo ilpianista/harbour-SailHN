@@ -39,6 +39,7 @@ NewsModel::~NewsModel()
 
 QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
+    roles[IdRole] = "id";
     roles[TitleRole] = "title";
     roles[UrlRole] = "url";
     return roles;
@@ -76,8 +77,10 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
 
 void NewsModel::onItemFetched(QVariantMap item)
 {
-    beginInsertRows(QModelIndex(), backing.size(), backing.size() + 1);
-    backing.append(item);
+    const QString idRole = roleNames().value(IdRole);
+    const int pos = order.indexOf(item.value(idRole).toInt());
+    beginInsertRows(QModelIndex(), pos, pos + 1);
+    backing.insert(pos, item);
     endInsertRows();
 }
 
@@ -87,6 +90,7 @@ void NewsModel::loadItems(QVariantList ids)
 
     QVariantList limited = ids.mid(0, MAX_ITEMS);
     Q_FOREACH (const QVariant id, limited) {
+        order.append(id.toInt());
         api->getItem(id.toInt());
     }
 }
