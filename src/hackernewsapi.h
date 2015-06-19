@@ -39,18 +39,15 @@ public:
     virtual ~HackerNewsAPI();
 
     void getItem(const int id);
-    void getMaxItemId();
     void getNewStories();
     void getTopStories();
 
 Q_SIGNALS:
     void itemFetched(QVariantMap item);
-    void maxItemIdFetched(int id);
     void multipleStoriesFetched(QVariantList ids);
 
 protected Q_SLOTS:
     void onGetItemResult();
-    void onMaxItemIdResult();
     void onMultipleStoriesResult();
 
 private:

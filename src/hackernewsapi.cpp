@@ -54,17 +54,6 @@ void HackerNewsAPI::getItem(const qint32 id)
     connect(reply, SIGNAL(finished()), this, SLOT(onGetItemResult()));
 }
 
-void HackerNewsAPI::getMaxItemId()
-{
-    qDebug() << "Requesting max item id";
-
-    QUrl url(API_URL + QString("maxitem.json"));
-    QNetworkRequest req(url);
-    QNetworkReply* reply = network->get(req);
-
-    connect(reply, SIGNAL(finished()), this, SLOT(onMaxItemIdResult()));
-}
-
 void HackerNewsAPI::getNewStories()
 {
     qDebug() << "Requesting new stories";
@@ -99,27 +88,6 @@ void HackerNewsAPI::onGetItemResult()
     QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
     qDebug() << "Got item:\n" << json;
     emit itemFetched(json.toVariant().toMap());
-
-    reply->deleteLater();
-}
-
-void HackerNewsAPI::onMaxItemIdResult()
-{
-    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
-
-    if (!reply || reply->error() != QNetworkReply::NoError) {
-        qCritical() << "Cannot fetch max id";
-        return;
-    }
-
-    bool* ok = 0;
-    const int maxId = reply->readAll().toInt(ok);
-
-    if (ok) {
-        qCritical() << "Cannot parse max id value!";
-    }
-
-    emit maxItemIdFetched(maxId);
 
     reply->deleteLater();
 }
