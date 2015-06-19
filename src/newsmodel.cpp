@@ -24,6 +24,8 @@
 
 #include "newsmodel.h"
 
+#include <QDebug>
+
 const static int MAX_ITEMS = 30;
 
 NewsModel::NewsModel(QObject *parent) :
@@ -51,7 +53,7 @@ void NewsModel::loadNewStories()
     backing.clear();
     endResetModel();
     api->getNewStories();
-    connect(api, SIGNAL(multipleStoriesFetched(QVariantList)), this, SLOT(loadItems(QVariantList)));
+    connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
 }
 
 void NewsModel::loadTopStories()
@@ -68,17 +70,20 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
         return QVariant();
     }
 
-    if (roleNames().contains(role)) {
-        return backing[index.row()].value(roleNames().value(role));
+    HackerNewsAPI::Item item = backing[index.row()];
+    switch (role) {
+    case IdRole: return item.id;
+    case TitleRole: return item.title;
+    case UrlRole: return item.url;
+    default: qCritical() << "Role not recognized";
     }
 
     return QVariant();
 }
 
-void NewsModel::onItemFetched(QVariantMap item)
+void NewsModel::onItemFetched(HackerNewsAPI::Item item)
 {
-    const QString idRole = roleNames().value(IdRole);
-    const int pos = order.indexOf(item.value(idRole).toInt());
+    const int pos = order.indexOf(item.id);
     beginInsertRows(QModelIndex(), pos, pos + 1);
     backing.insert(pos, item);
     endInsertRows();
@@ -86,7 +91,7 @@ void NewsModel::onItemFetched(QVariantMap item)
 
 void NewsModel::loadItems(QList<int> ids)
 {
-    connect(api, SIGNAL(itemFetched(QVariantMap)), this, SLOT(onItemFetched(QVariantMap)));
+    connect(api, SIGNAL(itemFetched(HackerNewsAPI::Item)), this, SLOT(onItemFetched(HackerNewsAPI::Item)));
 
     QList<int> limited = ids.mid(0, MAX_ITEMS);
     Q_FOREACH (const int id, limited) {

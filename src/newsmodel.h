@@ -51,11 +51,11 @@ public:
     Q_INVOKABLE void loadTopStories();
 
 protected Q_SLOTS:
-    void onItemFetched(QVariantMap item);
+    void onItemFetched(HackerNewsAPI::Item item);
     void loadItems(QList<int> ids);
 
 private:
-    QVector<QVariantMap> backing;
+    QVector<HackerNewsAPI::Item> backing;
     HackerNewsAPI* api;
     QList<int> order;
 };

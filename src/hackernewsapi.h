@@ -26,15 +26,22 @@
 #define HACKERNEWSAPI_H
 
 #include <QObject>
-#include <QVariantMap>
+#include <QString>
+#include <QUrl>
 
-class QNetworkReply;
 class QNetworkAccessManager;
 
 class HackerNewsAPI : public QObject
 {
     Q_OBJECT
 public:
+
+    struct Item {
+        int id;
+        QString title;
+        QUrl url;
+    };
+
     explicit HackerNewsAPI(QObject *parent = 0);
     virtual ~HackerNewsAPI();
 
@@ -43,7 +50,7 @@ public:
     void getTopStories();
 
 Q_SIGNALS:
-    void itemFetched(QVariantMap item);
+    void itemFetched(Item item);
     void multipleStoriesFetched(QList<int> ids);
 
 protected Q_SLOTS:

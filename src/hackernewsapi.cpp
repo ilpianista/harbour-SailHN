@@ -27,6 +27,7 @@
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 
@@ -88,7 +89,14 @@ void HackerNewsAPI::onGetItemResult()
     QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
     if (!json.isNull()) {
         qDebug() << "Got item:\n" << json;
-        emit itemFetched(json.toVariant().toMap());
+
+        Item item;
+        QJsonObject jsonObj = json.object();
+        item.id = jsonObj.value("id").toInt();
+        item.title = jsonObj.value("title").toString();
+        item.url = QUrl(jsonObj.value("url").toString());
+
+        emit itemFetched(item);
     }
 
     reply->deleteLater();
