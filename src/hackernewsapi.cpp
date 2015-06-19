@@ -43,7 +43,7 @@ HackerNewsAPI::~HackerNewsAPI()
     delete network;
 }
 
-void HackerNewsAPI::getItem(const qint32 id)
+void HackerNewsAPI::getItem(const int id)
 {
     qDebug() << "Requesting item with id" << id;
 
@@ -86,8 +86,10 @@ void HackerNewsAPI::onGetItemResult()
     }
 
     QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
-    qDebug() << "Got item:\n" << json;
-    emit itemFetched(json.toVariant().toMap());
+    if (!json.isNull()) {
+        qDebug() << "Got item:\n" << json;
+        emit itemFetched(json.toVariant().toMap());
+    }
 
     reply->deleteLater();
 }
@@ -102,8 +104,10 @@ void HackerNewsAPI::onMultipleStoriesResult()
     }
 
     QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
-    qDebug() << "Got" << json.array().size() << "items";
-    emit multipleStoriesFetched(json.array().toVariantList());
+    if (!json.isNull()) {
+        qDebug() << "Got" << json.array().size() << "items";
+        emit multipleStoriesFetched(json.array().toVariantList());
+    }
 
     reply->deleteLater();
 }
