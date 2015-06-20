@@ -26,16 +26,28 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 BackgroundItem {
+    height: contentItem.childrenRect.height
+    width: parent.width
 
-    Label {
+    Column {
         x: Theme.horizontalPageMargin
-        height: Theme.itemSizeMedium
         width: parent.width - Theme.horizontalPageMargin
-        text: title
-        font.pixelSize: Theme.fontSizeSmall
-        wrapMode: Text.WordWrap
-    }
 
+        Label {
+            width: parent.width
+            text: title
+            font.pixelSize: Theme.fontSizeSmall
+            wrapMode: Text.WordWrap
+        }
+
+        Label {
+            width: parent.width
+            text: score + ' ' + qsTr("points") + " - " + Qt.formatDateTime(time, "ddd, hh:mm")
+            font.pixelSize: Theme.fontSizeTiny
+            horizontalAlignment: Text.AlignRight
+        }
+
+    }
     onClicked: {
         console.log("Opening external browser: " + url);
         Qt.openUrlExternally(url);

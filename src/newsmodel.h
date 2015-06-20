@@ -35,9 +35,11 @@ class NewsModel : public QAbstractListModel
 public:
     enum NewsRoles {
         IdRole = Qt::UserRole + 1,
-        TimeRole = Qt::UserRole + 2,
-        TitleRole = Qt::UserRole + 3,
-        UrlRole = Qt::UserRole + 4
+        ByRole = Qt::UserRole +2,
+        ScoreRole = Qt::UserRole + 3,
+        TimeRole = Qt::UserRole + 4,
+        TitleRole = Qt::UserRole + 5,
+        UrlRole = Qt::UserRole + 6
     };
 
     explicit NewsModel(QObject *parent = 0);
@@ -53,7 +55,7 @@ public:
 
 protected Q_SLOTS:
     void onItemFetched(HackerNewsAPI::Item item);
-    void loadItems(QList<int> ids);
+    void loadItems(QList<qint32> ids);
 
 private:
     QVector<HackerNewsAPI::Item> backing;

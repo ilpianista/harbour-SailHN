@@ -42,6 +42,8 @@ NewsModel::~NewsModel()
 QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[IdRole] = "id";
+    roles[ByRole] = "by";
+    roles[ScoreRole] = "score";
     roles[TimeRole] = "time";
     roles[TitleRole] = "title";
     roles[UrlRole] = "url";
@@ -51,13 +53,13 @@ QHash<int, QByteArray> NewsModel::roleNames() const {
 void NewsModel::loadNewStories()
 {
     api->getNewStories();
-    connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
+    connect(api, SIGNAL(multipleStoriesFetched(QList<qint32>)), this, SLOT(loadItems(QList<qint32>)));
 }
 
 void NewsModel::loadTopStories()
 {
     api->getTopStories();
-    connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
+    connect(api, SIGNAL(multipleStoriesFetched(QList<qint32>)), this, SLOT(loadItems(QList<qint32>)));
 }
 
 QVariant NewsModel::data(const QModelIndex &index, int role) const {
@@ -68,6 +70,8 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
     HackerNewsAPI::Item item = backing[index.row()];
     switch (role) {
     case IdRole: return item.id;
+    case ByRole: return item.by;
+    case ScoreRole: return item.score;
     case TimeRole: return item.time;
     case TitleRole: return item.title;
     case UrlRole: return item.url;
@@ -84,7 +88,7 @@ void NewsModel::onItemFetched(HackerNewsAPI::Item item)
     endInsertRows();
 }
 
-void NewsModel::loadItems(QList<int> ids)
+void NewsModel::loadItems(QList<qint32> ids)
 {
     connect(api, SIGNAL(itemFetched(HackerNewsAPI::Item)), this, SLOT(onItemFetched(HackerNewsAPI::Item)));
 
@@ -92,8 +96,8 @@ void NewsModel::loadItems(QList<int> ids)
     backing.clear();
     endResetModel();
 
-    QList<int> limited = ids.mid(0, MAX_ITEMS);
-    Q_FOREACH (const int id, limited) {
+    QList<qint32> limited = ids.mid(0, MAX_ITEMS);
+    Q_FOREACH (const qint32 id, limited) {
         api->getItem(id);
     }
 }

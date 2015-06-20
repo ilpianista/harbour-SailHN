@@ -2,6 +2,17 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>ItemDelegate</name>
+    <message>
+        <source>points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>NewStoriesPage</name>
     <message>
         <source>Newest</source>

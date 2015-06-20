@@ -38,7 +38,9 @@ class HackerNewsAPI : public QObject
 public:
 
     struct Item {
-        int id;
+        qint32 id;
+        QString by;
+        quint16 score;
         QDateTime time;
         QString title;
         QUrl url;
@@ -47,13 +49,13 @@ public:
     explicit HackerNewsAPI(QObject *parent = 0);
     virtual ~HackerNewsAPI();
 
-    void getItem(const int id);
+    void getItem(const qint32 id);
     void getNewStories();
     void getTopStories();
 
 Q_SIGNALS:
     void itemFetched(HackerNewsAPI::Item item);
-    void multipleStoriesFetched(QList<int> ids);
+    void multipleStoriesFetched(QList<qint32> ids);
 
 protected Q_SLOTS:
     void onGetItemResult();
