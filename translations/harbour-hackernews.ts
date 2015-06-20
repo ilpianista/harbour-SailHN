@@ -8,7 +8,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>by</source>
+        <source>point</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -18,11 +18,19 @@
         <source>Newest</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open external url</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TopStoriesPage</name>
     <message>
         <source>Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open external url</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

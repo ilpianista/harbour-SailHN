@@ -5,11 +5,11 @@
     <name>ItemDelegate</name>
     <message>
         <source>points</source>
-        <translation type="unfinished"></translation>
+        <translation>punti</translation>
     </message>
     <message>
-        <source>by</source>
-        <translation type="unfinished"></translation>
+        <source>point</source>
+        <translation>punto</translation>
     </message>
 </context>
 <context>
@@ -18,12 +18,20 @@
         <source>Newest</source>
         <translation>Ultime</translation>
     </message>
+    <message>
+        <source>Open external url</source>
+        <translation>Apri url</translation>
+    </message>
 </context>
 <context>
     <name>TopStoriesPage</name>
     <message>
         <source>Top</source>
         <translation>Top</translation>
+    </message>
+    <message>
+        <source>Open external url</source>
+        <translation>Apri url</translation>
     </message>
 </context>
 </TS>
