@@ -43,6 +43,7 @@ QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[IdRole] = "id";
     roles[ByRole] = "by";
+    roles[CommentsRole] = "comments";
     roles[ScoreRole] = "score";
     roles[TimeRole] = "time";
     roles[TitleRole] = "title";
@@ -71,6 +72,7 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
     switch (role) {
     case IdRole: return item.id;
     case ByRole: return item.by;
+    case CommentsRole: return item.comments;
     case ScoreRole: return item.score;
     case TimeRole: return item.time;
     case TitleRole: return item.title;

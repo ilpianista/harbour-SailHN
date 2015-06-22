@@ -31,8 +31,6 @@ Page {
     SilicaListView {
         id: items
 
-        property Item contextMenu
-
         anchors.fill: parent
 
         model: NewsModel {
@@ -46,21 +44,6 @@ Page {
         delegate: ItemDelegate {}
 
         VerticalScrollDecorator {}
-    }
-
-    Component {
-        id: menu
-
-        ContextMenu {
-            MenuItem {
-                text: qsTr("Open external url")
-
-                onClicked: {
-                    console.log("Opening external browser: " + url);
-                    Qt.openUrlExternally(url);
-                }
-            }
-        }
     }
 
     Component.onCompleted: {

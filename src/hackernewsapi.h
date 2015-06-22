@@ -40,6 +40,7 @@ public:
     struct Item {
         qint32 id;
         QString by;
+        qint16 comments;
         quint16 score;
         QDateTime time;
         QString title;

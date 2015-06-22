@@ -10,6 +10,7 @@ SOURCES += \
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
     qml/HackerNews.qml \
+    qml/pages/DetailsPage.qml \
     qml/pages/ItemDelegate.qml \
     qml/pages/NewStoriesPage.qml \
     qml/pages/TopStoriesPage.qml \

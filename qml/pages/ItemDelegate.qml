@@ -25,55 +25,64 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-Item {
-    id: item
-
-    property bool menuOpen: items.contextMenu != null && items.contextMenu.parent === item
-
+ListItem {
     width: ListView.view.width
-    height: menuOpen ? items.contextMenu.height + innerItem.height : innerItem.height
+    menu: menu
 
-    BackgroundItem {
-        id: innerItem
-        width: parent.width
-        height: contentItem.childrenRect.height
+    Column {
+        x: Theme.horizontalPageMargin
+        width: parent.width - Theme.horizontalPageMargin
 
-        Column {
-            x: Theme.horizontalPageMargin
-            width: parent.width - Theme.horizontalPageMargin
-
-            Label {
-                width: parent.width
-                text: title
-                font.pixelSize: Theme.fontSizeSmall
-                wrapMode: Text.WordWrap
-            }
-
-            Label {
-                width: parent.width
-                font.pixelSize: Theme.fontSizeTiny
-                horizontalAlignment: Text.AlignRight
-
-                text: {
-                    var pts = score + ' ';
-                    if (score === 1) {
-                        pts += qsTr("point");
-                    } else {
-                        pts += qsTr("points");
-                    }
-
-                    return pts + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
-                }
-            }
+        Label {
+            width: parent.width
+            text: title
+            font.pixelSize: Theme.fontSizeSmall
+            truncationMode: TruncationMode.Fade
         }
 
-        onPressAndHold: {
-            if (!items.contextMenu) {
-                items.contextMenu = menu.createObject(items)
-            }
+        Label {
+            width: parent.width
+            font.pixelSize: Theme.fontSizeTiny
+            horizontalAlignment: Text.AlignRight
 
-            items.contextMenu.show(item)
+            text: {
+                var pts = score + ' ';
+                if (score === 1) {
+                    pts += qsTr("point");
+                } else {
+                    pts += qsTr("points");
+                }
+
+                return pts + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
+            }
         }
     }
 
+    ContextMenu {
+        id: menu
+
+        MenuItem {
+            text: qsTr("Open external url")
+
+            onClicked: {
+                console.log("Opening external browser: " + url);
+                Qt.openUrlExternally(url);
+            }
+        }
+
+        MenuItem {
+            text: qsTr("Show details")
+
+            onClicked: {
+                pageStack.push(Qt.resolvedUrl("DetailsPage.qml"), {
+                    by: by,
+                    comments: comments,
+                    score: score,
+                    time: time,
+                    title: title,
+                    url: url
+                });
+            }
+        }
+    }
 }

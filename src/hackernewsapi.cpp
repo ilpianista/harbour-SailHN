@@ -94,8 +94,17 @@ void HackerNewsAPI::onGetItemResult()
         QJsonObject jsonObj = json.object();
         item.id = jsonObj.value("id").toInt();
         item.by = jsonObj.value("by").toString();
+        item.comments = jsonObj.value("kids").toArray().size();
         item.title = jsonObj.value("title").toString();
         item.url = QUrl(jsonObj.value("url").toString());
+
+        // FIXME: to be removed when we display items text and comments
+        // Since we don't display hacker news items yet, we just set
+        // the external url to the item detail page in Hacker News
+        if (item.url.isEmpty()) {
+            item.url = QUrl("https://news.ycombinator.com/item?id=" + QString::number(item.id));
+        }
+
         item.score = jsonObj.value("score").toInt();
         QDateTime timestamp;
         timestamp.setTime_t(jsonObj.value("time").toInt());
