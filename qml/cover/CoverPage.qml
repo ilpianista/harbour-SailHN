@@ -31,7 +31,7 @@ CoverBackground {
         anchors.centerIn: parent
 
         Label {
-            text: "Hacker News"
+            text: "SailHN"
         }
     }
 }

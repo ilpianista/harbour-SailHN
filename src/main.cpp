@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> view(SailfishApp::createView());
 
-    qmlRegisterType<NewsModel>("harbour.andreascarpino.hackernews", 1, 0, "NewsModel");
+    qmlRegisterType<NewsModel>("harbour.andreascarpino.sailhn", 1, 0, "NewsModel");
 
-    view->setSource(SailfishApp::pathTo("qml/HackerNews.qml"));
+    view->setSource(SailfishApp::pathTo("qml/SailHN.qml"));
     view->show();
 
     return app->exec();

@@ -1,4 +1,4 @@
-TARGET = harbour-hackernews
+TARGET = harbour-sailhn
 
 CONFIG += sailfishapp
 
@@ -9,19 +9,19 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    qml/HackerNews.qml \
+    qml/SailHN.qml \
     qml/pages/DetailsPage.qml \
     qml/pages/ItemDelegate.qml \
     qml/pages/NewStoriesPage.qml \
     qml/pages/TopStoriesPage.qml \
-    harbour-hackernews.desktop \
-    rpm/harbour-hackernews.changes \
-    rpm/harbour-hackernews.spec \
-    rpm/harbour-hackernews.yaml \
+    harbour-sailhn.desktop \
+    rpm/harbour-sailhn.changes \
+    rpm/harbour-sailhn.spec \
+    rpm/harbour-sailhn.yaml \
     translations/*.ts
 
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-hackernews-it.ts
+TRANSLATIONS += translations/harbour-sailhn-it.ts
 
 HEADERS += \
     src/newsmodel.h \
