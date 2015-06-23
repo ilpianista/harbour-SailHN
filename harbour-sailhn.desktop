@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Category=Network;
+Categories=Network;
 Icon=harbour-sailhn
 Exec=harbour-sailhn
 Name=SailHN
