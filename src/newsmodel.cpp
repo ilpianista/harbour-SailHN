@@ -26,6 +26,8 @@
 
 #include <QDebug>
 
+#include "hackernewsapi.h"
+
 const static int MAX_ITEMS = 30;
 
 NewsModel::NewsModel(QObject *parent) :
@@ -36,14 +38,15 @@ NewsModel::NewsModel(QObject *parent) :
 
 NewsModel::~NewsModel()
 {
+    qDeleteAll(backing);
     delete api;
 }
 
 QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
-    roles[IdRole] = "id";
     roles[ByRole] = "by";
     roles[CommentsRole] = "comments";
+    roles[KidsRole] = "kids";
     roles[ScoreRole] = "score";
     roles[TimeRole] = "time";
     roles[TitleRole] = "title";
@@ -68,22 +71,28 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
         return QVariant();
     }
 
-    HackerNewsAPI::Item item = backing[index.row()];
+    Item *item = backing[index.row()];
     switch (role) {
-    case IdRole: return item.id;
-    case ByRole: return item.by;
-    case CommentsRole: return item.comments;
-    case ScoreRole: return item.score;
-    case TimeRole: return item.time;
-    case TitleRole: return item.title;
-    case UrlRole: return item.url;
+    case ByRole: return item->by();
+    case CommentsRole: return item->kids().size();
+    case KidsRole: {
+        QVariantList kids;
+        Q_FOREACH (const qint32 kid, item->kids()) {
+            kids.append(kid);
+        }
+        return kids;
+    }
+    case ScoreRole: return item->score();
+    case TimeRole: return item->time();
+    case TitleRole: return item->title();
+    case UrlRole: return item->url();
     default: qCritical() << "Role not recognized";
     }
 
     return QVariant();
 }
 
-void NewsModel::onItemFetched(HackerNewsAPI::Item item)
+void NewsModel::onItemFetched(Item *item)
 {
     beginInsertRows(QModelIndex(), backing.size(), backing.size());
     backing.append(item);
@@ -92,7 +101,7 @@ void NewsModel::onItemFetched(HackerNewsAPI::Item item)
 
 void NewsModel::loadItems(QList<qint32> ids)
 {
-    connect(api, SIGNAL(itemFetched(HackerNewsAPI::Item)), this, SLOT(onItemFetched(HackerNewsAPI::Item)));
+    connect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
 
     beginResetModel();
     backing.clear();

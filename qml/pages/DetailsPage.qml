@@ -26,8 +26,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    id: details
-
     property var by
     property var comments
     property var score
@@ -46,7 +44,7 @@ Page {
 
                 onClicked: {
                     console.log("Opening external browser: " + url);
-                    Qt.openUrlExternally(details.url);
+                    Qt.openUrlExternally(url);
                 }
             }
         }
@@ -61,32 +59,32 @@ Page {
 
             DetailItem {
                 label: qsTr("Title")
-                value: details.title
+                value: title
             }
 
             DetailItem {
                 label: qsTr("Author")
-                value: details.by
+                value: by
             }
 
             DetailItem {
                 label: qsTr("When")
-                value: Qt.formatDateTime(details.time);
+                value: Qt.formatDateTime(time);
             }
 
             DetailItem {
                 label: qsTr("Score")
-                value: details.score
+                value: score
             }
 
             DetailItem {
                 label: qsTr("Comments")
-                value: details.comments
+                value: comments
             }
 
             DetailItem {
                 label: qsTr("Url")
-                value: details.url
+                value: url
             }
         }
     }

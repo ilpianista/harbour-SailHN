@@ -25,37 +25,24 @@
 #ifndef HACKERNEWSAPI_H
 #define HACKERNEWSAPI_H
 
-#include <QDateTime>
 #include <QObject>
-#include <QString>
-#include <QUrl>
 
+class Item;
 class QNetworkAccessManager;
 
 class HackerNewsAPI : public QObject
 {
     Q_OBJECT
 public:
-
-    struct Item {
-        qint32 id;
-        QString by;
-        qint16 comments;
-        quint16 score;
-        QDateTime time;
-        QString title;
-        QUrl url;
-    };
-
     explicit HackerNewsAPI(QObject *parent = 0);
     virtual ~HackerNewsAPI();
 
-    void getItem(const qint32 id);
+    Q_INVOKABLE void getItem(const qint32 id);
     void getNewStories();
     void getTopStories();
 
 Q_SIGNALS:
-    void itemFetched(HackerNewsAPI::Item item);
+    void itemFetched(Item *item);
     void multipleStoriesFetched(QList<qint32> ids);
 
 protected Q_SLOTS:
@@ -63,7 +50,7 @@ protected Q_SLOTS:
     void onMultipleStoriesResult();
 
 private:
-    QNetworkAccessManager* network;
+    QNetworkAccessManager *network;
 };
 
 #endif // HACKERNEWSAPI_H

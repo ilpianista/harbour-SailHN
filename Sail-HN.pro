@@ -5,7 +5,8 @@ CONFIG += sailfishapp
 SOURCES += \
     src/main.cpp \
     src/newsmodel.cpp \
-    src/hackernewsapi.cpp
+    src/hackernewsapi.cpp \
+    src/item.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -25,4 +26,6 @@ TRANSLATIONS += translations/harbour-sailhn-it.ts
 
 HEADERS += \
     src/newsmodel.h \
-    src/hackernewsapi.h
+    src/hackernewsapi.h \
+    src/item.h \
+    src/item_p.h

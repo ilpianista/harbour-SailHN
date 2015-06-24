@@ -31,6 +31,8 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 
+#include "item.h"
+
 const static QString API_URL = "https://hacker-news.firebaseio.com/v0/";
 
 HackerNewsAPI::HackerNewsAPI(QObject *parent) :
@@ -90,25 +92,32 @@ void HackerNewsAPI::onGetItemResult()
     if (!json.isNull()) {
         qDebug() << "Got item:\n" << json;
 
-        Item item;
+        Item* item = new Item();
         QJsonObject jsonObj = json.object();
-        item.id = jsonObj.value("id").toInt();
-        item.by = jsonObj.value("by").toString();
-        item.comments = jsonObj.value("kids").toArray().size();
-        item.title = jsonObj.value("title").toString();
-        item.url = QUrl(jsonObj.value("url").toString());
+        item->setId(jsonObj.value("id").toInt());
+        item->setBy(jsonObj.value("by").toString());
+
+        QJsonArray jsonKids = jsonObj.value("kids").toArray();
+        QList<qint32> kids;
+        Q_FOREACH (const QVariant kid, jsonKids.toVariantList()) {
+            kids.append(kid.toInt());
+        }
+        item->setKids(kids);
+
+        item->setTitle(jsonObj.value("title").toString());
+        item->setUrl(QUrl(jsonObj.value("url").toString()));
 
         // FIXME: to be removed when we display items text and comments
         // Since we don't display hacker news items yet, we just set
         // the external url to the item detail page in Hacker News
-        if (item.url.isEmpty()) {
-            item.url = QUrl("https://news.ycombinator.com/item?id=" + QString::number(item.id));
+        if (item->url().isEmpty()) {
+            item->setUrl(QUrl("https://news.ycombinator.com/item?id=" + QString::number(item->id())));
         }
 
-        item.score = jsonObj.value("score").toInt();
+        item->setScore(jsonObj.value("score").toInt());
         QDateTime timestamp;
         timestamp.setTime_t(jsonObj.value("time").toInt());
-        item.time = timestamp;
+        item->setTime(timestamp);
 
         emit itemFetched(item);
     }

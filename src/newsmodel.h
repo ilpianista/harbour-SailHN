@@ -27,16 +27,18 @@
 
 #include <QAbstractListModel>
 
-#include "hackernewsapi.h"
+#include "item.h"
+
+class HackerNewsAPI;
 
 class NewsModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
     enum NewsRoles {
-        IdRole = Qt::UserRole + 1,
-        ByRole = Qt::UserRole +2,
-        CommentsRole = Qt::UserRole +3,
+        ByRole = Qt::UserRole + 1,
+        CommentsRole = Qt::UserRole + 2,
+        KidsRole = Qt::UserRole + 3,
         ScoreRole = Qt::UserRole + 4,
         TimeRole = Qt::UserRole + 5,
         TitleRole = Qt::UserRole + 6,
@@ -55,12 +57,12 @@ public:
     Q_INVOKABLE void loadTopStories();
 
 protected Q_SLOTS:
-    void onItemFetched(HackerNewsAPI::Item item);
+    void onItemFetched(Item *item);
     void loadItems(QList<qint32> ids);
 
 private:
-    QVector<HackerNewsAPI::Item> backing;
-    HackerNewsAPI* api;
+    QVector<Item*> backing;
+    HackerNewsAPI *api;
 
 };
 
