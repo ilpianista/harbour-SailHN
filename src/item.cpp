@@ -31,6 +31,16 @@ void Item::setBy(const QString by)
     d->by = by;
 }
 
+bool Item::deleted() const
+{
+    return d->deleted;
+}
+
+void Item::setDeleted(const bool deleted)
+{
+    d->deleted = deleted;
+}
+
 QList<qint32> Item::kids() const
 {
     return d->kids;

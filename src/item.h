@@ -11,7 +11,6 @@ class ItemPrivate;
 class Item : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int id READ id)
     Q_PROPERTY(QString by READ by)
     Q_PROPERTY(QList<int> kids READ kids)
     Q_PROPERTY(quint16 score READ score)
@@ -28,6 +27,9 @@ public:
 
     QString by() const;
     void setBy(const QString by);
+
+    bool deleted() const;
+    void setDeleted(const bool deleted);
 
     QList<int> kids() const;
     void setKids(const QList<int> kids);

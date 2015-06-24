@@ -43,11 +43,11 @@ public:
 
 Q_SIGNALS:
     void itemFetched(Item *item);
-    void multipleStoriesFetched(QList<int> ids);
+    void storiesFetched(QList<int> ids);
 
 protected Q_SLOTS:
     void onGetItemResult();
-    void onMultipleStoriesResult();
+    void onStoriesResult();
 
 private:
     QNetworkAccessManager *network;

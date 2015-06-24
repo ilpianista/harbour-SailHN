@@ -70,7 +70,9 @@ ListItem {
     }
 
     onClicked: {
-        pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {kids: kids});
+        if (kids.length !== 0) {
+            pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {kids: kids});
+        }
     }
 
     ContextMenu {

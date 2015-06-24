@@ -39,6 +39,14 @@ Page {
             }
         }
 
+        PushUpMenu {
+
+            MenuItem {
+                text: qsTr("Load more")
+                onClicked: model.nextItems()
+            }
+        }
+
         model: NewsModel {
             id: model
         }

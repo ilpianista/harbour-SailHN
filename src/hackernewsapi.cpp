@@ -65,7 +65,7 @@ void HackerNewsAPI::getNewStories()
     QNetworkRequest req(url);
     QNetworkReply* reply = network->get(req);
 
-    connect(reply, SIGNAL(finished()), this, SLOT(onMultipleStoriesResult()));
+    connect(reply, SIGNAL(finished()), this, SLOT(onStoriesResult()));
 }
 
 void HackerNewsAPI::getTopStories()
@@ -76,7 +76,7 @@ void HackerNewsAPI::getTopStories()
     QNetworkRequest req(url);
     QNetworkReply* reply = network->get(req);
 
-    connect(reply, SIGNAL(finished()), this, SLOT(onMultipleStoriesResult()));
+    connect(reply, SIGNAL(finished()), this, SLOT(onStoriesResult()));
 }
 
 void HackerNewsAPI::onGetItemResult()
@@ -96,6 +96,7 @@ void HackerNewsAPI::onGetItemResult()
         QJsonObject jsonObj = json.object();
         item->setId(jsonObj.value("id").toInt());
         item->setBy(jsonObj.value("by").toString());
+        item->setDeleted(jsonObj.value("deleted").toBool());
 
         QJsonArray jsonKids = jsonObj.value("kids").toArray();
         QList<int> kids;
@@ -126,7 +127,7 @@ void HackerNewsAPI::onGetItemResult()
     reply->deleteLater();
 }
 
-void HackerNewsAPI::onMultipleStoriesResult()
+void HackerNewsAPI::onStoriesResult()
 {
     QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
 
@@ -144,7 +145,7 @@ void HackerNewsAPI::onMultipleStoriesResult()
             ids.append(id.toInt());
         }
 
-        emit multipleStoriesFetched(ids);
+        emit storiesFetched(ids);
     }
 
     reply->deleteLater();

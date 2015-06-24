@@ -38,6 +38,14 @@ Page {
             }
         }
 
+        PushUpMenu {
+
+            MenuItem {
+                text: qsTr("Load more")
+                onClicked: model.nextItems()
+            }
+        }
+
         anchors.fill: parent
 
         model: NewsModel {

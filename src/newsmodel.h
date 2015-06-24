@@ -55,14 +55,21 @@ public:
     Q_INVOKABLE void loadNewStories();
     Q_INVOKABLE void loadTopStories();
     Q_INVOKABLE void loadComments(const QList<int> kids);
+    Q_INVOKABLE void nextItems();
 
 protected Q_SLOTS:
     void onItemFetched(Item *item);
-    void loadItems(QList<int> ids);
+    void onStoriesFetched(QList<int> ids);
 
 private:
+    void loadItems();
+    void reset();
+
     QVector<Item*> backing;
     HackerNewsAPI *api;
+    QList<int> m_ids;
+    int m_start;
+    int m_end;
 
 };
 

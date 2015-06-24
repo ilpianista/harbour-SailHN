@@ -22,7 +22,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="48"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="46"/>
+        <source>Load more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="56"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -93,12 +98,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="80"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="82"/>
         <source>Open external url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="89"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="91"/>
         <source>Show details</source>
         <translation type="unfinished"></translation>
     </message>
@@ -111,7 +116,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="47"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="45"/>
+        <source>Load more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="55"/>
         <source>Newest</source>
         <translation type="unfinished"></translation>
     </message>
@@ -124,7 +134,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="48"/>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="44"/>
+        <source>Load more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="56"/>
         <source>Top</source>
         <translation type="unfinished"></translation>
     </message>

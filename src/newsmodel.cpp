@@ -34,16 +34,19 @@ const static int MAX_ITEMS = 30;
 NewsModel::NewsModel(QObject *parent) :
     QAbstractListModel(parent)
   , api(new HackerNewsAPI(this))
+  , m_start(0), m_end(MAX_ITEMS)
 {
 }
 
 NewsModel::~NewsModel()
 {
     disconnect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
+
     if (!backing.isEmpty()) {
         qDeleteAll(backing);
         backing.clear();
     }
+
     delete api;
 }
 
@@ -61,19 +64,37 @@ QHash<int, QByteArray> NewsModel::roleNames() const {
 
 void NewsModel::loadNewStories()
 {
+    reset();
     api->getNewStories();
-    connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
+    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 void NewsModel::loadTopStories()
 {
+    reset();
     api->getTopStories();
-    connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
+    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 void NewsModel::loadComments(const QList<int> kids)
 {
-    loadItems(kids);
+    reset();
+    m_ids = kids;
+    loadItems();
+}
+
+void NewsModel::nextItems()
+{
+    if (m_end < m_ids.size()) {
+        m_start = m_end;
+        m_end = m_end + MAX_ITEMS;
+
+        if (m_end >= m_ids.size()) {
+            m_end = -1;
+        }
+
+        loadItems();
+    }
 }
 
 QVariant NewsModel::data(const QModelIndex &index, int role) const {
@@ -104,12 +125,20 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
 
 void NewsModel::onItemFetched(Item *item)
 {
-    beginInsertRows(QModelIndex(), backing.size(), backing.size());
-    backing.append(item);
-    endInsertRows();
+    if (!item->deleted()) {
+        beginInsertRows(QModelIndex(), backing.size(), backing.size());
+        backing.append(item);
+        endInsertRows();
+    }
 }
 
-void NewsModel::loadItems(QList<int> ids)
+void NewsModel::onStoriesFetched(QList<int> ids)
+{
+    m_ids = ids;
+    loadItems();
+}
+
+void NewsModel::reset()
 {
     disconnect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
 
@@ -120,9 +149,16 @@ void NewsModel::loadItems(QList<int> ids)
         endResetModel();
     }
 
-    connect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
+    m_start = 0;
+    m_end = MAX_ITEMS;
+    m_ids.clear();
 
-    QList<int> limited = ids.mid(0, MAX_ITEMS);
+    connect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
+}
+
+void NewsModel::loadItems()
+{
+    QList<int> limited = m_ids.mid(m_start, m_end);
     Q_FOREACH (const int id, limited) {
         api->getItem(id);
     }

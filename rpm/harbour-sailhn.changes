@@ -1,3 +1,9 @@
+* Wed Jun 25 2015 Andrea Scarpino <me@andreascarpino.it> 0.3-1
+- Allow to show more items per page by adding a 'show more' menu action
+- Do not show deleted items
+- Fix hyperlinks in comments not using color theme
+- Do not show comments page if there are no comments
+
 * Wed Jun 24 2015 Andrea Scarpino <me@andreascarpino.it> 0.2-1
 - Show comments
 - Add a refresh menu action
