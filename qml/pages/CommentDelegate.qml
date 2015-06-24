@@ -35,7 +35,8 @@ BackgroundItem {
 
         Text {
             width: parent.width
-            text: itemText
+            textFormat: Text.RichText
+            text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
             color: Theme.secondaryColor
             font.pixelSize: Theme.fontSizeSmall
             wrapMode: Text.Wrap

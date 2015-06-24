@@ -4,12 +4,12 @@
 <context>
     <name>CommentDelegate</name>
     <message>
-        <location filename="../qml/pages/CommentDelegate.qml" line="56"/>
+        <location filename="../qml/pages/CommentDelegate.qml" line="57"/>
         <source>reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentDelegate.qml" line="58"/>
+        <location filename="../qml/pages/CommentDelegate.qml" line="59"/>
         <source>replies</source>
         <translation type="unfinished"></translation>
     </message>
