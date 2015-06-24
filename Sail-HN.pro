@@ -8,9 +8,17 @@ SOURCES += \
     src/hackernewsapi.cpp \
     src/item.cpp
 
+HEADERS += \
+    src/newsmodel.h \
+    src/hackernewsapi.h \
+    src/item.h \
+    src/item_p.h
+
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
     qml/SailHN.qml \
+    qml/pages/CommentDelegate.qml \
+    qml/pages/CommentsPage.qml \
     qml/pages/DetailsPage.qml \
     qml/pages/ItemDelegate.qml \
     qml/pages/NewStoriesPage.qml \
@@ -23,9 +31,3 @@ OTHER_FILES += \
 
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-sailhn-it.ts
-
-HEADERS += \
-    src/newsmodel.h \
-    src/hackernewsapi.h \
-    src/item.h \
-    src/item_p.h

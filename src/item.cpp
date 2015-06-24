@@ -51,6 +51,16 @@ void Item::setScore(const quint16 score)
     d->score = score;
 }
 
+QString Item::text() const
+{
+    return d->text;
+}
+
+void Item::setText(const QString text)
+{
+    d->text = text;
+}
+
 QDateTime Item::time() const
 {
     return d->time;

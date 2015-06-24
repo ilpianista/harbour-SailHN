@@ -26,6 +26,7 @@
 
 #include <QDebug>
 
+#include "item.h"
 #include "hackernewsapi.h"
 
 const static int MAX_ITEMS = 30;
@@ -45,9 +46,9 @@ NewsModel::~NewsModel()
 QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[ByRole] = "by";
-    roles[CommentsRole] = "comments";
     roles[KidsRole] = "kids";
     roles[ScoreRole] = "score";
+    roles[TextRole] = "itemText";
     roles[TimeRole] = "time";
     roles[TitleRole] = "title";
     roles[UrlRole] = "url";
@@ -57,13 +58,18 @@ QHash<int, QByteArray> NewsModel::roleNames() const {
 void NewsModel::loadNewStories()
 {
     api->getNewStories();
-    connect(api, SIGNAL(multipleStoriesFetched(QList<qint32>)), this, SLOT(loadItems(QList<qint32>)));
+    connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
 }
 
 void NewsModel::loadTopStories()
 {
     api->getTopStories();
-    connect(api, SIGNAL(multipleStoriesFetched(QList<qint32>)), this, SLOT(loadItems(QList<qint32>)));
+    connect(api, SIGNAL(multipleStoriesFetched(QList<int>)), this, SLOT(loadItems(QList<int>)));
+}
+
+void NewsModel::loadComments(const QList<int> kids)
+{
+    loadItems(kids);
 }
 
 QVariant NewsModel::data(const QModelIndex &index, int role) const {
@@ -74,15 +80,15 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
     Item *item = backing[index.row()];
     switch (role) {
     case ByRole: return item->by();
-    case CommentsRole: return item->kids().size();
     case KidsRole: {
         QVariantList kids;
-        Q_FOREACH (const qint32 kid, item->kids()) {
+        Q_FOREACH (const int kid, item->kids()) {
             kids.append(kid);
         }
         return kids;
     }
     case ScoreRole: return item->score();
+    case TextRole: return item->text();
     case TimeRole: return item->time();
     case TitleRole: return item->title();
     case UrlRole: return item->url();
@@ -99,7 +105,7 @@ void NewsModel::onItemFetched(Item *item)
     endInsertRows();
 }
 
-void NewsModel::loadItems(QList<qint32> ids)
+void NewsModel::loadItems(QList<int> ids)
 {
     connect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
 
@@ -107,8 +113,8 @@ void NewsModel::loadItems(QList<qint32> ids)
     backing.clear();
     endResetModel();
 
-    QList<qint32> limited = ids.mid(0, MAX_ITEMS);
-    Q_FOREACH (const qint32 id, limited) {
+    QList<int> limited = ids.mid(0, MAX_ITEMS);
+    Q_FOREACH (const int id, limited) {
         api->getItem(id);
     }
 }

@@ -29,8 +29,6 @@ import harbour.andreascarpino.sailhn 1.0
 Page {
 
     SilicaListView {
-        id: items
-
         anchors.fill: parent
 
         model: NewsModel {

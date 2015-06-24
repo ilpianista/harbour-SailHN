@@ -46,7 +46,7 @@ HackerNewsAPI::~HackerNewsAPI()
     delete network;
 }
 
-void HackerNewsAPI::getItem(const qint32 id)
+void HackerNewsAPI::getItem(const int id)
 {
     qDebug() << "Requesting item with id" << id;
 
@@ -98,12 +98,13 @@ void HackerNewsAPI::onGetItemResult()
         item->setBy(jsonObj.value("by").toString());
 
         QJsonArray jsonKids = jsonObj.value("kids").toArray();
-        QList<qint32> kids;
+        QList<int> kids;
         Q_FOREACH (const QVariant kid, jsonKids.toVariantList()) {
             kids.append(kid.toInt());
         }
         item->setKids(kids);
 
+        item->setText(jsonObj.value("text").toString());
         item->setTitle(jsonObj.value("title").toString());
         item->setUrl(QUrl(jsonObj.value("url").toString()));
 
@@ -138,7 +139,7 @@ void HackerNewsAPI::onMultipleStoriesResult()
     if (!json.isNull()) {
         qDebug() << "Got" << json.array().size() << "items";
 
-        QList<qint32> ids;
+        QList<int> ids;
         Q_FOREACH (const QJsonValue id, json.array()) {
             ids.append(id.toInt());
         }

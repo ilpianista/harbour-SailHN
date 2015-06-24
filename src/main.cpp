@@ -26,6 +26,8 @@
 
 #include <sailfishapp.h>
 
+#include "item.h"
+#include "hackernewsapi.h"
 #include "newsmodel.h"
 
 int main(int argc, char *argv[])

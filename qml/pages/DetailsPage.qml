@@ -27,7 +27,7 @@ import Sailfish.Silica 1.0
 
 Page {
     property var by
-    property var comments
+    property var kids
     property var score
     property var time
     property var title
@@ -79,7 +79,7 @@ Page {
 
             DetailItem {
                 label: qsTr("Comments")
-                value: comments
+                value: kids.length
             }
 
             DetailItem {

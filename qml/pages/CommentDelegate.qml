@@ -25,20 +25,22 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-ListItem {
+BackgroundItem {
     width: ListView.view.width
-    menu: menu
+    height: contentItem.childrenRect.height
 
     Column {
         x: Theme.horizontalPageMargin
         width: parent.width - Theme.horizontalPageMargin * 2
 
-        Label {
-            color: Theme.primaryColor
+        Text {
             width: parent.width
-            text: title
+            text: itemText
+            color: Theme.secondaryColor
             font.pixelSize: Theme.fontSizeSmall
-            truncationMode: TruncationMode.Fade
+            wrapMode: Text.Wrap
+
+            onLinkActivated: Qt.openUrlExternally(link)
         }
 
         Label {
@@ -46,21 +48,14 @@ ListItem {
             color: Theme.secondaryHighlightColor
             font.pixelSize: Theme.fontSizeExtraSmall
             horizontalAlignment: Text.AlignRight
-
             text: {
-                var txt = score + ' ';
-                if (score === 1) {
-                    txt += qsTr("point");
-                } else {
-                    txt += qsTr("points");
-                }
-
+                var txt = by;
                 if (kids.length !== 0) {
                     txt += " - " + kids.length + ' ';
                     if (kids.length === 1) {
-                        txt += qsTr("comment");
+                        txt += qsTr("reply");
                     } else {
-                        txt += qsTr("comments");
+                        txt += qsTr("replies");
                     }
                 }
 
@@ -70,34 +65,8 @@ ListItem {
     }
 
     onClicked: {
-        pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {kids: kids});
-    }
-
-    ContextMenu {
-        id: menu
-
-        MenuItem {
-            text: qsTr("Open external url")
-
-            onClicked: {
-                console.log("Opening external browser: " + url);
-                Qt.openUrlExternally(url);
-            }
-        }
-
-        MenuItem {
-            text: qsTr("Show details")
-
-            onClicked: {
-                pageStack.push(Qt.resolvedUrl("DetailsPage.qml"), {
-                    by: by,
-                    kids: kids,
-                    score: score,
-                    time: time,
-                    title: title,
-                    url: url
-                });
-            }
+        if (kids.length !== 0) {
+            pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {kids: kids});
         }
     }
 }

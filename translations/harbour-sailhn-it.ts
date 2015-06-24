@@ -2,44 +2,65 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>CommentDelegate</name>
+    <message>
+        <location filename="../qml/pages/CommentDelegate.qml" line="56"/>
+        <source>reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentDelegate.qml" line="58"/>
+        <source>replies</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CommentsPage</name>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="40"/>
+        <source>Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DetailsPage</name>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="45"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="43"/>
         <source>Open external url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="59"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="57"/>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="63"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="61"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="68"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="66"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="73"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="71"/>
         <source>When</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="78"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="76"/>
         <source>Score</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="83"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="81"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="88"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="86"/>
         <source>Url</source>
         <translation type="unfinished"></translation>
     </message>
@@ -47,22 +68,32 @@
 <context>
     <name>ItemDelegate</name>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="51"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="53"/>
         <source>point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="53"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="55"/>
         <source>points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="65"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="61"/>
+        <source>comment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ItemDelegate.qml" line="63"/>
+        <source>comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ItemDelegate.qml" line="80"/>
         <source>Open external url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="74"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="89"/>
         <source>Show details</source>
         <translation type="unfinished"></translation>
     </message>
@@ -70,7 +101,7 @@
 <context>
     <name>NewStoriesPage</name>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="41"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="39"/>
         <source>Newest</source>
         <translation type="unfinished"></translation>
     </message>

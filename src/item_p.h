@@ -6,10 +6,11 @@
 #include <QUrl>
 
 struct ItemPrivate {
-    qint32 id;
+    int id;
     QString by;
-    QList<qint32> kids;
+    QList<int> kids;
     quint16 score;
+    QString text;
     QDateTime time;
     QString title;
     QUrl url;

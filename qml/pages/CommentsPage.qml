@@ -22,35 +22,30 @@
   SOFTWARE.
 */
 
-#ifndef HACKERNEWSAPI_H
-#define HACKERNEWSAPI_H
+import QtQuick 2.0
+import Sailfish.Silica 1.0
+import harbour.andreascarpino.sailhn 1.0
 
-#include <QObject>
+Page {
+    property var kids
 
-class Item;
-class QNetworkAccessManager;
+    SilicaListView {
+        anchors.fill: parent
 
-class HackerNewsAPI : public QObject
-{
-    Q_OBJECT
-public:
-    explicit HackerNewsAPI(QObject *parent = 0);
-    virtual ~HackerNewsAPI();
+        model: NewsModel {
+            id: model
+        }
 
-    void getItem(const int id);
-    void getNewStories();
-    void getTopStories();
+        header: PageHeader {
+            title: qsTr("Comments")
+        }
 
-Q_SIGNALS:
-    void itemFetched(Item *item);
-    void multipleStoriesFetched(QList<int> ids);
+        delegate: CommentDelegate {}
 
-protected Q_SLOTS:
-    void onGetItemResult();
-    void onMultipleStoriesResult();
+        VerticalScrollDecorator {}
+    }
 
-private:
-    QNetworkAccessManager *network;
-};
-
-#endif // HACKERNEWSAPI_H
+    Component.onCompleted: {
+        model.loadComments(kids);
+    }
+}
