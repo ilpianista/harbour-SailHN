@@ -39,7 +39,11 @@ NewsModel::NewsModel(QObject *parent) :
 
 NewsModel::~NewsModel()
 {
-    qDeleteAll(backing);
+    disconnect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
+    if (!backing.isEmpty()) {
+        qDeleteAll(backing);
+        backing.clear();
+    }
     delete api;
 }
 
@@ -107,11 +111,16 @@ void NewsModel::onItemFetched(Item *item)
 
 void NewsModel::loadItems(QList<int> ids)
 {
-    connect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
+    disconnect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
 
-    beginResetModel();
-    backing.clear();
-    endResetModel();
+    if (!backing.isEmpty()) {
+        beginResetModel();
+        qDeleteAll(backing);
+        backing.clear();
+        endResetModel();
+    }
+
+    connect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
 
     QList<int> limited = ids.mid(0, MAX_ITEMS);
     Q_FOREACH (const int id, limited) {

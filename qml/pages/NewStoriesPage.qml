@@ -31,6 +31,14 @@ Page {
     SilicaListView {
         anchors.fill: parent
 
+        PullDownMenu {
+
+            MenuItem {
+                text: qsTr("Refresh")
+                onClicked: loadNewStories()
+            }
+        }
+
         model: NewsModel {
             id: model
         }
@@ -44,7 +52,9 @@ Page {
         VerticalScrollDecorator {}
     }
 
-    Component.onCompleted: {
+    Component.onCompleted: loadNewStories()
+
+    function loadNewStories() {
         model.loadNewStories();
     }
 }

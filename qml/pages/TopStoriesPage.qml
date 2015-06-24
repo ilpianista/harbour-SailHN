@@ -29,7 +29,14 @@ import harbour.andreascarpino.sailhn 1.0
 Page {
 
     SilicaListView {
-        id: items
+
+        PullDownMenu {
+
+            MenuItem {
+                text: qsTr("Refresh")
+                onClicked: loadTopStories()
+            }
+        }
 
         anchors.fill: parent
 
@@ -46,7 +53,9 @@ Page {
         VerticalScrollDecorator {}
     }
 
-    Component.onCompleted: {
+    Component.onCompleted: loadTopStories()
+
+    function loadTopStories() {
         model.loadTopStories();
     }
 }

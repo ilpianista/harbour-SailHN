@@ -17,7 +17,12 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="40"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="38"/>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="48"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -101,7 +106,12 @@
 <context>
     <name>NewStoriesPage</name>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="39"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="37"/>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="47"/>
         <source>Newest</source>
         <translation type="unfinished"></translation>
     </message>
@@ -109,7 +119,12 @@
 <context>
     <name>TopStoriesPage</name>
     <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="41"/>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="36"/>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="48"/>
         <source>Top</source>
         <translation type="unfinished"></translation>
     </message>
