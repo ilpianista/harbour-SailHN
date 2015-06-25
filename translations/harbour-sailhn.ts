@@ -35,42 +35,37 @@
 <context>
     <name>DetailsPage</name>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="43"/>
-        <source>Open external url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="57"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="47"/>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="61"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="51"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="66"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="56"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="71"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="61"/>
         <source>When</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="76"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="66"/>
         <source>Score</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="81"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="71"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/DetailsPage.qml" line="86"/>
+        <location filename="../qml/pages/DetailsPage.qml" line="82"/>
         <source>Url</source>
         <translation type="unfinished"></translation>
     </message>

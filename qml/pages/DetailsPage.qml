@@ -37,19 +37,9 @@ Page {
         anchors.fill: parent
         contentHeight: childrenRect.height
 
-        PullDownMenu {
-
-            MenuItem {
-                text: qsTr("Open external url")
-
-                onClicked: {
-                    console.log("Opening external browser: " + url);
-                    Qt.openUrlExternally(url);
-                }
-            }
-        }
-
         Column {
+            x: Theme.horizontalPageMargin
+            width: parent.width - Theme.horizontalPageMargin * 2
             anchors.fill: parent
             spacing: Theme.paddingMedium
 
@@ -82,9 +72,34 @@ Page {
                 value: kids.length
             }
 
-            DetailItem {
-                label: qsTr("Url")
-                value: url
+            // DetailItem does not expose onLinkActivated signal,
+            // this is a workaround to get it
+            Row {
+                x: Theme.paddingMedium
+                spacing: Theme.paddingMedium
+                width: parent.width
+
+                Label {
+                    id: urlLabel
+                    text: qsTr("Url")
+                    color: Theme.secondaryHighlightColor
+                    font.pixelSize: Theme.fontSizeSmall
+                }
+
+                Text {
+                    width: parent.width - urlLabel.width - Theme.paddingMedium * 3
+                    textFormat: Text.RichText
+                    text: {
+                        var txt = "<style>a:link{color: " + Theme.highlightColor + ";}</style>";
+                        txt += "<a href=\"" + url + "\" rel=\"nofollow\">" + url + "</a>";
+                        return txt;
+                    }
+                    wrapMode: Text.WrapAnywhere
+                    color: Theme.highlightColor
+                    font.pixelSize: Theme.fontSizeSmall
+
+                    onLinkActivated: Qt.openUrlExternally(url)
+                }
             }
         }
     }
