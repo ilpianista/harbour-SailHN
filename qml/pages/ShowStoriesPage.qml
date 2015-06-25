@@ -24,12 +24,57 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "pages"
+import harbour.andreascarpino.sailhn 1.0
 
-ApplicationWindow {
+Page {
 
-    initialPage: Component { TopStoriesPage { } }
-    cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    property bool storiesLoadedOnce: false
+
+    SilicaListView {
+        anchors.fill: parent
+
+        PullDownMenu {
+
+            MenuItem {
+                text: qsTr("Refresh")
+                onClicked: loadStories()
+            }
+        }
+
+        PushUpMenu {
+
+            MenuItem {
+                text: qsTr("Load more")
+                onClicked: model.nextItems()
+            }
+        }
+
+        model: NewsModel {
+            id: model
+        }
+
+        header: PageHeader {
+            title: qsTr("Show")
+        }
+
+        delegate: ItemDelegate {}
+
+        VerticalScrollDecorator {}
+    }
+
+    onStatusChanged: {
+        if (status === PageStatus.Activating) {
+            if (!storiesLoadedOnce) {
+                loadStories();
+            }
+        } else if (status === PageStatus.Active) {
+            pageStack.pushAttached(Qt.resolvedUrl("AskStoriesPage.qml"));
+        } else if (status === PageStatus.Deactivating) {
+            storiesLoadedOnce = true;
+        }
+    }
+
+    function loadStories() {
+        model.loadShowStories();
+    }
 }
-
-

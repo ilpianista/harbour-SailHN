@@ -57,22 +57,20 @@ void HackerNewsAPI::getItem(const int id)
     connect(reply, SIGNAL(finished()), this, SLOT(onGetItemResult()));
 }
 
-void HackerNewsAPI::getNewStories()
+void HackerNewsAPI::getStories(Stories kind)
 {
     qDebug() << "Requesting new stories";
 
-    QUrl url(API_URL + QString("newstories.json"));
-    QNetworkRequest req(url);
-    QNetworkReply* reply = network->get(req);
+    QString path;
+    switch (kind) {
+    case Ask: path = QString("askstories.json"); break;
+    case Job: path = QString("jobstories.json"); break;
+    case New: path = QString("newstories.json"); break;
+    case Show: path = QString("showstories.json"); break;
+    case Top: path = QString("topstories.json");
+    }
 
-    connect(reply, SIGNAL(finished()), this, SLOT(onStoriesResult()));
-}
-
-void HackerNewsAPI::getTopStories()
-{
-    qDebug() << "Requesting top stories";
-
-    QUrl url(API_URL + QString("topstories.json"));
+    QUrl url(API_URL + path);
     QNetworkRequest req(url);
     QNetworkReply* reply = network->get(req);
 

@@ -28,13 +28,16 @@ import harbour.andreascarpino.sailhn 1.0
 
 Page {
 
+    property bool storiesLoadedOnce: false
+
     SilicaListView {
+        anchors.fill: parent
 
         PullDownMenu {
 
             MenuItem {
                 text: qsTr("Refresh")
-                onClicked: loadTopStories()
+                onClicked: loadStories()
             }
         }
 
@@ -45,8 +48,6 @@ Page {
                 onClicked: model.nextItems()
             }
         }
-
-        anchors.fill: parent
 
         model: NewsModel {
             id: model
@@ -61,9 +62,19 @@ Page {
         VerticalScrollDecorator {}
     }
 
-    Component.onCompleted: loadTopStories()
+    onStatusChanged: {
+        if (status === PageStatus.Activating) {
+            if (!storiesLoadedOnce) {
+                loadStories();
+            }
+        } else if (status === PageStatus.Active) {
+            pageStack.pushAttached(Qt.resolvedUrl("NewStoriesPage.qml"));
+        } else if (status === PageStatus.Deactivating) {
+            storiesLoadedOnce = true;
+        }
+    }
 
-    function loadTopStories() {
+    function loadStories() {
         model.loadTopStories();
     }
 }

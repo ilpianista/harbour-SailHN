@@ -62,17 +62,38 @@ QHash<int, QByteArray> NewsModel::roleNames() const {
     return roles;
 }
 
+void NewsModel::loadAskStories()
+{
+    reset();
+    api->getStories(HackerNewsAPI::Ask);
+    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
+}
+
 void NewsModel::loadNewStories()
 {
     reset();
-    api->getNewStories();
+    api->getStories(HackerNewsAPI::New);
+    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
+}
+
+void NewsModel::loadJobStories()
+{
+    reset();
+    api->getStories(HackerNewsAPI::Job);
+    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
+}
+
+void NewsModel::loadShowStories()
+{
+    reset();
+    api->getStories(HackerNewsAPI::Show);
     connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 void NewsModel::loadTopStories()
 {
     reset();
-    api->getTopStories();
+    api->getStories(HackerNewsAPI::Top);
     connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 

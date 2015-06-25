@@ -21,7 +21,10 @@ OTHER_FILES += \
     qml/pages/CommentsPage.qml \
     qml/pages/DetailsPage.qml \
     qml/pages/ItemDelegate.qml \
+    qml/pages/AskStoriesPage.qml \
+    qml/pages/JobStoriesPage.qml \
     qml/pages/NewStoriesPage.qml \
+    qml/pages/ShowStoriesPage.qml \
     qml/pages/TopStoriesPage.qml \
     harbour-sailhn.desktop \
     rpm/harbour-sailhn.changes \

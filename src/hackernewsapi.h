@@ -34,12 +34,15 @@ class HackerNewsAPI : public QObject
 {
     Q_OBJECT
 public:
+    enum Stories {
+        New, Top, Show, Ask, Job
+    };
+
     explicit HackerNewsAPI(QObject *parent = 0);
     virtual ~HackerNewsAPI();
 
     void getItem(const int id);
-    void getNewStories();
-    void getTopStories();
+    void getStories(Stories kind);
 
 Q_SIGNALS:
     void itemFetched(Item *item);
