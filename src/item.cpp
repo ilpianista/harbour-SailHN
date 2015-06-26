@@ -9,6 +9,7 @@ Item::Item(QObject *parent) : QObject(parent)
 
 Item::~Item()
 {
+    delete d;
 }
 
 int Item::id() const
