@@ -50,7 +50,7 @@ void HackerNewsAPI::getItem(const int id)
 {
     qDebug() << "Requesting item with id" << id;
 
-    QUrl url(API_URL + QString("item/%1.json").arg(id));
+    QUrl url(API_URL + QStringLiteral("item/%1.json").arg(id));
     QNetworkRequest req(url);
     QNetworkReply* reply = network->get(req);
 
@@ -63,11 +63,11 @@ void HackerNewsAPI::getStories(Stories kind)
 
     QString path;
     switch (kind) {
-        case Ask: path = QString("askstories.json"); break;
-        case Job: path = QString("jobstories.json"); break;
-        case New: path = QString("newstories.json"); break;
-        case Show: path = QString("showstories.json"); break;
-        case Top: path = QString("topstories.json");
+        case Ask: path = QStringLiteral("askstories.json"); break;
+        case Job: path = QStringLiteral("jobstories.json"); break;
+        case New: path = QStringLiteral("newstories.json"); break;
+        case Show: path = QStringLiteral("showstories.json"); break;
+        case Top: path = QStringLiteral("topstories.json");
     }
 
     QUrl url(API_URL + path);
@@ -110,7 +110,7 @@ void HackerNewsAPI::onGetItemResult()
             // Since we don't display hacker news items yet, we just set
             // the external url to the item detail page in Hacker News
             if (item->url().isEmpty()) {
-                item->setUrl(QUrl("https://news.ycombinator.com/item?id=" + QString::number(item->id())));
+                item->setUrl(QUrl(QStringLiteral("https://news.ycombinator.com/item?id=%1").arg(item->id())));
             }
 
             item->setScore(jsonObj.value("score").toInt());
