@@ -36,6 +36,7 @@ NewsModel::NewsModel(QObject *parent) :
   , api(new HackerNewsAPI(this))
   , m_start(0), m_end(MAX_ITEMS)
 {
+    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 NewsModel::~NewsModel()
@@ -67,35 +68,30 @@ void NewsModel::loadAskStories()
 {
     reset();
     api->getStories(HackerNewsAPI::Ask);
-    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 void NewsModel::loadNewStories()
 {
     reset();
     api->getStories(HackerNewsAPI::New);
-    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 void NewsModel::loadJobStories()
 {
     reset();
     api->getStories(HackerNewsAPI::Job);
-    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 void NewsModel::loadShowStories()
 {
     reset();
     api->getStories(HackerNewsAPI::Show);
-    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 void NewsModel::loadTopStories()
 {
     reset();
     api->getStories(HackerNewsAPI::Top);
-    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
 }
 
 void NewsModel::loadComments(const QList<int> kids)
