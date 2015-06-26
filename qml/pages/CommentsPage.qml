@@ -29,14 +29,21 @@ import harbour.andreascarpino.sailhn 1.0
 Page {
     property var kids
 
+    readonly property int maxCommentsForPage: 30;
+    property int showingCommentsCount: maxCommentsForPage;
+
     SilicaListView {
+        id: comments
         anchors.fill: parent
 
         PullDownMenu {
 
             MenuItem {
                 text: qsTr("Refresh")
-                onClicked: loadComments()
+                onClicked: {
+                    loadComments();
+                    showingCommentsCount = maxCommentsForPage;
+                }
             }
         }
 
@@ -44,12 +51,23 @@ Page {
 
             MenuItem {
                 text: qsTr("Load more")
-                onClicked: model.nextItems()
+                onClicked: {
+                    model.nextItems();
+                    showingCommentsCount += maxCommentsForPage;
+                }
             }
         }
 
         model: NewsModel {
             id: model
+
+            onRowsInserted: {
+                comments.pushUpMenu.visible = false;
+
+                if (kids.length > showingCommentsCount) {
+                    comments.pushUpMenu.visible = true;
+                }
+            }
         }
 
         header: PageHeader {

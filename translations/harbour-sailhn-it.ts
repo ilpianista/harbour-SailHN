@@ -35,17 +35,17 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="38"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="42"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="46"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="53"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="56"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="75"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
