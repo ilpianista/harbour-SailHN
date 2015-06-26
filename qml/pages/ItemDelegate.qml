@@ -56,8 +56,8 @@ ListItem {
                 }
 
                 if (kids.length !== 0) {
-                    txt += " - " + kids.length + ' ';
-                    if (kids.length === 1) {
+                    txt += " - " + descendants + ' ';
+                    if (descendants === 1) {
                         txt += qsTr("comment");
                     } else {
                         txt += qsTr("comments");
@@ -93,7 +93,7 @@ ListItem {
             onClicked: {
                 pageStack.push(Qt.resolvedUrl("DetailsPage.qml"), {
                     by: by,
-                    kids: kids,
+                    descendants: descendants,
                     score: score,
                     time: time,
                     title: title,

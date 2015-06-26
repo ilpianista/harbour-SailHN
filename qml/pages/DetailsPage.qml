@@ -27,7 +27,7 @@ import Sailfish.Silica 1.0
 
 Page {
     property var by
-    property var kids
+    property var descendants
     property var score
     property var time
     property var title
@@ -69,7 +69,7 @@ Page {
 
             DetailItem {
                 label: qsTr("Comments")
-                value: kids.length
+                value: descendants
             }
 
             // DetailItem does not expose onLinkActivated signal,

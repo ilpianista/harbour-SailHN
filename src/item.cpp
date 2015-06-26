@@ -41,6 +41,16 @@ void Item::setDeleted(const bool deleted)
     d->deleted = deleted;
 }
 
+int Item::descendants() const
+{
+    return d->descendants;
+}
+
+void Item::setDescendants(const int descendants)
+{
+    d->descendants = descendants;
+}
+
 QList<qint32> Item::kids() const
 {
     return d->kids;

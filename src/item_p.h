@@ -9,6 +9,7 @@ struct ItemPrivate {
     int id;
     QString by;
     bool deleted;
+    int descendants;
     QList<int> kids;
     quint16 score;
     QString text;

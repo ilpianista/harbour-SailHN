@@ -12,6 +12,7 @@ class Item : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString by READ by)
+    Q_PROPERTY(int descendants READ descendants)
     Q_PROPERTY(QList<int> kids READ kids)
     Q_PROPERTY(quint16 score READ score)
     Q_PROPERTY(QString text READ text)
@@ -30,6 +31,9 @@ public:
 
     bool deleted() const;
     void setDeleted(const bool deleted);
+
+    int descendants() const;
+    void setDescendants(const int descendants);
 
     QList<int> kids() const;
     void setKids(const QList<int> kids);

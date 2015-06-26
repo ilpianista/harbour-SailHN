@@ -95,6 +95,7 @@ void HackerNewsAPI::onGetItemResult()
         item->setId(jsonObj.value("id").toInt());
         item->setBy(jsonObj.value("by").toString());
         item->setDeleted(jsonObj.value("deleted").toBool());
+        item->setDescendants(jsonObj.value("descendants").toInt());
 
         QJsonArray jsonKids = jsonObj.value("kids").toArray();
         QList<int> kids;

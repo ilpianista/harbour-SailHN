@@ -36,12 +36,13 @@ class NewsModel : public QAbstractListModel
 public:
     enum NewsRoles {
         ByRole = Qt::UserRole + 1,
-        KidsRole = Qt::UserRole + 2,
-        ScoreRole = Qt::UserRole + 3,
-        TextRole = Qt::UserRole + 4,
-        TimeRole = Qt::UserRole + 5,
-        TitleRole = Qt::UserRole + 6,
-        UrlRole = Qt::UserRole + 7
+        DescendantsRole = Qt::UserRole + 2,
+        KidsRole = Qt::UserRole + 3,
+        ScoreRole = Qt::UserRole + 4,
+        TextRole = Qt::UserRole + 5,
+        TimeRole = Qt::UserRole + 6,
+        TitleRole = Qt::UserRole + 7,
+        UrlRole = Qt::UserRole + 8
     };
 
     explicit NewsModel(QObject *parent = 0);

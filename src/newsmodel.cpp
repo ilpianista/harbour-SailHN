@@ -53,6 +53,7 @@ NewsModel::~NewsModel()
 QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[ByRole] = "by";
+    roles[DescendantsRole] = "descendants";
     roles[KidsRole] = "kids";
     roles[ScoreRole] = "score";
     roles[TextRole] = "itemText";
@@ -126,6 +127,7 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
     Item *item = backing[index.row()];
     switch (role) {
     case ByRole: return item->by();
+    case DescendantsRole: return item->descendants();
     case KidsRole: {
         QVariantList kids;
         Q_FOREACH (const int kid, item->kids()) {
