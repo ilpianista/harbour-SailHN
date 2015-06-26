@@ -36,12 +36,12 @@ NewsModel::NewsModel(QObject *parent) :
   , api(new HackerNewsAPI(this))
   , m_start(0), m_end(MAX_ITEMS)
 {
-    connect(api, SIGNAL(storiesFetched(QList<int>)), this, SLOT(onStoriesFetched(QList<int>)));
+    connect(api, &HackerNewsAPI::storiesFetched, this, &NewsModel::onStoriesFetched);
 }
 
 NewsModel::~NewsModel()
 {
-    disconnect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
+    disconnect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onItemFetched);
 
     if (!backing.isEmpty()) {
         qDeleteAll(backing);
@@ -159,7 +159,7 @@ void NewsModel::onStoriesFetched(QList<int> ids)
 
 void NewsModel::reset()
 {
-    disconnect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
+    disconnect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onItemFetched);
 
     if (!backing.isEmpty()) {
         beginResetModel();
@@ -172,7 +172,7 @@ void NewsModel::reset()
     m_end = MAX_ITEMS;
     m_ids.clear();
 
-    connect(api, SIGNAL(itemFetched(Item*)), this, SLOT(onItemFetched(Item*)));
+    connect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onItemFetched);
 }
 
 void NewsModel::loadItems()

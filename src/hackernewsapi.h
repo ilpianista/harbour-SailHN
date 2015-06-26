@@ -48,11 +48,10 @@ Q_SIGNALS:
     void itemFetched(Item *item);
     void storiesFetched(QList<int> ids);
 
-protected Q_SLOTS:
+private:
     void onGetItemResult();
     void onStoriesResult();
 
-private:
     QNetworkAccessManager *network;
 };
 

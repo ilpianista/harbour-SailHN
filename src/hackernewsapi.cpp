@@ -54,7 +54,7 @@ void HackerNewsAPI::getItem(const int id)
     QNetworkRequest req(url);
     QNetworkReply* reply = network->get(req);
 
-    connect(reply, SIGNAL(finished()), this, SLOT(onGetItemResult()));
+    connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onGetItemResult);
 }
 
 void HackerNewsAPI::getStories(Stories kind)
@@ -74,7 +74,7 @@ void HackerNewsAPI::getStories(Stories kind)
     QNetworkRequest req(url);
     QNetworkReply* reply = network->get(req);
 
-    connect(reply, SIGNAL(finished()), this, SLOT(onStoriesResult()));
+    connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onStoriesResult);
 }
 
 void HackerNewsAPI::onGetItemResult()

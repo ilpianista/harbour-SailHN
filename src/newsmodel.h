@@ -61,12 +61,10 @@ public:
     Q_INVOKABLE void loadComments(const QList<int> kids);
     Q_INVOKABLE void nextItems();
 
-protected Q_SLOTS:
-    void onItemFetched(Item *item);
-    void onStoriesFetched(QList<int> ids);
-
 private:
     void loadItems();
+    void onItemFetched(Item *item);
+    void onStoriesFetched(QList<int> ids);
     void reset();
 
     QVector<Item*> backing;
