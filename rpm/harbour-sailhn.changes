@@ -1,4 +1,11 @@
-* Wed Jun 25 2015 Andrea Scarpino <me@andreascarpino.it> 0.3-1
+* Fri Jun 26 2015 Andrea Scarpino <me@andreascarpino.it> 0.4-1
+- Show LoadMore menu only if there are more entries to load
+- Fix comments count
+- Add support for Ask, Job and Show pages
+- Show SailHN icon in cover
+- Remove PullDownMenu in the details page, make the URL clickable instead
+
+* Thu Jun 25 2015 Andrea Scarpino <me@andreascarpino.it> 0.3-1
 - Allow to show more items per page by adding a 'show more' menu action
 - Do not show deleted items
 - Fix hyperlinks in comments not using color theme

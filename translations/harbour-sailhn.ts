@@ -45,7 +45,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="75"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
