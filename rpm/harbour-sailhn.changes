@@ -1,3 +1,8 @@
+* Sat Jun 26 2015 Andrea Scarpino <me@andreascarpino.it> 0.6-1
+- Show item title and url in the comments page (and drop details page
+  because it is not useful anymore)
+- Increment size in every text by 1 size
+
 * Sat Jun 26 2015 Andrea Scarpino <me@andreascarpino.it> 0.5-1
 - For story items display text instead of redirecting to Hacker News website
 - Memleak fixes and performance improvments

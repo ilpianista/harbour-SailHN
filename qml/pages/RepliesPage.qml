@@ -27,18 +27,13 @@ import Sailfish.Silica 1.0
 import harbour.andreascarpino.sailhn 1.0
 
 Page {
-    property var by
-    property var itemText
     property var kids
-    property var time
-    property var title
-    property var url
 
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
 
     SilicaFlickable {
-        id: comments
+        id: replies
         anchors.fill: parent
         contentHeight: column.height
 
@@ -74,57 +69,7 @@ Page {
             spacing: Theme.paddingMedium
 
             SectionHeader {
-                text: qsTr("Comments")
-            }
-
-            Label {
-                width: parent.width
-                text: title
-                color:Theme.primaryColor
-                font.pixelSize: Theme.fontSizeMedium
-                wrapMode: Text.Wrap
-            }
-
-            Text {
-                width: parent.width
-                visible: (itemText && !(/^\s*$/.test(itemText)))
-                textFormat: Text.RichText
-                text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
-                color: Theme.secondaryColor
-                font.pixelSize: Theme.fontSizeMedium
-                wrapMode: Text.Wrap
-
-                onLinkActivated: {
-                    console.log("Opening external browser: " + link);
-                    Qt.openUrlExternally(link)
-                }
-            }
-
-            // Workaround for Label that does not provide onClick?
-            Text {
-                width: parent.width
-                visible: (url && !(/^\s*$/.test(url)))
-                textFormat: Text.RichText
-                font.pixelSize: Theme.fontSizeSmall
-                wrapMode: Text.WrapAnywhere
-                text: {
-                    var txt = "<style>a:link{color: " + Theme.secondaryHighlightColor + ";}</style>";
-                    txt += "<a href=\"" + url + "\" rel=\"nofollow\">" + url + "</a>";
-                    return txt;
-                }
-
-                onLinkActivated: {
-                    console.log("Opening external browser: " + link);
-                    Qt.openUrlExternally(link);
-                }
-            }
-
-            Label {
-                width: parent.width
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeSmall
-                horizontalAlignment: Text.AlignRight
-                text: by + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
+                text: qsTr("Replies")
             }
 
             Repeater {
@@ -134,7 +79,7 @@ Page {
 
                     onRowsInserted: {
                         if (kids.length > showingCommentsCount) {
-                            comments.pushUpMenu.visible = true;
+                            replies.pushUpMenu.visible = true;
                         }
                     }
                 }

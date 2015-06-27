@@ -37,21 +37,40 @@ BackgroundItem {
             textFormat: Text.RichText
             text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
             color: Theme.secondaryColor
-            font.pixelSize: Theme.fontSizeSmall
+            font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.Wrap
 
-            onLinkActivated: Qt.openUrlExternally(link)
+            onLinkActivated: {
+                console.log("Opening external browser: " + link);
+                Qt.openUrlExternally(link)
+            }
         }
 
-        CommentFooter {
+        Label {
             width: parent.width
-            replies: kids.length
+            color: Theme.secondaryHighlightColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: Text.AlignRight
+
+            text: {
+                var txt = by;
+                if (kids.length !== 0) {
+                    txt += " - " + kids.length + ' ';
+                    if (kids.length === 1) {
+                        txt += qsTr("reply");
+                    } else {
+                        txt += qsTr("replies");
+                    }
+                }
+
+                return txt + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
+            }
         }
     }
 
     onClicked: {
         if (kids.length !== 0) {
-            pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {kids: kids, itemText: ""});
+            pageStack.push(Qt.resolvedUrl("RepliesPage.qml"), {kids: kids});
         }
     }
 }

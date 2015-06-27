@@ -59,7 +59,7 @@ void HackerNewsAPI::getItem(const int id)
 
 void HackerNewsAPI::getStories(Stories kind)
 {
-    qDebug() << "Requesting new stories";
+    qDebug() << "Requesting stories";
 
     QString path;
     switch (kind) {
@@ -113,6 +113,8 @@ void HackerNewsAPI::onGetItemResult()
             item->setTime(timestamp);
 
             emit itemFetched(item);
+        } else {
+            qDebug() << "Got an invalid JSON!";
         }
     }
 
@@ -136,6 +138,8 @@ void HackerNewsAPI::onStoriesResult()
             }
 
             emit storiesFetched(ids);
+        } else {
+            qDebug() << "Got an invalid JSON!";
         }
     }
 

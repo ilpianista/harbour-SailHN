@@ -37,14 +37,14 @@ ListItem {
             color: Theme.primaryColor
             width: parent.width
             text: title
-            font.pixelSize: Theme.fontSizeSmall
+            font.pixelSize: Theme.fontSizeMedium
             truncationMode: TruncationMode.Fade
         }
 
         Label {
             width: parent.width
             color: Theme.secondaryHighlightColor
-            font.pixelSize: Theme.fontSizeExtraSmall
+            font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignRight
 
             text: {
@@ -75,7 +75,9 @@ ListItem {
                                by: by,
                                itemText: itemText,
                                kids: kids,
-                               time: time
+                               time: time,
+                               title: title,
+                               url: url
                            });
         }
     }
@@ -85,26 +87,11 @@ ListItem {
 
         MenuItem {
             text: qsTr("Open external url")
-            enabled: (url.length !== 0)
+            enabled: (url && !(/^\s*$/.test(url)))
 
             onClicked: {
                 console.log("Opening external browser: " + url);
                 Qt.openUrlExternally(url);
-            }
-        }
-
-        MenuItem {
-            text: qsTr("Show details")
-
-            onClicked: {
-                pageStack.push(Qt.resolvedUrl("DetailsPage.qml"), {
-                    by: by,
-                    descendants: descendants,
-                    score: score,
-                    time: time,
-                    title: title,
-                    url: url
-                });
             }
         }
     }
