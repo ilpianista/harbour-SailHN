@@ -78,6 +78,7 @@ Page {
                 x: Theme.paddingMedium
                 spacing: Theme.paddingMedium
                 width: parent.width
+                visible: (url.length !== 0)
 
                 Label {
                     id: urlLabel
