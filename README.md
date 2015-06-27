@@ -1,4 +1,4 @@
-# harbour-Sail-HN
+# harbour-SailHN
 
 [Hacker News](https://news.ycombinator.com/) unofficial client for [Sailfish OS](https://sailfishos.org).
 
