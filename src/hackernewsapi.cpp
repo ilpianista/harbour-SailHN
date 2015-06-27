@@ -91,6 +91,8 @@ void HackerNewsAPI::onGetItemResult()
             Item* item = new Item();
             QJsonObject jsonObj = json.object();
             item->setId(jsonObj.value("id").toInt());
+            qDebug() << "Got item with id" << item->id();
+
             item->setBy(jsonObj.value("by").toString());
             item->setDeleted(jsonObj.value("deleted").toBool());
             item->setDescendants(jsonObj.value("descendants").toInt());
@@ -105,14 +107,6 @@ void HackerNewsAPI::onGetItemResult()
             item->setText(jsonObj.value("text").toString());
             item->setTitle(jsonObj.value("title").toString());
             item->setUrl(QUrl(jsonObj.value("url").toString()));
-
-            // FIXME: to be removed when we display items text and comments
-            // Since we don't display hacker news items yet, we just set
-            // the external url to the item detail page in Hacker News
-            if (item->url().isEmpty()) {
-                item->setUrl(QUrl(QStringLiteral("https://news.ycombinator.com/item?id=%1").arg(item->id())));
-            }
-
             item->setScore(jsonObj.value("score").toInt());
             QDateTime timestamp;
             timestamp.setTime_t(jsonObj.value("time").toInt());
@@ -134,7 +128,7 @@ void HackerNewsAPI::onStoriesResult()
     } else {
         QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
         if (!json.isNull()) {
-            qDebug() << "Got" << json.array().size() << "items";
+            qDebug() << "There are" << json.array().size() << "items";
 
             QList<int> ids;
             Q_FOREACH (const QJsonValue id, json.array()) {

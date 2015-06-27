@@ -27,19 +27,24 @@ import Sailfish.Silica 1.0
 import harbour.andreascarpino.sailhn 1.0
 
 Page {
+    property var by
+    property var itemText
     property var kids
+    property var time
 
-    readonly property int maxCommentsForPage: 30;
-    property int showingCommentsCount: maxCommentsForPage;
+    readonly property int maxCommentsForPage: 30
+    property int showingCommentsCount: maxCommentsForPage
 
-    SilicaListView {
+    SilicaFlickable {
         id: comments
         anchors.fill: parent
+        contentHeight: column.height
 
         PullDownMenu {
 
             MenuItem {
                 text: qsTr("Refresh")
+
                 onClicked: {
                     loadComments();
                     showingCommentsCount = maxCommentsForPage;
@@ -48,9 +53,11 @@ Page {
         }
 
         PushUpMenu {
+            visible: false
 
             MenuItem {
                 text: qsTr("Load more")
+
                 onClicked: {
                     model.nextItems();
                     showingCommentsCount += maxCommentsForPage;
@@ -58,23 +65,49 @@ Page {
             }
         }
 
-        model: NewsModel {
-            id: model
+        Column {
+            id: column
+            x: Theme.horizontalPageMargin
+            width: parent.width - Theme.horizontalPageMargin * 2
+            spacing: Theme.paddingMedium
 
-            onRowsInserted: {
-                comments.pushUpMenu.visible = false;
+            PageHeader {
+                title: qsTr("Comments")
+            }
 
-                if (kids.length > showingCommentsCount) {
-                    comments.pushUpMenu.visible = true;
+            Text {
+                width: parent.width
+                visible: (itemText.length !== 0)
+                textFormat: Text.RichText
+                text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
+                color: Theme.primaryColor
+                font.pixelSize: Theme.fontSizeSmall
+                wrapMode: Text.Wrap
+
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+
+            CommentFooter {
+                width: parent.width
+                replies: kids.length
+                visible: (itemText.length !== 0)
+            }
+
+            Repeater {
+
+                model: NewsModel {
+                    id: model
+
+                    onRowsInserted: {
+                        if (kids.length > showingCommentsCount) {
+                            comments.pushUpMenu.visible = true;
+                        }
+                    }
                 }
+
+                delegate: CommentDelegate {}
             }
         }
-
-        header: PageHeader {
-            title: qsTr("Comments")
-        }
-
-        delegate: CommentDelegate {}
 
         VerticalScrollDecorator {}
     }

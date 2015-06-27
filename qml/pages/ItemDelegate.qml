@@ -71,7 +71,12 @@ ListItem {
 
     onClicked: {
         if (kids.length !== 0) {
-            pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {kids: kids});
+            pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
+                               by: by,
+                               itemText: itemText,
+                               kids: kids,
+                               time: time
+                           });
         }
     }
 
@@ -80,6 +85,7 @@ ListItem {
 
         MenuItem {
             text: qsTr("Open external url")
+            enabled: (url.length !== 0)
 
             onClicked: {
                 console.log("Opening external browser: " + url);

@@ -20,14 +20,14 @@
     </message>
 </context>
 <context>
-    <name>CommentDelegate</name>
+    <name>CommentFooter</name>
     <message>
-        <location filename="../qml/pages/CommentDelegate.qml" line="57"/>
+        <location filename="../qml/pages/CommentFooter.qml" line="40"/>
         <source>reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentDelegate.qml" line="59"/>
+        <location filename="../qml/pages/CommentFooter.qml" line="42"/>
         <source>replies</source>
         <translation type="unfinished"></translation>
     </message>
@@ -35,17 +35,17 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="42"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="46"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="53"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="59"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="75"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -111,12 +111,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="82"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="87"/>
         <source>Open external url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="91"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="97"/>
         <source>Show details</source>
         <translation type="unfinished"></translation>
     </message>

@@ -18,6 +18,7 @@ OTHER_FILES += \
     qml/cover/CoverPage.qml \
     qml/SailHN.qml \
     qml/pages/CommentDelegate.qml \
+    qml/pages/CommentFooter.qml \
     qml/pages/CommentsPage.qml \
     qml/pages/DetailsPage.qml \
     qml/pages/ItemDelegate.qml \

@@ -25,33 +25,24 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-BackgroundItem {
-    width: parent.width
-    height: contentItem.childrenRect.height
+Label {
+    property var replies
 
-    Column {
-        width: parent.width
+    color: Theme.secondaryHighlightColor
+    font.pixelSize: Theme.fontSizeExtraSmall
+    horizontalAlignment: Text.AlignRight
 
-        Text {
-            width: parent.width
-            textFormat: Text.RichText
-            text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
-            color: Theme.secondaryColor
-            font.pixelSize: Theme.fontSizeSmall
-            wrapMode: Text.Wrap
-
-            onLinkActivated: Qt.openUrlExternally(link)
+    text: {
+        var txt = by;
+        if (replies !== 0) {
+            txt += " - " + replies + ' ';
+            if (replies === 1) {
+                txt += qsTr("reply");
+            } else {
+                txt += qsTr("replies");
+            }
         }
 
-        CommentFooter {
-            width: parent.width
-            replies: kids.length
-        }
-    }
-
-    onClicked: {
-        if (kids.length !== 0) {
-            pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {kids: kids, itemText: ""});
-        }
+        return txt + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
     }
 }
