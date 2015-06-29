@@ -70,16 +70,14 @@ ListItem {
     }
 
     onClicked: {
-        if (kids.length !== 0) {
-            pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
-                               by: by,
-                               itemText: itemText,
-                               kids: kids,
-                               time: time,
-                               title: title,
-                               url: url
-                           });
-        }
+        pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
+                           by: by,
+                           itemText: itemText,
+                           kids: kids,
+                           time: time,
+                           title: title,
+                           url: url
+                       });
     }
 
     ContextMenu {

@@ -114,7 +114,7 @@ void HackerNewsAPI::onGetItemResult()
 
             emit itemFetched(item);
         } else {
-            qDebug() << "Got an invalid JSON!";
+            qCritical() << "Got an invalid JSON!";
         }
     }
 
@@ -139,7 +139,7 @@ void HackerNewsAPI::onStoriesResult()
 
             emit storiesFetched(ids);
         } else {
-            qDebug() << "Got an invalid JSON!";
+            qCritical() << "Got an invalid JSON!";
         }
     }
 
