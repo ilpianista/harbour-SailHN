@@ -60,7 +60,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="89"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="87"/>
         <source>Open external url</source>
         <translation type="unfinished"></translation>
     </message>

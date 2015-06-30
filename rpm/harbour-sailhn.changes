@@ -1,3 +1,7 @@
+* Tue Jun 30 2015 Andrea Scarpino <me@andreascarpino.it> 0.6.1-1
+- Show comments page even for items without comments
+- Harbour compliant fixes
+
 * Sat Jun 26 2015 Andrea Scarpino <me@andreascarpino.it> 0.6-1
 - Show item title and url in the comments page (and drop details page
   because it is not useful anymore)
