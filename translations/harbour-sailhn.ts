@@ -4,17 +4,17 @@
 <context>
     <name>AskStoriesPage</name>
     <message>
-        <location filename="../qml/pages/AskStoriesPage.qml" line="39"/>
+        <location filename="../qml/pages/AskStoriesPage.qml" line="41"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AskStoriesPage.qml" line="47"/>
+        <location filename="../qml/pages/AskStoriesPage.qml" line="49"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AskStoriesPage.qml" line="57"/>
+        <location filename="../qml/pages/AskStoriesPage.qml" line="59"/>
         <source>Ask</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22,17 +22,17 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="48"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="50"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="61"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="63"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="77"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="79"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -68,17 +68,17 @@
 <context>
     <name>JobStoriesPage</name>
     <message>
-        <location filename="../qml/pages/JobStoriesPage.qml" line="39"/>
+        <location filename="../qml/pages/JobStoriesPage.qml" line="41"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/JobStoriesPage.qml" line="47"/>
+        <location filename="../qml/pages/JobStoriesPage.qml" line="49"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/JobStoriesPage.qml" line="57"/>
+        <location filename="../qml/pages/JobStoriesPage.qml" line="59"/>
         <source>Job</source>
         <translation type="unfinished"></translation>
     </message>
@@ -86,17 +86,17 @@
 <context>
     <name>NewStoriesPage</name>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="39"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="41"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="47"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="49"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="57"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="59"/>
         <source>Newest</source>
         <translation type="unfinished"></translation>
     </message>
@@ -104,17 +104,17 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="43"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="45"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="56"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="58"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="72"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="74"/>
         <source>Replies</source>
         <translation type="unfinished"></translation>
     </message>
@@ -135,17 +135,17 @@
 <context>
     <name>ShowStoriesPage</name>
     <message>
-        <location filename="../qml/pages/ShowStoriesPage.qml" line="39"/>
+        <location filename="../qml/pages/ShowStoriesPage.qml" line="41"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ShowStoriesPage.qml" line="47"/>
+        <location filename="../qml/pages/ShowStoriesPage.qml" line="49"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ShowStoriesPage.qml" line="57"/>
+        <location filename="../qml/pages/ShowStoriesPage.qml" line="59"/>
         <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
@@ -153,17 +153,17 @@
 <context>
     <name>TopStoriesPage</name>
     <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="39"/>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="41"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="47"/>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="49"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="57"/>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="59"/>
         <source>Top</source>
         <translation type="unfinished"></translation>
     </message>

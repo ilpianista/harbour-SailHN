@@ -30,6 +30,8 @@ Page {
 
     property bool storiesLoadedOnce: false
 
+    allowedOrientations: Orientation.All
+
     SilicaListView {
         anchors.fill: parent
 

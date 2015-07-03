@@ -37,6 +37,8 @@ Page {
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
 
+    allowedOrientations: Orientation.All
+
     SilicaFlickable {
         id: comments
         anchors.fill: parent
@@ -86,7 +88,7 @@ Page {
             }
 
             Text {
-                width: parent.width
+                width: parent.implicitWidth
                 visible: (itemText && !(/^\s*$/.test(itemText)))
                 textFormat: Text.RichText
                 text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
@@ -102,7 +104,7 @@ Page {
 
             // Workaround for Label that does not provide onClick?
             Text {
-                width: parent.width
+                width: parent.implicitWidth
                 visible: (url && !(/^\s*$/.test(url)))
                 textFormat: Text.RichText
                 font.pixelSize: Theme.fontSizeSmall

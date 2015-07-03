@@ -32,6 +32,8 @@ Page {
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
 
+    allowedOrientations: Orientation.All
+
     SilicaFlickable {
         id: replies
         anchors.fill: parent

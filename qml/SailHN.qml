@@ -31,5 +31,3 @@ ApplicationWindow {
     initialPage: Component { TopStoriesPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 }
-
-
