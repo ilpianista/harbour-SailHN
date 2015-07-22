@@ -13,11 +13,6 @@
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../qml/pages/AskStoriesPage.qml" line="59"/>
-        <source>Ask</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CommentsPage</name>
@@ -77,11 +72,6 @@
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../qml/pages/JobStoriesPage.qml" line="59"/>
-        <source>Job</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>NewStoriesPage</name>
@@ -93,11 +83,6 @@
     <message>
         <location filename="../qml/pages/NewStoriesPage.qml" line="49"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="59"/>
-        <source>Newest</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -144,11 +129,6 @@
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../qml/pages/ShowStoriesPage.qml" line="59"/>
-        <source>Show</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>TopStoriesPage</name>
@@ -160,11 +140,6 @@
     <message>
         <location filename="../qml/pages/TopStoriesPage.qml" line="49"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="59"/>
-        <source>Top</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

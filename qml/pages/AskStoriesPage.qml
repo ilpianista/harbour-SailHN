@@ -56,7 +56,7 @@ Page {
         }
 
         header: PageHeader {
-            title: qsTr("Ask")
+            title: "Ask"
         }
 
         delegate: ItemDelegate {}
