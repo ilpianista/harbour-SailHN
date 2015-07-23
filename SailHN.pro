@@ -33,4 +33,7 @@ OTHER_FILES += \
     translations/*.ts
 
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-sailhn-it.ts
+
+TRANSLATIONS += translations/harbour-sailhn-it.ts \
+    translations/harbour-sailhn-tr.ts
+
