@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[sailhn.harbour-sailhnts]
+[harbour-SailHN.harbour-sailhnts]
 file_filter = translations/harbour-sailhn-<lang>.ts
 source_file = translations/harbour-sailhn.ts
 source_lang = en
