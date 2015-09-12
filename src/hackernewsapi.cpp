@@ -112,7 +112,7 @@ void HackerNewsAPI::onGetItemResult()
             timestamp.setTime_t(jsonObj.value("time").toInt());
             item->setTime(timestamp);
 
-            emit itemFetched(item);
+            Q_EMIT itemFetched(item);
         } else {
             qCritical() << "Got an invalid JSON!";
         }
@@ -137,7 +137,7 @@ void HackerNewsAPI::onStoriesResult()
                 ids.append(id.toInt());
             }
 
-            emit storiesFetched(ids);
+            Q_EMIT storiesFetched(ids);
         } else {
             qCritical() << "Got an invalid JSON!";
         }
