@@ -72,7 +72,6 @@ private:
     QList<int> m_ids;
     int m_start;
     int m_end;
-
 };
 
 #endif // NEWSMODEL_H

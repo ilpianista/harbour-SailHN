@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2015-2016 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2016 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,25 +22,35 @@
   SOFTWARE.
 */
 
-#include <QtQuick>
+#ifndef HNMANAGER_H
+#define HNMANAGER_H
 
-#include <sailfishapp.h>
+#include <QObject>
 
-#include "hnmanager.h"
-#include "newsmodel.h"
+class QNetworkAccessManager;
 
-int main(int argc, char *argv[])
+class HNManager : public QObject
 {
-    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
-    QScopedPointer<QQuickView> view(SailfishApp::createView());
+    Q_OBJECT
+public:
 
-    qmlRegisterType<NewsModel>("harbour.sailhn", 1, 0, "NewsModel");
+    explicit HNManager(QObject *parent = 0);
+    virtual ~HNManager();
 
-    HNManager manager;
-    view->rootContext()->setContextProperty("manager", &manager);
+    Q_INVOKABLE void authenticate(const QString &username, const QString &password);
+    Q_INVOKABLE bool isAuthenticated() const;
+    Q_INVOKABLE QString loggedUser() const;
+    Q_INVOKABLE void logout();
 
-    view->setSource(SailfishApp::pathTo("qml/SailHN.qml"));
-    view->show();
+Q_SIGNALS:
+    void authenticated(const bool result);
 
-    return app->exec();
-}
+private:
+    void onAuthenticateResult();
+
+    QNetworkAccessManager *network;
+    QString user;
+    bool logged;
+};
+
+#endif // HNMANAGER_H

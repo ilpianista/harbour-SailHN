@@ -4,15 +4,17 @@ CONFIG += sailfishapp
 
 SOURCES += \
     src/main.cpp \
-    src/newsmodel.cpp \
     src/hackernewsapi.cpp \
-    src/item.cpp
+    src/hnmanager.cpp \
+    src/item.cpp \
+    src/newsmodel.cpp \
 
 HEADERS += \
-    src/newsmodel.h \
     src/hackernewsapi.h \
+    src/hnmanager.h \
     src/item.h \
-    src/item_p.h
+    src/item_p.h \
+    src/newsmodel.h
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -24,6 +26,7 @@ OTHER_FILES += \
     qml/pages/NewStoriesPage.qml \
     qml/pages/RepliesPage.qml \
     qml/pages/ReplyDelegate.qml \
+    qml/pages/Settings.qml \
     qml/pages/ShowStoriesPage.qml \
     qml/pages/TopStoriesPage.qml \
     harbour-sailhn.desktop \

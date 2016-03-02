@@ -5,11 +5,16 @@
     <name>AskStoriesPage</name>
     <message>
         <location filename="../qml/pages/AskStoriesPage.qml" line="41"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AskStoriesPage.qml" line="46"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AskStoriesPage.qml" line="49"/>
+        <location filename="../qml/pages/AskStoriesPage.qml" line="54"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
@@ -64,11 +69,16 @@
     <name>JobStoriesPage</name>
     <message>
         <location filename="../qml/pages/JobStoriesPage.qml" line="41"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/JobStoriesPage.qml" line="46"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/JobStoriesPage.qml" line="49"/>
+        <location filename="../qml/pages/JobStoriesPage.qml" line="54"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
@@ -77,11 +87,16 @@
     <name>NewStoriesPage</name>
     <message>
         <location filename="../qml/pages/NewStoriesPage.qml" line="41"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="46"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="49"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="54"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
@@ -118,14 +133,58 @@
     </message>
 </context>
 <context>
+    <name>Settings</name>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="128"/>
+        <source>Logged</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="57"/>
+        <source>Logout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="43"/>
+        <source>Login failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="72"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="79"/>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="86"/>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="92"/>
+        <location filename="../qml/pages/Settings.qml" line="130"/>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ShowStoriesPage</name>
     <message>
         <location filename="../qml/pages/ShowStoriesPage.qml" line="41"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ShowStoriesPage.qml" line="46"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ShowStoriesPage.qml" line="49"/>
+        <location filename="../qml/pages/ShowStoriesPage.qml" line="54"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
@@ -134,11 +193,16 @@
     <name>TopStoriesPage</name>
     <message>
         <location filename="../qml/pages/TopStoriesPage.qml" line="41"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="46"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="49"/>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="54"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>

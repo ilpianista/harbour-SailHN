@@ -48,7 +48,7 @@ HackerNewsAPI::~HackerNewsAPI()
 
 void HackerNewsAPI::getItem(const int id)
 {
-    qDebug() << "Requesting item with id" << id;
+    //qDebug() << "Requesting item with id" << id;
 
     QUrl url(API_URL + QStringLiteral("item/%1.json").arg(id));
     QNetworkRequest req(url);
@@ -92,7 +92,7 @@ void HackerNewsAPI::onGetItemResult()
             Item* item = new Item();
             QJsonObject jsonObj = json.object();
             item->setId(jsonObj.value("id").toInt());
-            qDebug() << "Got item with id" << item->id();
+            //qDebug() << "Got item with id" << item->id();
 
             item->setBy(jsonObj.value("by").toString());
             item->setDeleted(jsonObj.value("deleted").toBool());
