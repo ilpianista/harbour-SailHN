@@ -68,7 +68,7 @@ void HackerNewsAPI::getStories(Stories kind)
         case New: path = QStringLiteral("newstories.json"); break;
         case Show: path = QStringLiteral("showstories.json"); break;
         case Top: path = QStringLiteral("topstories.json"); break;
-        default: qDebug() << "Unsupported kind" << kind;
+        default: qCritical() << "Unrecognized kind" << kind;
     }
 
     QUrl url(API_URL + path);

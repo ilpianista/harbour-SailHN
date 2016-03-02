@@ -105,7 +105,7 @@ void NewsModel::nextItems()
 {
     if (m_end < m_ids.size()) {
         m_start = m_end;
-        m_end = m_end + MAX_ITEMS;
+        m_end += MAX_ITEMS;
 
         if (m_end >= m_ids.size()) {
             m_end = -1;
@@ -122,21 +122,21 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
 
     Item *item = backing[index.row()];
     switch (role) {
-    case ByRole: return item->by();
-    case DescendantsRole: return item->descendants();
-    case KidsRole: {
-        QVariantList kids;
-        Q_FOREACH (const int kid, item->kids()) {
-            kids.append(kid);
+        case ByRole: return item->by();
+        case DescendantsRole: return item->descendants();
+        case KidsRole: {
+            QVariantList kids;
+            Q_FOREACH (const int kid, item->kids()) {
+                kids.append(kid);
+            }
+            return kids;
         }
-        return kids;
-    }
-    case ScoreRole: return item->score();
-    case TextRole: return item->text();
-    case TimeRole: return item->time();
-    case TitleRole: return item->title();
-    case UrlRole: return item->url();
-    default: qCritical() << "Role not recognized";
+        case ScoreRole: return item->score();
+        case TextRole: return item->text();
+        case TimeRole: return item->time();
+        case TitleRole: return item->title();
+        case UrlRole: return item->url();
+        default: qCritical() << "Unrecognized role" << role;
     }
 
     return QVariant();
