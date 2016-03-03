@@ -12,8 +12,8 @@ Name:       harbour-sailhn
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    Hacker News unofficial client
-Version:    0.7.1
+Summary:    Unofficial Hacker News client
+Version:    0.8
 Release:    1
 Group:      Qt/Qt
 License:    MIT
@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Hacker News unofficial client
+Unofficial Hacker News client
 
 
 %prep
