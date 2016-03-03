@@ -9,12 +9,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AskStoriesPage.qml" line="46"/>
+        <location filename="../qml/pages/AskStoriesPage.qml" line="47"/>
+        <source>Submit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AskStoriesPage.qml" line="52"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AskStoriesPage.qml" line="54"/>
+        <location filename="../qml/pages/AskStoriesPage.qml" line="60"/>
         <source>Load more</source>
         <translation>Carica altro</translation>
     </message>
@@ -73,12 +78,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/JobStoriesPage.qml" line="46"/>
+        <location filename="../qml/pages/JobStoriesPage.qml" line="47"/>
+        <source>Submit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/JobStoriesPage.qml" line="52"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/JobStoriesPage.qml" line="54"/>
+        <location filename="../qml/pages/JobStoriesPage.qml" line="60"/>
         <source>Load more</source>
         <translation>Carica altro</translation>
     </message>
@@ -91,12 +101,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="46"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="47"/>
+        <source>Submit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="52"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewStoriesPage.qml" line="54"/>
+        <location filename="../qml/pages/NewStoriesPage.qml" line="60"/>
         <source>Load more</source>
         <translation>Carica altro</translation>
     </message>
@@ -140,32 +155,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="57"/>
+        <location filename="../qml/pages/Settings.qml" line="56"/>
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="43"/>
+        <location filename="../qml/pages/Settings.qml" line="107"/>
         <source>Login failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="72"/>
+        <location filename="../qml/pages/Settings.qml" line="71"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="79"/>
+        <location filename="../qml/pages/Settings.qml" line="78"/>
         <source>Username</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="86"/>
+        <location filename="../qml/pages/Settings.qml" line="85"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="92"/>
+        <location filename="../qml/pages/Settings.qml" line="91"/>
         <location filename="../qml/pages/Settings.qml" line="130"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
@@ -179,14 +194,58 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ShowStoriesPage.qml" line="46"/>
+        <location filename="../qml/pages/ShowStoriesPage.qml" line="47"/>
+        <source>Submit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ShowStoriesPage.qml" line="52"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ShowStoriesPage.qml" line="54"/>
+        <location filename="../qml/pages/ShowStoriesPage.qml" line="60"/>
         <source>Load more</source>
         <translation>Carica altro</translation>
+    </message>
+</context>
+<context>
+    <name>Submit</name>
+    <message>
+        <location filename="../qml/pages/Submit.qml" line="45"/>
+        <source>Submitted!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Submit.qml" line="60"/>
+        <location filename="../qml/pages/Submit.qml" line="90"/>
+        <source>Submit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Submit.qml" line="67"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Submit.qml" line="73"/>
+        <source>Url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Submit.qml" line="77"/>
+        <source>or</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Submit.qml" line="85"/>
+        <source>Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Submit.qml" line="43"/>
+        <source>Error during submission</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -197,12 +256,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="46"/>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="47"/>
+        <source>Submit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="52"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TopStoriesPage.qml" line="54"/>
+        <location filename="../qml/pages/TopStoriesPage.qml" line="60"/>
         <source>Load more</source>
         <translation>Carica altro</translation>
     </message>

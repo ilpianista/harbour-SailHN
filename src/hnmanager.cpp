@@ -25,10 +25,13 @@
 #include "hnmanager.h"
 
 #include <QDebug>
+#include <QEventLoop>
 #include <QNetworkAccessManager>
 #include <QNetworkCookieJar>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QUrlQuery>
 
 const static QString BASE_URL = QStringLiteral("https://news.ycombinator.com");
@@ -70,7 +73,6 @@ void HNManager::onAuthenticateResult()
     if (reply->error() != QNetworkReply::NoError) {
         qCritical() << "Cannot perform login";
     } else {
-        // FIXME: is there a better way?
         if (!reply->readAll().contains("Bad login.")) {
             logged = true;
         }
@@ -83,7 +85,7 @@ void HNManager::onAuthenticateResult()
 
 bool HNManager::isAuthenticated() const
 {
-    qDebug() << "Is authenticated:" << logged;
+    //qDebug() << "Is authenticated:" << logged;
 
     return logged;
 }
@@ -96,9 +98,73 @@ QString HNManager::loggedUser() const
 void HNManager::logout()
 {
     logged = false;
-    user = "";
+    user.clear();
 
     // FIXME: is there a better way?
     network->cookieJar()->deleteLater();
     network->setCookieJar(new QNetworkCookieJar(this));
+}
+
+void HNManager::submit(const QString &title, const QString &url, const QString &text)
+{
+    qDebug() << "Submit item with title" << title;
+
+    QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/r")));
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
+
+    QUrlQuery data;
+    data.addQueryItem(QLatin1String("title"), title);
+    data.addQueryItem(QLatin1String("url"), url);
+    data.addQueryItem(QLatin1String("text"), text);
+    data.addQueryItem(QLatin1String("fnop"), QLatin1String("submit-page"));
+    data.addQueryItem(QLatin1String("fnid"), getSubmitPage());
+
+    QNetworkReply* reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+
+    connect(reply, &QNetworkReply::finished, this, &HNManager::onSubmitResult);
+}
+
+void HNManager::onSubmitResult()
+{
+    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+
+    bool res = false;
+
+    if (reply->error() != QNetworkReply::NoError) {
+        qCritical() << "Cannot submit item";
+    } else {
+        if (!reply->readAll().contains("Unknown or expired link.")) {
+            res = true;
+        }
+    }
+
+    Q_EMIT submitted(res);
+
+    reply->deleteLater();
+}
+
+QString HNManager::getSubmitPage() const
+{
+    QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/submit")));
+    QNetworkReply* reply = network->get(req);
+
+    QEventLoop loop;
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
+    QTextStream stream(reply->readAll(), QIODevice::ReadOnly);
+
+    const QRegularExpression regexp("<input type=\"hidden\" name=\"fnid\" value=\"([^\"]+)\"");
+
+    QString line;
+    while (!stream.atEnd()) {
+        line = stream.readLine();
+
+        QRegularExpressionMatch match = regexp.match(line);
+        if (match.hasMatch()) {
+            return match.captured(1);
+        }
+    }
+
+    return QString();
 }

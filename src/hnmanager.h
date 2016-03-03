@@ -41,12 +41,17 @@ public:
     Q_INVOKABLE bool isAuthenticated() const;
     Q_INVOKABLE QString loggedUser() const;
     Q_INVOKABLE void logout();
+    Q_INVOKABLE void submit(const QString &title, const QString &url, const QString &text);
 
 Q_SIGNALS:
     void authenticated(const bool result);
+    void submitted(const bool result);
 
 private:
     void onAuthenticateResult();
+    void onSubmitResult();
+
+    QString getSubmitPage() const;
 
     QNetworkAccessManager *network;
     QString user;

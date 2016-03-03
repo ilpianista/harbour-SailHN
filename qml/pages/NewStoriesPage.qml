@@ -43,6 +43,12 @@ Page {
             }
 
             MenuItem {
+                id: submit
+                text: qsTr("Submit")
+                onClicked: pageStack.push(Qt.resolvedUrl("Submit.qml"))
+            }
+
+            MenuItem {
                 text: qsTr("Refresh")
                 onClicked: loadStories()
             }
@@ -74,6 +80,7 @@ Page {
             if (!storiesLoadedOnce) {
                 loadStories();
             }
+            submit.enabled = manager.isAuthenticated();
         } else if (status === PageStatus.Active) {
             pageStack.pushAttached(Qt.resolvedUrl("ShowStoriesPage.qml"));
         } else if (status === PageStatus.Deactivating) {

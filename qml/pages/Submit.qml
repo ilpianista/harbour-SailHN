@@ -32,15 +32,17 @@ Page {
     Connections {
         target: manager
 
-        onAuthenticated: {
-            console.log("Authenticated: " + result);
+        onSubmitted: {
+            console.log("Submitted: " + result);
 
             busy.visible = busy.running = false;
-
-            isAuthenticated();
+            submit.enabled = true;
+            msg.visible = true;
 
             if (!result) {
-                msg.visible = true;
+                msg.text = qsTr("Error during submission");
+            } else {
+                msg.text = qsTr("Submitted!");
             }
         }
     }
@@ -49,52 +51,49 @@ Page {
         anchors.fill: parent
         contentHeight: column.height
 
-        PullDownMenu {
-
-            MenuItem {
-                id: logout
-                text: qsTr("Logout")
-
-                onClicked: {
-                    manager.logout();
-                    isAuthenticated();
-                }
-            }
-        }
-
         Column {
             id: column
             x: Theme.horizontalPageMargin
             width: parent.width - Theme.horizontalPageMargin * 2
 
             PageHeader {
-                title: qsTr("Settings")
+                title: qsTr("Submit")
             }
 
             TextField {
-                id: username
+                id: title
                 width: parent.width
                 focus: true
-                placeholderText: qsTr("Username")
-                text: manager.loggedUser()
+                placeholderText: qsTr("Title")
             }
 
             TextField {
-                id: password
+                id: url
                 width: parent.width
-                placeholderText: qsTr("Password")
-                echoMode: TextInput.Password
+                placeholderText: qsTr("Url")
+            }
+
+            Label {
+                text: qsTr("or")
+                color: Theme.secondaryHighlightColor
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            TextArea {
+                id: text
+                width: parent.width
+                placeholderText: qsTr("Text")
             }
 
             Button {
-                id: login
-                text: qsTr("Login");
+                id: submit
+                text: qsTr("Submit");
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 onClicked: {
-                    if (username.text.length > 0 && password.text.length > 0) {
-                        manager.authenticate(username.text, password.text);
-                        login.enabled = false;
+                    if (title.text.length > 0 && (url.text.length > 0 || text.text.length > 0)) {
+                        manager.submit(title.text, url.text, text.text);
+                        submit.enabled = false;
                         busy.visible = busy.running = true;
                         msg.visible = false;
                     }
@@ -104,7 +103,6 @@ Page {
             Label {
                 id: msg
                 visible: false
-                text: qsTr("Login failed")
                 color: Theme.highlightColor
                 anchors.horizontalCenter: parent.horizontalCenter
             }
@@ -114,20 +112,6 @@ Page {
                 visible: false
                 anchors.horizontalCenter: parent.horizontalCenter
             }
-        }
-    }
-
-    Component.onCompleted: isAuthenticated()
-
-    function isAuthenticated() {
-        var isAuth = manager.isAuthenticated();
-        username.enabled = password.enabled = login.enabled = !isAuth;
-        logout.enabled = isAuth;
-
-        if (isAuth) {
-            login.text = qsTr("Logged");
-        } else {
-            login.text = qsTr("Login");
         }
     }
 }

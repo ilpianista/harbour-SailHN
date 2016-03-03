@@ -7,7 +7,7 @@ SOURCES += \
     src/hackernewsapi.cpp \
     src/hnmanager.cpp \
     src/item.cpp \
-    src/newsmodel.cpp \
+    src/newsmodel.cpp
 
 HEADERS += \
     src/hackernewsapi.h \
@@ -27,6 +27,7 @@ OTHER_FILES += \
     qml/pages/RepliesPage.qml \
     qml/pages/ReplyDelegate.qml \
     qml/pages/Settings.qml \
+    qml/pages/Submit.qml \
     qml/pages/ShowStoriesPage.qml \
     qml/pages/TopStoriesPage.qml \
     harbour-sailhn.desktop \
@@ -39,4 +40,3 @@ CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += translations/harbour-sailhn-it.ts \
     translations/harbour-sailhn-tr.ts
-
