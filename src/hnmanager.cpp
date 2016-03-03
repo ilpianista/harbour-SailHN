@@ -117,11 +117,29 @@ void HNManager::submit(const QString &title, const QString &url, const QString &
     data.addQueryItem(QLatin1String("url"), url);
     data.addQueryItem(QLatin1String("text"), text);
     data.addQueryItem(QLatin1String("fnop"), QLatin1String("submit-page"));
-    data.addQueryItem(QLatin1String("fnid"), getSubmitPage());
+    data.addQueryItem(QLatin1String("fnid"), getSubmitCSRF());
 
     QNetworkReply* reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
 
     connect(reply, &QNetworkReply::finished, this, &HNManager::onSubmitResult);
+}
+
+void HNManager::comment(const int parentId, const QString &text)
+{
+    qDebug() << "Comment item with id" << parentId;
+
+    QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/comment")));
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
+
+    QUrlQuery data;
+    data.addQueryItem(QLatin1String("parent"), QString::number(parentId));
+    data.addQueryItem(QLatin1String("goto"), QStringLiteral("item?id=%1").arg(parentId));
+    data.addQueryItem(QLatin1String("text"), text);
+    data.addQueryItem(QLatin1String("hmac"), getCommentCSRF(parentId));
+
+    QNetworkReply* reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+
+    connect(reply, &QNetworkReply::finished, this, &HNManager::onCommentResult);
 }
 
 void HNManager::onSubmitResult()
@@ -143,7 +161,26 @@ void HNManager::onSubmitResult()
     reply->deleteLater();
 }
 
-QString HNManager::getSubmitPage() const
+void HNManager::onCommentResult()
+{
+    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+
+    bool res = false;
+
+    if (reply->error() != QNetworkReply::NoError) {
+        qCritical() << "Cannot send comment";
+    } else {
+        if (!reply->readAll().contains("Please confirm that this is your comment by submitting it one more time.")) {
+            res = true;
+        }
+    }
+
+    Q_EMIT commented(res);
+
+    reply->deleteLater();
+}
+
+QString HNManager::getSubmitCSRF() const
 {
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/submit")));
     QNetworkReply* reply = network->get(req);
@@ -154,7 +191,39 @@ QString HNManager::getSubmitPage() const
 
     QTextStream stream(reply->readAll(), QIODevice::ReadOnly);
 
-    const QRegularExpression regexp("<input type=\"hidden\" name=\"fnid\" value=\"([^\"]+)\"");
+    const QRegularExpression regexp("<input type=\"hidden\" name=\"fnid\" value=\"([^\"]+)\">");
+
+    QString line;
+    while (!stream.atEnd()) {
+        line = stream.readLine();
+
+        QRegularExpressionMatch match = regexp.match(line);
+        if (match.hasMatch()) {
+            return match.captured(1);
+        }
+    }
+
+    return QString();
+}
+
+QString HNManager::getCommentCSRF(const int itemId) const
+{
+    QUrl url(BASE_URL + QLatin1String("/item"));
+
+    QUrlQuery query;
+    query.addQueryItem(QLatin1String("id"), QString::number(itemId));
+    url.setQuery(query);
+
+    QNetworkRequest req(url);
+    QNetworkReply* reply = network->get(req);
+
+    QEventLoop loop;
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
+    QTextStream stream(reply->readAll(), QIODevice::ReadOnly);
+
+    const QRegularExpression regexp("<input type=\"hidden\" name=\"hmac\" value=\"([^\"]+)\">");
 
     QString line;
     while (!stream.atEnd()) {

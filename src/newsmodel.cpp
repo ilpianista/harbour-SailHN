@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2015 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2015-2016 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -53,6 +53,7 @@ NewsModel::~NewsModel()
 
 QHash<int, QByteArray> NewsModel::roleNames() const {
     QHash<int, QByteArray> roles;
+    roles[IdRole] = "id";
     roles[ByRole] = "by";
     roles[DescendantsRole] = "descendants";
     roles[KidsRole] = "kids";
@@ -122,6 +123,7 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const {
 
     Item *item = backing[index.row()];
     switch (role) {
+        case IdRole: return item->id();
         case ByRole: return item->by();
         case DescendantsRole: return item->descendants();
         case KidsRole: {

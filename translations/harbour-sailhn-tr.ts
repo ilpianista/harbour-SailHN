@@ -27,17 +27,22 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="50"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="52"/>
+        <source>Reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="58"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="63"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="71"/>
         <source>Load more</source>
         <translation>Daha fazla yükle</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="79"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
         <source>Comments</source>
         <translation>Yorum</translation>
     </message>
@@ -65,7 +70,7 @@
         <translation>yorum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="87"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="88"/>
         <source>Open external url</source>
         <translation>Dış akış aç</translation>
     </message>
@@ -119,19 +124,52 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="45"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="47"/>
+        <source>Reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RepliesPage.qml" line="53"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="58"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="66"/>
         <source>Load more</source>
         <translation>Daha fazla yükle</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="74"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="82"/>
         <source>Replies</source>
         <translation>Yanıtlar</translation>
+    </message>
+</context>
+<context>
+    <name>Reply</name>
+    <message>
+        <location filename="../qml/pages/Reply.qml" line="44"/>
+        <source>Error when sending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Reply.qml" line="46"/>
+        <source>Commented!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Reply.qml" line="61"/>
+        <source>Reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Reply.qml" line="68"/>
+        <source>Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Reply.qml" line="73"/>
+        <source>Add Comment</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

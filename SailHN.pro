@@ -25,6 +25,7 @@ OTHER_FILES += \
     qml/pages/JobStoriesPage.qml \
     qml/pages/NewStoriesPage.qml \
     qml/pages/RepliesPage.qml \
+    qml/pages/Reply.qml \
     qml/pages/ReplyDelegate.qml \
     qml/pages/Settings.qml \
     qml/pages/Submit.qml \

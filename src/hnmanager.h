@@ -42,16 +42,20 @@ public:
     Q_INVOKABLE QString loggedUser() const;
     Q_INVOKABLE void logout();
     Q_INVOKABLE void submit(const QString &title, const QString &url, const QString &text);
+    Q_INVOKABLE void comment(const int parentId, const QString &text);
 
 Q_SIGNALS:
     void authenticated(const bool result);
     void submitted(const bool result);
+    void commented(const bool result);
 
 private:
     void onAuthenticateResult();
     void onSubmitResult();
+    void onCommentResult();
 
-    QString getSubmitPage() const;
+    QString getSubmitCSRF() const;
+    QString getCommentCSRF(const int itemId) const;
 
     QNetworkAccessManager *network;
     QString user;

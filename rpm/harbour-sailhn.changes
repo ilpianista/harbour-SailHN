@@ -1,3 +1,6 @@
+* Thu Mar 04 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.1-1
+- Implement comment/reply capability
+
 * Thu Mar 03 2016 Andrea Scarpino <me@andreascarpino.it> 0.8-1
 - Implement authentication
 - Implement 'Submit' capabilities

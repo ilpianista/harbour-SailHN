@@ -71,6 +71,7 @@ ListItem {
 
     onClicked: {
         pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
+                           id: id,
                            by: by,
                            itemText: itemText,
                            kids: kids,

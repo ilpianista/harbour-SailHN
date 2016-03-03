@@ -27,6 +27,7 @@ import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
 
 Page {
+    property var id
     property var by
     property var itemText
     property var kids
@@ -45,6 +46,13 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
+
+            MenuItem {
+                id: reply
+                text: qsTr("Reply")
+
+                onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: id})
+            }
 
             MenuItem {
                 text: qsTr("Refresh")
@@ -148,7 +156,10 @@ Page {
         VerticalScrollDecorator {}
     }
 
-    Component.onCompleted: loadComments()
+    Component.onCompleted: {
+        loadComments();
+        reply.enabled = manager.isAuthenticated();
+    }
 
     function loadComments() {
         model.loadComments(kids);
