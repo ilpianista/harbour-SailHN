@@ -175,12 +175,12 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="60"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="59"/>
         <source>reply</source>
         <translation>yanıt</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="62"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
         <source>replies</source>
         <translation>yanıtlar</translation>
     </message>
