@@ -61,10 +61,12 @@ public:
     Q_INVOKABLE void loadTopStories();
     Q_INVOKABLE void loadComments(const QList<int> kids);
     Q_INVOKABLE void nextItems();
+    Q_INVOKABLE void refresh(const int itemId);
 
 private:
     void loadItems();
     void onItemFetched(Item *item);
+    void onRefreshComments(Item *item);
     void onStoriesFetched(QList<int> ids);
     void reset();
 

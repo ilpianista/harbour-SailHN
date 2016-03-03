@@ -53,7 +53,7 @@ Page {
                 text: qsTr("Refresh")
 
                 onClicked: {
-                    loadComments();
+                    model.refresh(parentId);
                     showingCommentsCount = maxCommentsForPage;
                 }
             }

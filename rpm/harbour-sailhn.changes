@@ -1,5 +1,6 @@
 * Thu Mar 04 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.1-1
 - Implement comment/reply capability
+- Fix comments refresh
 
 * Thu Mar 03 2016 Andrea Scarpino <me@andreascarpino.it> 0.8-1
 - Implement authentication
