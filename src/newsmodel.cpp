@@ -25,7 +25,6 @@
 #include "newsmodel.h"
 
 #include <QDebug>
-#include <QEventLoop>
 
 #include "item.h"
 #include "hackernewsapi.h"
@@ -102,10 +101,7 @@ void NewsModel::refresh(const int itemId)
 {
     api->getItem(itemId);
 
-    QEventLoop loop;
-    connect(api, &HackerNewsAPI::itemFetched, &loop, &QEventLoop::quit);
     connect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onRefreshComments);
-    loop.exec();
 }
 
 void NewsModel::onRefreshComments(Item *item)
