@@ -44,6 +44,7 @@ class Item : public QObject
     Q_PROPERTY(QDateTime time READ time)
     Q_PROPERTY(QString title READ title)
     Q_PROPERTY(QUrl url READ url)
+
 public:
     explicit Item(QObject *parent = 0);
     virtual ~Item();

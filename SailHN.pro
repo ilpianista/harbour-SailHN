@@ -7,14 +7,17 @@ SOURCES += \
     src/hackernewsapi.cpp \
     src/hnmanager.cpp \
     src/item.cpp \
-    src/newsmodel.cpp
+    src/newsmodel.cpp \
+    src/user.cpp
 
 HEADERS += \
     src/hackernewsapi.h \
     src/hnmanager.h \
     src/item.h \
     src/item_p.h \
-    src/newsmodel.h
+    src/newsmodel.h \
+    src/user.h \
+    src/user_p.h
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \

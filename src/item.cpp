@@ -41,7 +41,7 @@ int Item::id() const
     return d->id;
 }
 
-void Item::setId(const qint32 id)
+void Item::setId(const int id)
 {
     d->id = id;
 }
@@ -76,12 +76,12 @@ void Item::setDescendants(const int descendants)
     d->descendants = descendants;
 }
 
-QList<qint32> Item::kids() const
+QList<int> Item::kids() const
 {
     return d->kids;
 }
 
-void Item::setKids(const QList<qint32> kids)
+void Item::setKids(const QList<int> kids)
 {
     d->kids = kids;
 }

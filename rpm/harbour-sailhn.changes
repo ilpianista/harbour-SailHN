@@ -1,6 +1,7 @@
 * Thu Mar 04 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.1-1
-- Implement comment/reply capability
-- Fix comments refresh
+- Add the capability to post comments
+- Fix new comments non visible when refreshing
+- Show logged user details in the settings
 
 * Thu Mar 03 2016 Andrea Scarpino <me@andreascarpino.it> 0.8-1
 - Implement authentication

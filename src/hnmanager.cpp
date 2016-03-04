@@ -34,13 +34,16 @@
 #include <QRegularExpressionMatch>
 #include <QUrlQuery>
 
+#include "hackernewsapi.h"
+
 const static QString BASE_URL = QStringLiteral("https://news.ycombinator.com");
 
 HNManager::HNManager(QObject *parent) :
     QObject(parent)
+  , api(new HackerNewsAPI(this))
   , network(new QNetworkAccessManager(this))
-  , user("")
-  , logged(false)
+  , m_loggedUser(0)
+  , m_loggedUsername(QString())
 {
     network->setCookieJar(new QNetworkCookieJar(this));
 }
@@ -52,7 +55,7 @@ HNManager::~HNManager()
 void HNManager::authenticate(const QString &username, const QString &password)
 {
     qDebug() << "Log in with username" << username;
-    user = username;
+    m_loggedUsername = username;
 
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/login")));
     req.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
@@ -70,11 +73,15 @@ void HNManager::onAuthenticateResult()
 {
     QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
 
+    bool logged = false;
     if (reply->error() != QNetworkReply::NoError) {
-        qCritical() << "Cannot perform login";
+        qCritical() << "Cannot perform login" << reply->errorString();
     } else {
         if (!reply->readAll().contains("Bad login.")) {
             logged = true;
+            api->getUser(m_loggedUsername);
+
+            connect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
         }
     }
 
@@ -83,22 +90,30 @@ void HNManager::onAuthenticateResult()
     reply->deleteLater();
 }
 
-bool HNManager::isAuthenticated() const
+void HNManager::onLoggedUserFetched(User *user)
 {
-    //qDebug() << "Is authenticated:" << logged;
+    disconnect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
 
-    return logged;
+    m_loggedUser = user;
+
+    Q_EMIT loggedUserFetched(user);
 }
 
-QString HNManager::loggedUser() const
+bool HNManager::isAuthenticated() const
 {
-    return user;
+    //qDebug() << "Is authenticated as:" << m_loggedUsername;
+
+    return !m_loggedUsername.isEmpty();
+}
+
+User* HNManager::loggedUser()
+{
+    return m_loggedUser;
 }
 
 void HNManager::logout()
 {
-    logged = false;
-    user.clear();
+    m_loggedUsername.clear();
 
     // FIXME: is there a better way?
     network->cookieJar()->deleteLater();
@@ -149,7 +164,7 @@ void HNManager::onSubmitResult()
     bool res = false;
 
     if (reply->error() != QNetworkReply::NoError) {
-        qCritical() << "Cannot submit item";
+        qCritical() << "Cannot submit item" << reply->errorString();
     } else {
         if (!reply->readAll().contains("Unknown or expired link.")) {
             res = true;
@@ -168,7 +183,7 @@ void HNManager::onCommentResult()
     bool res = false;
 
     if (reply->error() != QNetworkReply::NoError) {
-        qCritical() << "Cannot send comment";
+        qCritical() << "Cannot send comment" << reply->errorString();
     } else {
         if (!reply->readAll().contains("Please confirm that this is your comment by submitting it one more time.")) {
             res = true;

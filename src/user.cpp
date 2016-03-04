@@ -22,51 +22,76 @@
   SOFTWARE.
 */
 
-#ifndef HNMANAGER_H
-#define HNMANAGER_H
-
-#include <QObject>
-
 #include "user.h"
 
-class HackerNewsAPI;
+#include "user_p.h"
 
-class QNetworkAccessManager;
-
-class HNManager : public QObject
+User::User(QObject *parent) : QObject(parent)
+  , d(new UserPrivate)
 {
-    Q_OBJECT
-public:
+}
 
-    explicit HNManager(QObject *parent = 0);
-    virtual ~HNManager();
+User::~User()
+{
+    delete d;
+}
 
-    Q_INVOKABLE void authenticate(const QString &username, const QString &password);
-    Q_INVOKABLE bool isAuthenticated() const;
-    Q_INVOKABLE User* loggedUser();
-    Q_INVOKABLE void logout();
-    Q_INVOKABLE void submit(const QString &title, const QString &url, const QString &text);
-    Q_INVOKABLE void comment(const int parentId, const QString &text);
+QString User::id() const
+{
+    return d->id;
+}
 
-Q_SIGNALS:
-    void authenticated(const bool result);
-    void loggedUserFetched(User* user);
-    void submitted(const bool result);
-    void commented(const bool result);
+void User::setId(const QString id)
+{
+    d->id = id;
+}
 
-private:
-    void onAuthenticateResult();
-    void onCommentResult();
-    void onLoggedUserFetched(User *user);
-    void onSubmitResult();
+quint16 User::delay() const
+{
+    return d->delay;
+}
 
-    QString getSubmitCSRF() const;
-    QString getCommentCSRF(const int itemId) const;
+void User::setDelay(const quint16 delay)
+{
+    d->delay = delay;
+}
 
-    HackerNewsAPI *api;
-    QNetworkAccessManager *network;
-    User *m_loggedUser;
-    QString m_loggedUsername;
-};
+QDateTime User::created() const
+{
+    return d->created;
+}
 
-#endif // HNMANAGER_H
+void User::setCreated(const QDateTime created)
+{
+    d->created = created;
+}
+
+int User::karma() const
+{
+    return d->karma;
+}
+
+void User::setKarma(const int karma)
+{
+    d->karma = karma;
+}
+
+QString User::about() const
+{
+    return d->about;
+}
+
+void User::setAbout(const QString about)
+{
+    d->about = about;
+}
+
+QList<int> User::submitted() const
+{
+    return d->submitted;
+}
+
+void User::setSubmitted(const QList<int> submitted)
+{
+    d->submitted = submitted;
+}

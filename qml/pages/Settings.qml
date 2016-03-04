@@ -24,6 +24,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import harbour.sailhn 1.0
 
 Page {
 
@@ -37,11 +38,15 @@ Page {
 
             busy.visible = busy.running = false;
 
-            isAuthenticated();
+            isAuthenticated(result);
 
             if (!result) {
                 msg.visible = true;
             }
+        }
+
+        onLoggedUserFetched: {
+            updateDetails();
         }
     }
 
@@ -57,7 +62,7 @@ Page {
 
                 onClicked: {
                     manager.logout();
-                    isAuthenticated();
+                    isAuthenticated(false);
                 }
             }
         }
@@ -76,7 +81,6 @@ Page {
                 width: parent.width
                 focus: true
                 placeholderText: qsTr("Username")
-                text: manager.loggedUser()
             }
 
             TextField {
@@ -114,13 +118,57 @@ Page {
                 visible: false
                 anchors.horizontalCenter: parent.horizontalCenter
             }
+
+            Column {
+                id: details
+                width: parent.width
+                visible: false
+
+                SectionHeader {
+                    text: qsTr("User details")
+                }
+
+                DetailItem {
+                    id: created
+                    width: parent.width
+                    label: qsTr("created")
+                }
+
+                DetailItem {
+                    id: karma
+                    width: parent.width
+                    label: qsTr("karma")
+                }
+
+                Text {
+                    id: about
+                    width: parent.width
+                    text: qsTr("About")
+                    enabled: false
+                    textFormat: Text.RichText
+                    color: Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.Wrap
+
+                    onLinkActivated: {
+                        console.log("Opening external browser: " + link);
+                        Qt.openUrlExternally(link)
+                    }
+                }
+            }
         }
     }
 
-    Component.onCompleted: isAuthenticated()
-
-    function isAuthenticated() {
+    Component.onCompleted: {
         var isAuth = manager.isAuthenticated();
+        isAuthenticated(isAuth);
+
+        if (isAuth) {
+            updateDetails();
+        }
+    }
+
+    function isAuthenticated(isAuth) {
         username.enabled = password.enabled = login.enabled = !isAuth;
         logout.enabled = isAuth;
 
@@ -128,6 +176,18 @@ Page {
             login.text = qsTr("Logged");
         } else {
             login.text = qsTr("Login");
+            details.visible = false;
+            username.text = "";
+            password.text = "";
         }
+    }
+
+    function updateDetails() {
+        var user = manager.loggedUser();
+        username.text = user.id;
+        details.visible = true;
+        created.value = Qt.formatDateTime(user.created);
+        karma.value = user.karma;
+        about.text = "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + user.about;
     }
 }

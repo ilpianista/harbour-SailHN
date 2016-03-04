@@ -22,51 +22,49 @@
   SOFTWARE.
 */
 
-#ifndef HNMANAGER_H
-#define HNMANAGER_H
+#ifndef USER_H
+#define USER_H
 
+#include <QDateTime>
 #include <QObject>
+#include <QString>
 
-#include "user.h"
+class UserPrivate;
 
-class HackerNewsAPI;
-
-class QNetworkAccessManager;
-
-class HNManager : public QObject
+class User : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString id READ id)
+    Q_PROPERTY(quint16 delay READ delay)
+    Q_PROPERTY(QDateTime created READ created)
+    Q_PROPERTY(int karma READ karma)
+    Q_PROPERTY(QString about READ about)
+
 public:
+    explicit User(QObject *parent = 0);
+    virtual ~User();
 
-    explicit HNManager(QObject *parent = 0);
-    virtual ~HNManager();
+    QString id() const;
+    void setId(const QString id);
 
-    Q_INVOKABLE void authenticate(const QString &username, const QString &password);
-    Q_INVOKABLE bool isAuthenticated() const;
-    Q_INVOKABLE User* loggedUser();
-    Q_INVOKABLE void logout();
-    Q_INVOKABLE void submit(const QString &title, const QString &url, const QString &text);
-    Q_INVOKABLE void comment(const int parentId, const QString &text);
+    quint16 delay() const;
+    void setDelay(const quint16 delay);
 
-Q_SIGNALS:
-    void authenticated(const bool result);
-    void loggedUserFetched(User* user);
-    void submitted(const bool result);
-    void commented(const bool result);
+    QDateTime created() const;
+    void setCreated(const QDateTime created);
+
+    int karma() const;
+    void setKarma(const int karma);
+
+    QString about() const;
+    void setAbout(const QString about);
+
+    QList<int> submitted() const;
+    void setSubmitted(const QList<int> submitted);
 
 private:
-    void onAuthenticateResult();
-    void onCommentResult();
-    void onLoggedUserFetched(User *user);
-    void onSubmitResult();
+    UserPrivate *d;
 
-    QString getSubmitCSRF() const;
-    QString getCommentCSRF(const int itemId) const;
-
-    HackerNewsAPI *api;
-    QNetworkAccessManager *network;
-    User *m_loggedUser;
-    QString m_loggedUsername;
 };
 
-#endif // HNMANAGER_H
+#endif // USER_H

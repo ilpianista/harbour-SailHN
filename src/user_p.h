@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2015-2016 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2016 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,27 +22,19 @@
   SOFTWARE.
 */
 
-#include <QtQuick>
+#ifndef USER_PRIVATE_H
+#define USER_PRIVATE_H
 
-#include <sailfishapp.h>
+#include <QString>
+#include <QDateTime>
 
-#include "hnmanager.h"
-#include "newsmodel.h"
-#include "user.h"
+struct UserPrivate {
+    QString id;
+    quint16 delay;
+    QDateTime created;
+    int karma;
+    QString about;
+    QList<int> submitted;
+};
 
-int main(int argc, char *argv[])
-{
-    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
-    QScopedPointer<QQuickView> view(SailfishApp::createView());
-
-    qmlRegisterType<NewsModel>("harbour.sailhn", 1, 0, "NewsModel");
-    qmlRegisterType<User>("harbour.sailhn", 1, 0, "User");
-
-    HNManager manager;
-    view->rootContext()->setContextProperty("manager", &manager);
-
-    view->setSource(SailfishApp::pathTo("qml/SailHN.qml"));
-    view->show();
-
-    return app->exec();
-}
+#endif // USER_PRIVATE_H

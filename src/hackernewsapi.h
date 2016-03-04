@@ -28,6 +28,8 @@
 #include <QObject>
 
 class Item;
+class User;
+
 class QNetworkAccessManager;
 
 class HackerNewsAPI : public QObject
@@ -43,14 +45,17 @@ public:
 
     void getItem(const int id);
     void getStories(Stories kind);
+    void getUser(const QString id);
 
 Q_SIGNALS:
     void itemFetched(Item *item);
     void storiesFetched(QList<int> ids);
+    void userFetched(User *user);
 
 private:
     void onGetItemResult();
     void onStoriesResult();
+    void onGetUserResult();
 
     QNetworkAccessManager *network;
 };
