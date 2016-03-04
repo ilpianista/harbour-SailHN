@@ -29,16 +29,22 @@
 #include <QDateTime>
 #include <QUrl>
 
+#include "item.h"
+
 struct ItemPrivate {
     int id;
     QString by;
+    bool dead;
     bool deleted;
     int descendants;
     QList<int> kids;
+    int parent;
+    QList<int> parts;
     quint16 score;
     QString text;
     QDateTime time;
     QString title;
+    Item::Type type;
     QUrl url;
 };
 

@@ -29,6 +29,7 @@ import harbour.sailhn 1.0
 Page {
     property var id
     property var by
+    property var dead
     property var itemText
     property var kids
     property var time
@@ -50,6 +51,7 @@ Page {
             MenuItem {
                 id: reply
                 text: qsTr("Reply")
+                enabled: !dead
 
                 onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: id})
             }

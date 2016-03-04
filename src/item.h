@@ -37,6 +37,7 @@ class Item : public QObject
     Q_OBJECT
     Q_PROPERTY(int id READ id)
     Q_PROPERTY(QString by READ by)
+    Q_PROPERTY(bool dead READ dead)
     Q_PROPERTY(int descendants READ descendants)
     Q_PROPERTY(QList<int> kids READ kids)
     Q_PROPERTY(quint16 score READ score)
@@ -46,6 +47,10 @@ class Item : public QObject
     Q_PROPERTY(QUrl url READ url)
 
 public:
+    enum Type {
+        Job, Story, Comment, Poll, PollOpt
+    };
+
     explicit Item(QObject *parent = 0);
     virtual ~Item();
 
@@ -55,6 +60,9 @@ public:
     QString by() const;
     void setBy(const QString by);
 
+    bool dead() const;
+    void setDead(const bool dead);
+
     bool deleted() const;
     void setDeleted(const bool deleted);
 
@@ -63,6 +71,12 @@ public:
 
     QList<int> kids() const;
     void setKids(const QList<int> kids);
+
+    int parent() const;
+    void setParent(const int parent);
+
+    QList<int> parts() const;
+    void setParts(const QList<int> parts);
 
     quint16 score() const;
     void setScore(const quint16 score);
@@ -75,6 +89,9 @@ public:
 
     QString title() const;
     void setTitle(const QString title);
+
+    Type type() const;
+    void setType(const Type type);
 
     QUrl url() const;
     void setUrl(const QUrl url);

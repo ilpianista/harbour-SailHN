@@ -73,6 +73,7 @@ ListItem {
         pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
                            id: id,
                            by: by,
+                           dead: dead,
                            itemText: itemText,
                            kids: kids,
                            time: time,

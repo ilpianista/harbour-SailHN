@@ -69,7 +69,7 @@ BackgroundItem {
 
     onClicked: {
         if (kids.length !== 0) {
-            pageStack.push(Qt.resolvedUrl("RepliesPage.qml"), {parentId: id, kids: kids});
+            pageStack.push(Qt.resolvedUrl("RepliesPage.qml"), {parentId: id, dead: dead, kids: kids});
         }
     }
 }

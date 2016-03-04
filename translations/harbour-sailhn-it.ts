@@ -27,22 +27,22 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="52"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="53"/>
         <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="58"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="60"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="71"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="73"/>
         <source>Load more</source>
         <translation>Carica altro</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="89"/>
         <source>Comments</source>
         <translation>Commenti</translation>
     </message>
@@ -70,7 +70,7 @@
         <translation>commenti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="88"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="89"/>
         <source>Open external url</source>
         <translation>Apri URL esterno</translation>
     </message>
@@ -124,22 +124,22 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="47"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="48"/>
         <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="53"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="55"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="66"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="68"/>
         <source>Load more</source>
         <translation>Carica altro</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="82"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="84"/>
         <source>Replies</source>
         <translation>risposte</translation>
     </message>

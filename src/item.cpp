@@ -56,6 +56,16 @@ void Item::setBy(const QString by)
     d->by = by;
 }
 
+bool Item::dead() const
+{
+    return d->dead;
+}
+
+void Item::setDead(const bool dead)
+{
+    d->dead = dead;
+}
+
 bool Item::deleted() const
 {
     return d->deleted;
@@ -84,6 +94,26 @@ QList<int> Item::kids() const
 void Item::setKids(const QList<int> kids)
 {
     d->kids = kids;
+}
+
+int Item::parent() const
+{
+    return d->parent;
+}
+
+void Item::setParent(const int parent)
+{
+    d->parent = parent;
+}
+
+QList<int> Item::parts() const
+{
+    return d->parts;
+}
+
+void Item::setParts(const QList<int> parts)
+{
+    d->parts = parts;
 }
 
 quint16 Item::score() const
@@ -124,6 +154,16 @@ QString Item::title() const
 void Item::setTitle(const QString title)
 {
     d->title = title;
+}
+
+Item::Type Item::type() const
+{
+    return d->type;
+}
+
+void Item::setType(const Item::Type type)
+{
+    d->type = type;
 }
 
 QUrl Item::url() const

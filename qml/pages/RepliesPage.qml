@@ -27,8 +27,9 @@ import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
 
 Page {
-    property var parentId
+    property var dead
     property var kids
+    property var parentId
 
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
@@ -45,6 +46,7 @@ Page {
             MenuItem {
                 id: reply
                 text: qsTr("Reply")
+                enabled: !dead
 
                 onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: parentId})
             }

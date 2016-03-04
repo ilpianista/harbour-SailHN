@@ -108,7 +108,19 @@ void HackerNewsAPI::onGetItemResult()
             //qDebug() << "Got item with id" << item->id();
 
             item->setBy(jsonObj.value("by").toString());
-            item->setDeleted(jsonObj.value("deleted").toBool());
+
+            if (jsonObj.contains("dead")) {
+                item->setDead(jsonObj.value("dead").toBool());
+            } else {
+                item->setDead(false);
+            }
+
+            if (jsonObj.contains("deleted")) {
+                item->setDead(jsonObj.value("deleted").toBool());
+            } else {
+                item->setDead(false);
+            }
+
             item->setDescendants(jsonObj.value("descendants").toInt());
 
             QJsonArray jsonKids = jsonObj.value("kids").toArray();
@@ -118,13 +130,27 @@ void HackerNewsAPI::onGetItemResult()
             }
             item->setKids(kids);
 
+            item->setParent(jsonObj.value("parent").toInt());
+
+            QJsonArray jsonParts = jsonObj.value("parts").toArray();
+            QList<int> parts;
+            Q_FOREACH (const QVariant p, jsonParts.toVariantList()) {
+                parts.append(p.toInt());
+            }
+            item->setParts(parts);
+
             item->setText(jsonObj.value("text").toString());
-            item->setTitle(jsonObj.value("title").toString());
-            item->setUrl(QUrl(jsonObj.value("url").toString()));
-            item->setScore(jsonObj.value("score").toInt());
+
             QDateTime timestamp;
             timestamp.setTime_t(jsonObj.value("time").toInt());
             item->setTime(timestamp);
+
+            item->setTitle(jsonObj.value("title").toString());
+
+            // TODO: type
+
+            item->setScore(jsonObj.value("score").toInt());
+            item->setUrl(QUrl(jsonObj.value("url").toString()));
 
             Q_EMIT itemFetched(item);
         } else {

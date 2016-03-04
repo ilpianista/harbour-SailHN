@@ -37,13 +37,15 @@ public:
     enum NewsRoles {
         IdRole = Qt::UserRole + 1,
         ByRole = Qt::UserRole + 2,
-        DescendantsRole = Qt::UserRole + 3,
-        KidsRole = Qt::UserRole + 4,
-        ScoreRole = Qt::UserRole + 5,
-        TextRole = Qt::UserRole + 6,
-        TimeRole = Qt::UserRole + 7,
-        TitleRole = Qt::UserRole + 8,
-        UrlRole = Qt::UserRole + 9
+        DeadRole = Qt::UserRole +  3,
+        DescendantsRole = Qt::UserRole + 4,
+        KidsRole = Qt::UserRole + 5,
+        ParentRole = Qt::UserRole + 6,
+        ScoreRole = Qt::UserRole + 7,
+        TextRole = Qt::UserRole + 8,
+        TimeRole = Qt::UserRole + 9,
+        TitleRole = Qt::UserRole + 10,
+        UrlRole = Qt::UserRole + 11
     };
 
     explicit NewsModel(QObject *parent = 0);
