@@ -32,47 +32,12 @@ Page {
 
     allowedOrientations: Orientation.All
 
-    SilicaListView {
+    StoriesListView {
+        id: listView
         anchors.fill: parent
+        pageTitle: "Newest"
 
-        PullDownMenu {
-
-            MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
-            }
-
-            MenuItem {
-                id: submit
-                text: qsTr("Submit")
-                onClicked: pageStack.push(Qt.resolvedUrl("Submit.qml"))
-            }
-
-            MenuItem {
-                text: qsTr("Refresh")
-                onClicked: loadStories()
-            }
-        }
-
-        PushUpMenu {
-
-            MenuItem {
-                text: qsTr("Load more")
-                onClicked: model.nextItems()
-            }
-        }
-
-        model: NewsModel {
-            id: model
-        }
-
-        header: PageHeader {
-            title: "Newest"
-        }
-
-        delegate: ItemDelegate {}
-
-        VerticalScrollDecorator {}
+        onRefreshClicked: loadStories()
     }
 
     onStatusChanged: {
@@ -80,7 +45,7 @@ Page {
             if (!storiesLoadedOnce) {
                 loadStories();
             }
-            submit.enabled = manager.isAuthenticated();
+            listView.submitEnabled = manager.isAuthenticated();
         } else if (status === PageStatus.Active) {
             pageStack.pushAttached(Qt.resolvedUrl("ShowStoriesPage.qml"));
         } else if (status === PageStatus.Deactivating) {
@@ -89,6 +54,6 @@ Page {
     }
 
     function loadStories() {
-        model.loadNewStories();
+        listView.stories.loadNewStories();
     }
 }

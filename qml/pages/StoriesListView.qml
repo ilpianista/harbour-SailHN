@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2015-2016 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2016 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -26,34 +26,55 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
 
-Page {
+SilicaListView {
+    id: listView
 
-    property bool storiesLoadedOnce: false
+    property string pageTitle
+    property bool submitEnabled
+    property alias stories: model
 
-    allowedOrientations: Orientation.All
+    signal refreshClicked
 
-    StoriesListView {
-        id: listView
-        anchors.fill: parent
-        pageTitle: "Top"
+    PullDownMenu {
 
-        onRefreshClicked: loadStories()
-    }
+        MenuItem {
+            text: qsTr("Settings")
 
-    onStatusChanged: {
-        if (status === PageStatus.Activating) {
-            if (!storiesLoadedOnce) {
-                loadStories();
-            }
-            listView.submitEnabled = manager.isAuthenticated();
-        } else if (status === PageStatus.Active) {
-            pageStack.pushAttached(Qt.resolvedUrl("NewStoriesPage.qml"));
-        } else if (status === PageStatus.Deactivating) {
-            storiesLoadedOnce = true;
+            onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
+        }
+
+        MenuItem {
+            text: qsTr("Submit")
+            enabled: submitEnabled
+
+            onClicked: pageStack.push(Qt.resolvedUrl("Submit.qml"))
+        }
+
+        MenuItem {
+            text: qsTr("Refresh")
+
+            onClicked: listView.refreshClicked()
         }
     }
 
-    function loadStories() {
-        listView.stories.loadTopStories();
+    PushUpMenu {
+
+        MenuItem {
+            text: qsTr("Load more")
+
+            onClicked: model.nextItems()
+        }
     }
+
+    model: NewsModel {
+        id: model
+    }
+
+    header: PageHeader {
+        title: pageTitle
+    }
+
+    delegate: ItemDelegate {}
+
+    VerticalScrollDecorator {}
 }

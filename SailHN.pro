@@ -33,6 +33,7 @@ OTHER_FILES += \
     qml/pages/Settings.qml \
     qml/pages/Submit.qml \
     qml/pages/ShowStoriesPage.qml \
+    qml/pages/StoriesListView.qml \
     qml/pages/TopStoriesPage.qml \
     harbour-sailhn.desktop \
     rpm/harbour-sailhn.changes \
