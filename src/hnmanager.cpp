@@ -207,21 +207,9 @@ QString HNManager::getSubmitCSRF() const
     connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
     loop.exec();
 
-    QTextStream stream(reply->readAll(), QIODevice::ReadOnly);
-
     const QRegularExpression regexp("<input type=\"hidden\" name=\"fnid\" value=\"([^\"]+)\">");
 
-    QString line;
-    while (!stream.atEnd()) {
-        line = stream.readLine();
-
-        QRegularExpressionMatch match = regexp.match(line);
-        if (match.hasMatch()) {
-            return match.captured(1);
-        }
-    }
-
-    return QString();
+    return getCSRF(reply, regexp);
 }
 
 QString HNManager::getCommentCSRF(const int itemId) const
@@ -239,9 +227,14 @@ QString HNManager::getCommentCSRF(const int itemId) const
     connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
     loop.exec();
 
-    QTextStream stream(reply->readAll(), QIODevice::ReadOnly);
-
     const QRegularExpression regexp("<input type=\"hidden\" name=\"hmac\" value=\"([^\"]+)\">");
+
+    return getCSRF(reply, regexp);
+}
+
+QString HNManager::getCSRF(QNetworkReply *reply, const QRegularExpression &regexp) const
+{
+    QTextStream stream(reply->readAll(), QIODevice::ReadOnly);
 
     QString line;
     while (!stream.atEnd()) {
@@ -252,6 +245,8 @@ QString HNManager::getCommentCSRF(const int itemId) const
             return match.captured(1);
         }
     }
+
+    reply->deleteLater();
 
     return QString();
 }

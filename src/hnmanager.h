@@ -32,6 +32,8 @@
 class HackerNewsAPI;
 
 class QNetworkAccessManager;
+class QNetworkReply;
+class QRegularExpression;
 
 class HNManager : public QObject
 {
@@ -62,6 +64,7 @@ private:
 
     QString getSubmitCSRF() const;
     QString getCommentCSRF(const int itemId) const;
+    QString getCSRF(QNetworkReply *reply, const QRegularExpression &regexp) const;
 
     HackerNewsAPI *api;
     QNetworkAccessManager *network;
