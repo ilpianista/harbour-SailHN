@@ -50,6 +50,9 @@ HNManager::HNManager(QObject *parent) :
 
 HNManager::~HNManager()
 {
+    delete api;
+    delete network;
+    delete m_loggedUser;
 }
 
 void HNManager::authenticate(const QString &username, const QString &password)
