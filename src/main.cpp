@@ -35,6 +35,8 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> view(SailfishApp::createView());
 
+    QCoreApplication::setApplicationName(QStringLiteral("SailHN"));
+
     qmlRegisterType<NewsModel>("harbour.sailhn", 1, 0, "NewsModel");
     qmlRegisterType<User>("harbour.sailhn", 1, 0, "User");
 
