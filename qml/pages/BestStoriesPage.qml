@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2015 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2016 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,42 +22,36 @@
   SOFTWARE.
 */
 
-#ifndef HACKERNEWSAPI_H
-#define HACKERNEWSAPI_H
+import QtQuick 2.0
+import Sailfish.Silica 1.0
+import harbour.sailhn 1.0
 
-#include <QObject>
+Page {
 
-class Item;
-class User;
+    property bool storiesLoadedOnce: false
 
-class QNetworkAccessManager;
+    allowedOrientations: Orientation.All
 
-class HackerNewsAPI : public QObject
-{
-    Q_OBJECT
-public:
-    enum Stories {
-        New, Top, Show, Ask, Job, Best
-    };
+    StoriesListView {
+        id: listView
+        anchors.fill: parent
+        pageTitle: "Best"
 
-    explicit HackerNewsAPI(QObject *parent = 0);
-    virtual ~HackerNewsAPI();
+        onRefreshClicked: loadStories()
+    }
 
-    void getItem(const int id);
-    void getStories(Stories kind);
-    void getUser(const QString id);
+    onStatusChanged: {
+        if (status === PageStatus.Activating) {
+            if (!storiesLoadedOnce) {
+                loadStories();
+            }
+            listView.submitEnabled = manager.isAuthenticated();
+        } else if (status === PageStatus.Deactivating) {
+            storiesLoadedOnce = true;
+        }
+    }
 
-Q_SIGNALS:
-    void itemFetched(Item *item);
-    void storiesFetched(QList<int> ids);
-    void userFetched(User *user);
-
-private:
-    void onGetItemResult();
-    void onStoriesResult();
-    void onGetUserResult();
-
-    QNetworkAccessManager *network;
-};
-
-#endif // HACKERNEWSAPI_H
+    function loadStories() {
+        listView.stories.loadBestStories();
+    }
+}

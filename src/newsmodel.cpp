@@ -73,6 +73,13 @@ void NewsModel::loadAskStories()
     api->getStories(HackerNewsAPI::Ask);
 }
 
+void NewsModel::loadBestStories()
+{
+    reset();
+    api->getStories(HackerNewsAPI::Best);
+}
+
+
 void NewsModel::loadNewStories()
 {
     reset();
