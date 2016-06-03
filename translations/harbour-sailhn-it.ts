@@ -119,7 +119,7 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="176"/>
+        <location filename="../qml/pages/Settings.qml" line="177"/>
         <source>Logged</source>
         <translation>Connesso</translation>
     </message>
@@ -150,7 +150,7 @@
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="95"/>
-        <location filename="../qml/pages/Settings.qml" line="178"/>
+        <location filename="../qml/pages/Settings.qml" line="179"/>
         <source>Login</source>
         <translation>Entra</translation>
     </message>
