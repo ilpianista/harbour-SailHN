@@ -79,13 +79,14 @@ Page {
             TextField {
                 id: username
                 width: parent.width
-                focus: true
+                focus: text.length === 0
                 placeholderText: qsTr("Username")
             }
 
             TextField {
                 id: password
                 width: parent.width
+                focus: username.text.length > 0 && text.length === 0
                 placeholderText: qsTr("Password")
                 echoMode: TextInput.Password
             }
