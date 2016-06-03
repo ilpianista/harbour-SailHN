@@ -160,6 +160,7 @@ Page {
     }
 
     Component.onCompleted: {
+        username.text = manager.getUsername();
         var isAuth = manager.isAuthenticated();
         isAuthenticated(isAuth);
 
@@ -177,14 +178,12 @@ Page {
         } else {
             login.text = qsTr("Login");
             details.visible = false;
-            username.text = "";
             password.text = "";
         }
     }
 
     function updateDetails() {
         var user = manager.loggedUser();
-        username.text = user.id;
         details.visible = true;
         created.value = Qt.formatDateTime(user.created);
         karma.value = user.karma;

@@ -34,6 +34,7 @@ class HackerNewsAPI;
 class QNetworkAccessManager;
 class QNetworkReply;
 class QRegularExpression;
+class QSettings;
 
 class HNManager : public QObject
 {
@@ -46,6 +47,7 @@ public:
     Q_INVOKABLE void authenticate(const QString &username, const QString &password);
     Q_INVOKABLE bool isAuthenticated() const;
     Q_INVOKABLE User* loggedUser();
+    Q_INVOKABLE QString getUsername() const;
     Q_INVOKABLE void logout();
     Q_INVOKABLE void submit(const QString &title, const QString &url, const QString &text);
     Q_INVOKABLE void comment(const int parentId, const QString &text);
@@ -65,11 +67,13 @@ private:
     QString getSubmitCSRF() const;
     QString getCommentCSRF(const int itemId) const;
     QString getCSRF(QNetworkReply *reply, const QRegularExpression &regexp) const;
+    void setUsername(const QString &username);
 
     HackerNewsAPI *api;
     QNetworkAccessManager *network;
     User *m_loggedUser;
     QString m_loggedUsername;
+    QSettings *m_settings;
 };
 
 #endif // HNMANAGER_H

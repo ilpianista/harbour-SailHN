@@ -24,6 +24,7 @@
 
 #include "hnmanager.h"
 
+#include <QCoreApplication>
 #include <QDebug>
 #include <QEventLoop>
 #include <QNetworkAccessManager>
@@ -32,6 +33,7 @@
 #include <QNetworkReply>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
+#include <QSettings>
 #include <QUrlQuery>
 
 #include "hackernewsapi.h"
@@ -43,8 +45,10 @@ HNManager::HNManager(QObject *parent) :
   , api(new HackerNewsAPI(this))
   , network(new QNetworkAccessManager(this))
   , m_loggedUser(0)
-  , m_loggedUsername(QString())
 {
+    m_settings = new QSettings(QCoreApplication::applicationName(), QCoreApplication::applicationName(), this);
+    setUsername(m_settings->value("Username").toString());
+
     network->setCookieJar(new QNetworkCookieJar(this));
 }
 
@@ -53,12 +57,13 @@ HNManager::~HNManager()
     delete api;
     delete network;
     delete m_loggedUser;
+    delete m_settings;
 }
 
 void HNManager::authenticate(const QString &username, const QString &password)
 {
     qDebug() << "Log in with username" << username;
-    m_loggedUsername = username;
+    setUsername(username);
 
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/login")));
     req.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
@@ -104,9 +109,20 @@ void HNManager::onLoggedUserFetched(User *user)
 
 bool HNManager::isAuthenticated() const
 {
-    //qDebug() << "Is authenticated as:" << m_loggedUsername;
+    //qDebug() << "Is authenticated as:" << m_loggedUser->id();
 
-    return !m_loggedUsername.isEmpty();
+    return m_loggedUser != 0;
+}
+
+void HNManager::setUsername(const QString &username)
+{
+    m_loggedUsername = username;
+    m_settings->setValue("Username", username);
+}
+
+QString HNManager::getUsername() const
+{
+    return m_loggedUsername;
 }
 
 User* HNManager::loggedUser()
@@ -116,7 +132,8 @@ User* HNManager::loggedUser()
 
 void HNManager::logout()
 {
-    m_loggedUsername.clear();
+    setUsername(QString());
+    delete m_loggedUser;
 
     // FIXME: is there a better way?
     network->cookieJar()->deleteLater();
