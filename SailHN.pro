@@ -25,6 +25,7 @@ OTHER_FILES += \
     qml/pages/CommentsPage.qml \
     qml/pages/ItemDelegate.qml \
     qml/pages/AskStoriesPage.qml \
+    qml/pages/BestStoriesPage.qml \
     qml/pages/JobStoriesPage.qml \
     qml/pages/NewStoriesPage.qml \
     qml/pages/RepliesPage.qml \

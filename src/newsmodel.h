@@ -57,6 +57,7 @@ public:
     QHash<int, QByteArray> roleNames() const;
 
     Q_INVOKABLE void loadAskStories();
+    Q_INVOKABLE void loadBestStories();
     Q_INVOKABLE void loadNewStories();
     Q_INVOKABLE void loadJobStories();
     Q_INVOKABLE void loadShowStories();

@@ -3,6 +3,7 @@
 - Fix new comments non visible when refreshing
 - Show logged user details in the settings
 - Save the username
+- Support Best stories
 
 * Thu Mar 03 2016 Andrea Scarpino <me@andreascarpino.it> 0.8-1
 - Implement authentication

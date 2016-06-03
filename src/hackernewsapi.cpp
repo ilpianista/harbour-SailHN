@@ -77,6 +77,7 @@ void HackerNewsAPI::getStories(Stories kind)
     QString path;
     switch (kind) {
         case Ask: path = QStringLiteral("/askstories.json"); break;
+        case Best: path = QStringLiteral("/beststories.json"); break;
         case Job: path = QStringLiteral("/jobstories.json"); break;
         case New: path = QStringLiteral("/newstories.json"); break;
         case Show: path = QStringLiteral("/showstories.json"); break;
