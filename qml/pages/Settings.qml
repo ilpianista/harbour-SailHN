@@ -79,14 +79,12 @@ Page {
             TextField {
                 id: username
                 width: parent.width
-                focus: text.length === 0
                 placeholderText: qsTr("Username")
             }
 
             TextField {
                 id: password
                 width: parent.width
-                focus: username.text.length > 0 && text.length === 0
                 placeholderText: qsTr("Password")
                 echoMode: TextInput.Password
             }
@@ -162,6 +160,11 @@ Page {
 
     Component.onCompleted: {
         username.text = manager.getUsername();
+
+        if (username.text.length > 0) {
+            password.forceActiveFocus();
+        }
+
         var isAuth = manager.isAuthenticated();
         isAuthenticated(isAuth);
 
