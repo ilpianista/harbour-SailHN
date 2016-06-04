@@ -119,7 +119,7 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="178"/>
+        <location filename="../qml/pages/Settings.qml" line="181"/>
         <source>Logged</source>
         <translation>Connesso</translation>
     </message>
@@ -129,7 +129,7 @@
         <translation>Esci</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="112"/>
+        <location filename="../qml/pages/Settings.qml" line="110"/>
         <source>Login failed</source>
         <translation>Login fallito</translation>
     </message>
@@ -139,38 +139,38 @@
         <translation>Impostazioni</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="83"/>
+        <location filename="../qml/pages/Settings.qml" line="82"/>
         <source>Username</source>
         <translation>Username</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="90"/>
+        <location filename="../qml/pages/Settings.qml" line="88"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="96"/>
-        <location filename="../qml/pages/Settings.qml" line="180"/>
+        <location filename="../qml/pages/Settings.qml" line="94"/>
+        <location filename="../qml/pages/Settings.qml" line="183"/>
         <source>Login</source>
         <translation>Entra</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="129"/>
+        <location filename="../qml/pages/Settings.qml" line="127"/>
         <source>User details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="135"/>
+        <location filename="../qml/pages/Settings.qml" line="133"/>
         <source>created</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="141"/>
+        <location filename="../qml/pages/Settings.qml" line="139"/>
         <source>karma</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="147"/>
+        <location filename="../qml/pages/Settings.qml" line="145"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
