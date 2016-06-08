@@ -45,8 +45,8 @@ Page {
             if (!storiesLoadedOnce) {
                 loadStories();
             }
-            listView.submitEnabled = manager.isAuthenticated();
         } else if (status === PageStatus.Active) {
+            listView.submitEnabled = manager.isAuthenticated();
             pageStack.pushAttached(Qt.resolvedUrl("ShowStoriesPage.qml"));
         } else if (status === PageStatus.Deactivating) {
             storiesLoadedOnce = true;

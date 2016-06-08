@@ -45,6 +45,7 @@ Page {
             if (!storiesLoadedOnce) {
                 loadStories();
             }
+        } else if (status === PageStatus.Active) {
             listView.submitEnabled = manager.isAuthenticated();
         } else if (status === PageStatus.Deactivating) {
             storiesLoadedOnce = true;

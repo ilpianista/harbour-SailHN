@@ -30,10 +30,18 @@ SilicaListView {
     id: listView
 
     property string pageTitle
-    property bool submitEnabled
+    property alias submitEnabled: submit.enabled
     property alias stories: model
 
     signal refreshClicked
+
+    Connections {
+        target: manager
+
+        onLoggedUserFetched: {
+            submit.enabled = true;
+        }
+    }
 
     PullDownMenu {
 
@@ -44,8 +52,9 @@ SilicaListView {
         }
 
         MenuItem {
+            id: submit
             text: qsTr("Submit")
-            enabled: submitEnabled
+            enabled: false
 
             onClicked: pageStack.push(Qt.resolvedUrl("Submit.qml"))
         }

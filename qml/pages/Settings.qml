@@ -80,6 +80,8 @@ Page {
                 id: username
                 width: parent.width
                 placeholderText: qsTr("Username")
+
+                onTextChanged: login.enabled = (text.length > 0 && password.text.length > 0)
             }
 
             TextField {
@@ -87,20 +89,21 @@ Page {
                 width: parent.width
                 placeholderText: qsTr("Password")
                 echoMode: TextInput.Password
+
+                onTextChanged: login.enabled = (text.length > 0 && username.text.length > 0)
             }
 
             Button {
                 id: login
                 text: qsTr("Login");
                 anchors.horizontalCenter: parent.horizontalCenter
+                enabled: false
 
                 onClicked: {
-                    if (username.text.length > 0 && password.text.length > 0) {
-                        manager.authenticate(username.text, password.text);
-                        login.enabled = false;
-                        busy.visible = busy.running = true;
-                        msg.visible = false;
-                    }
+                    manager.authenticate(username.text, password.text);
+                    login.enabled = false;
+                    busy.visible = busy.running = true;
+                    msg.visible = false;
                 }
             }
 
@@ -174,7 +177,7 @@ Page {
     }
 
     function isAuthenticated(isAuth) {
-        username.enabled = password.enabled = login.enabled = !isAuth;
+        username.enabled = password.enabled = !isAuth;
         logout.enabled = isAuth;
 
         if (isAuth) {

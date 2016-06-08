@@ -28,7 +28,7 @@
 #include <QDebug>
 #include <QEventLoop>
 #include <QNetworkAccessManager>
-#include <QNetworkCookieJar>
+#include <QNetworkCookie>
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QRegularExpression>
@@ -36,6 +36,7 @@
 #include <QSettings>
 #include <QUrlQuery>
 
+#include "cookiejar.h"
 #include "hackernewsapi.h"
 
 const static QString BASE_URL = QStringLiteral("https://news.ycombinator.com");
@@ -49,7 +50,13 @@ HNManager::HNManager(QObject *parent) :
     m_settings = new QSettings(QCoreApplication::applicationName(), QCoreApplication::applicationName(), this);
     setUsername(m_settings->value("Username").toString());
 
-    network->setCookieJar(new QNetworkCookieJar(this));
+    network->setCookieJar(new CookieJar(this));
+
+    if (!network->cookieJar()->cookiesForUrl(QUrl(BASE_URL + "/")).isEmpty()) {
+        api->getUser(getUsername());
+
+        connect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
+    }
 }
 
 HNManager::~HNManager()
@@ -109,7 +116,7 @@ void HNManager::onLoggedUserFetched(User *user)
 
 bool HNManager::isAuthenticated() const
 {
-    //qDebug() << "Is authenticated as:" << m_loggedUser->id();
+    //qDebug() << "Is authenticated as:" << m_loggedUser;
 
     return m_loggedUser != 0;
 }
@@ -133,11 +140,13 @@ User* HNManager::loggedUser()
 void HNManager::logout()
 {
     setUsername(QString());
-    delete m_loggedUser;
+    m_loggedUser = 0;
 
-    // FIXME: is there a better way?
-    network->cookieJar()->deleteLater();
-    network->setCookieJar(new QNetworkCookieJar(this));
+    QNetworkCookieJar* cookieJar = network->cookieJar();
+    Q_FOREACH (const QNetworkCookie cookie, cookieJar->cookiesForUrl(QUrl(BASE_URL + "/"))) {
+       cookieJar->deleteCookie(cookie);
+    }
+    m_settings->setValue("Cookies", QVariantList());
 }
 
 void HNManager::submit(const QString &title, const QString &url, const QString &text)
