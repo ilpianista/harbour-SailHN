@@ -211,7 +211,7 @@ void HackerNewsAPI::onStoriesResult()
     } else {
         QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
         if (!json.isNull()) {
-            qDebug() << "There are" << json.array().size() << "items";
+            //qDebug() << "There are" << json.array().size() << "items";
 
             QList<int> ids;
             Q_FOREACH (const QJsonValue id, json.array()) {

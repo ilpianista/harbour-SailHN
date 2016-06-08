@@ -4,6 +4,7 @@ CONFIG += sailfishapp
 
 SOURCES += \
     src/main.cpp \
+    src/cookiejar.cpp \
     src/hackernewsapi.cpp \
     src/hnmanager.cpp \
     src/item.cpp \
@@ -11,6 +12,7 @@ SOURCES += \
     src/user.cpp
 
 HEADERS += \
+    src/cookiejar.h \
     src/hackernewsapi.h \
     src/hnmanager.h \
     src/item.h \

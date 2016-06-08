@@ -119,17 +119,12 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="181"/>
-        <source>Logged</source>
-        <translation>Connesso</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/Settings.qml" line="61"/>
         <source>Logout</source>
         <translation>Esci</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="110"/>
+        <location filename="../qml/pages/Settings.qml" line="113"/>
         <source>Login failed</source>
         <translation>Login fallito</translation>
     </message>
@@ -144,56 +139,61 @@
         <translation>Username</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="88"/>
+        <location filename="../qml/pages/Settings.qml" line="90"/>
         <source>Password</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="94"/>
-        <location filename="../qml/pages/Settings.qml" line="183"/>
+        <location filename="../qml/pages/Settings.qml" line="98"/>
+        <location filename="../qml/pages/Settings.qml" line="186"/>
         <source>Login</source>
         <translation>Entra</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="127"/>
+        <location filename="../qml/pages/Settings.qml" line="130"/>
         <source>User details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="133"/>
+        <location filename="../qml/pages/Settings.qml" line="136"/>
         <source>created</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="139"/>
+        <location filename="../qml/pages/Settings.qml" line="142"/>
         <source>karma</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="145"/>
+        <location filename="../qml/pages/Settings.qml" line="148"/>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="184"/>
+        <source>Logged</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="41"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="49"/>
         <source>Settings</source>
         <translation type="unfinished">Impostazioni</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="47"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="56"/>
         <source>Submit</source>
         <translation type="unfinished">Invia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="54"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="63"/>
         <source>Refresh</source>
         <translation type="unfinished">Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="63"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="72"/>
         <source>Load more</source>
         <translation type="unfinished">Carica altro</translation>
     </message>
