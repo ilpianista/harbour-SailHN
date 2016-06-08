@@ -65,12 +65,16 @@ Page {
                 width: parent.width
                 focus: true
                 placeholderText: qsTr("Title")
+
+                onTextChanged: submit.enabled = (text.length > 0 && (url.text.length > 0 || text.text.length > 0))
             }
 
             TextField {
                 id: url
                 width: parent.width
                 placeholderText: qsTr("Url")
+
+                onTextChanged: submit.enabled = (title.text.length > 0 && (text.length > 0 || text.text.length > 0))
             }
 
             Label {
@@ -83,20 +87,21 @@ Page {
                 id: text
                 width: parent.width
                 placeholderText: qsTr("Text")
+
+                onTextChanged: submit.enabled = (title.text.length > 0 && (url.text.length > 0 || text.length > 0))
             }
 
             Button {
                 id: submit
                 text: qsTr("Submit");
                 anchors.horizontalCenter: parent.horizontalCenter
+                enabled: false
 
                 onClicked: {
-                    if (title.text.length > 0 && (url.text.length > 0 || text.text.length > 0)) {
-                        manager.submit(title.text, url.text, text.text);
-                        submit.enabled = false;
-                        busy.visible = busy.running = true;
-                        msg.visible = false;
-                    }
+                    manager.submit(title.text, url.text, text.text);
+                    submit.enabled = false;
+                    busy.visible = busy.running = true;
+                    msg.visible = false;
                 }
             }
 
