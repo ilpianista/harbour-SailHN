@@ -163,6 +163,14 @@ Page {
         reply.enabled = manager.isAuthenticated();
     }
 
+    onStatusChanged: {
+        if (status == PageStatus.Active) {
+            if (url && !(/^\s*$/.test(url))) {
+                pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), { itemUrl: url });
+            }
+        }
+    }
+
     function loadComments() {
         model.loadComments(kids);
     }

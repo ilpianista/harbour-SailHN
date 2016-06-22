@@ -207,7 +207,7 @@
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="60"/>
-        <location filename="../qml/pages/Submit.qml" line="90"/>
+        <location filename="../qml/pages/Submit.qml" line="96"/>
         <source>Submit</source>
         <translation>Invia</translation>
     </message>
@@ -217,17 +217,17 @@
         <translation>Titolo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="73"/>
+        <location filename="../qml/pages/Submit.qml" line="75"/>
         <source>Url</source>
         <translation>Url</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="77"/>
+        <location filename="../qml/pages/Submit.qml" line="81"/>
         <source>or</source>
         <translation>oppure</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="85"/>
+        <location filename="../qml/pages/Submit.qml" line="89"/>
         <source>Text</source>
         <translation>Testo</translation>
     </message>

@@ -26,6 +26,7 @@ OTHER_FILES += \
     qml/SailHN.qml \
     qml/pages/CommentsPage.qml \
     qml/pages/ItemDelegate.qml \
+    qml/pages/ItemWebView.qml \
     qml/pages/AskStoriesPage.qml \
     qml/pages/BestStoriesPage.qml \
     qml/pages/JobStoriesPage.qml \
