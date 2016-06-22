@@ -207,7 +207,7 @@
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="60"/>
-        <location filename="../qml/pages/Submit.qml" line="90"/>
+        <location filename="../qml/pages/Submit.qml" line="96"/>
         <source>Submit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -217,17 +217,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="73"/>
+        <location filename="../qml/pages/Submit.qml" line="75"/>
         <source>Url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="77"/>
+        <location filename="../qml/pages/Submit.qml" line="81"/>
         <source>or</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="85"/>
+        <location filename="../qml/pages/Submit.qml" line="89"/>
         <source>Text</source>
         <translation type="unfinished"></translation>
     </message>
