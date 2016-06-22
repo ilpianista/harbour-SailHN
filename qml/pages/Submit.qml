@@ -66,7 +66,7 @@ Page {
                 focus: true
                 placeholderText: qsTr("Title")
 
-                onTextChanged: submit.enabled = (text.length > 0 && (url.text.length > 0 || text.text.length > 0))
+                onTextChanged: submit.enabled = (text.length > 0 && (url.text.length > 0 || itemText.text.length > 0))
             }
 
             TextField {
@@ -74,7 +74,7 @@ Page {
                 width: parent.width
                 placeholderText: qsTr("Url")
 
-                onTextChanged: submit.enabled = (title.text.length > 0 && (text.length > 0 || text.text.length > 0))
+                onTextChanged: submit.enabled = (title.text.length > 0 && (text.length > 0 || itemText.text.length > 0))
             }
 
             Label {
@@ -84,7 +84,7 @@ Page {
             }
 
             TextArea {
-                id: text
+                id: itemText
                 width: parent.width
                 placeholderText: qsTr("Text")
 
@@ -98,7 +98,7 @@ Page {
                 enabled: false
 
                 onClicked: {
-                    manager.submit(title.text, url.text, text.text);
+                    manager.submit(title.text, url.text, itemText.text);
                     submit.enabled = false;
                     busy.visible = busy.running = true;
                     msg.visible = false;
