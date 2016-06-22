@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="53"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Rispondi</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="60"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="73"/>
         <source>Load more</source>
-        <translation>Carica altro</translation>
+        <translation>Mostra altri</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="89"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="48"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Rispondi</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="55"/>
@@ -67,7 +67,7 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="68"/>
         <source>Load more</source>
-        <translation>Carica altro</translation>
+        <translation>Mostra altri</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="84"/>
@@ -80,27 +80,27 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="44"/>
         <source>Error when sending</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore durante l&apos;invio</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="46"/>
         <source>Commented!</source>
-        <translation type="unfinished"></translation>
+        <translation>Commentato!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="61"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Rispondi</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="68"/>
         <source>Text</source>
-        <translation type="unfinished">Testo</translation>
+        <translation>Testo</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="73"/>
         <source>Add Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Commenta</translation>
     </message>
 </context>
 <context>
@@ -126,17 +126,17 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="113"/>
         <source>Login failed</source>
-        <translation>Login fallito</translation>
+        <translation>Accesso fallito</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
         <source>Settings</source>
-        <translation>Impostazioni</translation>
+        <translation>Impostazioni </translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="82"/>
         <source>Username</source>
-        <translation>Username</translation>
+        <translation>Nome utente</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="90"/>
@@ -147,32 +147,32 @@
         <location filename="../qml/pages/Settings.qml" line="98"/>
         <location filename="../qml/pages/Settings.qml" line="186"/>
         <source>Login</source>
-        <translation>Entra</translation>
+        <translation>Accedi</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="130"/>
         <source>User details</source>
-        <translation type="unfinished"></translation>
+        <translation>Dettagli utente</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="136"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>creato</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="142"/>
         <source>karma</source>
-        <translation type="unfinished"></translation>
+        <translation>karma</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="148"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Info</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="184"/>
         <source>Logged</source>
-        <translation type="unfinished"></translation>
+        <translation>Connesso</translation>
     </message>
 </context>
 <context>
@@ -180,22 +180,22 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="49"/>
         <source>Settings</source>
-        <translation type="unfinished">Impostazioni</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="56"/>
         <source>Submit</source>
-        <translation type="unfinished">Invia</translation>
+        <translation>Invia</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="63"/>
         <source>Refresh</source>
-        <translation type="unfinished">Aggiorna</translation>
+        <translation>Aggiorna</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="72"/>
         <source>Load more</source>
-        <translation type="unfinished">Carica altro</translation>
+        <translation>Mostra altri</translation>
     </message>
 </context>
 <context>
@@ -234,7 +234,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="43"/>
         <source>Error during submission</source>
-        <translation>Errore nell&apos;invio</translation>
+        <translation>Errore durante l&apos;invio</translation>
     </message>
 </context>
 </TS>

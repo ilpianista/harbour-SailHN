@@ -1,3 +1,6 @@
+* Fri Jun 22 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.2-1
+- Add 'quick browser view' from item
+
 * Fri Jun 03 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.1-1
 - Add the capability to post comments
 - Fix new comments non visible when refreshing
