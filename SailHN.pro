@@ -48,4 +48,6 @@ OTHER_FILES += \
 CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += translations/harbour-sailhn-it.ts \
+    translations/harbour-sailhn-nl.ts \
+    translations/harbour-sailhn-sr.ts \
     translations/harbour-sailhn-tr.ts
