@@ -100,7 +100,7 @@ Page {
                 enabled: false
 
                 onClicked: {
-                    manager.authenticate(username.text, password.text);
+                    manager.authenticate(username.text.trim(), password.text.trim());
                     login.enabled = false;
                     busy.visible = busy.running = true;
                     msg.visible = false;
