@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" version="2.1">
 <context>
     <name>CommentsPage</name>
     <message>
@@ -80,7 +78,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="44"/>
         <source>Error when sending</source>
-        <translation>Fout bij versturen</translation>
+        <translation>Fout bij verzenden</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="46"/>
@@ -100,7 +98,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="73"/>
         <source>Add Comment</source>
-        <translation>Toevoegen reactie</translation>
+        <translation>Reactie toevoegen</translation>
     </message>
 </context>
 <context>
@@ -108,7 +106,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="59"/>
         <source>reply</source>
-        <translation>antwoorden</translation>
+        <translation>antwoord</translation>
     </message>
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
@@ -157,7 +155,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="136"/>
         <source>created</source>
-        <translation>gecreëerd</translation>
+        <translation>aangemaakt</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="142"/>
@@ -209,7 +207,7 @@
         <location filename="../qml/pages/Submit.qml" line="60"/>
         <location filename="../qml/pages/Submit.qml" line="96"/>
         <source>Submit</source>
-        <translation>Verzenden</translation>
+        <translation>Inzenden</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="67"/>
@@ -219,7 +217,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="75"/>
         <source>Url</source>
-        <translation>Url</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="81"/>
