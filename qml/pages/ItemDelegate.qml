@@ -27,7 +27,6 @@ import Sailfish.Silica 1.0
 
 ListItem {
     width: ListView.view.width
-    menu: menu
 
     Column {
         x: Theme.horizontalPageMargin
@@ -80,19 +79,5 @@ ListItem {
                            title: title,
                            url: url
                        });
-    }
-
-    ContextMenu {
-        id: menu
-
-        MenuItem {
-            text: qsTr("Open external url")
-            enabled: (url && !(/^\s*$/.test(url)))
-
-            onClicked: {
-                console.log("Opening external browser: " + url);
-                Qt.openUrlExternally(url);
-            }
-        }
     }
 }

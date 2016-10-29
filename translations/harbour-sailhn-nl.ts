@@ -32,29 +32,24 @@
 <context>
     <name>ItemDelegate</name>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="53"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="52"/>
         <source>point</source>
         <translation>punt</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="55"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="54"/>
         <source>points</source>
         <translation>punten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="61"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="60"/>
         <source>comment</source>
         <translation>reactie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="63"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="62"/>
         <source>comments</source>
         <translation>reacties</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="89"/>
-        <source>Open external url</source>
-        <translation>Open externe url</translation>
     </message>
 </context>
 <context>
