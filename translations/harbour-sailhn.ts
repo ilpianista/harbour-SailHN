@@ -4,22 +4,27 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="53"/>
-        <source>Reply</source>
+        <location filename="../qml/pages/CommentsPage.qml" line="51"/>
+        <source>Copy external url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="60"/>
+        <source>Reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="67"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="73"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="80"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="89"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="96"/>
         <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>

@@ -47,6 +47,13 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
+            MenuItem {
+                text: qsTr("Copy external url")
+
+                onClicked: {
+                    Clipboard.text = url;
+                }
+            }
 
             MenuItem {
                 id: reply

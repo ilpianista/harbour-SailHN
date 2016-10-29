@@ -1,23 +1,30 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="it">
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="53"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="51"/>
+        <source>Copy external url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="60"/>
         <source>Reply</source>
         <translation>Rispondi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="60"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="67"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="73"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="80"/>
         <source>Load more</source>
         <translation>Mostra altri</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="89"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="96"/>
         <source>Comments</source>
         <translation>Commenti</translation>
     </message>
