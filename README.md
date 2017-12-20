@@ -6,7 +6,9 @@ An [Hacker News](https://news.ycombinator.com/) unofficial client for [Sailfish 
 
 ## Translations
 
-Translations via [Transifex](https://www.transifex.com/ilpianista-harbour/harbour-SailHN/dashboard/), thank you!
+[![Translation status](https://hosted.weblate.org/widgets/harbour-sailhn/-/svg-badge.svg)](https://hosted.weblate.org/engage/harbour-sailhn/?utm_source=widget)
+
+Translations via [Weblate](https://hosted.weblate.org/projects/harbour-sailhn/), thank you!
 
 ## Donate
 
