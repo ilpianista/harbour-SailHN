@@ -131,12 +131,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
         <source>Settings</source>
-        <translation></translation>
+        <translation>Innstillinger</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="82"/>
         <source>Username</source>
-        <translation></translation>
+        <translation>Brukernavn</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="90"/>
@@ -152,12 +152,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="130"/>
         <source>User details</source>
-        <translation></translation>
+        <translation>Brukerdetaljer</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="136"/>
         <source>created</source>
-        <translation></translation>
+        <translation>opprettet</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="142"/>
@@ -167,12 +167,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="148"/>
         <source>About</source>
-        <translation></translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="184"/>
         <source>Logged</source>
-        <translation></translation>
+        <translation>Logget</translation>
     </message>
 </context>
 <context>
@@ -180,7 +180,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="49"/>
         <source>Settings</source>
-        <translation></translation>
+        <translation>Innstillinger</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="56"/>
@@ -190,12 +190,12 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="63"/>
         <source>Refresh</source>
-        <translation></translation>
+        <translation>Gjenoppfrisk</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="72"/>
         <source>Load more</source>
-        <translation></translation>
+        <translation>Last inn flere</translation>
     </message>
 </context>
 <context>
@@ -203,7 +203,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="45"/>
         <source>Submitted!</source>
-        <translation></translation>
+        <translation>Innsendt!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="60"/>
@@ -214,7 +214,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="67"/>
         <source>Title</source>
-        <translation></translation>
+        <translation>Tittel</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="75"/>
@@ -234,7 +234,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="43"/>
         <source>Error during submission</source>
-        <translation></translation>
+        <translation>Feil under innsending</translation>
     </message>
 </context>
 </TS>
