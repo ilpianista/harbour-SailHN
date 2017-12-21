@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS language="it" version="2.1">
 <context>
     <name>CommentsPage</name>
     <message>
@@ -129,7 +131,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
         <source>Settings</source>
-        <translation>Impostazioni </translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="82"/>
