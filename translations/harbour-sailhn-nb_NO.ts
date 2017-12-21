@@ -6,27 +6,27 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="51"/>
         <source>Copy external url</source>
-        <translation></translation>
+        <translation>Kopier ekstern nettadresse</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="60"/>
         <source>Reply</source>
-        <translation></translation>
+        <translation>Svar</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="67"/>
         <source>Refresh</source>
-        <translation></translation>
+        <translation>Gjenoppfrisk</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="80"/>
         <source>Load more</source>
-        <translation></translation>
+        <translation>Last inn flere</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="96"/>
         <source>Comments</source>
-        <translation></translation>
+        <translation>Kommentarer</translation>
     </message>
 </context>
 <context>
@@ -39,17 +39,17 @@
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="54"/>
         <source>points</source>
-        <translation></translation>
+        <translation>poeng</translation>
     </message>
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="60"/>
         <source>comment</source>
-        <translation></translation>
+        <translation>kommentar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="62"/>
         <source>comments</source>
-        <translation></translation>
+        <translation>kommentarer</translation>
     </message>
 </context>
 <context>
@@ -57,22 +57,22 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="48"/>
         <source>Reply</source>
-        <translation></translation>
+        <translation>Svar</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="55"/>
         <source>Refresh</source>
-        <translation></translation>
+        <translation>Gjenoppfrisk</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="68"/>
         <source>Load more</source>
-        <translation></translation>
+        <translation>Last inn flere</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="84"/>
         <source>Replies</source>
-        <translation></translation>
+        <translation>Svar</translation>
     </message>
 </context>
 <context>
@@ -80,17 +80,17 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="44"/>
         <source>Error when sending</source>
-        <translation></translation>
+        <translation>Feil under forsendelse</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="46"/>
         <source>Commented!</source>
-        <translation></translation>
+        <translation>Kommenterte!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="61"/>
         <source>Reply</source>
-        <translation></translation>
+        <translation>Svar</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="68"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="73"/>
         <source>Add Comment</source>
-        <translation></translation>
+        <translation>Legg til kommentar</translation>
     </message>
 </context>
 <context>
@@ -108,12 +108,12 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="59"/>
         <source>reply</source>
-        <translation></translation>
+        <translation>svar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
         <source>replies</source>
-        <translation></translation>
+        <translation>svar</translation>
     </message>
 </context>
 <context>
@@ -121,12 +121,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="61"/>
         <source>Logout</source>
-        <translation></translation>
+        <translation>Logg ut</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="113"/>
         <source>Login failed</source>
-        <translation></translation>
+        <translation>Innlogging mislyktes</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
