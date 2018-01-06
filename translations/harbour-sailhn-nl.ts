@@ -1,15 +1,17 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS language="nl" version="2.1">
 <context>
     <name>CommentsPage</name>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="51"/>
         <source>Copy external url</source>
-        <translation>Kopiëren externe url</translation>
+        <translation>Externe URL kopiëren</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="60"/>
         <source>Reply</source>
-        <translation>Antwoorden</translation>
+        <translation>Beantwoorden</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="67"/>
@@ -19,7 +21,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="80"/>
         <source>Load more</source>
-        <translation>Laad meer</translation>
+        <translation>Meer laden</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="96"/>
@@ -55,7 +57,7 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="48"/>
         <source>Reply</source>
-        <translation>Antwoorden</translation>
+        <translation>Beantwoorden</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="55"/>
@@ -65,7 +67,7 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="68"/>
         <source>Load more</source>
-        <translation>Laad meer</translation>
+        <translation>Meer laden</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="84"/>
@@ -193,7 +195,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="72"/>
         <source>Load more</source>
-        <translation>Laad meer</translation>
+        <translation>Meer laden</translation>
     </message>
 </context>
 <context>
