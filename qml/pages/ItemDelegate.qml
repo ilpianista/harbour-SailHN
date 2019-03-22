@@ -27,8 +27,10 @@ import Sailfish.Silica 1.0
 
 ListItem {
     width: ListView.view.width
+    height: col.height
 
     Column {
+        id: col
         x: Theme.horizontalPageMargin
         width: parent.width - Theme.horizontalPageMargin * 2
 
@@ -38,6 +40,8 @@ ListItem {
             text: title
             font.pixelSize: Theme.fontSizeMedium
             truncationMode: TruncationMode.Fade
+            maximumLineCount: 2
+            wrapMode: Text.WordWrap
         }
 
         Label {
