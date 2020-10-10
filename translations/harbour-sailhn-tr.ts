@@ -1,15 +1,17 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="tr" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS language="tr" version="2.1">
 <context>
     <name>CommentsPage</name>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="51"/>
         <source>Copy external url</source>
-        <translation type="unfinished"/>
+        <translation>Harici URL&apos;yi kopyala</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="60"/>
         <source>Reply</source>
-        <translation type="unfinished"/>
+        <translation>Yanıtla</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="67"/>
@@ -24,7 +26,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="96"/>
         <source>Comments</source>
-        <translation>Yorum</translation>
+        <translation>Yorumlar</translation>
     </message>
 </context>
 <context>
@@ -32,12 +34,12 @@
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="52"/>
         <source>point</source>
-        <translation>nokta</translation>
+        <translation>puan</translation>
     </message>
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="54"/>
         <source>points</source>
-        <translation>noktalar</translation>
+        <translation>puan</translation>
     </message>
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="60"/>
@@ -55,7 +57,7 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="48"/>
         <source>Reply</source>
-        <translation type="unfinished"/>
+        <translation>Yanıtla</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="55"/>
@@ -78,27 +80,27 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="44"/>
         <source>Error when sending</source>
-        <translation type="unfinished"/>
+        <translation>Gönderirken hata oluştu</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="46"/>
         <source>Commented!</source>
-        <translation type="unfinished"/>
+        <translation>Yorum yapıldı!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="61"/>
         <source>Reply</source>
-        <translation type="unfinished"/>
+        <translation>Yanıtla</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="68"/>
         <source>Text</source>
-        <translation type="unfinished"/>
+        <translation>Metin</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="73"/>
         <source>Add Comment</source>
-        <translation type="unfinished"/>
+        <translation>Yorum Ekle</translation>
     </message>
 </context>
 <context>
@@ -111,7 +113,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
         <source>replies</source>
-        <translation>yanıtlar</translation>
+        <translation>yanıt</translation>
     </message>
 </context>
 <context>
@@ -119,58 +121,58 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="61"/>
         <source>Logout</source>
-        <translation type="unfinished"/>
+        <translation>Oturumu kapat</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="113"/>
         <source>Login failed</source>
-        <translation type="unfinished"/>
+        <translation>Oturum açma başarısız oldu</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>Ayarlar</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="82"/>
         <source>Username</source>
-        <translation type="unfinished"/>
+        <translation>Kullanıcı adı</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="90"/>
         <source>Password</source>
-        <translation type="unfinished"/>
+        <translation>Parola</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="98"/>
         <location filename="../qml/pages/Settings.qml" line="186"/>
         <source>Login</source>
-        <translation type="unfinished"/>
+        <translation>Oturum aç</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="130"/>
         <source>User details</source>
-        <translation type="unfinished"/>
+        <translation>Kullanıcı ayrıntıları</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="136"/>
         <source>created</source>
-        <translation type="unfinished"/>
+        <translation>oluşturuldu</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="142"/>
         <source>karma</source>
-        <translation type="unfinished"/>
+        <translation>karma</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="148"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>Hakkında</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="184"/>
         <source>Logged</source>
-        <translation type="unfinished"/>
+        <translation>Oturum açıldı</translation>
     </message>
 </context>
 <context>
@@ -178,12 +180,12 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="49"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>Ayarlar</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="56"/>
         <source>Submit</source>
-        <translation type="unfinished"/>
+        <translation>Gönder</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="63"/>
@@ -201,38 +203,38 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="45"/>
         <source>Submitted!</source>
-        <translation type="unfinished"/>
+        <translation>Gönderildi!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="60"/>
         <location filename="../qml/pages/Submit.qml" line="96"/>
         <source>Submit</source>
-        <translation type="unfinished"/>
+        <translation>Gönder</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="67"/>
         <source>Title</source>
-        <translation type="unfinished"/>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="75"/>
         <source>Url</source>
-        <translation type="unfinished"/>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="81"/>
         <source>or</source>
-        <translation type="unfinished"/>
+        <translation>veya</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="89"/>
         <source>Text</source>
-        <translation type="unfinished"/>
+        <translation>Metin</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="43"/>
         <source>Error during submission</source>
-        <translation type="unfinished"/>
+        <translation>Gönderme sırasında hata oluştu</translation>
     </message>
 </context>
 </TS>
