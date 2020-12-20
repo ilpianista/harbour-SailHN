@@ -6,27 +6,27 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="51"/>
         <source>Copy external url</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi ulkoinen osoite</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="60"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Vastaa</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="67"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="80"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa lisää</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="96"/>
         <source>Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentit</translation>
     </message>
 </context>
 <context>
@@ -34,22 +34,22 @@
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="52"/>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>piste</translation>
     </message>
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="54"/>
         <source>points</source>
-        <translation type="unfinished"></translation>
+        <translation>pistettä</translation>
     </message>
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="60"/>
         <source>comment</source>
-        <translation type="unfinished"></translation>
+        <translation>kommentti</translation>
     </message>
     <message>
         <location filename="../qml/pages/ItemDelegate.qml" line="62"/>
         <source>comments</source>
-        <translation type="unfinished"></translation>
+        <translation>kommenttia</translation>
     </message>
 </context>
 <context>
@@ -57,22 +57,22 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="48"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Vastaa</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="55"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="68"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa lisää</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="84"/>
         <source>Replies</source>
-        <translation type="unfinished"></translation>
+        <translation>Vastaukset</translation>
     </message>
 </context>
 <context>
@@ -80,27 +80,27 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="44"/>
         <source>Error when sending</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe lähetettäessä</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="46"/>
         <source>Commented!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentoitu!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="61"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Vastaa</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="68"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Teksti</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="73"/>
         <source>Add Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kommentti</translation>
     </message>
 </context>
 <context>
@@ -108,12 +108,12 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="59"/>
         <source>reply</source>
-        <translation type="unfinished"></translation>
+        <translation>vastaus</translation>
     </message>
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
         <source>replies</source>
-        <translation type="unfinished"></translation>
+        <translation>vastaukset</translation>
     </message>
 </context>
 <context>
@@ -121,58 +121,58 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="61"/>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjaudu ulos</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="113"/>
         <source>Login failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjautuminen epäonnistui</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="82"/>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjätunnus</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="90"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasana</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="98"/>
         <location filename="../qml/pages/Settings.qml" line="186"/>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjaudu sisään</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="130"/>
         <source>User details</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjätiedot</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="136"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>luotu</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="142"/>
         <source>karma</source>
-        <translation type="unfinished"></translation>
+        <translation>karma</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="148"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="184"/>
         <source>Logged</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjautunut sisään</translation>
     </message>
 </context>
 <context>
@@ -180,22 +180,22 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="49"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="56"/>
         <source>Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="63"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="72"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa lisää</translation>
     </message>
 </context>
 <context>
@@ -203,38 +203,38 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="45"/>
         <source>Submitted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetetty!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="60"/>
         <location filename="../qml/pages/Submit.qml" line="96"/>
         <source>Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="67"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikko</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="75"/>
         <source>Url</source>
-        <translation type="unfinished"></translation>
+        <translation>URL-osoite</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="81"/>
         <source>or</source>
-        <translation type="unfinished"></translation>
+        <translation>tai</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="89"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Teksti</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="43"/>
         <source>Error during submission</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe lähetettäessä</translation>
     </message>
 </context>
 </TS>
