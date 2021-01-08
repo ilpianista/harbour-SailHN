@@ -1,10 +1,12 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sr" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS language="sr" version="2.1">
 <context>
     <name>CommentsPage</name>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="51"/>
         <source>Copy external url</source>
-        <translation type="unfinished"/>
+        <translation>Копирај спољни УРЛ</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="60"/>
