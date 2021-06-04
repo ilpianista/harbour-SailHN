@@ -2,7 +2,7 @@
 
 An [Hacker News](https://news.ycombinator.com/) unofficial client for [Sailfish OS](https://sailfishos.org).
 
-[Build status](https://build.merproject.org/package/live_build_log/home:ilpianista/harbour-sailhn/sailfish_latest_armv7hl/armv8el)
+[![Build Status](https://git.sailfishos.org/ilpianista/harbour-SailHN/badges/master/pipeline.svg)](https://git.sailfishos.org/ilpianista/harbour-SailHN/pipelines)
 
 ## Translations
 
