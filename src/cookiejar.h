@@ -2,7 +2,7 @@
  * The MIT License (MIT)
  *
  * Copyright (c) 2015 Nathan Osman
- *               2016 Andrea Scarpino <me@andreascarpino.it>
+ *               2016-2021 Andrea Scarpino <andrea@scarpino.dev>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
