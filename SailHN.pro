@@ -47,8 +47,17 @@ OTHER_FILES += \
 
 CONFIG += sailfishapp_i18n
 
-TRANSLATIONS += translations/harbour-sailhn-de.ts \
+TRANSLATIONS += \
+    translations/harbour-sailhn-de.ts \
+    translations/harbour-sailhn-et.ts \
+    translations/harbour-sailhn-fi.ts \
+    translations/harbour-sailhn-fr.ts \
+    translations/harbour-sailhn-hr.ts \
     translations/harbour-sailhn-it.ts \
+    translations/harbour-sailhn-nb_NO.ts \
+    translations/harbour-sailhn-nl_BE.ts \
     translations/harbour-sailhn-nl.ts \
     translations/harbour-sailhn-sr.ts \
-    translations/harbour-sailhn-tr.ts
+    translations/harbour-sailhn-tr.ts \
+    translations/harbour-sailhn.ts \
+    translations/harbour-sailhn-zh_Hant.ts
