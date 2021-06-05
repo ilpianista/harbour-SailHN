@@ -59,5 +59,4 @@ TRANSLATIONS += \
     translations/harbour-sailhn-nl.ts \
     translations/harbour-sailhn-sr.ts \
     translations/harbour-sailhn-tr.ts \
-    translations/harbour-sailhn.ts \
     translations/harbour-sailhn-zh_Hant.ts
