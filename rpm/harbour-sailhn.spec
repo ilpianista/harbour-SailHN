@@ -28,7 +28,26 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Unofficial Hacker News client
+Unofficial Hacker News client.
+
+%if "%{?vendor}" == "chum"
+PackageName: SailHN
+Type: desktop-application
+DeveloperName: Andrea Scarpino
+Categories:
+ - Network
+Custom:
+  Repo: https://gitlab.com/ilpianista/harbour-SailHN
+Icon: https://gitlab.com/ilpianista/harbour-SailHN/-/raw/master/icons/harbour-sailhn.svg
+Screenshots:
+ - https://gitlab.com/ilpianista/harbour-SailHN/-/raw/master/screenshots/screenshot_1.png
+ - https://gitlab.com/ilpianista/harbour-SailHN/-/raw/master/screenshots/screenshot_2.png
+ - https://gitlab.com/ilpianista/harbour-SailHN/-/raw/master/screenshots/screenshot_3.png
+Url:
+  Homepage: https://gitlab.com/ilpianista/harbour-SailHN
+  Bugtracker: https://gitlab.com/ilpianista/harbour-SailHN/-/issues
+  Donation: https://paypal.me/andreascarpino
+%endif
 
 
 %prep
