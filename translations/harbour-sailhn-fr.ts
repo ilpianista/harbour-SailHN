@@ -32,22 +32,22 @@
 <context>
     <name>ItemDelegate</name>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="52"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="56"/>
         <source>point</source>
         <translation>point</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="54"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="58"/>
         <source>points</source>
         <translation>points</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="60"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="64"/>
         <source>comment</source>
         <translation>commentaire</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="62"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="66"/>
         <source>comments</source>
         <translation>commentaires</translation>
     </message>
@@ -55,22 +55,17 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="48"/>
-        <source>Reply</source>
-        <translation>Répondre</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="55"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="46"/>
         <source>Refresh</source>
         <translation>Rafraîchir</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="68"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="59"/>
         <source>Load more</source>
         <translation>Charger plus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="84"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="75"/>
         <source>Replies</source>
         <translation>Réponses</translation>
     </message>
@@ -106,14 +101,19 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="59"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
         <source>reply</source>
         <translation>réponse</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="63"/>
         <source>replies</source>
         <translation>réponses</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="77"/>
+        <source>Reply</source>
+        <translation type="unfinished">Répondre</translation>
     </message>
 </context>
 <context>

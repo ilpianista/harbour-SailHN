@@ -6,3 +6,8 @@ Icon=harbour-sailhn
 Exec=harbour-sailhn
 Name=SailHN
 Comment=Hacker News unofficial client
+
+[X-Sailjail]
+Permissions=Internet
+OrganizationName=it.andreascarpino
+ApplicationName=harbour-sailhn

@@ -42,15 +42,6 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
-
-            MenuItem {
-                id: reply
-                text: qsTr("Reply")
-                enabled: !dead
-
-                onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: parentId})
-            }
-
             MenuItem {
                 text: qsTr("Refresh")
 
