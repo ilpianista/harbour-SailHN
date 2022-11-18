@@ -27,8 +27,47 @@ import Sailfish.Silica 1.0
 
 CoverBackground {
 
+    Connections {
+        target: manager
+
+        onSearchResult: {
+            placeholder.visible = !found;
+
+            if (found) {
+                title.text = lyric.artist + " - " + lyric.song;
+                itemText.text = lyric.text;
+            }
+            itemInfo.visible = found;
+        }
+    }
+
     CoverPlaceholder {
+        id: placeholder
         text: "SailHN"
         icon.source: "/usr/share/icons/hicolor/86x86/apps/harbour-sailhn.png"
+    }
+
+    Column {
+        id: itemInfo
+        anchors.centerIn: parent
+        x: Theme.paddingSmall
+        width: parent.width - Theme.paddingSmall * 2
+
+        Label {
+            id: title
+            width: parent.width
+            wrapMode: Text.Wrap
+            font.pixelSize: Theme.fontSizeMedium
+            horizontalAlignment: Text.AlignHCenter
+        }
+
+        Label {
+            id: itemText
+            width: parent.width
+            wrapMode: Text.Wrap
+            maximumLineCount: 10
+            elide: Text.ElideRight
+            font.pixelSize: Theme.fontSizeExtraSmall
+        }
     }
 }

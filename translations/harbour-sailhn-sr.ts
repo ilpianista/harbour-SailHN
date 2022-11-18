@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS language="sr" version="2.1">
+<TS version="2.1" language="sr">
 <context>
     <name>CommentsPage</name>
     <message>
@@ -32,22 +32,22 @@
 <context>
     <name>ItemDelegate</name>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="52"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="56"/>
         <source>point</source>
         <translation>поента</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="54"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="58"/>
         <source>points</source>
         <translation>поенте</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="60"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="64"/>
         <source>comment</source>
         <translation>коментар</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="62"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="66"/>
         <source>comments</source>
         <translation>коментари</translation>
     </message>
@@ -55,22 +55,17 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="48"/>
-        <source>Reply</source>
-        <translation>Узврати</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="55"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="46"/>
         <source>Refresh</source>
         <translation>Освежи</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="68"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="59"/>
         <source>Load more</source>
         <translation>Учитај још</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="84"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="75"/>
         <source>Replies</source>
         <translation>Узвраћаји</translation>
     </message>
@@ -106,14 +101,19 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="59"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
         <source>reply</source>
         <translation>узврати</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="63"/>
         <source>replies</source>
         <translation>узвраћаји</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="77"/>
+        <source>Reply</source>
+        <translation type="unfinished">Узврати</translation>
     </message>
 </context>
 <context>

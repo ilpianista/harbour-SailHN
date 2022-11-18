@@ -25,10 +25,12 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-BackgroundItem {
-    height: contentItem.childrenRect.height
+ListItem {
+    height: content.height
+    menu: replyMenu
 
     Column {
+        id: content
         width: parent.width
 
         Text {
@@ -64,6 +66,17 @@ BackgroundItem {
 
                 return txt + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
             }
+        }
+    }
+
+    ContextMenu {
+        id: replyMenu
+        enabled: !dead
+
+        MenuItem {
+            text: qsTr("Reply")
+
+            onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: id})
         }
     }
 

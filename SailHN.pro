@@ -2,6 +2,8 @@ TARGET = harbour-sailhn
 
 CONFIG += sailfishapp
 
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
+
 SOURCES += \
     src/main.cpp \
     src/cookiejar.cpp \
