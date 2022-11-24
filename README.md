@@ -2,8 +2,6 @@
 
 An [Hacker News](https://news.ycombinator.com/) unofficial client for [Sailfish OS](https://sailfishos.org).
 
-[![Build Status](https://gitlab.com/ilpianista/harbour-SailHN/badges/master/pipeline.svg)](https://gitlab.com/ilpianista/harbour-SailHN/pipelines)
-
 ## Translations
 
 [![Translation status](https://hosted.weblate.org/widgets/harbour-sailhn/-/svg-badge.svg)](https://hosted.weblate.org/engage/harbour-sailhn/?utm_source=widget)
