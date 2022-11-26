@@ -38,15 +38,15 @@ Categories:
  - Network
 Custom:
   Repo: https://github.com/ilpianista/harbour-SailHN
-Icon: https://github.com/ilpianista/harbour-SailHN/-/raw/master/icons/harbour-sailhn.svg
+Icon: https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/icons/harbour-sailhn.svg
 Screenshots:
- - https://github.com/ilpianista/harbour-SailHN/-/raw/master/screenshots/screenshot_1.png
- - https://github.com/ilpianista/harbour-SailHN/-/raw/master/screenshots/screenshot_2.png
- - https://github.com/ilpianista/harbour-SailHN/-/raw/master/screenshots/screenshot_3.png
+ - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_1.png
+ - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_2.png
+ - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_3.png
 Url:
   Homepage: https://github.com/ilpianista/harbour-SailHN
   Bugtracker: https://github.com/ilpianista/harbour-SailHN/-/issues
-  Donation: https://paypal.me/andreascarpino
+  Donation: https://liberapay.com/ilpianista
 %endif
 
 
