@@ -33,7 +33,7 @@ jobs:
         release: 4.4.0.58
         arch: i486
 
-    - name: Build i486
+    - name: Build aarch64
       id: build_aarch64
       uses: coderus/github-sfos-build@master
       with:
