@@ -75,9 +75,11 @@ void HNManager::authenticate(const QString &username, const QString &password)
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/login")));
     req.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
 
+    // QUrlQuery doesn't convert "+" to "&2B" so we must perform this manually
+    // See https://doc.qt.io/qt-5/qurlquery.html#handling-of-spaces-and-plus
     QUrlQuery data;
-    data.addQueryItem(QLatin1String("acct"), username);
-    data.addQueryItem(QLatin1String("pw"), password);
+    data.addQueryItem(QLatin1String("acct"), QString(username).replace("+", "%2B"));
+    data.addQueryItem(QLatin1String("pw"), QString(password).replace("+", "%2B"));
 
     QNetworkReply* reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
 
