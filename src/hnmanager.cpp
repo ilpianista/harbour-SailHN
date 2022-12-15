@@ -262,6 +262,8 @@ QString HNManager::getCommentCSRF(const int itemId) const
 
 QString HNManager::getCSRF(QNetworkReply *reply, const QRegularExpression &regexp) const
 {
+    QString csrf;
+
     QTextStream stream(reply->readAll(), QIODevice::ReadOnly);
 
     QString line;
@@ -270,11 +272,11 @@ QString HNManager::getCSRF(QNetworkReply *reply, const QRegularExpression &regex
 
         QRegularExpressionMatch match = regexp.match(line);
         if (match.hasMatch()) {
-            return match.captured(1);
+            csrf = match.captured(1);
         }
     }
 
     reply->deleteLater();
 
-    return QString();
+    return csrf;
 }
