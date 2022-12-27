@@ -45,7 +45,7 @@ Screenshots:
  - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_3.png
 Url:
   Homepage: https://github.com/ilpianista/harbour-SailHN
-  Bugtracker: https://github.com/ilpianista/harbour-SailHN/-/issues
+  Bugtracker: https://github.com/ilpianista/harbour-SailHN/issues
   Donation: https://liberapay.com/ilpianista
 %endif
 
