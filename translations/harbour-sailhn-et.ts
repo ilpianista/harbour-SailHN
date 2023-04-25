@@ -113,7 +113,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="77"/>
         <source>Reply</source>
-        <translation type="unfinished">Vasta</translation>
+        <translation>Vasta</translation>
     </message>
 </context>
 <context>
