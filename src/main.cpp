@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> view(SailfishApp::createView());
 
     QCoreApplication::setApplicationName(QStringLiteral("harbour-sailhn"));
-    QCoreApplication::setOrganizationDomain(QStringLiteral("andreascarpino.it"));
+    QCoreApplication::setOrganizationName(QStringLiteral("andreascarpino.it"));
 
     qmlRegisterType<NewsModel>("harbour.sailhn", 1, 0, "NewsModel");
     qmlRegisterType<User>("harbour.sailhn", 1, 0, "User");
