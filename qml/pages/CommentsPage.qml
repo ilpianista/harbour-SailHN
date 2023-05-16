@@ -23,10 +23,13 @@
 */
 
 import QtQuick 2.0
+import Sailfish.Share 1.0
 import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
 
 Page {
+    id: page
+
     property var id
     property var by
     property var dead
@@ -52,6 +55,14 @@ Page {
 
                 onClicked: {
                     Clipboard.text = url;
+                }
+            }
+
+            MenuItem {
+                text: qsTr("Share")
+
+                onClicked: {
+                    share.trigger();
                 }
             }
 
@@ -180,5 +191,16 @@ Page {
 
     function loadComments() {
         model.loadComments(kids);
+    }
+
+    ShareAction {
+        id: share
+        title: qsTr("Share url")
+        mimeType: "text/x-url"
+        resources: [{
+            "type": "text/x-url",
+            "linkTitle": page.title,
+            "status": url.toString()
+        }]
     }
 }
