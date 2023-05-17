@@ -65,17 +65,22 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="46"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="47"/>
+        <source>Reply</source>
+        <translation type="unfinished">Узврати</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RepliesPage.qml" line="54"/>
         <source>Refresh</source>
         <translation>Освежи</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="59"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="67"/>
         <source>Load more</source>
         <translation>Учитај још</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="75"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="83"/>
         <source>Replies</source>
         <translation>Узвраћаји</translation>
     </message>
