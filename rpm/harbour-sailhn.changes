@@ -1,3 +1,8 @@
+* Wed May 17 2023 Andrea Scarpino <andrea@scarpino.dev> 0.9.1-1
+- Fix reply button on comments
+- Fix replies page
+- Reset cover text when on list pages
+
 * Wed May 17 2023 Andrea Scarpino <andrea@scarpino.dev> 0.9.0-1
 - Add a Share button into item view
 - Show item title and text in cover
