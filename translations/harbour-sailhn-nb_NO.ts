@@ -4,29 +4,39 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="51"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="54"/>
         <source>Copy external url</source>
         <translation>Kopier ekstern nettadresse</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="60"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="62"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="71"/>
         <source>Reply</source>
         <translation>Svar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="67"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="78"/>
         <source>Refresh</source>
         <translation>Gjenoppfrisk</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="80"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="91"/>
         <source>Load more</source>
         <translation>Last inn flere</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="96"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
         <source>Comments</source>
         <translation>Kommentarer</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="200"/>
+        <source>Share url</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
