@@ -49,6 +49,8 @@ OTHER_FILES += \
 
 CONFIG += sailfishapp_i18n
 
+PKGCONFIG += qt5embedwidget
+
 TRANSLATIONS += \
     translations/harbour-sailhn-de.ts \
     translations/harbour-sailhn-et.ts \
