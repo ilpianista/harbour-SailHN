@@ -86,4 +86,9 @@ SilicaListView {
     delegate: ItemDelegate {}
 
     VerticalScrollDecorator {}
+
+    Component.onCompleted: {
+        appWindow.itemTitle = "";
+        appWindow.itemText = "";
+    }
 }
