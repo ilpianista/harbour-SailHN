@@ -1,3 +1,7 @@
+* Wed Jun 28 2023 Andrea Scarpino <andrea@scarpino.dev> 0.9.2-1
+- Do not store webview history
+- Fix erratic scroll behaviour when loading more items
+
 * Wed May 17 2023 Andrea Scarpino <andrea@scarpino.dev> 0.9.1-1
 - Fix reply button on comments
 - Fix replies page
