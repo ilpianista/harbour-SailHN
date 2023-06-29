@@ -128,7 +128,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="77"/>
         <source>Reply</source>
-        <translation type="unfinished">Svar</translation>
+        <translation>Svar</translation>
     </message>
 </context>
 <context>
