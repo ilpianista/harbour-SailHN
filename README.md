@@ -2,6 +2,10 @@
 
 An [Hacker News](https://news.ycombinator.com/) unofficial client for [Sailfish OS](https://sailfishos.org).
 
+## Install
+
+Install via Jolla Store, [Chum](https://github.com/sailfishos-chum/main) or [OpenRepos](https://openrepos.net/content/ilpianista/sailhn).
+
 ## Translations
 
 [![Translation status](https://hosted.weblate.org/widgets/harbour-sailhn/-/svg-badge.svg)](https://hosted.weblate.org/engage/harbour-sailhn/?utm_source=widget)

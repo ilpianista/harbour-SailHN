@@ -27,6 +27,10 @@ import Sailfish.Silica 1.0
 import "pages"
 
 ApplicationWindow {
+    id: appWindow
+
+    property string itemTitle: ""
+    property string itemText: ""
 
     initialPage: Component { TopStoriesPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")

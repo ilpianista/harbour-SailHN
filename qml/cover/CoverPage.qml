@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2015-2021 Andrea Scarpino <andrea@scarpino.dev>
+  Copyright (c) 2015-2023 Andrea Scarpino <andrea@scarpino.dev>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -27,47 +27,33 @@ import Sailfish.Silica 1.0
 
 CoverBackground {
 
-    Connections {
-        target: manager
-
-        onSearchResult: {
-            placeholder.visible = !found;
-
-            if (found) {
-                title.text = lyric.artist + " - " + lyric.song;
-                itemText.text = lyric.text;
-            }
-            itemInfo.visible = found;
-        }
-    }
-
     CoverPlaceholder {
-        id: placeholder
         text: "SailHN"
         icon.source: "/usr/share/icons/hicolor/86x86/apps/harbour-sailhn.png"
+        visible: appWindow.itemTitle.length === 0
     }
 
     Column {
-        id: itemInfo
         anchors.centerIn: parent
         x: Theme.paddingSmall
         width: parent.width - Theme.paddingSmall * 2
+        visible: appWindow.itemTitle.length > 0
 
         Label {
-            id: title
             width: parent.width
             wrapMode: Text.Wrap
             font.pixelSize: Theme.fontSizeMedium
-            horizontalAlignment: Text.AlignHCenter
+            text: appWindow.itemTitle
         }
 
         Label {
-            id: itemText
             width: parent.width
             wrapMode: Text.Wrap
             maximumLineCount: 10
             elide: Text.ElideRight
             font.pixelSize: Theme.fontSizeExtraSmall
+            text: appWindow.itemText
+            color: Theme.secondaryColor;
         }
     }
 }

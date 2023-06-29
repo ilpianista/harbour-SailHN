@@ -26,7 +26,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 ListItem {
-    height: content.height
+    contentHeight: content.height
     menu: replyMenu
 
     Column {

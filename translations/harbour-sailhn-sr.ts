@@ -4,29 +4,39 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="51"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="54"/>
         <source>Copy external url</source>
         <translation>Копирај спољни УРЛ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="60"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="62"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="71"/>
         <source>Reply</source>
         <translation>Узврати</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="67"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="78"/>
         <source>Refresh</source>
         <translation>Освежи</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="80"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="91"/>
         <source>Load more</source>
         <translation>Учитај још</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="96"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
         <source>Comments</source>
         <translation>Коментари</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="200"/>
+        <source>Share url</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -55,17 +65,22 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="46"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="47"/>
+        <source>Reply</source>
+        <translation type="unfinished">Узврати</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RepliesPage.qml" line="54"/>
         <source>Refresh</source>
         <translation>Освежи</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="59"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="67"/>
         <source>Load more</source>
         <translation>Учитај још</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="75"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="83"/>
         <source>Replies</source>
         <translation>Узвраћаји</translation>
     </message>

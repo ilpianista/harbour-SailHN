@@ -4,50 +4,60 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="51"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="54"/>
         <source>Copy external url</source>
         <translation>Kopijuoti išorinį URL</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="60"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="62"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="71"/>
         <source>Reply</source>
         <translation>Atsakyti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="67"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="78"/>
         <source>Refresh</source>
         <translation>Įkelti iš naujo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="80"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="91"/>
         <source>Load more</source>
         <translation>Įkelti daugiau</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="96"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
         <source>Comments</source>
         <translation>Komentarai</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="200"/>
+        <source>Share url</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ItemDelegate</name>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="52"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="56"/>
         <source>point</source>
         <translation>taškas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="54"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="58"/>
         <source>points</source>
         <translation>taškai</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="60"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="64"/>
         <source>comment</source>
         <translation>komentaras</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="62"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="66"/>
         <source>comments</source>
         <translation>komentarai</translation>
     </message>
@@ -55,22 +65,22 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="48"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="47"/>
         <source>Reply</source>
-        <translation>Atsakyti</translation>
+        <translation type="unfinished">Atsakyti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="55"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="54"/>
         <source>Refresh</source>
         <translation>Įkelti iš naujo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="68"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="67"/>
         <source>Load more</source>
         <translation>Įkelti daugiau</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="84"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="83"/>
         <source>Replies</source>
         <translation>Atsakymai</translation>
     </message>
@@ -106,14 +116,19 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="59"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
         <source>reply</source>
         <translation>atsakymas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="61"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="63"/>
         <source>replies</source>
         <translation>atsakymai</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="77"/>
+        <source>Reply</source>
+        <translation type="unfinished">Atsakyti</translation>
     </message>
 </context>
 <context>

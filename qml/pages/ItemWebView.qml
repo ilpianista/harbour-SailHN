@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2016-2021 Andrea Scarpino <andrea@scarpino.dev>
+  Copyright (c) 2016-2023 Andrea Scarpino <andrea@scarpino.dev>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -24,15 +24,17 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Sailfish.WebView 1.0
 
-Page {
+WebViewPage {
     property var itemUrl
 
     allowedOrientations: Orientation.All
 
-    SilicaWebView {
+    WebView {
         anchors.fill: parent
 
         url: itemUrl
+        privateMode: true
     }
 }

@@ -67,11 +67,15 @@ SilicaListView {
     }
 
     PushUpMenu {
+        id: pushupmenu
 
         MenuItem {
             text: qsTr("Load more")
 
-            onClicked: model.nextItems()
+            onClicked: {
+                model.nextItems();
+                pushupmenu.close();
+            }
         }
     }
 
@@ -86,4 +90,9 @@ SilicaListView {
     delegate: ItemDelegate {}
 
     VerticalScrollDecorator {}
+
+    Component.onCompleted: {
+        appWindow.itemTitle = "";
+        appWindow.itemText = "";
+    }
 }
