@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="62"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Dijeli</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="71"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="200"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Dijeli url</translation>
     </message>
 </context>
 <context>
@@ -67,7 +67,7 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="47"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Odgovori</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="54"/>
