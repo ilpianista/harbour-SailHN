@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="200"/>
         <source>Share URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Condividi URL</translation>
     </message>
 </context>
 <context>
