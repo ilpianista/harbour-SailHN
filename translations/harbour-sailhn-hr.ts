@@ -5,7 +5,7 @@
     <name>CommentsPage</name>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="54"/>
-        <source>Copy external url</source>
+        <source>Copy external URL</source>
         <translation>Kopiraj vanjski URL</translation>
     </message>
     <message>
@@ -35,8 +35,8 @@
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="200"/>
-        <source>Share url</source>
-        <translation>Dijeli url</translation>
+        <source>Share URL</source>
+        <translation>Dijeli URL</translation>
     </message>
 </context>
 <context>
@@ -135,7 +135,7 @@
     <name>Settings</name>
     <message>
         <location filename="../qml/pages/Settings.qml" line="61"/>
-        <source>Logout</source>
+        <source>Log out</source>
         <translation>Odjava</translation>
     </message>
     <message>
