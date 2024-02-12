@@ -5,8 +5,8 @@
     <name>CommentsPage</name>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="54"/>
-        <source>Copy external url</source>
-        <translation>Copia url externo</translation>
+        <source>Copy external URL</source>
+        <translation>Copia URL externo</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="62"/>
@@ -35,7 +35,7 @@
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="200"/>
-        <source>Share url</source>
+        <source>Share URL</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

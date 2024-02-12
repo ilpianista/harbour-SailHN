@@ -51,7 +51,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Copy external url")
+                text: qsTr("Copy external URL")
 
                 onClicked: {
                     Clipboard.text = url;
