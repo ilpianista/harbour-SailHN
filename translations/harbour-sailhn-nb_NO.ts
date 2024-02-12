@@ -135,7 +135,7 @@
     <name>Settings</name>
     <message>
         <location filename="../qml/pages/Settings.qml" line="61"/>
-        <source>Logout</source>
+        <source>Log out</source>
         <translation>Logg ut</translation>
     </message>
     <message>

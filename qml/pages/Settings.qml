@@ -58,7 +58,7 @@ Page {
 
             MenuItem {
                 id: logout
-                text: qsTr("Logout")
+                text: qsTr("Log out")
 
                 onClicked: {
                     manager.logout();
