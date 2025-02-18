@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="78"/>
         <source>Refresh</source>
-        <translation>Päivitä</translation>
+        <translation>Virkistä</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="91"/>
@@ -72,7 +72,7 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="54"/>
         <source>Refresh</source>
-        <translation>Päivitä</translation>
+        <translation>Virkistä</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="67"/>
@@ -205,7 +205,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="63"/>
         <source>Refresh</source>
-        <translation>Päivitä</translation>
+        <translation>Virkistä</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="72"/>
