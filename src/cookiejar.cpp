@@ -30,11 +30,13 @@
 #include <QSettings>
 #include <QVariantList>
 
-CookieJar::CookieJar(QObject *parent) :
-    QNetworkCookieJar(parent)
+CookieJar::CookieJar(QObject *parent)
+    : QNetworkCookieJar(parent)
 {
     // Load the list of cookies
-    m_settings = new QSettings(QCoreApplication::applicationName(), QCoreApplication::applicationName(), this);
+    m_settings = new QSettings(QCoreApplication::applicationName(),
+                               QCoreApplication::applicationName(),
+                               this);
 
     // Read and parse each of the cookies
     QList<QNetworkCookie> cookies;

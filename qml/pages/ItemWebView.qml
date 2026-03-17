@@ -33,7 +33,6 @@ WebViewPage {
 
     WebView {
         anchors.fill: parent
-
         url: itemUrl
         privateMode: true
     }

@@ -35,7 +35,6 @@ class CookieJar : public QNetworkCookieJar
     Q_OBJECT
 
 public:
-
     explicit CookieJar(QObject *parent);
     virtual ~CookieJar();
 

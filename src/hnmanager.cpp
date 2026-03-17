@@ -29,8 +29,8 @@
 #include <QEventLoop>
 #include <QNetworkAccessManager>
 #include <QNetworkCookie>
-#include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QNetworkRequest>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QSettings>
@@ -41,13 +41,15 @@
 
 const static QString BASE_URL = QStringLiteral("https://news.ycombinator.com");
 
-HNManager::HNManager(QObject *parent) :
-    QObject(parent)
-  , api(new HackerNewsAPI(this))
-  , network(new QNetworkAccessManager(this))
-  , m_loggedUser(0)
+HNManager::HNManager(QObject *parent)
+    : QObject(parent)
+    , api(new HackerNewsAPI(this))
+    , network(new QNetworkAccessManager(this))
+    , m_loggedUser(0)
 {
-    m_settings = new QSettings(QCoreApplication::applicationName(), QCoreApplication::applicationName(), this);
+    m_settings = new QSettings(QCoreApplication::applicationName(),
+                               QCoreApplication::applicationName(),
+                               this);
     setUsername(m_settings->value("Username").toString());
 
     network->setCookieJar(new CookieJar(this));
@@ -73,7 +75,8 @@ void HNManager::authenticate(const QString &username, const QString &password)
     setUsername(username);
 
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/login")));
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
+    req.setHeader(QNetworkRequest::ContentTypeHeader,
+                  QLatin1String("application/x-www-form-urlencoded"));
 
     // QUrlQuery doesn't convert "+" to "&2B" so we must perform this manually
     // See https://doc.qt.io/qt-5/qurlquery.html#handling-of-spaces-and-plus
@@ -81,14 +84,14 @@ void HNManager::authenticate(const QString &username, const QString &password)
     data.addQueryItem(QLatin1String("acct"), QString(username).replace("+", "%2B"));
     data.addQueryItem(QLatin1String("pw"), QString(password).replace("+", "%2B"));
 
-    QNetworkReply* reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+    QNetworkReply *reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
 
     connect(reply, &QNetworkReply::finished, this, &HNManager::onAuthenticateResult);
 }
 
 void HNManager::onAuthenticateResult()
 {
-    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
 
     bool logged = false;
     if (reply->error() != QNetworkReply::NoError) {
@@ -118,7 +121,7 @@ void HNManager::onLoggedUserFetched(User *user)
 
 bool HNManager::isAuthenticated() const
 {
-    //qDebug() << "Is authenticated as:" << m_loggedUser;
+    // qDebug() << "Is authenticated as:" << m_loggedUser;
 
     return m_loggedUser != 0;
 }
@@ -134,7 +137,7 @@ QString HNManager::getUsername() const
     return m_loggedUsername;
 }
 
-User* HNManager::loggedUser()
+User *HNManager::loggedUser()
 {
     return m_loggedUser;
 }
@@ -144,9 +147,9 @@ void HNManager::logout()
     setUsername(QString());
     m_loggedUser = 0;
 
-    QNetworkCookieJar* cookieJar = network->cookieJar();
+    QNetworkCookieJar *cookieJar = network->cookieJar();
     Q_FOREACH (const QNetworkCookie cookie, cookieJar->cookiesForUrl(QUrl(BASE_URL + "/"))) {
-       cookieJar->deleteCookie(cookie);
+        cookieJar->deleteCookie(cookie);
     }
     m_settings->setValue("Cookies", QVariantList());
 }
@@ -156,7 +159,8 @@ void HNManager::submit(const QString &title, const QString &url, const QString &
     qDebug() << "Submit item with title" << title;
 
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/r")));
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
+    req.setHeader(QNetworkRequest::ContentTypeHeader,
+                  QLatin1String("application/x-www-form-urlencoded"));
 
     QUrlQuery data;
     data.addQueryItem(QLatin1String("title"), title);
@@ -165,7 +169,7 @@ void HNManager::submit(const QString &title, const QString &url, const QString &
     data.addQueryItem(QLatin1String("fnop"), QLatin1String("submit-page"));
     data.addQueryItem(QLatin1String("fnid"), getSubmitCSRF());
 
-    QNetworkReply* reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+    QNetworkReply *reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
 
     connect(reply, &QNetworkReply::finished, this, &HNManager::onSubmitResult);
 }
@@ -175,7 +179,8 @@ void HNManager::comment(const int parentId, const QString &text)
     qDebug() << "Comment item with id" << parentId;
 
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/comment")));
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
+    req.setHeader(QNetworkRequest::ContentTypeHeader,
+                  QLatin1String("application/x-www-form-urlencoded"));
 
     QUrlQuery data;
     data.addQueryItem(QLatin1String("parent"), QString::number(parentId));
@@ -183,14 +188,14 @@ void HNManager::comment(const int parentId, const QString &text)
     data.addQueryItem(QLatin1String("text"), text);
     data.addQueryItem(QLatin1String("hmac"), getCommentCSRF(parentId));
 
-    QNetworkReply* reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+    QNetworkReply *reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
 
     connect(reply, &QNetworkReply::finished, this, &HNManager::onCommentResult);
 }
 
 void HNManager::onSubmitResult()
 {
-    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
 
     bool res = false;
 
@@ -209,14 +214,15 @@ void HNManager::onSubmitResult()
 
 void HNManager::onCommentResult()
 {
-    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
 
     bool res = false;
 
     if (reply->error() != QNetworkReply::NoError) {
         qCritical() << "Cannot send comment" << reply->errorString();
     } else {
-        if (!reply->readAll().contains("Please confirm that this is your comment by submitting it one more time.")) {
+        if (!reply->readAll().contains("Please confirm that this is your comment "
+                                       "by submitting it one more time.")) {
             res = true;
         }
     }
@@ -229,7 +235,7 @@ void HNManager::onCommentResult()
 QString HNManager::getSubmitCSRF() const
 {
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/submit")));
-    QNetworkReply* reply = network->get(req);
+    QNetworkReply *reply = network->get(req);
 
     QEventLoop loop;
     connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
@@ -249,7 +255,7 @@ QString HNManager::getCommentCSRF(const int itemId) const
     url.setQuery(query);
 
     QNetworkRequest req(url);
-    QNetworkReply* reply = network->get(req);
+    QNetworkReply *reply = network->get(req);
 
     QEventLoop loop;
     connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);

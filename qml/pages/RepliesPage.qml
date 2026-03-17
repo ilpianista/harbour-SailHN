@@ -30,29 +30,38 @@ Page {
     property var dead
     property var kids
     property var parentId
-
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
 
+    function loadComments() {
+        model.loadComments(kids);
+    }
+
     allowedOrientations: Orientation.All
+    Component.onCompleted: {
+        reply.enabled = manager.isAuthenticated();
+        loadComments();
+    }
 
     SilicaFlickable {
         id: replies
+
         anchors.fill: parent
         contentHeight: column.height
 
         PullDownMenu {
             MenuItem {
                 id: reply
+
                 text: qsTr("Reply")
                 enabled: !dead
-
-                onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: parentId})
+                onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {
+                    "parentId": parentId
+                })
             }
 
             MenuItem {
                 text: qsTr("Refresh")
-
                 onClicked: {
                     model.refresh(parentId);
                     showingCommentsCount = maxCommentsForPage;
@@ -65,7 +74,6 @@ Page {
 
             MenuItem {
                 text: qsTr("Load more")
-
                 onClicked: {
                     model.nextItems();
                     showingCommentsCount += maxCommentsForPage;
@@ -75,6 +83,7 @@ Page {
 
         Column {
             id: column
+
             x: Theme.horizontalPageMargin
             width: parent.width - Theme.horizontalPageMargin * 2
             spacing: Theme.paddingMedium
@@ -89,9 +98,8 @@ Page {
                     id: model
 
                     onRowsInserted: {
-                        if (kids.length > showingCommentsCount) {
+                        if (kids.length > showingCommentsCount)
                             replies.pushUpMenu.visible = true;
-                        }
                     }
                 }
 
@@ -100,14 +108,5 @@ Page {
         }
 
         VerticalScrollDecorator {}
-    }
-
-    Component.onCompleted: {
-        reply.enabled = manager.isAuthenticated();
-        loadComments();
-    }
-
-    function loadComments() {
-        model.loadComments(kids);
     }
 }

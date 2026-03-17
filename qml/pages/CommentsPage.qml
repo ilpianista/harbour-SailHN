@@ -38,21 +38,38 @@ Page {
     property var time
     property var title
     property var url
-
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
 
+    function loadComments() {
+        model.loadComments(kids);
+    }
+
     allowedOrientations: Orientation.All
+    Component.onCompleted: {
+        appWindow.itemTitle = title;
+        appWindow.itemText = itemText;
+        loadComments();
+        reply.enabled = manager.isAuthenticated();
+    }
+    onStatusChanged: {
+        if (status == PageStatus.Active) {
+            if (url && !(/^\s*$/.test(url)))
+                pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {
+                    "itemUrl": url
+                });
+        }
+    }
 
     SilicaFlickable {
         id: comments
+
         anchors.fill: parent
         contentHeight: column.height
 
         PullDownMenu {
             MenuItem {
                 text: qsTr("Copy external URL")
-
                 onClicked: {
                     Clipboard.text = url;
                 }
@@ -60,7 +77,6 @@ Page {
 
             MenuItem {
                 text: qsTr("Share")
-
                 onClicked: {
                     share.trigger();
                 }
@@ -68,15 +84,16 @@ Page {
 
             MenuItem {
                 id: reply
+
                 text: qsTr("Reply")
                 enabled: !dead
-
-                onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: id})
+                onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {
+                    "parentId": id
+                })
             }
 
             MenuItem {
                 text: qsTr("Refresh")
-
                 onClicked: {
                     model.refresh(id);
                     showingCommentsCount = maxCommentsForPage;
@@ -89,7 +106,6 @@ Page {
 
             MenuItem {
                 text: qsTr("Load more")
-
                 onClicked: {
                     model.nextItems();
                     showingCommentsCount += maxCommentsForPage;
@@ -99,6 +115,7 @@ Page {
 
         Column {
             id: column
+
             x: Theme.horizontalPageMargin
             width: parent.width - Theme.horizontalPageMargin * 2
             spacing: Theme.paddingMedium
@@ -110,7 +127,7 @@ Page {
             Label {
                 width: parent.width
                 text: title
-                color:Theme.primaryColor
+                color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
                 wrapMode: Text.Wrap
             }
@@ -123,10 +140,9 @@ Page {
                 color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeMedium
                 wrapMode: Text.Wrap
-
                 onLinkActivated: {
                     console.log("Opening external browser: " + link);
-                    Qt.openUrlExternally(link)
+                    Qt.openUrlExternally(link);
                 }
             }
 
@@ -142,7 +158,6 @@ Page {
                     txt += "<a href=\"" + url + "\" rel=\"nofollow\">" + url + "</a>";
                     return txt;
                 }
-
                 onLinkActivated: {
                     console.log("Opening external browser: " + link);
                     Qt.openUrlExternally(link);
@@ -154,7 +169,7 @@ Page {
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignRight
-                text: by + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
+                text: by + " - " + Qt.formatDateTime(time, "ddd, hh:mm")
             }
 
             Repeater {
@@ -163,9 +178,8 @@ Page {
                     id: model
 
                     onRowsInserted: {
-                        if (kids.length > showingCommentsCount) {
+                        if (kids.length > showingCommentsCount)
                             comments.pushUpMenu.visible = true;
-                        }
                     }
                 }
 
@@ -176,33 +190,17 @@ Page {
         VerticalScrollDecorator {}
     }
 
-    Component.onCompleted: {
-        appWindow.itemTitle = title;
-        appWindow.itemText = itemText;
-        loadComments();
-        reply.enabled = manager.isAuthenticated();
-    }
-
-    onStatusChanged: {
-        if (status == PageStatus.Active) {
-            if (url && !(/^\s*$/.test(url))) {
-                pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), { itemUrl: url });
-            }
-        }
-    }
-
-    function loadComments() {
-        model.loadComments(kids);
-    }
-
     ShareAction {
         id: share
+
         title: qsTr("Share url")
         mimeType: "text/x-url"
-        resources: [{
-            "type": "text/x-url",
-            "linkTitle": page.title,
-            "status": url.toString()
-        }]
+        resources: [
+            {
+                "type": "text/x-url",
+                "linkTitle": page.title,
+                "status": url.toString()
+            }
+        ]
     }
 }

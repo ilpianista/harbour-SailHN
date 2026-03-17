@@ -37,7 +37,7 @@ public:
     enum NewsRoles {
         IdRole = Qt::UserRole + 1,
         ByRole = Qt::UserRole + 2,
-        DeadRole = Qt::UserRole +  3,
+        DeadRole = Qt::UserRole + 3,
         DescendantsRole = Qt::UserRole + 4,
         KidsRole = Qt::UserRole + 5,
         ParentRole = Qt::UserRole + 6,
@@ -51,7 +51,7 @@ public:
     explicit NewsModel(QObject *parent = 0);
     virtual ~NewsModel();
 
-    virtual int rowCount(const QModelIndex&) const { return backing.size(); }
+    virtual int rowCount(const QModelIndex &) const { return backing.size(); }
     virtual QVariant data(const QModelIndex &index, int role) const;
 
     QHash<int, QByteArray> roleNames() const;
@@ -73,7 +73,7 @@ private:
     void onStoriesFetched(QList<int> ids);
     void reset();
 
-    QVector<Item*> backing;
+    QVector<Item *> backing;
     HackerNewsAPI *api;
     QList<int> m_ids;
     int m_start;

@@ -25,13 +25,14 @@
 #ifndef ITEM_PRIVATE_H
 #define ITEM_PRIVATE_H
 
-#include <QString>
 #include <QDateTime>
+#include <QString>
 #include <QUrl>
 
 #include "item.h"
 
-struct ItemPrivate {
+struct ItemPrivate
+{
     int id;
     QString by;
     bool dead;

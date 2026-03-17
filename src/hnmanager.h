@@ -40,13 +40,12 @@ class HNManager : public QObject
 {
     Q_OBJECT
 public:
-
     explicit HNManager(QObject *parent = 0);
     virtual ~HNManager();
 
     Q_INVOKABLE void authenticate(const QString &username, const QString &password);
     Q_INVOKABLE bool isAuthenticated() const;
-    Q_INVOKABLE User* loggedUser();
+    Q_INVOKABLE User *loggedUser();
     Q_INVOKABLE QString getUsername() const;
     Q_INVOKABLE void logout();
     Q_INVOKABLE void submit(const QString &title, const QString &url, const QString &text);
@@ -54,7 +53,7 @@ public:
 
 Q_SIGNALS:
     void authenticated(const bool result);
-    void loggedUserFetched(User* user);
+    void loggedUserFetched(User *user);
     void submitted(const bool result);
     void commented(const bool result);
 

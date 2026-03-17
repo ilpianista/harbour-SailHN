@@ -27,159 +27,9 @@ import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
 
 Page {
-
-    allowedOrientations: Orientation.All
-
-    Connections {
-        target: manager
-
-        onAuthenticated: {
-            console.log("Authenticated: " + result);
-
-            busy.visible = busy.running = false;
-
-            isAuthenticated(result);
-
-            if (!result) {
-                msg.visible = true;
-            }
-        }
-
-        onLoggedUserFetched: {
-            updateDetails();
-        }
-    }
-
-    SilicaFlickable {
-        anchors.fill: parent
-        contentHeight: column.height
-
-        PullDownMenu {
-
-            MenuItem {
-                id: logout
-                text: qsTr("Log out")
-
-                onClicked: {
-                    manager.logout();
-                    isAuthenticated(false);
-                }
-            }
-        }
-
-        Column {
-            id: column
-            x: Theme.horizontalPageMargin
-            width: parent.width - Theme.horizontalPageMargin * 2
-
-            PageHeader {
-                title: qsTr("Settings")
-            }
-
-            TextField {
-                id: username
-                width: parent.width
-                placeholderText: qsTr("Username")
-
-                onTextChanged: login.enabled = (text.length > 0 && password.text.length > 0)
-            }
-
-            TextField {
-                id: password
-                width: parent.width
-                placeholderText: qsTr("Password")
-                echoMode: TextInput.Password
-
-                onTextChanged: login.enabled = (text.length > 0 && username.text.length > 0)
-            }
-
-            Button {
-                id: login
-                text: qsTr("Login");
-                anchors.horizontalCenter: parent.horizontalCenter
-                enabled: false
-
-                onClicked: {
-                    manager.authenticate(username.text.trim(), password.text.trim());
-                    login.enabled = false;
-                    busy.visible = busy.running = true;
-                    msg.visible = false;
-                }
-            }
-
-            Label {
-                id: msg
-                visible: false
-                text: qsTr("Login failed")
-                color: Theme.highlightColor
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            BusyIndicator {
-                id: busy
-                visible: false
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Column {
-                id: details
-                width: parent.width
-                visible: false
-
-                SectionHeader {
-                    text: qsTr("User details")
-                }
-
-                DetailItem {
-                    id: created
-                    width: parent.width
-                    label: qsTr("created")
-                }
-
-                DetailItem {
-                    id: karma
-                    width: parent.width
-                    label: qsTr("karma")
-                }
-
-                Text {
-                    id: about
-                    width: parent.width
-                    text: qsTr("About")
-                    enabled: false
-                    textFormat: Text.RichText
-                    color: Theme.secondaryColor
-                    font.pixelSize: Theme.fontSizeMedium
-                    wrapMode: Text.Wrap
-
-                    onLinkActivated: {
-                        console.log("Opening external browser: " + link);
-                        Qt.openUrlExternally(link)
-                    }
-                }
-            }
-        }
-    }
-
-    Component.onCompleted: {
-        username.text = manager.getUsername();
-
-        if (username.text.length > 0) {
-            password.forceActiveFocus();
-        }
-
-        var isAuth = manager.isAuthenticated();
-        isAuthenticated(isAuth);
-
-        if (isAuth) {
-            updateDetails();
-        }
-    }
-
     function isAuthenticated(isAuth) {
         username.enabled = password.enabled = !isAuth;
         logout.enabled = isAuth;
-
         if (isAuth) {
             login.text = qsTr("Logged");
         } else {
@@ -195,5 +45,147 @@ Page {
         created.value = Qt.formatDateTime(user.created);
         karma.value = user.karma;
         about.text = "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + user.about;
+    }
+
+    allowedOrientations: Orientation.All
+    Component.onCompleted: {
+        username.text = manager.getUsername();
+        if (username.text.length > 0)
+            password.forceActiveFocus();
+
+        var isAuth = manager.isAuthenticated();
+        isAuthenticated(isAuth);
+        if (isAuth)
+            updateDetails();
+    }
+
+    Connections {
+        target: manager
+        onAuthenticated: {
+            console.log("Authenticated: " + result);
+            busy.visible = busy.running = false;
+            isAuthenticated(result);
+            if (!result)
+                msg.visible = true;
+        }
+        onLoggedUserFetched: {
+            updateDetails();
+        }
+    }
+
+    SilicaFlickable {
+        anchors.fill: parent
+        contentHeight: column.height
+
+        PullDownMenu {
+            MenuItem {
+                id: logout
+
+                text: qsTr("Log out")
+                onClicked: {
+                    manager.logout();
+                    isAuthenticated(false);
+                }
+            }
+        }
+
+        Column {
+            id: column
+
+            x: Theme.horizontalPageMargin
+            width: parent.width - Theme.horizontalPageMargin * 2
+
+            PageHeader {
+                title: qsTr("Settings")
+            }
+
+            TextField {
+                id: username
+
+                width: parent.width
+                placeholderText: qsTr("Username")
+                onTextChanged: login.enabled = (text.length > 0 && password.text.length > 0)
+            }
+
+            TextField {
+                id: password
+
+                width: parent.width
+                placeholderText: qsTr("Password")
+                echoMode: TextInput.Password
+                onTextChanged: login.enabled = (text.length > 0 && username.text.length > 0)
+            }
+
+            Button {
+                id: login
+
+                text: qsTr("Login")
+                anchors.horizontalCenter: parent.horizontalCenter
+                enabled: false
+                onClicked: {
+                    manager.authenticate(username.text.trim(), password.text.trim());
+                    login.enabled = false;
+                    busy.visible = busy.running = true;
+                    msg.visible = false;
+                }
+            }
+
+            Label {
+                id: msg
+
+                visible: false
+                text: qsTr("Login failed")
+                color: Theme.highlightColor
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            BusyIndicator {
+                id: busy
+
+                visible: false
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Column {
+                id: details
+
+                width: parent.width
+                visible: false
+
+                SectionHeader {
+                    text: qsTr("User details")
+                }
+
+                DetailItem {
+                    id: created
+
+                    width: parent.width
+                    label: qsTr("created")
+                }
+
+                DetailItem {
+                    id: karma
+
+                    width: parent.width
+                    label: qsTr("karma")
+                }
+
+                Text {
+                    id: about
+
+                    width: parent.width
+                    text: qsTr("About")
+                    enabled: false
+                    textFormat: Text.RichText
+                    color: Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    wrapMode: Text.Wrap
+                    onLinkActivated: {
+                        console.log("Opening external browser: " + link);
+                        Qt.openUrlExternally(link);
+                    }
+                }
+            }
+        }
     }
 }

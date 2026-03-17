@@ -36,9 +36,7 @@ class HackerNewsAPI : public QObject
 {
     Q_OBJECT
 public:
-    enum Stories {
-        New, Top, Show, Ask, Job, Best
-    };
+    enum Stories { New, Top, Show, Ask, Job, Best };
 
     explicit HackerNewsAPI(QObject *parent = 0);
     virtual ~HackerNewsAPI();

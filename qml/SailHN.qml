@@ -32,6 +32,9 @@ ApplicationWindow {
     property string itemTitle: ""
     property string itemText: ""
 
-    initialPage: Component { TopStoriesPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
+
+    initialPage: Component {
+        TopStoriesPage {}
+    }
 }
