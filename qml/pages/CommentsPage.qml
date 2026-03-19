@@ -48,7 +48,6 @@ Page {
     allowedOrientations: Orientation.All
     Component.onCompleted: {
         appWindow.itemTitle = title;
-        appWindow.itemText = itemText;
         loadComments();
         reply.enabled = manager.isAuthenticated();
     }

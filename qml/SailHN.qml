@@ -30,7 +30,6 @@ ApplicationWindow {
     id: appWindow
 
     property string itemTitle: ""
-    property string itemText: ""
 
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
