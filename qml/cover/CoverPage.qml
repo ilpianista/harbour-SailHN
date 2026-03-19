@@ -21,7 +21,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
@@ -43,16 +42,6 @@ CoverBackground {
             wrapMode: Text.Wrap
             font.pixelSize: Theme.fontSizeMedium
             text: appWindow.itemTitle
-        }
-
-        Label {
-            width: parent.width
-            wrapMode: Text.Wrap
-            maximumLineCount: 10
-            elide: Text.ElideRight
-            font.pixelSize: Theme.fontSizeExtraSmall
-            text: appWindow.itemText
-            color: Theme.secondaryColor
         }
     }
 }

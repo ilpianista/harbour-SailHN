@@ -37,7 +37,6 @@ SilicaListView {
 
     Component.onCompleted: {
         appWindow.itemTitle = "";
-        appWindow.itemText = "";
     }
 
     Connections {
