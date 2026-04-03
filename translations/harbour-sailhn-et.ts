@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="195"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaga võrguaadressi</translation>
     </message>
 </context>
 <context>
