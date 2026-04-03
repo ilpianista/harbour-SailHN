@@ -26,15 +26,16 @@
 
 #include <QDebug>
 
-#include "item.h"
 #include "hackernewsapi.h"
+#include "item.h"
 
 const static int MAX_ITEMS = 30;
 
-NewsModel::NewsModel(QObject *parent) :
-    QAbstractListModel(parent)
-  , api(new HackerNewsAPI(this))
-  , m_start(0), m_end(MAX_ITEMS)
+NewsModel::NewsModel(QObject *parent)
+    : QAbstractListModel(parent)
+    , api(new HackerNewsAPI(this))
+    , m_start(0)
+    , m_end(MAX_ITEMS)
 {
     connect(api, &HackerNewsAPI::storiesFetched, this, &NewsModel::onStoriesFetched);
 }
@@ -51,7 +52,8 @@ NewsModel::~NewsModel()
     delete api;
 }
 
-QHash<int, QByteArray> NewsModel::roleNames() const {
+QHash<int, QByteArray> NewsModel::roleNames() const
+{
     QHash<int, QByteArray> roles;
     roles[IdRole] = "id";
     roles[ByRole] = "by";
@@ -78,7 +80,6 @@ void NewsModel::loadBestStories()
     reset();
     api->getStories(HackerNewsAPI::Best);
 }
-
 
 void NewsModel::loadNewStories()
 {
@@ -139,31 +140,43 @@ void NewsModel::nextItems()
     }
 }
 
-QVariant NewsModel::data(const QModelIndex &index, int role) const {
+QVariant NewsModel::data(const QModelIndex &index, int role) const
+{
     if (!index.isValid()) {
         return QVariant();
     }
 
     Item *item = backing[index.row()];
     switch (role) {
-        case IdRole: return item->id();
-        case ByRole: return item->by();
-        case DeadRole: return item->dead();
-        case DescendantsRole: return item->descendants();
-        case KidsRole: {
-            QVariantList kids;
-            Q_FOREACH (const int kid, item->kids()) {
-                kids.append(kid);
-            }
-            return kids;
+    case IdRole:
+        return item->id();
+    case ByRole:
+        return item->by();
+    case DeadRole:
+        return item->dead();
+    case DescendantsRole:
+        return item->descendants();
+    case KidsRole: {
+        QVariantList kids;
+        Q_FOREACH (const int kid, item->kids()) {
+            kids.append(kid);
         }
-        case ParentRole: return item->parent();
-        case ScoreRole: return item->score();
-        case TextRole: return item->text();
-        case TimeRole: return item->time();
-        case TitleRole: return item->title();
-        case UrlRole: return item->url();
-        default: qCritical() << "Unrecognized role" << role;
+        return kids;
+    }
+    case ParentRole:
+        return item->parent();
+    case ScoreRole:
+        return item->score();
+    case TextRole:
+        return item->text();
+    case TimeRole:
+        return item->time();
+    case TitleRole:
+        return item->title();
+    case UrlRole:
+        return item->url();
+    default:
+        qCritical() << "Unrecognized role" << role;
     }
 
     return QVariant();

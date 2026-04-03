@@ -64,7 +64,6 @@ public:
 
 private:
     UserPrivate *d;
-
 };
 
 #endif // USER_H

@@ -25,10 +25,11 @@
 #ifndef USER_PRIVATE_H
 #define USER_PRIVATE_H
 
-#include <QString>
 #include <QDateTime>
+#include <QString>
 
-struct UserPrivate {
+struct UserPrivate
+{
     QString id;
     quint16 delay;
     QDateTime created;

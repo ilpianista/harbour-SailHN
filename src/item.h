@@ -47,9 +47,7 @@ class Item : public QObject
     Q_PROPERTY(QUrl url READ url)
 
 public:
-    enum Type {
-        Job, Story, Comment, Poll, PollOpt
-    };
+    enum Type { Job, Story, Comment, Poll, PollOpt };
 
     explicit Item(QObject *parent = 0);
     virtual ~Item();
@@ -98,7 +96,6 @@ public:
 
 private:
     ItemPrivate *d;
-
 };
 
 #endif // ITEM_H

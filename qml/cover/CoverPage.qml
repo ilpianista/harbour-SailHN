@@ -26,7 +26,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
-
     CoverPlaceholder {
         text: "SailHN"
         icon.source: "/usr/share/icons/hicolor/86x86/apps/harbour-sailhn.png"
@@ -53,7 +52,7 @@ CoverBackground {
             elide: Text.ElideRight
             font.pixelSize: Theme.fontSizeExtraSmall
             text: appWindow.itemText
-            color: Theme.secondaryColor;
+            color: Theme.secondaryColor
         }
     }
 }

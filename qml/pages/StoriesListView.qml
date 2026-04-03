@@ -35,33 +35,34 @@ SilicaListView {
 
     signal refreshClicked
 
+    Component.onCompleted: {
+        appWindow.itemTitle = "";
+        appWindow.itemText = "";
+    }
+
     Connections {
         target: manager
-
         onLoggedUserFetched: {
             submit.enabled = true;
         }
     }
 
     PullDownMenu {
-
         MenuItem {
             text: qsTr("Settings")
-
             onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
         }
 
         MenuItem {
             id: submit
+
             text: qsTr("Submit")
             enabled: false
-
             onClicked: pageStack.push(Qt.resolvedUrl("Submit.qml"))
         }
 
         MenuItem {
             text: qsTr("Refresh")
-
             onClicked: listView.refreshClicked()
         }
     }
@@ -71,13 +72,14 @@ SilicaListView {
 
         MenuItem {
             text: qsTr("Load more")
-
             onClicked: {
                 model.nextItems();
                 pushupmenu.close();
             }
         }
     }
+
+    VerticalScrollDecorator {}
 
     model: NewsModel {
         id: model
@@ -88,11 +90,4 @@ SilicaListView {
     }
 
     delegate: ItemDelegate {}
-
-    VerticalScrollDecorator {}
-
-    Component.onCompleted: {
-        appWindow.itemTitle = "";
-        appWindow.itemText = "";
-    }
 }

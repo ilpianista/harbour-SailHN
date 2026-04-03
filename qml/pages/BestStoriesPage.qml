@@ -27,32 +27,28 @@ import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
 
 Page {
-
     property bool storiesLoadedOnce: false
-
-    allowedOrientations: Orientation.All
-
-    StoriesListView {
-        id: listView
-        anchors.fill: parent
-        pageTitle: "Best"
-
-        onRefreshClicked: loadStories()
-    }
-
-    onStatusChanged: {
-        if (status === PageStatus.Activating) {
-            if (!storiesLoadedOnce) {
-                loadStories();
-            }
-        } else if (status === PageStatus.Active) {
-            listView.submitEnabled = manager.isAuthenticated();
-        } else if (status === PageStatus.Deactivating) {
-            storiesLoadedOnce = true;
-        }
-    }
 
     function loadStories() {
         listView.stories.loadBestStories();
+    }
+
+    allowedOrientations: Orientation.All
+    onStatusChanged: {
+        if (status === PageStatus.Activating) {
+            if (!storiesLoadedOnce)
+                loadStories();
+        } else if (status === PageStatus.Active)
+            listView.submitEnabled = manager.isAuthenticated();
+        else if (status === PageStatus.Deactivating)
+            storiesLoadedOnce = true;
+    }
+
+    StoriesListView {
+        id: listView
+
+        anchors.fill: parent
+        pageTitle: "Best"
+        onRefreshClicked: loadStories()
     }
 }

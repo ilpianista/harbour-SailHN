@@ -32,19 +32,15 @@ Page {
 
     Connections {
         target: manager
-
         onCommented: {
             console.log("Commented: " + result);
-
             busy.visible = busy.running = false;
             send.enabled = true;
             msg.visible = true;
-
-            if (!result) {
+            if (!result)
                 msg.text = qsTr("Error when sending");
-            } else {
+            else
                 msg.text = qsTr("Commented!");
-            }
         }
     }
 
@@ -54,6 +50,7 @@ Page {
 
         Column {
             id: column
+
             x: Theme.horizontalPageMargin
             width: parent.width - Theme.horizontalPageMargin * 2
 
@@ -63,6 +60,7 @@ Page {
 
             TextArea {
                 id: comment
+
                 width: parent.width
                 focus: true
                 placeholderText: qsTr("Text")
@@ -70,9 +68,9 @@ Page {
 
             Button {
                 id: send
-                text: qsTr("Add Comment");
-                anchors.horizontalCenter: parent.horizontalCenter
 
+                text: qsTr("Add Comment")
+                anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     if (comment.text.length > 0) {
                         manager.comment(parentId, comment.text);
@@ -85,6 +83,7 @@ Page {
 
             Label {
                 id: msg
+
                 visible: false
                 color: Theme.highlightColor
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -92,6 +91,7 @@ Page {
 
             BusyIndicator {
                 id: busy
+
                 visible: false
                 anchors.horizontalCenter: parent.horizontalCenter
             }

@@ -28,9 +28,18 @@ import Sailfish.Silica 1.0
 ListItem {
     contentHeight: content.height
     menu: replyMenu
+    onClicked: {
+        if (kids.length !== 0)
+            pageStack.push(Qt.resolvedUrl("RepliesPage.qml"), {
+                "parentId": id,
+                "dead": dead,
+                "kids": kids
+            });
+    }
 
     Column {
         id: content
+
         width: parent.width
 
         Text {
@@ -40,10 +49,9 @@ ListItem {
             color: Theme.secondaryColor
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.Wrap
-
             onLinkActivated: {
                 console.log("Opening external browser: " + link);
-                Qt.openUrlExternally(link)
+                Qt.openUrlExternally(link);
             }
         }
 
@@ -52,18 +60,15 @@ ListItem {
             color: Theme.secondaryHighlightColor
             font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignRight
-
             text: {
                 var txt = by;
                 if (kids.length !== 0) {
                     txt += " - " + kids.length + ' ';
-                    if (kids.length === 1) {
+                    if (kids.length === 1)
                         txt += qsTr("reply");
-                    } else {
+                    else
                         txt += qsTr("replies");
-                    }
                 }
-
                 return txt + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
             }
         }
@@ -71,18 +76,14 @@ ListItem {
 
     ContextMenu {
         id: replyMenu
+
         enabled: !dead
 
         MenuItem {
             text: qsTr("Reply")
-
-            onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {parentId: id})
-        }
-    }
-
-    onClicked: {
-        if (kids.length !== 0) {
-            pageStack.push(Qt.resolvedUrl("RepliesPage.qml"), {parentId: id, dead: dead, kids: kids});
+            onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {
+                "parentId": id
+            })
         }
     }
 }

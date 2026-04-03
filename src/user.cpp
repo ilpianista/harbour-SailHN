@@ -26,10 +26,10 @@
 
 #include "user_p.h"
 
-User::User(QObject *parent) : QObject(parent)
-  , d(new UserPrivate)
-{
-}
+User::User(QObject *parent)
+    : QObject(parent)
+    , d(new UserPrivate)
+{}
 
 User::~User()
 {

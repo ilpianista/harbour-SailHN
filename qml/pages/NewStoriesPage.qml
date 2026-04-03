@@ -27,24 +27,17 @@ import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
 
 Page {
-
     property bool storiesLoadedOnce: false
 
-    allowedOrientations: Orientation.All
-
-    StoriesListView {
-        id: listView
-        anchors.fill: parent
-        pageTitle: "Newest"
-
-        onRefreshClicked: loadStories()
+    function loadStories() {
+        listView.stories.loadNewStories();
     }
 
+    allowedOrientations: Orientation.All
     onStatusChanged: {
         if (status === PageStatus.Activating) {
-            if (!storiesLoadedOnce) {
+            if (!storiesLoadedOnce)
                 loadStories();
-            }
         } else if (status === PageStatus.Active) {
             listView.submitEnabled = manager.isAuthenticated();
             pageStack.pushAttached(Qt.resolvedUrl("ShowStoriesPage.qml"));
@@ -53,7 +46,11 @@ Page {
         }
     }
 
-    function loadStories() {
-        listView.stories.loadNewStories();
+    StoriesListView {
+        id: listView
+
+        anchors.fill: parent
+        pageTitle: "Newest"
+        onRefreshClicked: loadStories()
     }
 }

@@ -36,11 +36,10 @@
 
 const static QString API_URL = QStringLiteral("https://hacker-news.firebaseio.com/v0");
 
-HackerNewsAPI::HackerNewsAPI(QObject *parent) :
-    QObject(parent)
-  , network(new QNetworkAccessManager(this))
-{
-}
+HackerNewsAPI::HackerNewsAPI(QObject *parent)
+    : QObject(parent)
+    , network(new QNetworkAccessManager(this))
+{}
 
 HackerNewsAPI::~HackerNewsAPI()
 {
@@ -49,23 +48,23 @@ HackerNewsAPI::~HackerNewsAPI()
 
 void HackerNewsAPI::getItem(const int id)
 {
-    //qDebug() << "Requesting item with id" << id;
+    // qDebug() << "Requesting item with id" << id;
 
     QUrl url(API_URL + QStringLiteral("/item/%1.json").arg(id));
     QNetworkRequest req(url);
-    QNetworkReply* reply = network->get(req);
+    QNetworkReply *reply = network->get(req);
 
     connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onGetItemResult);
 }
 
 void HackerNewsAPI::getUser(const QString id)
 {
-    //qDebug() << "Requesting user with id" << id;
+    // qDebug() << "Requesting user with id" << id;
 
     QUrl url(API_URL + QStringLiteral("/user/%1.json").arg(id));
 
     QNetworkRequest req(url);
-    QNetworkReply* reply = network->get(req);
+    QNetworkReply *reply = network->get(req);
 
     connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onGetUserResult);
 }
@@ -76,37 +75,50 @@ void HackerNewsAPI::getStories(Stories kind)
 
     QString path;
     switch (kind) {
-        case Ask: path = QStringLiteral("/askstories.json"); break;
-        case Best: path = QStringLiteral("/beststories.json"); break;
-        case Job: path = QStringLiteral("/jobstories.json"); break;
-        case New: path = QStringLiteral("/newstories.json"); break;
-        case Show: path = QStringLiteral("/showstories.json"); break;
-        case Top: path = QStringLiteral("/topstories.json"); break;
-        default: qCritical() << "Unrecognized kind" << kind;
+    case Ask:
+        path = QStringLiteral("/askstories.json");
+        break;
+    case Best:
+        path = QStringLiteral("/beststories.json");
+        break;
+    case Job:
+        path = QStringLiteral("/jobstories.json");
+        break;
+    case New:
+        path = QStringLiteral("/newstories.json");
+        break;
+    case Show:
+        path = QStringLiteral("/showstories.json");
+        break;
+    case Top:
+        path = QStringLiteral("/topstories.json");
+        break;
+    default:
+        qCritical() << "Unrecognized kind" << kind;
     }
 
     QUrl url(API_URL + path);
     QNetworkRequest req(url);
-    QNetworkReply* reply = network->get(req);
+    QNetworkReply *reply = network->get(req);
 
     connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onStoriesResult);
 }
 
 void HackerNewsAPI::onGetItemResult()
 {
-    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
 
     if (reply->error() != QNetworkReply::NoError) {
         qCritical() << "Cannot fetch item" << reply->errorString();
     } else {
         QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
         if (!json.isNull()) {
-            //qDebug() << "Got item:\n" << json;
+            // qDebug() << "Got item:\n" << json;
 
-            Item* item = new Item();
+            Item *item = new Item();
             QJsonObject jsonObj = json.object();
             item->setId(jsonObj.value("id").toInt());
-            //qDebug() << "Got item with id" << item->id();
+            // qDebug() << "Got item with id" << item->id();
 
             item->setBy(jsonObj.value("by").toString());
 
@@ -164,19 +176,19 @@ void HackerNewsAPI::onGetItemResult()
 
 void HackerNewsAPI::onGetUserResult()
 {
-    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
 
     if (reply->error() != QNetworkReply::NoError) {
         qCritical() << "Cannot fetch user:" << reply->errorString();
     } else {
         QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
         if (!json.isNull()) {
-            //qDebug() << "Got user:\n" << json;
+            // qDebug() << "Got user:\n" << json;
 
-            User* user = new User();
+            User *user = new User();
             QJsonObject jsonObj = json.object();
             user->setId(jsonObj.value("id").toString());
-            //qDebug() << "Got user with id" << user->id();
+            // qDebug() << "Got user with id" << user->id();
 
             user->setDelay(jsonObj.value("delay").toInt());
             user->setKarma(jsonObj.value("karma").toInt());
@@ -204,14 +216,14 @@ void HackerNewsAPI::onGetUserResult()
 
 void HackerNewsAPI::onStoriesResult()
 {
-    QNetworkReply* reply = qobject_cast<QNetworkReply*>(QObject::sender());
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
 
     if (reply->error() != QNetworkReply::NoError) {
         qCritical() << "Cannot fetch stories" << reply->errorString();
     } else {
         QJsonDocument json = QJsonDocument::fromJson(reply->readAll());
         if (!json.isNull()) {
-            //qDebug() << "There are" << json.array().size() << "items";
+            // qDebug() << "There are" << json.array().size() << "items";
 
             QList<int> ids;
             Q_FOREACH (const QJsonValue id, json.array()) {

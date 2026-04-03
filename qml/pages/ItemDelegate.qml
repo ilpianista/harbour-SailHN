@@ -28,9 +28,22 @@ import Sailfish.Silica 1.0
 ListItem {
     width: ListView.view.width
     height: col.height
+    onClicked: {
+        pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
+            "id": id,
+            "by": by,
+            "dead": dead,
+            "itemText": itemText,
+            "kids": kids,
+            "time": time,
+            "title": title,
+            "url": url
+        });
+    }
 
     Column {
         id: col
+
         x: Theme.horizontalPageMargin
         width: parent.width - Theme.horizontalPageMargin * 2
 
@@ -49,39 +62,21 @@ ListItem {
             color: Theme.secondaryHighlightColor
             font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignRight
-
             text: {
                 var txt = score + ' ';
-                if (score === 1) {
+                if (score === 1)
                     txt += qsTr("point");
-                } else {
+                else
                     txt += qsTr("points");
-                }
-
                 if (kids.length !== 0) {
                     txt += " - " + descendants + ' ';
-                    if (descendants === 1) {
+                    if (descendants === 1)
                         txt += qsTr("comment");
-                    } else {
+                    else
                         txt += qsTr("comments");
-                    }
                 }
-
                 return txt + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
             }
         }
-    }
-
-    onClicked: {
-        pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
-                           id: id,
-                           by: by,
-                           dead: dead,
-                           itemText: itemText,
-                           kids: kids,
-                           time: time,
-                           title: title,
-                           url: url
-                       });
     }
 }

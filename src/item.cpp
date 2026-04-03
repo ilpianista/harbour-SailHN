@@ -26,10 +26,10 @@
 
 #include "item_p.h"
 
-Item::Item(QObject *parent) : QObject(parent)
-  , d(new ItemPrivate)
-{
-}
+Item::Item(QObject *parent)
+    : QObject(parent)
+    , d(new ItemPrivate)
+{}
 
 Item::~Item()
 {

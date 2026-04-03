@@ -26,24 +26,19 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-
     allowedOrientations: Orientation.All
 
     Connections {
         target: manager
-
         onSubmitted: {
             console.log("Submitted: " + result);
-
             busy.visible = busy.running = false;
             submit.enabled = true;
             msg.visible = true;
-
-            if (!result) {
+            if (!result)
                 msg.text = qsTr("Error during submission");
-            } else {
+            else
                 msg.text = qsTr("Submitted!");
-            }
         }
     }
 
@@ -53,6 +48,7 @@ Page {
 
         Column {
             id: column
+
             x: Theme.horizontalPageMargin
             width: parent.width - Theme.horizontalPageMargin * 2
 
@@ -62,18 +58,18 @@ Page {
 
             TextField {
                 id: title
+
                 width: parent.width
                 focus: true
                 placeholderText: qsTr("Title")
-
                 onTextChanged: submit.enabled = (text.length > 0 && (url.text.length > 0 || itemText.text.length > 0))
             }
 
             TextField {
                 id: url
+
                 width: parent.width
                 placeholderText: qsTr("Url")
-
                 onTextChanged: submit.enabled = (title.text.length > 0 && (text.length > 0 || itemText.text.length > 0))
             }
 
@@ -85,18 +81,18 @@ Page {
 
             TextArea {
                 id: itemText
+
                 width: parent.width
                 placeholderText: qsTr("Text")
-
                 onTextChanged: submit.enabled = (title.text.length > 0 && (url.text.length > 0 || text.length > 0))
             }
 
             Button {
                 id: submit
-                text: qsTr("Submit");
+
+                text: qsTr("Submit")
                 anchors.horizontalCenter: parent.horizontalCenter
                 enabled: false
-
                 onClicked: {
                     manager.submit(title.text, url.text, itemText.text);
                     submit.enabled = false;
@@ -107,6 +103,7 @@ Page {
 
             Label {
                 id: msg
+
                 visible: false
                 color: Theme.highlightColor
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -114,6 +111,7 @@ Page {
 
             BusyIndicator {
                 id: busy
+
                 visible: false
                 anchors.horizontalCenter: parent.horizontalCenter
             }
