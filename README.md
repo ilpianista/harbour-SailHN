@@ -14,7 +14,11 @@ Translations via [Weblate](https://hosted.weblate.org/projects/harbour-sailhn/),
 
 ## Donate
 
-Donations via [Liberapay](https://liberapay.com/ilpianista) or Bitcoin (1Ph3hFEoQaD4PK6MhL3kBNNh9FZFBfisEH) are always welcomed, _thank you_!
+The SailfishOS Community Team is on Liberapay:
+
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/SailfishOScommunityTeam?logo=liberapay&label=SailfishOSCommunity)](https://liberapay.com/SailfishOScommunityTeam)
+
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/ilpianista?logo=liberapay&label=ilpianista)](https://liberapay.com/ilpianista)
 
 ## License
 
