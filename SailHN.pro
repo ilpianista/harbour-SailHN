@@ -2,11 +2,13 @@ TARGET = harbour-sailhn
 
 CONFIG += sailfishapp
 
+INCLUDEPATH += /usr/include/Sailfish
+
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 SOURCES += \
     src/main.cpp \
-    src/cookiejar.cpp \
+    src/securesecrets.cpp \
     src/hackernewsapi.cpp \
     src/hnmanager.cpp \
     src/item.cpp \
@@ -14,7 +16,7 @@ SOURCES += \
     src/user.cpp
 
 HEADERS += \
-    src/cookiejar.h \
+    src/securesecrets.h \
     src/hackernewsapi.h \
     src/hnmanager.h \
     src/item.h \
@@ -44,10 +46,11 @@ OTHER_FILES += \
     harbour-sailhn.desktop \
     rpm/harbour-sailhn.changes \
     rpm/harbour-sailhn.spec \
-    rpm/harbour-sailhn.yaml \
     translations/*.ts
 
 CONFIG += sailfishapp_i18n
+
+PKGCONFIG += sailfishsecrets
 
 TRANSLATIONS += \
     translations/harbour-sailhn-de.ts \

@@ -8,6 +8,6 @@ Name=SailHN
 Comment=Hacker News unofficial client
 
 [X-Sailjail]
-Permissions=Internet
+Permissions=Internet;Secrets
 OrganizationName=it.andreascarpino
 ApplicationName=harbour-sailhn

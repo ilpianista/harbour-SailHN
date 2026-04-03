@@ -27,6 +27,7 @@
 
 #include <QObject>
 
+#include "securesecrets.h"
 #include "user.h"
 
 class HackerNewsAPI;
@@ -73,6 +74,7 @@ private:
     User *m_loggedUser;
     QString m_loggedUsername;
     QSettings *m_settings;
+    SecureSecrets *m_secureStorage;
 };
 
 #endif // HNMANAGER_H

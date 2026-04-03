@@ -26,18 +26,21 @@
 
 #include <QCoreApplication>
 #include <QDebug>
+#include <QDir>
 #include <QEventLoop>
 #include <QNetworkAccessManager>
 #include <QNetworkCookie>
+#include <QNetworkCookieJar>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QSettings>
+#include <QStandardPaths>
 #include <QUrlQuery>
 
-#include "cookiejar.h"
 #include "hackernewsapi.h"
+#include "securesecrets.h"
 
 const static QString BASE_URL = QStringLiteral("https://news.ycombinator.com");
 
@@ -47,18 +50,41 @@ HNManager::HNManager(QObject *parent)
     , network(new QNetworkAccessManager(this))
     , m_loggedUser(0)
 {
-    m_settings = new QSettings(QCoreApplication::applicationName(),
-                               QCoreApplication::applicationName(),
-                               this);
+    const QString settingsPath = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
+                                 + QDir::separator() + QCoreApplication::applicationName()
+                                 + ".conf";
+    m_settings = new QSettings(settingsPath, QSettings::NativeFormat, this);
+
+    if (!m_settings->contains("migrated")) {
+        QSettings oldSettings(QCoreApplication::applicationName(),
+                              QCoreApplication::applicationName(),
+                              this);
+
+        for (const QString &key : oldSettings.childKeys())
+            m_settings->setValue(key, oldSettings.value(key));
+
+        oldSettings.clear();
+
+        m_settings->setValue("migrated", "true");
+    }
+
     setUsername(m_settings->value("Username").toString());
 
-    network->setCookieJar(new CookieJar(this));
-
-    if (!network->cookieJar()->cookiesForUrl(QUrl(BASE_URL + "/")).isEmpty()) {
+    if (!getUsername().isEmpty()) {
         api->getUser(getUsername());
-
         connect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
     }
+
+    // Use SecureSecrets for cookie storage
+    m_secureStorage = new SecureSecrets(this);
+    connect(m_secureStorage, &SecureSecrets::initialized, this, [this]() {
+        // Load cookies from secure storage
+        QNetworkCookieJar *cookieJar = network->cookieJar();
+        Q_FOREACH (const QNetworkCookie cookie, m_secureStorage->loadCookies()) {
+            cookieJar->insertCookie(cookie);
+        }
+    });
+    m_secureStorage->initialize();
 }
 
 HNManager::~HNManager()
@@ -99,8 +125,13 @@ void HNManager::onAuthenticateResult()
     } else {
         if (!reply->readAll().contains("Bad login.")) {
             logged = true;
-            api->getUser(m_loggedUsername);
 
+            // Save cookies to secure storage after successful login
+            QList<QNetworkCookie> cookies = network->cookieJar()->cookiesForUrl(
+                QUrl(BASE_URL + "/"));
+            m_secureStorage->storeCookies(cookies);
+
+            api->getUser(m_loggedUsername);
             connect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
         }
     }
@@ -147,11 +178,17 @@ void HNManager::logout()
     setUsername(QString());
     m_loggedUser = 0;
 
+    // Clear cookies from network manager
     QNetworkCookieJar *cookieJar = network->cookieJar();
     Q_FOREACH (const QNetworkCookie cookie, cookieJar->cookiesForUrl(QUrl(BASE_URL + "/"))) {
         cookieJar->deleteCookie(cookie);
     }
-    m_settings->setValue("Cookies", QVariantList());
+
+    // Clear cookies from secure storage
+    m_secureStorage->clearCookies();
+
+    // Clear username from settings
+    m_settings->setValue("Username", QString());
 }
 
 void HNManager::submit(const QString &title, const QString &url, const QString &text)
