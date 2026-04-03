@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="79"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Deel</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="88"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="196"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Deel url</translation>
     </message>
 </context>
 <context>
@@ -67,7 +67,7 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="56"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Antwoord</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="64"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="58"/>
         <source>Reply</source>
-        <translation>Antwoorden</translation>
+        <translation>Antwoord</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="66"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="83"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Antwoord</translation>
     </message>
 </context>
 <context>

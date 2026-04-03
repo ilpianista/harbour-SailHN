@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="79"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaa</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="88"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="96"/>
         <source>Refresh</source>
-        <translation>Päivitä</translation>
+        <translation>Virkistä</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="108"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="196"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaa url-osoite</translation>
     </message>
 </context>
 <context>
@@ -67,12 +67,12 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="56"/>
         <source>Reply</source>
-        <translation type="unfinished">Vastaa</translation>
+        <translation>Vastaa</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="64"/>
         <source>Refresh</source>
-        <translation>Päivitä</translation>
+        <translation>Virkistä</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="76"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="83"/>
         <source>Reply</source>
-        <translation type="unfinished">Vastaa</translation>
+        <translation>Vastaa</translation>
     </message>
 </context>
 <context>
@@ -205,7 +205,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="65"/>
         <source>Refresh</source>
-        <translation>Päivitä</translation>
+        <translation>Virkistä</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="74"/>
