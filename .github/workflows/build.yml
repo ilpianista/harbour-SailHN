@@ -27,7 +27,7 @@ jobs:
     - name: Build ${{ matrix.arch }}
       uses: coderus/github-sfos-build@master
       with:
-        release: $RELEASE
+        release: ${{ env.RELEASE }}
         arch: ${{ matrix.arch }}
 
     - name: Upload build result
