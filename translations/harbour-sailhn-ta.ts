@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="195"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>முகவரி ஐப் பகிரவும்</translation>
     </message>
 </context>
 <context>
