@@ -4,37 +4,37 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="72"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="71"/>
         <source>Copy external URL</source>
         <translation>Kopeeri väline URL</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="79"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="78"/>
         <source>Share</source>
         <translation>Jaga</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="88"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
         <source>Reply</source>
         <translation>Vasta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="96"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="95"/>
         <source>Refresh</source>
         <translation>Uuenda</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="108"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
         <source>Load more</source>
         <translation>Laadi veel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="124"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="123"/>
         <source>Comments</source>
         <translation>Kommentaarid</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="196"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="195"/>
         <source>Share url</source>
         <translation type="unfinished"></translation>
     </message>
@@ -193,22 +193,22 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="52"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="51"/>
         <source>Settings</source>
         <translation>Seaded</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="59"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="58"/>
         <source>Submit</source>
         <translation>Saada</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="65"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="64"/>
         <source>Refresh</source>
         <translation>Uuenda</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="74"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="73"/>
         <source>Load more</source>
         <translation>Laadi veel</translation>
     </message>
