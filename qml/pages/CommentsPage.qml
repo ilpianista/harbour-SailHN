@@ -21,7 +21,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Share 1.0
 import Sailfish.Silica 1.0
@@ -30,14 +29,16 @@ import harbour.sailhn 1.0
 Page {
     id: page
 
-    property var id
-    property var by
-    property var dead
-    property var itemText
+    property int id
+    property string by
+    property bool dead
+    property string itemText
     property var kids
+    property int descendants
+    property int score
     property var time
-    property var title
-    property var url
+    property string title
+    property string url
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
 
@@ -48,6 +49,8 @@ Page {
     allowedOrientations: Orientation.All
     Component.onCompleted: {
         appWindow.itemTitle = title;
+        appWindow.itemScore = score;
+        appWindow.itemDescendants = descendants;
         loadComments();
         reply.enabled = manager.isAuthenticated();
     }

@@ -32,6 +32,7 @@ CoverBackground {
     }
 
     Column {
+        id: column
         anchors.centerIn: parent
         x: Theme.paddingSmall
         width: parent.width - Theme.paddingSmall * 2
@@ -42,6 +43,50 @@ CoverBackground {
             wrapMode: Text.Wrap
             font.pixelSize: Theme.fontSizeMedium
             text: appWindow.itemTitle
+        }
+
+        Label {
+            width: parent.width
+            color: Theme.secondaryHighlightColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: Text.AlignRight
+            text: {
+                var txt = appWindow.itemScore + ' ';
+                if (appWindow.itemScore === 1)
+                    txt += qsTr("point");
+                else
+                    txt += qsTr("points");
+            }
+        }
+
+        Label {
+            id: comments
+            width: parent.width
+            color: Theme.secondaryHighlightColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: Text.AlignRight
+            visible: appWindow.itemDescendants > 0
+            text: {
+                var txt = appWindow.itemDescendants + ' ';
+                if (appWindow.itemDescendants === 1)
+                    txt += qsTr("comment");
+                else
+                    txt += qsTr("comments");
+            }
+        }
+    }
+
+    CoverActionList {
+        enabled: appWindow.itemTitle.length === 0
+
+        CoverAction {
+            id: cover
+            iconSource: "image://theme/icon-cover-new"
+
+            onTriggered: {
+                appWindow.activate();
+                pageStack.push(Qt.resolvedUrl("../pages/Submit.qml"));
+            }
         }
     }
 }

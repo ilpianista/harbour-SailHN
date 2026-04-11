@@ -33,8 +33,10 @@ ListItem {
             "id": id,
             "by": by,
             "dead": dead,
+            "descendants": descendants,
             "itemText": itemText,
             "kids": kids,
+            "score": score,
             "time": time,
             "title": title,
             "url": url

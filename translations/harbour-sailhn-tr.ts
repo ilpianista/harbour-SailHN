@@ -4,60 +4,83 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="71"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="76"/>
         <source>Copy external URL</source>
         <translation>Harici URL&apos;yi kopyala</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="78"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="83"/>
         <source>Share</source>
         <translation>Paylaş</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="92"/>
         <source>Reply</source>
         <translation>Yanıtla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="95"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="100"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="112"/>
         <source>Load more</source>
         <translation>Daha fazla yükle</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="123"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="128"/>
         <source>Comments</source>
         <translation>Yorumlar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="195"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="200"/>
         <source>Share url</source>
         <translation>URL&apos;yi paylaş</translation>
     </message>
 </context>
 <context>
+    <name>CoverPage</name>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="57"/>
+        <source>point</source>
+        <translation type="unfinished">puan</translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="59"/>
+        <source>points</source>
+        <translation type="unfinished">puan</translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="73"/>
+        <source>comment</source>
+        <translation type="unfinished">yorum</translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="75"/>
+        <source>comments</source>
+        <translation type="unfinished">yorum</translation>
+    </message>
+</context>
+<context>
     <name>ItemDelegate</name>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="68"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="71"/>
         <source>point</source>
         <translation>puan</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="70"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="73"/>
         <source>points</source>
         <translation>puan</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="74"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="77"/>
         <source>comment</source>
         <translation>yorum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="76"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="79"/>
         <source>comments</source>
         <translation>yorum</translation>
     </message>
@@ -193,22 +216,22 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="51"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="54"/>
         <source>Settings</source>
         <translation>Ayarlar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="58"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="61"/>
         <source>Submit</source>
         <translation>Gönder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="64"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="67"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="73"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="76"/>
         <source>Load more</source>
         <translation>Daha fazla yükle</translation>
     </message>
@@ -216,38 +239,38 @@
 <context>
     <name>Submit</name>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="42"/>
+        <location filename="../qml/pages/Submit.qml" line="40"/>
         <source>Submitted!</source>
         <translation>Gönderildi!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="65"/>
-        <location filename="../qml/pages/Submit.qml" line="114"/>
+        <location filename="../qml/pages/Submit.qml" line="63"/>
+        <location filename="../qml/pages/Submit.qml" line="112"/>
         <source>Submit</source>
         <translation>Gönder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="73"/>
+        <location filename="../qml/pages/Submit.qml" line="71"/>
         <source>Title</source>
         <translation>Başlık</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="89"/>
+        <location filename="../qml/pages/Submit.qml" line="87"/>
         <source>Url</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="96"/>
+        <location filename="../qml/pages/Submit.qml" line="94"/>
         <source>or</source>
         <translation>veya</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="105"/>
+        <location filename="../qml/pages/Submit.qml" line="103"/>
         <source>Text</source>
         <translation>Metin</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="40"/>
+        <location filename="../qml/pages/Submit.qml" line="38"/>
         <source>Error during submission</source>
         <translation>Gönderme sırasında hata oluştu</translation>
     </message>

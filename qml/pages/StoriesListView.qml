@@ -21,7 +21,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
@@ -37,6 +36,8 @@ SilicaListView {
 
     Component.onCompleted: {
         appWindow.itemTitle = "";
+        appWindow.itemScore = 0;
+        appWindow.itemDescendants = 0;
     }
 
     Connections {

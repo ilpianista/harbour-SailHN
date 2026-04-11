@@ -21,7 +21,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "pages"
@@ -30,6 +29,8 @@ ApplicationWindow {
     id: appWindow
 
     property string itemTitle: ""
+    property int itemScore: 0
+    property int itemDescendants: 0
 
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
