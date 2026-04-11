@@ -11,7 +11,7 @@ on:
       - master
 
 env:
-  RELEASE: 5.5.0.43
+  RELEASE: 5.0.0.43
 
 jobs:
   build:
