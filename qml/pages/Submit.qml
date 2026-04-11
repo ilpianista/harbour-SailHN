@@ -21,7 +21,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
@@ -42,6 +41,13 @@ Page {
         }
     }
 
+    function submit() {
+        manager.submit(title.text, url.text, itemText.text);
+        submit.enabled = false;
+        busy.visible = busy.running = true;
+        msg.visible = false;
+    }
+
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: column.height
@@ -51,6 +57,7 @@ Page {
 
             x: Theme.horizontalPageMargin
             width: parent.width - Theme.horizontalPageMargin * 2
+            spacing: Theme.paddingLarge
 
             PageHeader {
                 title: qsTr("Submit")
@@ -62,7 +69,15 @@ Page {
                 width: parent.width
                 focus: true
                 placeholderText: qsTr("Title")
-                onTextChanged: submit.enabled = (text.length > 0 && (url.text.length > 0 || itemText.text.length > 0))
+                EnterKey.enabled: text.length > 0
+                EnterKey.iconSource: "image://theme/icon-m-enter-next"
+                EnterKey.onClicked: url.focus = true
+            }
+
+            Separator {
+                width: parent.width
+                color: Theme.highlightBackgroundColor
+                horizontalAlignment: Qt.AlignHCenter
             }
 
             TextField {
@@ -70,7 +85,9 @@ Page {
 
                 width: parent.width
                 placeholderText: qsTr("Url")
-                onTextChanged: submit.enabled = (title.text.length > 0 && (text.length > 0 || itemText.text.length > 0))
+                EnterKey.enabled: text.length > 0
+                EnterKey.iconSource: "image://theme/icon-m-enter-accept"
+                EnterKey.onClicked: submit()
             }
 
             Label {
@@ -84,7 +101,9 @@ Page {
 
                 width: parent.width
                 placeholderText: qsTr("Text")
-                onTextChanged: submit.enabled = (title.text.length > 0 && (url.text.length > 0 || text.length > 0))
+                EnterKey.enabled: text.length > 0
+                EnterKey.iconSource: "image://theme/icon-m-enter-accept"
+                EnterKey.onClicked: submit()
             }
 
             Button {
@@ -92,13 +111,8 @@ Page {
 
                 text: qsTr("Submit")
                 anchors.horizontalCenter: parent.horizontalCenter
-                enabled: false
-                onClicked: {
-                    manager.submit(title.text, url.text, itemText.text);
-                    submit.enabled = false;
-                    busy.visible = busy.running = true;
-                    msg.visible = false;
-                }
+                enabled: title.text.length > 0 && (url.text.length > 0 || itemText.text.length > 0)
+                onClicked: submit()
             }
 
             Label {

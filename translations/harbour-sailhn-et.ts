@@ -42,22 +42,22 @@
 <context>
     <name>ItemDelegate</name>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="70"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="68"/>
         <source>point</source>
         <translation>punkt</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="72"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="70"/>
         <source>points</source>
         <translation>punktid</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="76"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="74"/>
         <source>comment</source>
         <translation>kommentaar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="78"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="76"/>
         <source>comments</source>
         <translation>kommentaarid</translation>
     </message>
@@ -116,17 +116,17 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="70"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="68"/>
         <source>reply</source>
         <translation>vastus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="72"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="70"/>
         <source>replies</source>
         <translation>vastused</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="85"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="83"/>
         <source>Reply</source>
         <translation>Vasta</translation>
     </message>
@@ -216,38 +216,38 @@
 <context>
     <name>Submit</name>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="41"/>
+        <location filename="../qml/pages/Submit.qml" line="42"/>
         <source>Submitted!</source>
         <translation>Saadetud!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="56"/>
-        <location filename="../qml/pages/Submit.qml" line="93"/>
+        <location filename="../qml/pages/Submit.qml" line="65"/>
+        <location filename="../qml/pages/Submit.qml" line="114"/>
         <source>Submit</source>
         <translation>Saada</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="64"/>
+        <location filename="../qml/pages/Submit.qml" line="73"/>
         <source>Title</source>
         <translation>Pealkiri</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="72"/>
+        <location filename="../qml/pages/Submit.qml" line="89"/>
         <source>Url</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="77"/>
+        <location filename="../qml/pages/Submit.qml" line="96"/>
         <source>or</source>
         <translation>või</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="86"/>
+        <location filename="../qml/pages/Submit.qml" line="105"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Submit.qml" line="39"/>
+        <location filename="../qml/pages/Submit.qml" line="40"/>
         <source>Error during submission</source>
         <translation>Viga saatmisel</translation>
     </message>
