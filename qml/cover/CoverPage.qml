@@ -60,7 +60,6 @@ CoverBackground {
         }
 
         Label {
-            id: comments
             width: parent.width
             color: Theme.secondaryHighlightColor
             font.pixelSize: Theme.fontSizeSmall

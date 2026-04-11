@@ -101,9 +101,6 @@ Page {
 
                 width: parent.width
                 placeholderText: qsTr("Text")
-                EnterKey.enabled: text.length > 0
-                EnterKey.iconSource: "image://theme/icon-m-enter-accept"
-                EnterKey.onClicked: submit()
             }
 
             Button {
