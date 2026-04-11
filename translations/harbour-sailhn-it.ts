@@ -42,22 +42,22 @@
 <context>
     <name>ItemDelegate</name>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="68"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="70"/>
         <source>point</source>
         <translation>punto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="70"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="72"/>
         <source>points</source>
         <translation>punti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="74"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="76"/>
         <source>comment</source>
         <translation>commento</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="76"/>
+        <location filename="../qml/pages/ItemDelegate.qml" line="78"/>
         <source>comments</source>
         <translation>commenti</translation>
     </message>
@@ -116,17 +116,17 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="68"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="70"/>
         <source>reply</source>
         <translation>risposta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="70"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="72"/>
         <source>replies</source>
         <translation>risposte</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="83"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="85"/>
         <source>Reply</source>
         <translation>Rispondi</translation>
     </message>

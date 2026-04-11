@@ -21,11 +21,11 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 ListItem {
+    id: listItem
     contentHeight: content.height
     menu: replyMenu
     onClicked: {
@@ -46,7 +46,7 @@ ListItem {
             width: parent.width
             textFormat: Text.RichText
             text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
-            color: Theme.secondaryColor
+            color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.Wrap
             onLinkActivated: {

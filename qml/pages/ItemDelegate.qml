@@ -21,11 +21,11 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 ListItem {
+    id: listItem
     width: ListView.view.width
     height: col.height
     onClicked: {
@@ -48,7 +48,7 @@ ListItem {
         width: parent.width - Theme.horizontalPageMargin * 2
 
         Label {
-            color: Theme.primaryColor
+            color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
             width: parent.width
             text: title
             font.pixelSize: Theme.fontSizeMedium
