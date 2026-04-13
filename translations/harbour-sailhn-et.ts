@@ -44,22 +44,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="58"/>
         <source>point</source>
-        <translation type="unfinished">punkt</translation>
+        <translation>punkt</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="60"/>
         <source>points</source>
-        <translation type="unfinished">punktid</translation>
+        <translation>punktid</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="73"/>
         <source>comment</source>
-        <translation type="unfinished">kommentaar</translation>
+        <translation>kommentaar</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="75"/>
         <source>comments</source>
-        <translation type="unfinished">kommentaarid</translation>
+        <translation>kommentaarid</translation>
     </message>
 </context>
 <context>
