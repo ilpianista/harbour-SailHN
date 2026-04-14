@@ -36,7 +36,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="203"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Dijeli URL</translation>
     </message>
 </context>
 <context>
@@ -44,22 +44,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="58"/>
         <source>point</source>
-        <translation type="unfinished">točka</translation>
+        <translation>točka</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="60"/>
         <source>points</source>
-        <translation type="unfinished">točke</translation>
+        <translation>točke</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="73"/>
         <source>comment</source>
-        <translation type="unfinished">komentar</translation>
+        <translation>komentar</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="75"/>
         <source>comments</source>
-        <translation type="unfinished">komentari</translation>
+        <translation>komentari</translation>
     </message>
 </context>
 <context>
