@@ -23,6 +23,7 @@
 */
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "utils.js" as Utils
 
 ListItem {
     id: listItem
@@ -50,26 +51,41 @@ ListItem {
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.Wrap
             onLinkActivated: {
-                console.log("Opening external browser: " + link);
                 Qt.openUrlExternally(link);
             }
         }
 
-        Label {
-            width: parent.width
-            color: Theme.secondaryHighlightColor
-            font.pixelSize: Theme.fontSizeSmall
-            horizontalAlignment: Text.AlignRight
-            text: {
-                var txt = by;
-                if (kids.length !== 0) {
-                    txt += " - " + kids.length + ' ';
-                    if (kids.length === 1)
-                        txt += qsTr("reply");
-                    else
-                        txt += qsTr("replies");
+        Row {
+            spacing: Theme.paddingSmall
+
+            anchors.right: parent.right
+            anchors.rightMargin: Theme.horizontalPageMargin
+
+            Row {
+                visible: kids.length !== 0
+                spacing: Theme.paddingSmall
+
+                Label {
+                    color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    text: kids.length
+                    anchors.verticalCenter: parent.verticalCenter
                 }
-                return txt + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
+
+                Image {
+                    source: "image://theme/icon-s-chat"
+                    width: Theme.iconSizeExtraSmall
+                    height: Theme.iconSizeExtraSmall
+                    anchors.verticalCenter: parent.verticalCenter
+                    opacity: 0.7
+                }
+            }
+
+            Label {
+                color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                font.pixelSize: Theme.fontSizeSmall
+                anchors.verticalCenter: parent.verticalCenter
+                text: by + " · " + Utils.getRelativeTime(time)
             }
         }
     }

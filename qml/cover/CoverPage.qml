@@ -41,6 +41,8 @@ CoverBackground {
         Label {
             width: parent.width
             wrapMode: Text.Wrap
+            maximumLineCount: 4
+            elide: Text.ElideRight
             font.pixelSize: Theme.fontSizeMedium
             text: appWindow.itemTitle
         }

@@ -4,37 +4,37 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="75"/>
         <source>Copy external URL</source>
         <translation>வெளிப்புற முகவரி ஐ நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="81"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="82"/>
         <source>Share</source>
         <translation>பங்கு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="90"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="91"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="98"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="99"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="110"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="111"/>
         <source>Load more</source>
         <translation>மேலும் ஏற்றவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="126"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="127"/>
         <source>Comments</source>
         <translation>கருத்துகள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="198"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="203"/>
         <source>Share url</source>
         <translation>முகவரி ஐப் பகிரவும்</translation>
     </message>
@@ -42,22 +42,22 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="56"/>
+        <location filename="../qml/cover/CoverPage.qml" line="58"/>
         <source>point</source>
         <translation type="unfinished">புள்ளியம்</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="58"/>
+        <location filename="../qml/cover/CoverPage.qml" line="60"/>
         <source>points</source>
         <translation type="unfinished">பிரிவகம்</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="71"/>
+        <location filename="../qml/cover/CoverPage.qml" line="73"/>
         <source>comment</source>
         <translation type="unfinished">கருத்து</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="73"/>
+        <location filename="../qml/cover/CoverPage.qml" line="75"/>
         <source>comments</source>
         <translation type="unfinished">கருத்துகள்</translation>
     </message>
@@ -116,17 +116,7 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="68"/>
-        <source>reply</source>
-        <translation>பதில்</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="70"/>
-        <source>replies</source>
-        <translation>பதில்கள்</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="83"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="100"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>

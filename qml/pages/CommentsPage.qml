@@ -25,6 +25,7 @@ import QtQuick 2.0
 import Sailfish.Share 1.0
 import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
+import "utils.js" as Utils
 
 Page {
     id: page
@@ -143,7 +144,6 @@ Page {
                 font.pixelSize: Theme.fontSizeMedium
                 wrapMode: Text.Wrap
                 onLinkActivated: {
-                    console.log("Opening external browser: " + link);
                     Qt.openUrlExternally(link);
                 }
             }
@@ -161,17 +161,22 @@ Page {
                     return txt;
                 }
                 onLinkActivated: {
-                    console.log("Opening external browser: " + link);
                     Qt.openUrlExternally(link);
                 }
             }
 
             Label {
                 width: parent.width
-                color: Theme.secondaryHighlightColor
+                color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignRight
-                text: by + " - " + Qt.formatDateTime(time, "ddd, hh:mm")
+                text: by + " · " + Utils.getRelativeTime(time)
+            }
+
+            Separator {
+                width: parent.width
+                color: Theme.highlightBackgroundColor
+                horizontalAlignment: Qt.AlignHCenter
             }
 
             Repeater {
