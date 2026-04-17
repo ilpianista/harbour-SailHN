@@ -43,6 +43,7 @@ OTHER_FILES += \
     qml/pages/ShowStoriesPage.qml \
     qml/pages/StoriesListView.qml \
     qml/pages/TopStoriesPage.qml \
+    qml/pages/utils.js \
     harbour-sailhn.desktop \
     rpm/harbour-sailhn.changes \
     rpm/harbour-sailhn.spec \

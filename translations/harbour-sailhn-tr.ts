@@ -4,37 +4,37 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="76"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
         <source>Copy external URL</source>
         <translation>Harici URL&apos;yi kopyala</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="83"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="81"/>
         <source>Share</source>
         <translation>Paylaş</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="92"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="90"/>
         <source>Reply</source>
         <translation>Yanıtla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="100"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="98"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="112"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="110"/>
         <source>Load more</source>
         <translation>Daha fazla yükle</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="128"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="126"/>
         <source>Comments</source>
         <translation>Yorumlar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="200"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="198"/>
         <source>Share url</source>
         <translation>URL&apos;yi paylaş</translation>
     </message>
@@ -42,47 +42,24 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="57"/>
+        <location filename="../qml/cover/CoverPage.qml" line="56"/>
         <source>point</source>
         <translation type="unfinished">puan</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="59"/>
+        <location filename="../qml/cover/CoverPage.qml" line="58"/>
         <source>points</source>
         <translation type="unfinished">puan</translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="71"/>
+        <source>comment</source>
+        <translation type="unfinished">yorum</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="73"/>
-        <source>comment</source>
-        <translation type="unfinished">yorum</translation>
-    </message>
-    <message>
-        <location filename="../qml/cover/CoverPage.qml" line="75"/>
         <source>comments</source>
         <translation type="unfinished">yorum</translation>
-    </message>
-</context>
-<context>
-    <name>ItemDelegate</name>
-    <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="71"/>
-        <source>point</source>
-        <translation>puan</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="73"/>
-        <source>points</source>
-        <translation>puan</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="77"/>
-        <source>comment</source>
-        <translation>yorum</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ItemDelegate.qml" line="79"/>
-        <source>comments</source>
-        <translation>yorum</translation>
     </message>
 </context>
 <context>
@@ -216,22 +193,22 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="54"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="52"/>
         <source>Settings</source>
         <translation>Ayarlar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="61"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="59"/>
         <source>Submit</source>
         <translation>Gönder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="67"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="65"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="76"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="74"/>
         <source>Load more</source>
         <translation>Daha fazla yükle</translation>
     </message>
@@ -245,7 +222,7 @@
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="63"/>
-        <location filename="../qml/pages/Submit.qml" line="112"/>
+        <location filename="../qml/pages/Submit.qml" line="109"/>
         <source>Submit</source>
         <translation>Gönder</translation>
     </message>
@@ -273,6 +250,44 @@
         <location filename="../qml/pages/Submit.qml" line="38"/>
         <source>Error during submission</source>
         <translation>Gönderme sırasında hata oluştu</translation>
+    </message>
+</context>
+<context>
+    <name>utils</name>
+    <message>
+        <location filename="../qml/pages/utils.js" line="13"/>
+        <source>just now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/utils.js" line="15"/>
+        <source>1 minute ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/utils.js" line="15"/>
+        <source>%1 minutes ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/utils.js" line="17"/>
+        <source>1 hour ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/utils.js" line="17"/>
+        <source>%1 hours ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/utils.js" line="19"/>
+        <source>1 day ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/utils.js" line="19"/>
+        <source>%1 days ago</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -23,11 +23,13 @@
 */
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "utils.js" as Utils
 
 ListItem {
     id: listItem
     width: ListView.view.width
-    height: col.height
+    contentHeight: col.height + Theme.paddingSmall * 2
+
     onClicked: {
         pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
             "id": id,
@@ -59,25 +61,54 @@ ListItem {
             wrapMode: Text.WordWrap
         }
 
-        Label {
+        Row {
             width: parent.width
-            color: Theme.secondaryHighlightColor
-            font.pixelSize: Theme.fontSizeSmall
-            horizontalAlignment: Text.AlignRight
-            text: {
-                var txt = score + ' ';
-                if (score === 1)
-                    txt += qsTr("point");
-                else
-                    txt += qsTr("points");
-                if (kids.length !== 0) {
-                    txt += " - " + descendants + ' ';
-                    if (descendants === 1)
-                        txt += qsTr("comment");
-                    else
-                        txt += qsTr("comments");
+            spacing: Theme.paddingMedium
+
+            Row {
+                spacing: Theme.paddingSmall
+
+                Image {
+                    source: "image://theme/icon-s-like"
+                    width: Theme.iconSizeExtraSmall
+                    height: Theme.iconSizeExtraSmall
+                    anchors.verticalCenter: parent.verticalCenter
+                    opacity: 0.7
                 }
-                return txt + " - " + Qt.formatDateTime(time, "ddd, hh:mm");
+
+                Label {
+                    color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    text: score
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+
+            Row {
+                visible: kids.length !== 0
+                spacing: Theme.paddingSmall
+
+                Image {
+                    source: "image://theme/icon-s-chat"
+                    width: Theme.iconSizeExtraSmall
+                    height: Theme.iconSizeExtraSmall
+                    anchors.verticalCenter: parent.verticalCenter
+                    opacity: 0.7
+                }
+
+                Label {
+                    color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    text: descendants
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+
+            Label {
+                color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                font.pixelSize: Theme.fontSizeSmall
+                text: Utils.getRelativeTime(time)
+                anchors.verticalCenter: parent.verticalCenter
             }
         }
     }
