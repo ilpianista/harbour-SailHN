@@ -48,7 +48,7 @@ HNManager::HNManager(QObject *parent)
     : QObject(parent)
     , api(new HackerNewsAPI(this))
     , network(new QNetworkAccessManager(this))
-    , m_loggedUser(0)
+    , m_loggedUser(nullptr)
 {
     const QString settingsPath = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
                                  + QDir::separator() + QCoreApplication::applicationName()
@@ -146,6 +146,7 @@ void HNManager::onLoggedUserFetched(User *user)
     disconnect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
 
     m_loggedUser = user;
+    m_loggedUser->setParent(this);
 
     Q_EMIT loggedUserFetched(user);
 }
@@ -154,7 +155,7 @@ bool HNManager::isAuthenticated() const
 {
     // qDebug() << "Is authenticated as:" << m_loggedUser;
 
-    return m_loggedUser != 0;
+    return m_loggedUser != nullptr;
 }
 
 void HNManager::setUsername(const QString &username)
@@ -176,7 +177,8 @@ User *HNManager::loggedUser()
 void HNManager::logout()
 {
     setUsername(QString());
-    m_loggedUser = 0;
+    delete m_loggedUser;
+    m_loggedUser = nullptr;
 
     // Clear cookies from network manager
     QNetworkCookieJar *cookieJar = network->cookieJar();

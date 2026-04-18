@@ -116,7 +116,7 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="100"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="99"/>
         <source>Reply</source>
         <translation type="unfinished">Antworten</translation>
     </message>
