@@ -246,37 +246,37 @@
     <message>
         <location filename="../qml/pages/utils.js" line="13"/>
         <source>just now</source>
-        <translation type="unfinished"></translation>
+        <translation>äsja</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="15"/>
         <source>1 minute ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 minuti eest</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="15"/>
         <source>%1 minutes ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 minuti eest</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="17"/>
         <source>1 hour ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 tunni eest</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="17"/>
         <source>%1 hours ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tunni eest</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="19"/>
         <source>1 day ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 päev tagasi</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="19"/>
         <source>%1 days ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 päeva tagasi</translation>
     </message>
 </context>
 </TS>
