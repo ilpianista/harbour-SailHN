@@ -183,24 +183,24 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="52"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="70"/>
         <source>Settings</source>
         <translation>Nustatymai</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="59"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="77"/>
         <source>Submit</source>
         <translation>Pateikti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="65"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="83"/>
         <source>Refresh</source>
         <translation>Įkelti iš naujo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="74"/>
-        <source>Load more</source>
-        <translation>Įkelti daugiau</translation>
+        <location filename="../qml/pages/StoriesListView.qml" line="101"/>
+        <source>Loading more…</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

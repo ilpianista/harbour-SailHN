@@ -29,7 +29,7 @@
 #include "hackernewsapi.h"
 #include "item.h"
 
-const static int MAX_ITEMS = 30;
+const static int MAX_ITEMS = 15;
 
 NewsModel::NewsModel(QObject *parent)
     : QAbstractListModel(parent)

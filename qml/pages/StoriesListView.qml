@@ -31,6 +31,7 @@ SilicaListView {
     property string pageTitle
     property alias submitEnabled: submit.enabled
     property alias stories: model
+    property bool loadingMore: false
 
     signal refreshClicked
 
@@ -44,6 +45,20 @@ SilicaListView {
         target: manager
         onLoggedUserFetched: {
             submit.enabled = true;
+        }
+    }
+
+    Connections {
+        target: model
+        onRowsInserted: {
+            loadingMore = false;
+        }
+    }
+
+    onAtYEndChanged: {
+        if (atYEnd && !loadingMore && listView.count > 0) {
+            loadingMore = true;
+            model.nextItems();
         }
     }
 
@@ -67,15 +82,22 @@ SilicaListView {
         }
     }
 
-    PushUpMenu {
-        id: pushupmenu
+    footer: Column {
+        width: parent.width
+        height: visible ? implicitHeight + Theme.paddingLarge * 2 : 0
+        visible: loadingMore && listView.count > 0
 
-        MenuItem {
-            text: qsTr("Load more")
-            onClicked: {
-                model.nextItems();
-                pushupmenu.close();
-            }
+        BusyIndicator {
+            anchors.horizontalCenter: parent.horizontalCenter
+            size: BusyIndicatorSize.Small
+            running: loadingMore
+        }
+
+        Label {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Loading more…")
+            font.pixelSize: Theme.fontSizeExtraSmall
+            color: Theme.secondaryColor
         }
     }
 

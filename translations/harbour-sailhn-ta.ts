@@ -183,24 +183,24 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="52"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="70"/>
         <source>Settings</source>
         <translation>அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="59"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="77"/>
         <source>Submit</source>
         <translation>சமர்ப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="65"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="83"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="74"/>
-        <source>Load more</source>
-        <translation>மேலும் ஏற்றவும்</translation>
+        <location filename="../qml/pages/StoriesListView.qml" line="101"/>
+        <source>Loading more…</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
