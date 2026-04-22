@@ -54,7 +54,6 @@ Page {
             appWindow.itemScore = score;
             appWindow.itemDescendants = descendants;
             loadComments();
-            reply.enabled = manager.isAuthenticated();
 
             if (url && !(/^\s*$/.test(url)))
                 pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {
@@ -82,7 +81,7 @@ Page {
                 id: reply
 
                 text: qsTr("Reply")
-                enabled: !dead
+                enabled: manager.isAuthenticated() && !dead
                 onClicked: pageStack.push(Qt.resolvedUrl("Reply.qml"), {
                     "parentId": id
                 })

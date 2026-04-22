@@ -93,7 +93,7 @@ ListItem {
     ContextMenu {
         id: replyMenu
 
-        enabled: !dead
+        enabled: manager.isAuthenticated() && !dead
 
         MenuItem {
             text: qsTr("Reply")
