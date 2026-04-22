@@ -4,32 +4,32 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="75"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
         <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="84"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="83"/>
         <source>Reply</source>
         <translation>Узврати</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="92"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="91"/>
         <source>Refresh</source>
         <translation>Освежи</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="104"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="103"/>
         <source>Load more</source>
         <translation>Учитај још</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="120"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="119"/>
         <source>Comments</source>
         <translation>Коментари</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="196"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="195"/>
         <source>Share url</source>
         <translation type="unfinished"></translation>
     </message>
@@ -37,22 +37,22 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="58"/>
+        <location filename="../qml/cover/CoverPage.qml" line="59"/>
         <source>point</source>
         <translation type="unfinished">поента</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="60"/>
+        <location filename="../qml/cover/CoverPage.qml" line="61"/>
         <source>points</source>
         <translation type="unfinished">поенте</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="73"/>
+        <location filename="../qml/cover/CoverPage.qml" line="74"/>
         <source>comment</source>
         <translation type="unfinished">коментар</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="75"/>
+        <location filename="../qml/cover/CoverPage.qml" line="76"/>
         <source>comments</source>
         <translation type="unfinished">коментари</translation>
     </message>
@@ -127,60 +127,56 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="85"/>
+        <location filename="../qml/pages/Settings.qml" line="92"/>
         <source>Log out</source>
         <translation>Одјави се</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="139"/>
+        <location filename="../qml/pages/Settings.qml" line="150"/>
         <source>Login failed</source>
         <translation>Пријава није успела</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="108"/>
+        <location filename="../qml/pages/Settings.qml" line="116"/>
+        <location filename="../qml/pages/Settings.qml" line="117"/>
         <source>Username</source>
         <translation>Корисничко име</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="116"/>
+        <location filename="../qml/pages/Settings.qml" line="128"/>
+        <location filename="../qml/pages/Settings.qml" line="129"/>
         <source>Password</source>
         <translation>Лозинка</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="35"/>
-        <location filename="../qml/pages/Settings.qml" line="124"/>
+        <location filename="../qml/pages/Settings.qml" line="140"/>
         <source>Login</source>
         <translation>Пријава</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="101"/>
+        <location filename="../qml/pages/Settings.qml" line="109"/>
         <source>Account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="158"/>
+        <location filename="../qml/pages/Settings.qml" line="169"/>
         <source>User details</source>
         <translation>Детаљи корисника</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="165"/>
+        <location filename="../qml/pages/Settings.qml" line="176"/>
         <source>created</source>
         <translation>направљено</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="172"/>
+        <location filename="../qml/pages/Settings.qml" line="183"/>
         <source>karma</source>
         <translation>карма</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="179"/>
+        <location filename="../qml/pages/Settings.qml" line="190"/>
         <source>About</source>
         <translation>О</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Settings.qml" line="33"/>
-        <source>Logged</source>
-        <translation>Логовано</translation>
     </message>
 </context>
 <context>

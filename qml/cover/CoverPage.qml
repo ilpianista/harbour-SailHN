@@ -78,7 +78,7 @@ CoverBackground {
     }
 
     CoverActionList {
-        enabled: appWindow.itemTitle.length === 0
+        enabled: manager.isAuthenticated() && appWindow.itemTitle.length === 0
 
         CoverAction {
             id: cover

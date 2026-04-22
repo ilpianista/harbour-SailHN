@@ -26,13 +26,18 @@ import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
 
 Page {
+    function authenticate() {
+        manager.authenticate(username.text.trim(), password.text.trim());
+        login.enabled = false;
+        busy.visible = busy.running = true;
+        msg.visible = false;
+    }
+
     function isAuthenticated(isAuth) {
         username.enabled = password.enabled = !isAuth;
+        login.visible = !isAuth;
         logout.enabled = isAuth;
-        if (isAuth) {
-            login.text = qsTr("Logged");
-        } else {
-            login.text = qsTr("Login");
+        if (!isAuth) {
             details.visible = false;
             password.text = "";
         }
@@ -65,6 +70,7 @@ Page {
         onAuthenticated: {
             console.log("Authenticated: " + result);
             busy.visible = busy.running = false;
+            login.visible = false;
             isAuthenticated(result);
             if (!result)
                 msg.visible = true;
@@ -83,6 +89,7 @@ Page {
                 id: logout
 
                 text: qsTr("Log out")
+                enabled: manager.isAuthenticated()
                 onClicked: {
                     manager.logout();
                     isAuthenticated(false);
@@ -105,17 +112,25 @@ Page {
                 id: username
 
                 width: parent.width
+                label: qsTr("Username")
                 placeholderText: qsTr("Username")
-                onTextChanged: login.enabled = (text.length > 0 && password.text.length > 0)
+
+                EnterKey.enabled: text.length > 0
+                EnterKey.iconSource: "image://theme/icon-m-enter-next"
+                EnterKey.onClicked: password.focus = true
             }
 
             TextField {
                 id: password
 
                 width: parent.width
+                label: qsTr("Password")
                 placeholderText: qsTr("Password")
                 echoMode: TextInput.Password
-                onTextChanged: login.enabled = (text.length > 0 && username.text.length > 0)
+
+                EnterKey.enabled: text.length > 0 && username.text.length > 0
+                EnterKey.iconSource: "image://theme/icon-m-enter-accept"
+                EnterKey.onClicked: authenticate()
             }
 
             Button {
@@ -123,13 +138,8 @@ Page {
 
                 text: qsTr("Login")
                 anchors.horizontalCenter: parent.horizontalCenter
-                enabled: false
-                onClicked: {
-                    manager.authenticate(username.text.trim(), password.text.trim());
-                    login.enabled = false;
-                    busy.visible = busy.running = true;
-                    msg.visible = false;
-                }
+                enabled: username.text.length > 0 && password.text.length > 0
+                onClicked: authenticate()
             }
 
             Label {
