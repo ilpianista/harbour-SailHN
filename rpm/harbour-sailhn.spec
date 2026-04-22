@@ -13,7 +13,7 @@ Name:       harbour-sailhn
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Unofficial Hacker News client
-Version:    0.9.2
+Version:    0.10.0
 Release:    1
 Group:      Qt/Qt
 License:    MIT
@@ -43,8 +43,7 @@ Icon: https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/icons/h
 Screenshots:
  - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_1.png
  - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_2.png
- - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_3.png
-Url:
+Links:
   Homepage: https://github.com/ilpianista/harbour-SailHN
   Bugtracker: https://github.com/ilpianista/harbour-SailHN/issues
   Donation: https://liberapay.com/ilpianista

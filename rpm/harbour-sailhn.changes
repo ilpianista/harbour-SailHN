@@ -1,3 +1,13 @@
+* Wed Apr 22 2026 Andrea Scarpino <andrea@scarpino.dev> 0.10.0-1
+- Use Sailfish Secrets to store cookie
+- Many styling fixes to the UI
+- Drop 'Copy to clipboard' menu item
+- Allow to share the link to the item
+- Add a share button to the webview
+- Continuous scrolling in the stories pages
+- Add cover action to submit stories
+- Update translations
+
 * Wed Jun 28 2023 Andrea Scarpino <andrea@scarpino.dev> 0.9.2-1
 - Do not store webview history
 - Fix erratic scroll behaviour when loading more items
@@ -29,7 +39,7 @@
 * Wed Jul 13 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.3-1
 - Add Serbian and Dutch translations
 
-* Fri Jun 22 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.2-1
+* Thu Jun 23 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.2-1
 - Add 'quick browser view' from item
 
 * Fri Jun 03 2016 Andrea Scarpino <me@andreascarpino.it> 0.8.1-1
@@ -52,12 +62,12 @@
 - Show comments page even for items without comments
 - Harbour compliant fixes
 
-* Sat Jun 26 2015 Andrea Scarpino <me@andreascarpino.it> 0.6-1
+* Sat Jun 27 2015 Andrea Scarpino <me@andreascarpino.it> 0.6-1
 - Show item title and url in the comments page (and drop details page
   because it is not useful anymore)
 - Increment size in every text by 1 size
 
-* Sat Jun 26 2015 Andrea Scarpino <me@andreascarpino.it> 0.5-1
+* Sat Jun 27 2015 Andrea Scarpino <me@andreascarpino.it> 0.5-1
 - For story items display text instead of redirecting to Hacker News website
 - Memleak fixes and performance improvments
 
