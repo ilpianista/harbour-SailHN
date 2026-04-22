@@ -51,7 +51,7 @@ QString Item::by() const
     return d->by;
 }
 
-void Item::setBy(const QString by)
+void Item::setBy(const QString &by)
 {
     d->by = by;
 }
@@ -91,7 +91,7 @@ QList<int> Item::kids() const
     return d->kids;
 }
 
-void Item::setKids(const QList<int> kids)
+void Item::setKids(const QList<int> &kids)
 {
     d->kids = kids;
 }
@@ -111,7 +111,7 @@ QList<int> Item::parts() const
     return d->parts;
 }
 
-void Item::setParts(const QList<int> parts)
+void Item::setParts(const QList<int> &parts)
 {
     d->parts = parts;
 }
@@ -131,7 +131,7 @@ QString Item::text() const
     return d->text;
 }
 
-void Item::setText(const QString text)
+void Item::setText(const QString &text)
 {
     d->text = text;
 }
@@ -141,7 +141,7 @@ QDateTime Item::time() const
     return d->time;
 }
 
-void Item::setTime(const QDateTime time)
+void Item::setTime(const QDateTime &time)
 {
     d->time = time;
 }
@@ -151,7 +151,7 @@ QString Item::title() const
     return d->title;
 }
 
-void Item::setTitle(const QString title)
+void Item::setTitle(const QString &title)
 {
     d->title = title;
 }
@@ -171,7 +171,7 @@ QUrl Item::url() const
     return d->url;
 }
 
-void Item::setUrl(const QUrl url)
+void Item::setUrl(const QUrl &url)
 {
     d->url = url;
 }

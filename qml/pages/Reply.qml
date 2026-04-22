@@ -21,7 +21,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
@@ -69,7 +68,7 @@ Page {
             Button {
                 id: send
 
-                text: qsTr("Add Comment")
+                text: qsTr("Add comment")
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     if (comment.text.length > 0) {
@@ -96,5 +95,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
+
+        VerticalScrollDecorator {}
     }
 }

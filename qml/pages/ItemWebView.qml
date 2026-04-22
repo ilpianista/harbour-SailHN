@@ -21,13 +21,16 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Sailfish.Share 1.0
 import Sailfish.WebView 1.0
 
 WebViewPage {
-    property var itemUrl
+    id: page
+
+    property string itemUrl
+    property string itemTitle
 
     allowedOrientations: Orientation.All
 
@@ -35,5 +38,29 @@ WebViewPage {
         anchors.fill: parent
         url: itemUrl
         privateMode: true
+    }
+
+    ShareAction {
+        id: share
+
+        title: qsTr("Share url")
+        mimeType: "text/x-url"
+        resources: [
+            {
+                "type": "text/x-url",
+                "linkTitle": itemTitle,
+                "status": itemUrl
+            }
+        ]
+    }
+
+    IconButton {
+        anchors {
+            right: parent.right
+            bottom: parent.bottom
+            margins: Theme.horizontalPageMargin
+        }
+        icon.source: "image://theme/icon-m-share"
+        onClicked: share.trigger()
     }
 }

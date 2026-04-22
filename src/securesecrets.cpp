@@ -27,6 +27,7 @@
 #include <QDebug>
 #include <QEventLoop>
 #include <QNetworkCookie>
+#include <QTimer>
 
 using namespace Sailfish::Secrets;
 
@@ -79,7 +80,7 @@ void SecureSecrets::storeCookies(const QList<QNetworkCookie> &cookies)
 
     // Serialize cookies to QByteArray
     QByteArray cookiesData = QByteArray();
-    Q_FOREACH (const QNetworkCookie cookie, cookies) {
+    for (const QNetworkCookie &cookie : cookies) {
         if (!cookiesData.isEmpty())
             cookiesData += '\n'; // Separate cookies with newline
         cookiesData += cookie.toRawForm();
@@ -168,8 +169,11 @@ QByteArray SecureSecrets::getSecret(const QString &name) const
                                              SecretManager::DefaultEncryptedStoragePluginName));
     request.setUserInteractionMode(SecretManager::SystemInteraction);
 
-    // Use event loop for synchronous retrieval
+    // Use event loop for synchronous retrieval with a safety timeout
     QEventLoop loop;
+    QTimer timeoutTimer;
+    timeoutTimer.setSingleShot(true);
+    QObject::connect(&timeoutTimer, &QTimer::timeout, &loop, &QEventLoop::quit);
     QObject::connect(&request, &StoredSecretRequest::statusChanged, &loop, [&loop, &request]() {
         if (request.status() == Request::Finished) {
             loop.quit();
@@ -179,13 +183,20 @@ QByteArray SecureSecrets::getSecret(const QString &name) const
     request.startRequest();
 
     if (request.status() != Request::Finished) {
+        timeoutTimer.start(5000);
         loop.exec();
+    }
+
+    if (request.status() != Request::Finished) {
+        qWarning() << "Timed out waiting for secret" << name;
+        return QByteArray();
     }
 
     if (request.result().code() == Result::Succeeded) {
         return request.secret().data();
     }
 
+    qWarning() << "Failed to retrieve secret" << name << ":" << request.result().errorMessage();
     return QByteArray();
 }
 
@@ -198,8 +209,12 @@ void SecureSecrets::deleteSecret(const QString &name)
                                               SecretManager::DefaultEncryptedStoragePluginName));
     request->setUserInteractionMode(SecretManager::SystemInteraction);
 
-    connect(request, &DeleteSecretRequest::statusChanged, this, [request]() {
+    connect(request, &DeleteSecretRequest::statusChanged, this, [request, name]() {
         if (request->status() == Request::Finished) {
+            if (request->result().code() != Result::Succeeded) {
+                qWarning() << "Failed to delete secret" << name << ":"
+                           << request->result().errorMessage();
+            }
             request->deleteLater();
         }
     });

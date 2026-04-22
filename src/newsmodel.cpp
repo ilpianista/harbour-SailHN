@@ -24,6 +24,7 @@
 
 #include "newsmodel.h"
 
+#include <memory>
 #include <QDebug>
 
 #include "hackernewsapi.h"
@@ -36,6 +37,7 @@ NewsModel::NewsModel(QObject *parent)
     , api(new HackerNewsAPI(this))
     , m_start(0)
     , m_end(MAX_ITEMS)
+    , m_hasMore(true)
 {
     connect(api, &HackerNewsAPI::storiesFetched, this, &NewsModel::onStoriesFetched);
 }
@@ -48,8 +50,6 @@ NewsModel::~NewsModel()
         qDeleteAll(backing);
         backing.clear();
     }
-
-    delete api;
 }
 
 QHash<int, QByteArray> NewsModel::roleNames() const
@@ -107,19 +107,18 @@ void NewsModel::loadTopStories()
 
 void NewsModel::refresh(const int itemId)
 {
+    // Use a single-shot connection to avoid duplicate handlers
+    auto conn = std::make_shared<QMetaObject::Connection>();
+    *conn = connect(api, &HackerNewsAPI::itemFetched, this, [this, conn](Item *item) {
+        disconnect(*conn);
+        loadComments(item->kids());
+        delete item;
+    });
+
     api->getItem(itemId);
-
-    connect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onRefreshComments);
 }
 
-void NewsModel::onRefreshComments(Item *item)
-{
-    disconnect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onRefreshComments);
-
-    loadComments(item->kids());
-}
-
-void NewsModel::loadComments(const QList<int> kids)
+void NewsModel::loadComments(const QList<int> &kids)
 {
     reset();
     m_ids = kids;
@@ -128,21 +127,24 @@ void NewsModel::loadComments(const QList<int> kids)
 
 void NewsModel::nextItems()
 {
-    if (m_end < m_ids.size()) {
-        m_start = m_end;
-        m_end += MAX_ITEMS;
-
-        if (m_end >= m_ids.size()) {
-            m_end = -1;
-        }
-
-        loadItems();
+    if (!m_hasMore) {
+        return;
     }
+
+    m_start = m_end;
+    m_end += MAX_ITEMS;
+
+    if (m_end >= m_ids.size()) {
+        m_end = m_ids.size();
+        m_hasMore = false;
+    }
+
+    loadItems();
 }
 
 QVariant NewsModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid()) {
+    if (!index.isValid() || index.row() < 0 || index.row() >= backing.size()) {
         return QVariant();
     }
 
@@ -158,7 +160,7 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const
         return item->descendants();
     case KidsRole: {
         QVariantList kids;
-        Q_FOREACH (const int kid, item->kids()) {
+        for (const int kid : item->kids()) {
             kids.append(kid);
         }
         return kids;
@@ -184,11 +186,14 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const
 
 void NewsModel::onItemFetched(Item *item)
 {
-    if (!item->deleted()) {
-        beginInsertRows(QModelIndex(), backing.size(), backing.size());
-        backing.append(item);
-        endInsertRows();
+    if (item->deleted()) {
+        delete item;
+        return;
     }
+
+    beginInsertRows(QModelIndex(), backing.size(), backing.size());
+    backing.append(item);
+    endInsertRows();
 }
 
 void NewsModel::onStoriesFetched(QList<int> ids)
@@ -210,6 +215,7 @@ void NewsModel::reset()
 
     m_start = 0;
     m_end = MAX_ITEMS;
+    m_hasMore = true;
     m_ids.clear();
 
     connect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onItemFetched);
@@ -217,8 +223,8 @@ void NewsModel::reset()
 
 void NewsModel::loadItems()
 {
-    QList<int> limited = m_ids.mid(m_start, m_end);
-    Q_FOREACH (const int id, limited) {
+    QList<int> limited = m_ids.mid(m_start, m_end - m_start);
+    for (const int id : limited) {
         api->getItem(id);
     }
 }

@@ -48,18 +48,18 @@ Page {
     }
 
     allowedOrientations: Orientation.All
-    Component.onCompleted: {
-        appWindow.itemTitle = title;
-        appWindow.itemScore = score;
-        appWindow.itemDescendants = descendants;
-        loadComments();
-        reply.enabled = manager.isAuthenticated();
-    }
     onStatusChanged: {
-        if (status == PageStatus.Active) {
+        if (status === PageStatus.Active) {
+            appWindow.itemTitle = title;
+            appWindow.itemScore = score;
+            appWindow.itemDescendants = descendants;
+            loadComments();
+            reply.enabled = manager.isAuthenticated();
+
             if (url && !(/^\s*$/.test(url)))
                 pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {
-                    "itemUrl": url
+                    "itemUrl": url,
+                    "itemTitle": title
                 });
         }
     }
@@ -71,13 +71,6 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
-            MenuItem {
-                text: qsTr("Copy external URL")
-                onClicked: {
-                    Clipboard.text = url;
-                }
-            }
-
             MenuItem {
                 text: qsTr("Share")
                 onClicked: {
@@ -123,8 +116,8 @@ Page {
             width: parent.width - Theme.horizontalPageMargin * 2
             spacing: Theme.paddingMedium
 
-            SectionHeader {
-                text: qsTr("Comments")
+            PageHeader {
+                title: qsTr("Comments")
             }
 
             Label {
@@ -136,7 +129,7 @@ Page {
             }
 
             Text {
-                width: parent.implicitWidth
+                width: parent.width
                 visible: (itemText && !(/^\s*$/.test(itemText)))
                 textFormat: Text.RichText
                 text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
@@ -150,7 +143,7 @@ Page {
 
             // Workaround for Label that does not provide onClick?
             Text {
-                width: parent.implicitWidth
+                width: parent.width
                 visible: (url && !(/^\s*$/.test(url)))
                 textFormat: Text.RichText
                 font.pixelSize: Theme.fontSizeSmall
@@ -206,7 +199,7 @@ Page {
             {
                 "type": "text/x-url",
                 "linkTitle": page.title,
-                "status": url.toString()
+                "status": "https://news.ycombinator.com/item?id=" + id
             }
         ]
     }

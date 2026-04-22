@@ -21,7 +21,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
@@ -48,15 +47,17 @@ Page {
     }
 
     allowedOrientations: Orientation.All
-    Component.onCompleted: {
-        username.text = manager.getUsername();
-        if (username.text.length > 0)
-            password.forceActiveFocus();
+    onStatusChanged: {
+        if (status === PageStatus.Active) {
+            username.text = manager.getUsername();
+            if (username.text.length > 0)
+                password.forceActiveFocus();
 
-        var isAuth = manager.isAuthenticated();
-        isAuthenticated(isAuth);
-        if (isAuth)
-            updateDetails();
+            var isAuth = manager.isAuthenticated();
+            isAuthenticated(isAuth);
+            if (isAuth)
+                updateDetails();
+        }
     }
 
     Connections {
@@ -94,9 +95,10 @@ Page {
 
             x: Theme.horizontalPageMargin
             width: parent.width - Theme.horizontalPageMargin * 2
+            spacing: Theme.paddingMedium
 
             PageHeader {
-                title: qsTr("Settings")
+                title: qsTr("Account")
             }
 
             TextField {
@@ -181,11 +183,12 @@ Page {
                     font.pixelSize: Theme.fontSizeMedium
                     wrapMode: Text.Wrap
                     onLinkActivated: {
-                        console.log("Opening external browser: " + link);
                         Qt.openUrlExternally(link);
                     }
                 }
             }
         }
+
+        VerticalScrollDecorator {}
     }
 }

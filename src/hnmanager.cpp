@@ -24,10 +24,10 @@
 
 #include "hnmanager.h"
 
+#include <memory>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
-#include <QEventLoop>
 #include <QNetworkAccessManager>
 #include <QNetworkCookie>
 #include <QNetworkCookieJar>
@@ -71,8 +71,12 @@ HNManager::HNManager(QObject *parent)
     setUsername(m_settings->value("Username").toString());
 
     if (!getUsername().isEmpty()) {
+        auto conn = std::make_shared<QMetaObject::Connection>();
+        *conn = connect(api, &HackerNewsAPI::userFetched, this, [this, conn](User *user) {
+            disconnect(*conn);
+            onLoggedUserFetched(user);
+        });
         api->getUser(getUsername());
-        connect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
     }
 
     // Use SecureSecrets for cookie storage
@@ -80,7 +84,7 @@ HNManager::HNManager(QObject *parent)
     connect(m_secureStorage, &SecureSecrets::initialized, this, [this]() {
         // Load cookies from secure storage
         QNetworkCookieJar *cookieJar = network->cookieJar();
-        Q_FOREACH (const QNetworkCookie cookie, m_secureStorage->loadCookies()) {
+        for (const QNetworkCookie &cookie : m_secureStorage->loadCookies()) {
             cookieJar->insertCookie(cookie);
         }
     });
@@ -89,10 +93,9 @@ HNManager::HNManager(QObject *parent)
 
 HNManager::~HNManager()
 {
-    delete api;
-    delete network;
-    delete m_loggedUser;
-    delete m_settings;
+    if (m_loggedUser && !m_loggedUser->parent()) {
+        delete m_loggedUser;
+    }
 }
 
 void HNManager::authenticate(const QString &username, const QString &password)
@@ -118,6 +121,10 @@ void HNManager::authenticate(const QString &username, const QString &password)
 void HNManager::onAuthenticateResult()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
+    if (!reply) {
+        Q_EMIT authenticated(false);
+        return;
+    }
 
     bool logged = false;
     if (reply->error() != QNetworkReply::NoError) {
@@ -126,13 +133,17 @@ void HNManager::onAuthenticateResult()
         if (!reply->readAll().contains("Bad login.")) {
             logged = true;
 
-            // Save cookies to secure storage after successful login
             QList<QNetworkCookie> cookies = network->cookieJar()->cookiesForUrl(
                 QUrl(BASE_URL + "/"));
             m_secureStorage->storeCookies(cookies);
 
+            // Use a single-shot connection to avoid duplicates
+            auto conn = std::make_shared<QMetaObject::Connection>();
+            *conn = connect(api, &HackerNewsAPI::userFetched, this, [this, conn](User *user) {
+                disconnect(*conn);
+                onLoggedUserFetched(user);
+            });
             api->getUser(m_loggedUsername);
-            connect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
         }
     }
 
@@ -143,7 +154,9 @@ void HNManager::onAuthenticateResult()
 
 void HNManager::onLoggedUserFetched(User *user)
 {
-    disconnect(api, &HackerNewsAPI::userFetched, this, &HNManager::onLoggedUserFetched);
+    if (m_loggedUser) {
+        m_loggedUser->deleteLater();
+    }
 
     m_loggedUser = user;
     m_loggedUser->setParent(this);
@@ -153,8 +166,6 @@ void HNManager::onLoggedUserFetched(User *user)
 
 bool HNManager::isAuthenticated() const
 {
-    // qDebug() << "Is authenticated as:" << m_loggedUser;
-
     return m_loggedUser != nullptr;
 }
 
@@ -177,19 +188,18 @@ User *HNManager::loggedUser()
 void HNManager::logout()
 {
     setUsername(QString());
-    delete m_loggedUser;
-    m_loggedUser = nullptr;
 
-    // Clear cookies from network manager
+    if (m_loggedUser) {
+        m_loggedUser->deleteLater();
+        m_loggedUser = nullptr;
+    }
+
     QNetworkCookieJar *cookieJar = network->cookieJar();
-    Q_FOREACH (const QNetworkCookie cookie, cookieJar->cookiesForUrl(QUrl(BASE_URL + "/"))) {
+    for (const QNetworkCookie &cookie : cookieJar->cookiesForUrl(QUrl(BASE_URL + "/"))) {
         cookieJar->deleteCookie(cookie);
     }
 
-    // Clear cookies from secure storage
     m_secureStorage->clearCookies();
-
-    // Clear username from settings
     m_settings->setValue("Username", QString());
 }
 
@@ -197,44 +207,64 @@ void HNManager::submit(const QString &title, const QString &url, const QString &
 {
     qDebug() << "Submit item with title" << title;
 
-    QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/r")));
-    req.setHeader(QNetworkRequest::ContentTypeHeader,
-                  QLatin1String("application/x-www-form-urlencoded"));
+    getSubmitCSRF([this, title, url, text](const QString &csrf) {
+        if (csrf.isEmpty()) {
+            qCritical() << "Failed to obtain submit CSRF token";
+            Q_EMIT submitted(false);
+            return;
+        }
 
-    QUrlQuery data;
-    data.addQueryItem(QLatin1String("title"), title);
-    data.addQueryItem(QLatin1String("url"), url);
-    data.addQueryItem(QLatin1String("text"), text);
-    data.addQueryItem(QLatin1String("fnop"), QLatin1String("submit-page"));
-    data.addQueryItem(QLatin1String("fnid"), getSubmitCSRF());
+        QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/r")));
+        req.setHeader(QNetworkRequest::ContentTypeHeader,
+                      QLatin1String("application/x-www-form-urlencoded"));
 
-    QNetworkReply *reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+        QUrlQuery data;
+        data.addQueryItem(QLatin1String("title"), title);
+        data.addQueryItem(QLatin1String("url"), url);
+        data.addQueryItem(QLatin1String("text"), text);
+        data.addQueryItem(QLatin1String("fnop"), QLatin1String("submit-page"));
+        data.addQueryItem(QLatin1String("fnid"), csrf);
 
-    connect(reply, &QNetworkReply::finished, this, &HNManager::onSubmitResult);
+        QNetworkReply *reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+
+        connect(reply, &QNetworkReply::finished, this, &HNManager::onSubmitResult);
+    });
 }
 
 void HNManager::comment(const int parentId, const QString &text)
 {
     qDebug() << "Comment item with id" << parentId;
 
-    QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/comment")));
-    req.setHeader(QNetworkRequest::ContentTypeHeader,
-                  QLatin1String("application/x-www-form-urlencoded"));
+    getCommentCSRF(parentId, [this, parentId, text](const QString &csrf) {
+        if (csrf.isEmpty()) {
+            qCritical() << "Failed to obtain comment CSRF token";
+            Q_EMIT commented(false);
+            return;
+        }
 
-    QUrlQuery data;
-    data.addQueryItem(QLatin1String("parent"), QString::number(parentId));
-    data.addQueryItem(QLatin1String("goto"), QStringLiteral("item?id=%1").arg(parentId));
-    data.addQueryItem(QLatin1String("text"), text);
-    data.addQueryItem(QLatin1String("hmac"), getCommentCSRF(parentId));
+        QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/comment")));
+        req.setHeader(QNetworkRequest::ContentTypeHeader,
+                      QLatin1String("application/x-www-form-urlencoded"));
 
-    QNetworkReply *reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+        QUrlQuery data;
+        data.addQueryItem(QLatin1String("parent"), QString::number(parentId));
+        data.addQueryItem(QLatin1String("goto"), QStringLiteral("item?id=%1").arg(parentId));
+        data.addQueryItem(QLatin1String("text"), text);
+        data.addQueryItem(QLatin1String("hmac"), csrf);
 
-    connect(reply, &QNetworkReply::finished, this, &HNManager::onCommentResult);
+        QNetworkReply *reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+
+        connect(reply, &QNetworkReply::finished, this, &HNManager::onCommentResult);
+    });
 }
 
 void HNManager::onSubmitResult()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
+    if (!reply) {
+        Q_EMIT submitted(false);
+        return;
+    }
 
     bool res = false;
 
@@ -254,6 +284,10 @@ void HNManager::onSubmitResult()
 void HNManager::onCommentResult()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
+    if (!reply) {
+        Q_EMIT commented(false);
+        return;
+    }
 
     bool res = false;
 
@@ -271,21 +305,18 @@ void HNManager::onCommentResult()
     reply->deleteLater();
 }
 
-QString HNManager::getSubmitCSRF() const
+void HNManager::getSubmitCSRF(std::function<void(const QString &)> callback)
 {
     QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/submit")));
     QNetworkReply *reply = network->get(req);
 
-    QEventLoop loop;
-    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
-
-    const QRegularExpression regexp("<input type=\"hidden\" name=\"fnid\" value=\"([^\"]+)\">");
-
-    return getCSRF(reply, regexp);
+    connect(reply, &QNetworkReply::finished, this, [this, reply, callback]() {
+        const QRegularExpression regexp("<input type=\"hidden\" name=\"fnid\" value=\"([^\"]+)\">");
+        callback(getCSRF(reply, regexp));
+    });
 }
 
-QString HNManager::getCommentCSRF(const int itemId) const
+void HNManager::getCommentCSRF(const int itemId, std::function<void(const QString &)> callback)
 {
     QUrl url(BASE_URL + QLatin1String("/item"));
 
@@ -296,20 +327,24 @@ QString HNManager::getCommentCSRF(const int itemId) const
     QNetworkRequest req(url);
     QNetworkReply *reply = network->get(req);
 
-    QEventLoop loop;
-    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
-
-    const QRegularExpression regexp("<input type=\"hidden\" name=\"hmac\" value=\"([^\"]+)\">");
-
-    return getCSRF(reply, regexp);
+    connect(reply, &QNetworkReply::finished, this, [this, reply, callback]() {
+        const QRegularExpression regexp("<input type=\"hidden\" name=\"hmac\" value=\"([^\"]+)\">");
+        callback(getCSRF(reply, regexp));
+    });
 }
 
 QString HNManager::getCSRF(QNetworkReply *reply, const QRegularExpression &regexp) const
 {
     QString csrf;
 
-    QTextStream stream(reply->readAll(), QIODevice::ReadOnly);
+    if (reply->error() != QNetworkReply::NoError) {
+        qCritical() << "CSRF request failed:" << reply->errorString();
+        reply->deleteLater();
+        return csrf;
+    }
+
+    QByteArray data = reply->readAll();
+    QTextStream stream(data, QIODevice::ReadOnly);
 
     QString line;
     while (!stream.atEnd()) {

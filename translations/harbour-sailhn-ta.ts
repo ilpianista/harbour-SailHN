@@ -5,38 +5,33 @@
     <name>CommentsPage</name>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="75"/>
-        <source>Copy external URL</source>
-        <translation>வெளிப்புற முகவரி ஐ நகலெடுக்கவும்</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="82"/>
         <source>Share</source>
         <translation>பங்கு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="91"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="84"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="99"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="92"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="111"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="104"/>
         <source>Load more</source>
         <translation>மேலும் ஏற்றவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="127"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="120"/>
         <source>Comments</source>
         <translation>கருத்துகள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="203"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="196"/>
         <source>Share url</source>
-        <translation>முகவரி ஐப் பகிரவும்</translation>
+        <translation type="unfinished">முகவரி ஐப் பகிரவும்</translation>
     </message>
 </context>
 <context>
@@ -63,24 +58,32 @@
     </message>
 </context>
 <context>
+    <name>ItemWebView</name>
+    <message>
+        <location filename="../qml/pages/ItemWebView.qml" line="46"/>
+        <source>Share url</source>
+        <translation type="unfinished">முகவரி ஐப் பகிரவும்</translation>
+    </message>
+</context>
+<context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="56"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="58"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="64"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="66"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="76"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="78"/>
         <source>Load more</source>
         <translation>மேலும் ஏற்றவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="92"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="94"/>
         <source>Replies</source>
         <translation>பதில்கள்</translation>
     </message>
@@ -88,29 +91,29 @@
 <context>
     <name>Reply</name>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="41"/>
+        <location filename="../qml/pages/Reply.qml" line="40"/>
         <source>Error when sending</source>
         <translation>அனுப்பும்போது பிழை</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="43"/>
+        <location filename="../qml/pages/Reply.qml" line="42"/>
         <source>Commented!</source>
         <translation>கருத்து!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="58"/>
+        <location filename="../qml/pages/Reply.qml" line="57"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="66"/>
+        <location filename="../qml/pages/Reply.qml" line="65"/>
         <source>Text</source>
         <translation>உரை</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="72"/>
-        <source>Add Comment</source>
-        <translation>கருத்து சேர்க்கவும்</translation>
+        <location filename="../qml/pages/Reply.qml" line="71"/>
+        <source>Add comment</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -124,58 +127,58 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <location filename="../qml/pages/Settings.qml" line="85"/>
         <source>Log out</source>
         <translation>விடுபதிகை</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="137"/>
+        <location filename="../qml/pages/Settings.qml" line="139"/>
         <source>Login failed</source>
         <translation>உள்நுழைவு தோல்வியடைந்தது</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="99"/>
-        <source>Settings</source>
-        <translation>அமைப்புகள்</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Settings.qml" line="106"/>
+        <location filename="../qml/pages/Settings.qml" line="108"/>
         <source>Username</source>
         <translation>பயனர்பெயர்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="114"/>
+        <location filename="../qml/pages/Settings.qml" line="116"/>
         <source>Password</source>
         <translation>கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="36"/>
-        <location filename="../qml/pages/Settings.qml" line="122"/>
+        <location filename="../qml/pages/Settings.qml" line="35"/>
+        <location filename="../qml/pages/Settings.qml" line="124"/>
         <source>Login</source>
         <translation>புகுபதிவு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="156"/>
+        <location filename="../qml/pages/Settings.qml" line="101"/>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="158"/>
         <source>User details</source>
         <translation>பயனர் விவரங்கள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="163"/>
+        <location filename="../qml/pages/Settings.qml" line="165"/>
         <source>created</source>
         <translation>உருவாக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="170"/>
+        <location filename="../qml/pages/Settings.qml" line="172"/>
         <source>karma</source>
         <translation>கர்மா</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="177"/>
+        <location filename="../qml/pages/Settings.qml" line="179"/>
         <source>About</source>
         <translation>பற்றி</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="34"/>
+        <location filename="../qml/pages/Settings.qml" line="33"/>
         <source>Logged</source>
         <translation>உள்நுழைந்த</translation>
     </message>
@@ -183,22 +186,22 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="70"/>
-        <source>Settings</source>
-        <translation>அமைப்புகள்</translation>
+        <location filename="../qml/pages/StoriesListView.qml" line="67"/>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="77"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="74"/>
         <source>Submit</source>
         <translation>சமர்ப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="83"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="80"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="101"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="98"/>
         <source>Loading more…</source>
         <translation type="unfinished"></translation>
     </message>

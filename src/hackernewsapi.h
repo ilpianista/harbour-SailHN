@@ -38,12 +38,12 @@ class HackerNewsAPI : public QObject
 public:
     enum Stories { New, Top, Show, Ask, Job, Best };
 
-    explicit HackerNewsAPI(QObject *parent = 0);
-    virtual ~HackerNewsAPI();
+    explicit HackerNewsAPI(QObject *parent = nullptr);
+    ~HackerNewsAPI() override;
 
     void getItem(const int id);
     void getStories(Stories kind);
-    void getUser(const QString id);
+    void getUser(const QString &id);
 
 Q_SIGNALS:
     void itemFetched(Item *item);
