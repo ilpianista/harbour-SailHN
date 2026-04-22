@@ -24,8 +24,8 @@
 
 #include "newsmodel.h"
 
-#include <QDebug>
 #include <memory>
+#include <QDebug>
 
 #include "hackernewsapi.h"
 #include "item.h"

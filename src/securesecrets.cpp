@@ -196,8 +196,7 @@ QByteArray SecureSecrets::getSecret(const QString &name) const
         return request.secret().data();
     }
 
-    qWarning() << "Failed to retrieve secret" << name << ":"
-               << request.result().errorMessage();
+    qWarning() << "Failed to retrieve secret" << name << ":" << request.result().errorMessage();
     return QByteArray();
 }
 

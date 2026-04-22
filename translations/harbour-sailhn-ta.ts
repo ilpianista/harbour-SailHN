@@ -4,39 +4,34 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
-        <source>Copy external URL</source>
-        <translation>வெளிப்புற முகவரி ஐ நகலெடுக்கவும்</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="81"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="76"/>
         <source>Share</source>
         <translation>பங்கு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="90"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="85"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="98"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="93"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="110"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="105"/>
         <source>Load more</source>
         <translation>மேலும் ஏற்றவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="126"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="121"/>
         <source>Comments</source>
         <translation>கருத்துகள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="202"/>
-        <source>Share url</source>
-        <translation>முகவரி ஐப் பகிரவும்</translation>
+        <location filename="../qml/pages/CommentsPage.qml" line="197"/>
+        <source>Share link</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -65,7 +60,7 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/pages/ItemWebView.qml" line="46"/>
+        <location filename="../qml/pages/ItemWebView.qml" line="48"/>
         <source>Share url</source>
         <translation type="unfinished">முகவரி ஐப் பகிரவும்</translation>
     </message>
@@ -191,22 +186,22 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="70"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="67"/>
         <source>Settings</source>
         <translation>அமைப்புகள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="77"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="74"/>
         <source>Submit</source>
         <translation>சமர்ப்பிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="83"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="80"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="101"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="98"/>
         <source>Loading more…</source>
         <translation type="unfinished"></translation>
     </message>

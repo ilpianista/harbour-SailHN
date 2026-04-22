@@ -50,16 +50,17 @@ Page {
     allowedOrientations: Orientation.All
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            appWindow.itemTitle = title
-            appWindow.itemScore = score
-            appWindow.itemDescendants = descendants
-            loadComments()
-            reply.enabled = manager.isAuthenticated()
+            appWindow.itemTitle = title;
+            appWindow.itemScore = score;
+            appWindow.itemDescendants = descendants;
+            loadComments();
+            reply.enabled = manager.isAuthenticated();
 
             if (url && !(/^\s*$/.test(url)))
                 pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {
-                    "itemUrl": url
-                })
+                    "itemUrl": url,
+                    "itemTitle": title
+                });
         }
     }
 
@@ -70,13 +71,6 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
-            MenuItem {
-                text: qsTr("Copy external URL")
-                onClicked: {
-                    Clipboard.text = url;
-                }
-            }
-
             MenuItem {
                 text: qsTr("Share")
                 onClicked: {
@@ -205,7 +199,7 @@ Page {
             {
                 "type": "text/x-url",
                 "linkTitle": page.title,
-                "status": url.toString()
+                "status": "https://news.ycombinator.com/item?id=" + id
             }
         ]
     }

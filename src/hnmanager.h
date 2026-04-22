@@ -25,8 +25,8 @@
 #ifndef HNMANAGER_H
 #define HNMANAGER_H
 
-#include <QObject>
 #include <functional>
+#include <QObject>
 
 #include "securesecrets.h"
 #include "user.h"

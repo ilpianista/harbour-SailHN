@@ -4,38 +4,33 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
-        <source>Copy external URL</source>
-        <translation>Kopijuoti išorinį URL</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="81"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="76"/>
         <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="90"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="85"/>
         <source>Reply</source>
         <translation>Atsakyti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="98"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="93"/>
         <source>Refresh</source>
         <translation>Įkelti iš naujo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="110"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="105"/>
         <source>Load more</source>
         <translation>Įkelti daugiau</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="126"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="121"/>
         <source>Comments</source>
         <translation>Komentarai</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="202"/>
-        <source>Share url</source>
+        <location filename="../qml/pages/CommentsPage.qml" line="197"/>
+        <source>Share link</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -65,7 +60,7 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/pages/ItemWebView.qml" line="46"/>
+        <location filename="../qml/pages/ItemWebView.qml" line="48"/>
         <source>Share url</source>
         <translation type="unfinished"></translation>
     </message>
@@ -191,22 +186,22 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="70"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="67"/>
         <source>Settings</source>
         <translation>Nustatymai</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="77"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="74"/>
         <source>Submit</source>
         <translation>Pateikti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="83"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="80"/>
         <source>Refresh</source>
         <translation>Įkelti iš naujo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="101"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="98"/>
         <source>Loading more…</source>
         <translation type="unfinished"></translation>
     </message>

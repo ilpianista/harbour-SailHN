@@ -21,7 +21,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 */
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Sailfish.Share 1.0
@@ -30,7 +29,8 @@ import Sailfish.WebView 1.0
 WebViewPage {
     id: page
 
-    property var itemUrl
+    property string itemUrl
+    property string itemTitle
 
     allowedOrientations: Orientation.All
 
@@ -48,16 +48,16 @@ WebViewPage {
         resources: [
             {
                 "type": "text/x-url",
-                "linkTitle": itemUrl.toString(),
-                "status": itemUrl.toString()
+                "linkTitle": itemTitle,
+                "status": itemUrl
             }
         ]
     }
 
     IconButton {
         anchors {
-            top: parent.top
             right: parent.right
+            bottom: parent.bottom
             margins: Theme.horizontalPageMargin
         }
         icon.source: "image://theme/icon-m-share"

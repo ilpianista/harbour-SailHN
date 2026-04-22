@@ -50,14 +50,14 @@ Page {
     allowedOrientations: Orientation.All
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            username.text = manager.getUsername()
+            username.text = manager.getUsername();
             if (username.text.length > 0)
-                password.forceActiveFocus()
+                password.forceActiveFocus();
 
-            var isAuth = manager.isAuthenticated()
-            isAuthenticated(isAuth)
+            var isAuth = manager.isAuthenticated();
+            isAuthenticated(isAuth);
             if (isAuth)
-                updateDetails()
+                updateDetails();
         }
     }
 

@@ -40,8 +40,8 @@ Page {
     allowedOrientations: Orientation.All
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            reply.enabled = manager.isAuthenticated()
-            loadComments()
+            reply.enabled = manager.isAuthenticated();
+            loadComments();
         }
     }
 
