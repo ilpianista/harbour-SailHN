@@ -48,15 +48,17 @@ Page {
     }
 
     allowedOrientations: Orientation.All
-    Component.onCompleted: {
-        username.text = manager.getUsername();
-        if (username.text.length > 0)
-            password.forceActiveFocus();
+    onStatusChanged: {
+        if (status === PageStatus.Active) {
+            username.text = manager.getUsername()
+            if (username.text.length > 0)
+                password.forceActiveFocus()
 
-        var isAuth = manager.isAuthenticated();
-        isAuthenticated(isAuth);
-        if (isAuth)
-            updateDetails();
+            var isAuth = manager.isAuthenticated()
+            isAuthenticated(isAuth)
+            if (isAuth)
+                updateDetails()
+        }
     }
 
     Connections {
@@ -187,5 +189,7 @@ Page {
                 }
             }
         }
+
+        VerticalScrollDecorator {}
     }
 }

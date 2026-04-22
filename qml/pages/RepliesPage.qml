@@ -38,9 +38,11 @@ Page {
     }
 
     allowedOrientations: Orientation.All
-    Component.onCompleted: {
-        reply.enabled = manager.isAuthenticated();
-        loadComments();
+    onStatusChanged: {
+        if (status === PageStatus.Active) {
+            reply.enabled = manager.isAuthenticated()
+            loadComments()
+        }
     }
 
     SilicaFlickable {
@@ -88,8 +90,8 @@ Page {
             width: parent.width - Theme.horizontalPageMargin * 2
             spacing: Theme.paddingMedium
 
-            SectionHeader {
-                text: qsTr("Replies")
+            PageHeader {
+                title: qsTr("Replies")
             }
 
             Repeater {

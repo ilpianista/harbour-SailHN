@@ -96,5 +96,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
+
+        VerticalScrollDecorator {}
     }
 }
