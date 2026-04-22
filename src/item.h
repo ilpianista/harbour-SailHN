@@ -35,28 +35,28 @@ class ItemPrivate;
 class Item : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int id READ id)
-    Q_PROPERTY(QString by READ by)
-    Q_PROPERTY(bool dead READ dead)
-    Q_PROPERTY(int descendants READ descendants)
-    Q_PROPERTY(QList<int> kids READ kids)
-    Q_PROPERTY(quint16 score READ score)
-    Q_PROPERTY(QString text READ text)
-    Q_PROPERTY(QDateTime time READ time)
-    Q_PROPERTY(QString title READ title)
-    Q_PROPERTY(QUrl url READ url)
+    Q_PROPERTY(int id READ id CONSTANT)
+    Q_PROPERTY(QString by READ by CONSTANT)
+    Q_PROPERTY(bool dead READ dead CONSTANT)
+    Q_PROPERTY(int descendants READ descendants CONSTANT)
+    Q_PROPERTY(QList<int> kids READ kids CONSTANT)
+    Q_PROPERTY(quint16 score READ score CONSTANT)
+    Q_PROPERTY(QString text READ text CONSTANT)
+    Q_PROPERTY(QDateTime time READ time CONSTANT)
+    Q_PROPERTY(QString title READ title CONSTANT)
+    Q_PROPERTY(QUrl url READ url CONSTANT)
 
 public:
     enum Type { Job, Story, Comment, Poll, PollOpt };
 
-    explicit Item(QObject *parent = 0);
-    virtual ~Item();
+    explicit Item(QObject *parent = nullptr);
+    ~Item() override;
 
     int id() const;
     void setId(const int id);
 
     QString by() const;
-    void setBy(const QString by);
+    void setBy(const QString &by);
 
     bool dead() const;
     void setDead(const bool dead);
@@ -68,31 +68,31 @@ public:
     void setDescendants(const int descendants);
 
     QList<int> kids() const;
-    void setKids(const QList<int> kids);
+    void setKids(const QList<int> &kids);
 
     int parent() const;
     void setParent(const int parent);
 
     QList<int> parts() const;
-    void setParts(const QList<int> parts);
+    void setParts(const QList<int> &parts);
 
     quint16 score() const;
     void setScore(const quint16 score);
 
     QString text() const;
-    void setText(const QString text);
+    void setText(const QString &text);
 
     QDateTime time() const;
-    void setTime(const QDateTime time);
+    void setTime(const QDateTime &time);
 
     QString title() const;
-    void setTitle(const QString title);
+    void setTitle(const QString &title);
 
     Type type() const;
     void setType(const Type type);
 
     QUrl url() const;
-    void setUrl(const QUrl url);
+    void setUrl(const QUrl &url);
 
 private:
     ItemPrivate *d;

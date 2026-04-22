@@ -41,10 +41,7 @@ HackerNewsAPI::HackerNewsAPI(QObject *parent)
     , network(new QNetworkAccessManager(this))
 {}
 
-HackerNewsAPI::~HackerNewsAPI()
-{
-    delete network;
-}
+HackerNewsAPI::~HackerNewsAPI() {}
 
 void HackerNewsAPI::getItem(const int id)
 {
@@ -57,7 +54,7 @@ void HackerNewsAPI::getItem(const int id)
     connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onGetItemResult);
 }
 
-void HackerNewsAPI::getUser(const QString id)
+void HackerNewsAPI::getUser(const QString &id)
 {
     // qDebug() << "Requesting user with id" << id;
 
@@ -95,6 +92,7 @@ void HackerNewsAPI::getStories(Stories kind)
         break;
     default:
         qCritical() << "Unrecognized kind" << kind;
+        return;
     }
 
     QUrl url(API_URL + path);
@@ -107,6 +105,9 @@ void HackerNewsAPI::getStories(Stories kind)
 void HackerNewsAPI::onGetItemResult()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
+    if (!reply) {
+        return;
+    }
 
     if (reply->error() != QNetworkReply::NoError) {
         qCritical() << "Cannot fetch item" << reply->errorString();
@@ -124,21 +125,17 @@ void HackerNewsAPI::onGetItemResult()
 
             if (jsonObj.contains("dead")) {
                 item->setDead(jsonObj.value("dead").toBool());
-            } else {
-                item->setDead(false);
             }
 
             if (jsonObj.contains("deleted")) {
-                item->setDead(jsonObj.value("deleted").toBool());
-            } else {
-                item->setDead(false);
+                item->setDeleted(jsonObj.value("deleted").toBool());
             }
 
             item->setDescendants(jsonObj.value("descendants").toInt());
 
             QJsonArray jsonKids = jsonObj.value("kids").toArray();
             QList<int> kids;
-            Q_FOREACH (const QVariant kid, jsonKids.toVariantList()) {
+            for (const QVariant &kid : jsonKids.toVariantList()) {
                 kids.append(kid.toInt());
             }
             item->setKids(kids);
@@ -147,7 +144,7 @@ void HackerNewsAPI::onGetItemResult()
 
             QJsonArray jsonParts = jsonObj.value("parts").toArray();
             QList<int> parts;
-            Q_FOREACH (const QVariant p, jsonParts.toVariantList()) {
+            for (const QVariant &p : jsonParts.toVariantList()) {
                 parts.append(p.toInt());
             }
             item->setParts(parts);
@@ -177,6 +174,9 @@ void HackerNewsAPI::onGetItemResult()
 void HackerNewsAPI::onGetUserResult()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
+    if (!reply) {
+        return;
+    }
 
     if (reply->error() != QNetworkReply::NoError) {
         qCritical() << "Cannot fetch user:" << reply->errorString();
@@ -200,7 +200,7 @@ void HackerNewsAPI::onGetUserResult()
 
             QJsonArray jsonSumitted = jsonObj.value("submitted").toArray();
             QList<int> submitted;
-            Q_FOREACH (const QVariant s, jsonSumitted.toVariantList()) {
+            for (const QVariant &s : jsonSumitted.toVariantList()) {
                 submitted.append(s.toInt());
             }
             user->setSubmitted(submitted);
@@ -217,6 +217,9 @@ void HackerNewsAPI::onGetUserResult()
 void HackerNewsAPI::onStoriesResult()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(QObject::sender());
+    if (!reply) {
+        return;
+    }
 
     if (reply->error() != QNetworkReply::NoError) {
         qCritical() << "Cannot fetch stories" << reply->errorString();
@@ -226,7 +229,7 @@ void HackerNewsAPI::onStoriesResult()
             // qDebug() << "There are" << json.array().size() << "items";
 
             QList<int> ids;
-            Q_FOREACH (const QJsonValue id, json.array()) {
+            for (const QJsonValue &id : json.array()) {
                 ids.append(id.toInt());
             }
 

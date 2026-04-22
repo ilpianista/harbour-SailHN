@@ -33,19 +33,19 @@
 
 struct ItemPrivate
 {
-    int id;
+    int id = 0;
     QString by;
-    bool dead;
-    bool deleted;
-    int descendants;
+    bool dead = false;
+    bool deleted = false;
+    int descendants = 0;
     QList<int> kids;
-    int parent;
+    int parent = 0;
     QList<int> parts;
-    quint16 score;
+    quint16 score = 0;
     QString text;
     QDateTime time;
     QString title;
-    Item::Type type;
+    Item::Type type = Item::Story;
     QUrl url;
 };
 

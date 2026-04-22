@@ -26,6 +26,7 @@
 #define HNMANAGER_H
 
 #include <QObject>
+#include <functional>
 
 #include "securesecrets.h"
 #include "user.h"
@@ -41,8 +42,8 @@ class HNManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit HNManager(QObject *parent = 0);
-    virtual ~HNManager();
+    explicit HNManager(QObject *parent = nullptr);
+    ~HNManager() override;
 
     Q_INVOKABLE void authenticate(const QString &username, const QString &password);
     Q_INVOKABLE bool isAuthenticated() const;
@@ -64,8 +65,8 @@ private:
     void onLoggedUserFetched(User *user);
     void onSubmitResult();
 
-    QString getSubmitCSRF() const;
-    QString getCommentCSRF(const int itemId) const;
+    void getSubmitCSRF(std::function<void(const QString &)> callback);
+    void getCommentCSRF(const int itemId, std::function<void(const QString &)> callback);
     QString getCSRF(QNetworkReply *reply, const QRegularExpression &regexp) const;
     void setUsername(const QString &username);
 

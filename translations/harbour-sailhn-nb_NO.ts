@@ -4,37 +4,37 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="75"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
         <source>Copy external URL</source>
         <translation>Kopier ekstern nettadresse</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="82"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="81"/>
         <source>Share</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="91"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="90"/>
         <source>Reply</source>
         <translation>Svar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="99"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="98"/>
         <source>Refresh</source>
         <translation>Gjenoppfrisk</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="111"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="110"/>
         <source>Load more</source>
         <translation>Last inn flere</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="127"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="126"/>
         <source>Comments</source>
         <translation>Kommentarer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="203"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="202"/>
         <source>Share url</source>
         <translation type="unfinished"></translation>
     </message>
@@ -63,24 +63,32 @@
     </message>
 </context>
 <context>
+    <name>ItemWebView</name>
+    <message>
+        <location filename="../qml/pages/ItemWebView.qml" line="46"/>
+        <source>Share url</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="56"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="58"/>
         <source>Reply</source>
         <translation>Svar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="64"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="66"/>
         <source>Refresh</source>
         <translation>Gjenoppfrisk</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="76"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="78"/>
         <source>Load more</source>
         <translation>Last inn flere</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="92"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="94"/>
         <source>Replies</source>
         <translation>Svar</translation>
     </message>
@@ -124,53 +132,53 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <location filename="../qml/pages/Settings.qml" line="86"/>
         <source>Log out</source>
         <translation>Logg ut</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="137"/>
+        <location filename="../qml/pages/Settings.qml" line="139"/>
         <source>Login failed</source>
         <translation>Innlogging mislyktes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="99"/>
+        <location filename="../qml/pages/Settings.qml" line="101"/>
         <source>Settings</source>
         <translation>Innstillinger</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="106"/>
+        <location filename="../qml/pages/Settings.qml" line="108"/>
         <source>Username</source>
         <translation>Brukernavn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="114"/>
+        <location filename="../qml/pages/Settings.qml" line="116"/>
         <source>Password</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="36"/>
-        <location filename="../qml/pages/Settings.qml" line="122"/>
+        <location filename="../qml/pages/Settings.qml" line="124"/>
         <source>Login</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="156"/>
+        <location filename="../qml/pages/Settings.qml" line="158"/>
         <source>User details</source>
         <translation>Brukerdetaljer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="163"/>
+        <location filename="../qml/pages/Settings.qml" line="165"/>
         <source>created</source>
         <translation>opprettet</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="170"/>
+        <location filename="../qml/pages/Settings.qml" line="172"/>
         <source>karma</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="177"/>
+        <location filename="../qml/pages/Settings.qml" line="179"/>
         <source>About</source>
         <translation>Om</translation>
     </message>

@@ -31,9 +31,9 @@
 struct UserPrivate
 {
     QString id;
-    quint16 delay;
+    quint16 delay = 0;
     QDateTime created;
-    int karma;
+    int karma = 0;
     QString about;
     QList<int> submitted;
 };

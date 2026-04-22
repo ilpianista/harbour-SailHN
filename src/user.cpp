@@ -41,7 +41,7 @@ QString User::id() const
     return d->id;
 }
 
-void User::setId(const QString id)
+void User::setId(const QString &id)
 {
     d->id = id;
 }
@@ -61,7 +61,7 @@ QDateTime User::created() const
     return d->created;
 }
 
-void User::setCreated(const QDateTime created)
+void User::setCreated(const QDateTime &created)
 {
     d->created = created;
 }
@@ -81,7 +81,7 @@ QString User::about() const
     return d->about;
 }
 
-void User::setAbout(const QString about)
+void User::setAbout(const QString &about)
 {
     d->about = about;
 }
@@ -91,7 +91,7 @@ QList<int> User::submitted() const
     return d->submitted;
 }
 
-void User::setSubmitted(const QList<int> submitted)
+void User::setSubmitted(const QList<int> &submitted)
 {
     d->submitted = submitted;
 }

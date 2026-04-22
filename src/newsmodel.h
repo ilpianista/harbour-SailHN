@@ -48,13 +48,13 @@ public:
         UrlRole = Qt::UserRole + 11
     };
 
-    explicit NewsModel(QObject *parent = 0);
-    virtual ~NewsModel();
+    explicit NewsModel(QObject *parent = nullptr);
+    ~NewsModel() override;
 
-    virtual int rowCount(const QModelIndex &) const { return backing.size(); }
-    virtual QVariant data(const QModelIndex &index, int role) const;
+    int rowCount(const QModelIndex &) const override { return backing.size(); }
+    QVariant data(const QModelIndex &index, int role) const override;
 
-    QHash<int, QByteArray> roleNames() const;
+    QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE void loadAskStories();
     Q_INVOKABLE void loadBestStories();
@@ -62,14 +62,13 @@ public:
     Q_INVOKABLE void loadJobStories();
     Q_INVOKABLE void loadShowStories();
     Q_INVOKABLE void loadTopStories();
-    Q_INVOKABLE void loadComments(const QList<int> kids);
+    Q_INVOKABLE void loadComments(const QList<int> &kids);
     Q_INVOKABLE void nextItems();
     Q_INVOKABLE void refresh(const int itemId);
 
 private:
     void loadItems();
     void onItemFetched(Item *item);
-    void onRefreshComments(Item *item);
     void onStoriesFetched(QList<int> ids);
     void reset();
 
@@ -78,6 +77,7 @@ private:
     QList<int> m_ids;
     int m_start;
     int m_end;
+    bool m_hasMore;
 };
 
 #endif // NEWSMODEL_H

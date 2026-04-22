@@ -34,33 +34,33 @@ class UserPrivate;
 class User : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString id READ id)
-    Q_PROPERTY(quint16 delay READ delay)
-    Q_PROPERTY(QDateTime created READ created)
-    Q_PROPERTY(int karma READ karma)
-    Q_PROPERTY(QString about READ about)
+    Q_PROPERTY(QString id READ id CONSTANT)
+    Q_PROPERTY(quint16 delay READ delay CONSTANT)
+    Q_PROPERTY(QDateTime created READ created CONSTANT)
+    Q_PROPERTY(int karma READ karma CONSTANT)
+    Q_PROPERTY(QString about READ about CONSTANT)
 
 public:
-    explicit User(QObject *parent = 0);
-    virtual ~User();
+    explicit User(QObject *parent = nullptr);
+    ~User() override;
 
     QString id() const;
-    void setId(const QString id);
+    void setId(const QString &id);
 
     quint16 delay() const;
     void setDelay(const quint16 delay);
 
     QDateTime created() const;
-    void setCreated(const QDateTime created);
+    void setCreated(const QDateTime &created);
 
     int karma() const;
     void setKarma(const int karma);
 
     QString about() const;
-    void setAbout(const QString about);
+    void setAbout(const QString &about);
 
     QList<int> submitted() const;
-    void setSubmitted(const QList<int> submitted);
+    void setSubmitted(const QList<int> &submitted);
 
 private:
     UserPrivate *d;
