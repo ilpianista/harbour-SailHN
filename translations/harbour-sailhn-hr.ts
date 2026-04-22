@@ -4,34 +4,34 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="76"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="75"/>
         <source>Share</source>
         <translation>Dijeli</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="85"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="84"/>
         <source>Reply</source>
         <translation>Odgovori</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="93"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="92"/>
         <source>Refresh</source>
         <translation>Aktualiziraj</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="105"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="104"/>
         <source>Load more</source>
         <translation>Učitaj više</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="121"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="120"/>
         <source>Comments</source>
         <translation>Komentari</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="197"/>
-        <source>Share link</source>
-        <translation type="unfinished"></translation>
+        <location filename="../qml/pages/CommentsPage.qml" line="196"/>
+        <source>Share url</source>
+        <translation type="unfinished">Dijeli URL</translation>
     </message>
 </context>
 <context>
@@ -60,7 +60,7 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/pages/ItemWebView.qml" line="48"/>
+        <location filename="../qml/pages/ItemWebView.qml" line="46"/>
         <source>Share url</source>
         <translation type="unfinished">Dijeli URL</translation>
     </message>
@@ -91,29 +91,29 @@
 <context>
     <name>Reply</name>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="41"/>
+        <location filename="../qml/pages/Reply.qml" line="40"/>
         <source>Error when sending</source>
         <translation>Greška tijekom slanja</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="43"/>
+        <location filename="../qml/pages/Reply.qml" line="42"/>
         <source>Commented!</source>
         <translation>Komentirano!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="58"/>
+        <location filename="../qml/pages/Reply.qml" line="57"/>
         <source>Reply</source>
         <translation>Odgovori</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="66"/>
+        <location filename="../qml/pages/Reply.qml" line="65"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Reply.qml" line="72"/>
-        <source>Add Comment</source>
-        <translation>Dodaj komentar</translation>
+        <location filename="../qml/pages/Reply.qml" line="71"/>
+        <source>Add comment</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -127,7 +127,7 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="86"/>
+        <location filename="../qml/pages/Settings.qml" line="85"/>
         <source>Log out</source>
         <translation>Odjava</translation>
     </message>
@@ -135,11 +135,6 @@
         <location filename="../qml/pages/Settings.qml" line="139"/>
         <source>Login failed</source>
         <translation>Prijava neuspjela</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Settings.qml" line="101"/>
-        <source>Settings</source>
-        <translation>Postavke</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="108"/>
@@ -152,10 +147,15 @@
         <translation>Lozinka</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="36"/>
+        <location filename="../qml/pages/Settings.qml" line="35"/>
         <location filename="../qml/pages/Settings.qml" line="124"/>
         <source>Login</source>
         <translation>Prijava</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="101"/>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="158"/>
@@ -178,7 +178,7 @@
         <translation>Informacije</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="34"/>
+        <location filename="../qml/pages/Settings.qml" line="33"/>
         <source>Logged</source>
         <translation>Zabilježeno</translation>
     </message>
@@ -187,8 +187,8 @@
     <name>StoriesListView</name>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="67"/>
-        <source>Settings</source>
-        <translation>Postavke</translation>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="74"/>
