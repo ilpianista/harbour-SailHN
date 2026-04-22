@@ -31,6 +31,7 @@ ApplicationWindow {
     property string itemTitle: ""
     property int itemScore: 0
     property int itemDescendants: 0
+    property bool authenticated: false
 
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 

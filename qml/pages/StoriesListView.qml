@@ -45,6 +45,7 @@ SilicaListView {
         target: manager
         onLoggedUserFetched: {
             submit.enabled = true;
+            appWindow.authenticated = true;
         }
     }
 

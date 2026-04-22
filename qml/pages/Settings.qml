@@ -37,6 +37,7 @@ Page {
         username.enabled = password.enabled = !isAuth;
         login.visible = !isAuth;
         logout.enabled = isAuth;
+        appWindow.authenticated = isAuth;
         if (!isAuth) {
             details.visible = false;
             password.text = "";
@@ -89,7 +90,6 @@ Page {
                 id: logout
 
                 text: qsTr("Log out")
-                enabled: manager.isAuthenticated()
                 onClicked: {
                     manager.logout();
                     isAuthenticated(false);

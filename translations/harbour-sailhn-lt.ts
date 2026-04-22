@@ -132,49 +132,49 @@
         <translation>Atsijungti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="150"/>
+        <location filename="../qml/pages/Settings.qml" line="149"/>
         <source>Login failed</source>
         <translation>Prisijungti nepavyko</translation>
     </message>
     <message>
+        <location filename="../qml/pages/Settings.qml" line="115"/>
         <location filename="../qml/pages/Settings.qml" line="116"/>
-        <location filename="../qml/pages/Settings.qml" line="117"/>
         <source>Username</source>
         <translation>Vartotojo vardas</translation>
     </message>
     <message>
+        <location filename="../qml/pages/Settings.qml" line="127"/>
         <location filename="../qml/pages/Settings.qml" line="128"/>
-        <location filename="../qml/pages/Settings.qml" line="129"/>
         <source>Password</source>
         <translation>Slaptažodis</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="140"/>
+        <location filename="../qml/pages/Settings.qml" line="139"/>
         <source>Login</source>
         <translation>Prisijungti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="109"/>
+        <location filename="../qml/pages/Settings.qml" line="108"/>
         <source>Account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="169"/>
+        <location filename="../qml/pages/Settings.qml" line="168"/>
         <source>User details</source>
         <translation>Vartotojo informacija</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="176"/>
+        <location filename="../qml/pages/Settings.qml" line="175"/>
         <source>created</source>
         <translation>sukurta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="183"/>
+        <location filename="../qml/pages/Settings.qml" line="182"/>
         <source>karma</source>
         <translation>karma</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="190"/>
+        <location filename="../qml/pages/Settings.qml" line="189"/>
         <source>About</source>
         <translation>Apie</translation>
     </message>
@@ -182,22 +182,22 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="67"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="74"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="76"/>
         <source>Submit</source>
         <translation>Pateikti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="80"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="82"/>
         <source>Refresh</source>
         <translation>Įkelti iš naujo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="98"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
         <translation type="unfinished"></translation>
     </message>
