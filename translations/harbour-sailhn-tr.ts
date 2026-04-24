@@ -31,7 +31,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="195"/>
         <source>Share url</source>
-        <translation type="unfinished">URL&apos;yi paylaş</translation>
+        <translation>URL&apos;yi paylaş</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../qml/pages/ItemWebView.qml" line="46"/>
         <source>Share url</source>
-        <translation type="unfinished">URL&apos;yi paylaş</translation>
+        <translation>URL&apos;yi paylaş</translation>
     </message>
 </context>
 <context>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="71"/>
         <source>Add comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Yorum ekle</translation>
     </message>
 </context>
 <context>
@@ -156,7 +156,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="108"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesap</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="168"/>
@@ -184,7 +184,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesap</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="76"/>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
-        <translation type="unfinished"></translation>
+        <translation>Daha fazla yükleniyor…</translation>
     </message>
 </context>
 <context>
