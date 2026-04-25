@@ -6,32 +6,32 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="74"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Dela</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="83"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Svara</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="91"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="103"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in mer</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="119"/>
         <source>Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentarer</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="195"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Dela URL</translation>
     </message>
 </context>
 <context>
@@ -39,22 +39,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="59"/>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>punkt</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="61"/>
         <source>points</source>
-        <translation type="unfinished"></translation>
+        <translation>punkter</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="74"/>
         <source>comment</source>
-        <translation type="unfinished"></translation>
+        <translation>kommentar</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="76"/>
         <source>comments</source>
-        <translation type="unfinished"></translation>
+        <translation>kommentarer</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../qml/pages/ItemWebView.qml" line="46"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Dela URL</translation>
     </message>
 </context>
 <context>
@@ -70,22 +70,22 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="58"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Svara</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="66"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="78"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in mer</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="94"/>
         <source>Replies</source>
-        <translation type="unfinished"></translation>
+        <translation>Svar</translation>
     </message>
 </context>
 <context>
@@ -93,27 +93,27 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="40"/>
         <source>Error when sending</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel vid sändning</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="42"/>
         <source>Commented!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommenterade!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="57"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Svara</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="65"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Text</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="71"/>
         <source>Add comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till kommentar</translation>
     </message>
 </context>
 <context>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="99"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Svara</translation>
     </message>
 </context>
 <context>
@@ -129,54 +129,54 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="92"/>
         <source>Log out</source>
-        <translation type="unfinished"></translation>
+        <translation>Logga ut</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="149"/>
         <source>Login failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte logga in</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="115"/>
         <location filename="../qml/pages/Settings.qml" line="116"/>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Användarnamn</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="127"/>
         <location filename="../qml/pages/Settings.qml" line="128"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösenord</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="139"/>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Logga in</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="108"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Konto</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="168"/>
         <source>User details</source>
-        <translation type="unfinished"></translation>
+        <translation>Användarinformation</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="175"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>skapat</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="182"/>
         <source>karma</source>
-        <translation type="unfinished"></translation>
+        <translation>karma</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="189"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Om</translation>
     </message>
 </context>
 <context>
@@ -184,22 +184,22 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Konto</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="76"/>
         <source>Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="82"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
-        <translation type="unfinished"></translation>
+        <translation>Läser in mer…</translation>
     </message>
 </context>
 <context>
@@ -207,38 +207,38 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="40"/>
         <source>Submitted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Skickat!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="63"/>
         <location filename="../qml/pages/Submit.qml" line="109"/>
         <source>Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="71"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="87"/>
         <source>Url</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="94"/>
         <source>or</source>
-        <translation type="unfinished"></translation>
+        <translation>eller</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="103"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Text</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="38"/>
         <source>Error during submission</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel vid inskickning</translation>
     </message>
 </context>
 <context>
@@ -246,37 +246,37 @@
     <message>
         <location filename="../qml/pages/utils.js" line="13"/>
         <source>just now</source>
-        <translation type="unfinished"></translation>
+        <translation>just nu</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="15"/>
         <source>1 minute ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 minut sedan</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="15"/>
         <source>%1 minutes ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 minuter sedan</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="17"/>
         <source>1 hour ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 timme sedan</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="17"/>
         <source>%1 hours ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 timmar sedan</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="19"/>
         <source>1 day ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 dag sedan</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="19"/>
         <source>%1 days ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dagar sedan</translation>
     </message>
 </context>
 </TS>
