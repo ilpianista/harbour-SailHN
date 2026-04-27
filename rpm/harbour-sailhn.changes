@@ -1,3 +1,7 @@
+* Tue Apr 28 2026 Andrea Scarpino <andrea@scarpino.dev> 0.10.2-1
+- Add remorse for logout
+- Use Format to format relative dates
+
 * Mon Apr 27 2026 Andrea Scarpino <andrea@scarpino.dev> 0.10.1-1
 - Fix cover action not being shown
 - Update translations
