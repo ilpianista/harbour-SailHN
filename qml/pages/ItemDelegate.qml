@@ -23,7 +23,6 @@
 */
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "utils.js" as Utils
 
 ListItem {
     id: listItem
@@ -109,7 +108,7 @@ ListItem {
             Label {
                 color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeSmall
-                text: Utils.getRelativeTime(time)
+                text: Format.formatDate(time, Formatter.DurationElapsed)
                 anchors.verticalCenter: parent.verticalCenter
             }
         }

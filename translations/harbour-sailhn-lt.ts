@@ -4,32 +4,32 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="74"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="73"/>
         <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="83"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="82"/>
         <source>Reply</source>
         <translation>Atsakyti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="91"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="90"/>
         <source>Refresh</source>
         <translation>Įkelti iš naujo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="103"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="102"/>
         <source>Load more</source>
         <translation>Įkelti daugiau</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="119"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="118"/>
         <source>Comments</source>
         <translation>Komentarai</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="195"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="194"/>
         <source>Share url</source>
         <translation type="unfinished"></translation>
     </message>
@@ -119,7 +119,7 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="99"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="98"/>
         <source>Reply</source>
         <translation type="unfinished">Atsakyti</translation>
     </message>
@@ -127,59 +127,59 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="97"/>
+        <location filename="../qml/pages/Settings.qml" line="96"/>
         <source>Log out</source>
         <translation>Atsijungti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="156"/>
+        <location filename="../qml/pages/Settings.qml" line="155"/>
         <source>Login failed</source>
         <translation>Prisijungti nepavyko</translation>
     </message>
     <message>
+        <location filename="../qml/pages/Settings.qml" line="121"/>
         <location filename="../qml/pages/Settings.qml" line="122"/>
-        <location filename="../qml/pages/Settings.qml" line="123"/>
         <source>Username</source>
         <translation>Vartotojo vardas</translation>
     </message>
     <message>
+        <location filename="../qml/pages/Settings.qml" line="133"/>
         <location filename="../qml/pages/Settings.qml" line="134"/>
-        <location filename="../qml/pages/Settings.qml" line="135"/>
         <source>Password</source>
         <translation>Slaptažodis</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="146"/>
+        <location filename="../qml/pages/Settings.qml" line="145"/>
         <source>Login</source>
         <translation>Prisijungti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="115"/>
+        <location filename="../qml/pages/Settings.qml" line="114"/>
         <source>Account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="99"/>
+        <location filename="../qml/pages/Settings.qml" line="98"/>
         <source>Logging out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="175"/>
+        <location filename="../qml/pages/Settings.qml" line="174"/>
         <source>User details</source>
         <translation>Vartotojo informacija</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="182"/>
+        <location filename="../qml/pages/Settings.qml" line="181"/>
         <source>created</source>
         <translation>sukurta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="189"/>
+        <location filename="../qml/pages/Settings.qml" line="188"/>
         <source>karma</source>
         <translation>karma</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="196"/>
+        <location filename="../qml/pages/Settings.qml" line="195"/>
         <source>About</source>
         <translation>Apie</translation>
     </message>
@@ -244,44 +244,6 @@
         <location filename="../qml/pages/Submit.qml" line="38"/>
         <source>Error during submission</source>
         <translation>Klaida pateikiant</translation>
-    </message>
-</context>
-<context>
-    <name>utils</name>
-    <message>
-        <location filename="../qml/pages/utils.js" line="13"/>
-        <source>just now</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/utils.js" line="15"/>
-        <source>1 minute ago</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/utils.js" line="15"/>
-        <source>%1 minutes ago</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/utils.js" line="17"/>
-        <source>1 hour ago</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/utils.js" line="17"/>
-        <source>%1 hours ago</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/utils.js" line="19"/>
-        <source>1 day ago</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/utils.js" line="19"/>
-        <source>%1 days ago</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

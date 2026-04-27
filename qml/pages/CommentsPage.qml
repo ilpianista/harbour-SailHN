@@ -25,7 +25,6 @@ import QtQuick 2.0
 import Sailfish.Share 1.0
 import Sailfish.Silica 1.0
 import harbour.sailhn 1.0
-import "utils.js" as Utils
 
 Page {
     id: page
@@ -162,7 +161,7 @@ Page {
                 color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignRight
-                text: by + " · " + Utils.getRelativeTime(time)
+                text: by + " · " + Format.formatDate(time, Formatter.DurationElapsed)
             }
 
             Separator {
