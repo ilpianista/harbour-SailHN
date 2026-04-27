@@ -85,14 +85,20 @@ Page {
         anchors.fill: parent
         contentHeight: column.height
 
+        RemorsePopup {
+            id: remorseLogout
+        }
+
         PullDownMenu {
             MenuItem {
                 id: logout
 
                 text: qsTr("Log out")
                 onClicked: {
-                    manager.logout();
-                    isAuthenticated(false);
+                    remorseLogout.execute(qsTr("Logging out"), function () {
+                        manager.logout();
+                        isAuthenticated(false);
+                    });
                 }
             }
         }
