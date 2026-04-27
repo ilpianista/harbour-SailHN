@@ -31,7 +31,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="195"/>
         <source>Share url</source>
-        <translation type="unfinished">Jaga võrguaadressi</translation>
+        <translation>Jaga võrguaadressi</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../qml/pages/ItemWebView.qml" line="46"/>
         <source>Share url</source>
-        <translation type="unfinished">Jaga võrguaadressi</translation>
+        <translation>Jaga võrguaadressi</translation>
     </message>
 </context>
 <context>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="71"/>
         <source>Add comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa kommentaar</translation>
     </message>
 </context>
 <context>
@@ -156,7 +156,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="108"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasutajakonto</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="168"/>
@@ -184,7 +184,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasutajakonto</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="76"/>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
-        <translation type="unfinished"></translation>
+        <translation>Laadin lisaks…</translation>
     </message>
 </context>
 <context>
@@ -246,37 +246,37 @@
     <message>
         <location filename="../qml/pages/utils.js" line="13"/>
         <source>just now</source>
-        <translation type="unfinished"></translation>
+        <translation>äsja</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="15"/>
         <source>1 minute ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 minuti eest</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="15"/>
         <source>%1 minutes ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 minuti eest</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="17"/>
         <source>1 hour ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 tunni eest</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="17"/>
         <source>%1 hours ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tunni eest</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="19"/>
         <source>1 day ago</source>
-        <translation type="unfinished"></translation>
+        <translation>1 päev tagasi</translation>
     </message>
     <message>
         <location filename="../qml/pages/utils.js" line="19"/>
         <source>%1 days ago</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 päeva tagasi</translation>
     </message>
 </context>
 </TS>
