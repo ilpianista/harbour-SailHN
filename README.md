@@ -4,7 +4,7 @@ An [Hacker News](https://news.ycombinator.com/) unofficial client for [Sailfish 
 
 ## Install
 
-Install via Jolla Store, [Chum](https://github.com/sailfishos-chum/main) or [OpenRepos](https://openrepos.net/content/ilpianista/sailhn).
+Install via Jolla Store or [Chum](https://github.com/sailfishos-chum/main).
 
 ## Translations
 
