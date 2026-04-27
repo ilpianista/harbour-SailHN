@@ -1,3 +1,7 @@
+* Mon Apr 27 2026 Andrea Scarpino <andrea@scarpino.dev> 0.10.1-1
+- Fix cover action not being shown
+- Update translations
+
 * Wed Apr 22 2026 Andrea Scarpino <andrea@scarpino.dev> 0.10.0-1
 - Use Sailfish Secrets to store cookie
 - Many styling fixes to the UI
