@@ -4,32 +4,32 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="73"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="77"/>
         <source>Share</source>
         <translation>Jaa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="82"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="86"/>
         <source>Reply</source>
         <translation>Vastaa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="90"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="94"/>
         <source>Refresh</source>
         <translation>Virkistä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="102"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="106"/>
         <source>Load more</source>
         <translation>Lataa lisää</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="118"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="122"/>
         <source>Comments</source>
         <translation>Kommentit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="194"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="198"/>
         <source>Share url</source>
         <translation type="unfinished">Jaa url-osoite</translation>
     </message>
@@ -68,22 +68,22 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="58"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="61"/>
         <source>Reply</source>
         <translation>Vastaa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="66"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="69"/>
         <source>Refresh</source>
         <translation>Virkistä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="78"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="81"/>
         <source>Load more</source>
         <translation>Lataa lisää</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="94"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="97"/>
         <source>Replies</source>
         <translation>Vastaukset</translation>
     </message>

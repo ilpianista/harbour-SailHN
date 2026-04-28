@@ -4,32 +4,32 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="73"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="77"/>
         <source>Share</source>
         <translation>பங்கு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="82"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="86"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="90"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="94"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="102"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="106"/>
         <source>Load more</source>
         <translation>மேலும் ஏற்றவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="118"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="122"/>
         <source>Comments</source>
         <translation>கருத்துகள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="194"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="198"/>
         <source>Share url</source>
         <translation type="unfinished">முகவரி ஐப் பகிரவும்</translation>
     </message>
@@ -68,22 +68,22 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="58"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="61"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="66"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="69"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="78"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="81"/>
         <source>Load more</source>
         <translation>மேலும் ஏற்றவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="94"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="97"/>
         <source>Replies</source>
         <translation>பதில்கள்</translation>
     </message>

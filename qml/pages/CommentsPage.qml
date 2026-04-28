@@ -47,12 +47,16 @@ Page {
     }
 
     allowedOrientations: Orientation.All
+
+    Component.onCompleted: {
+        loadComments();
+    }
+
     onStatusChanged: {
         if (status === PageStatus.Active) {
             appWindow.itemTitle = title;
             appWindow.itemScore = score;
             appWindow.itemDescendants = descendants;
-            loadComments();
 
             if (url && !(/^\s*$/.test(url)))
                 pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {
