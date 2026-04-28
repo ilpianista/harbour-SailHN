@@ -7,6 +7,9 @@ Exec=harbour-sailhn
 Name=SailHN
 Comment=Hacker News unofficial client
 
+[X-HarbourBackup]
+BackupPathList=.config/it.andreascarpino/harbour-sailhn/
+
 [X-Sailjail]
 Permissions=Internet;Secrets
 OrganizationName=it.andreascarpino
