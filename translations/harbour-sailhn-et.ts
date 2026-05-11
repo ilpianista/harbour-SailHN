@@ -176,7 +176,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="188"/>
         <source>karma</source>
-        <translation></translation>
+        <translation>karma</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="195"/>
@@ -228,7 +228,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="87"/>
         <source>Url</source>
-        <translation></translation>
+        <translation>Url</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="94"/>
