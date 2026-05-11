@@ -31,7 +31,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="199"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Condividi url</translation>
     </message>
 </context>
 <context>
@@ -39,22 +39,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="68"/>
         <source>point</source>
-        <translation type="unfinished">punto</translation>
+        <translation>punto</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="70"/>
         <source>points</source>
-        <translation type="unfinished">punti</translation>
+        <translation>punti</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="83"/>
         <source>comment</source>
-        <translation type="unfinished">commento</translation>
+        <translation>commento</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="85"/>
         <source>comments</source>
-        <translation type="unfinished">commenti</translation>
+        <translation>commenti</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../qml/pages/ItemWebView.qml" line="46"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Condividi url</translation>
     </message>
 </context>
 <context>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="71"/>
         <source>Add comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi commento</translation>
     </message>
 </context>
 <context>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="114"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilo</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="98"/>
         <source>Logging out</source>
-        <translation type="unfinished"></translation>
+        <translation>Sto uscendo</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="174"/>
@@ -189,7 +189,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilo</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="76"/>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
-        <translation type="unfinished"></translation>
+        <translation>Sto caricando…</translation>
     </message>
 </context>
 <context>
