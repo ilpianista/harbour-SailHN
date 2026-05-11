@@ -98,7 +98,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="42"/>
         <source>Commented!</source>
-        <translation>Commenté !</translation>
+        <translation>Commenté&#x202f;!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="57"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="40"/>
         <source>Submitted!</source>
-        <translation>Soumis !</translation>
+        <translation>Soumis&#x202f;!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="63"/>
