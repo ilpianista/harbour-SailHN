@@ -161,7 +161,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="98"/>
         <source>Logging out</source>
-        <translation type="unfinished"></translation>
+        <translation>Loggar ut</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="174"/>
