@@ -31,7 +31,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="199"/>
         <source>Share url</source>
-        <translation type="unfinished">Dijeli URL</translation>
+        <translation>Dijeli URL</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../qml/pages/ItemWebView.qml" line="46"/>
         <source>Share url</source>
-        <translation type="unfinished">Dijeli URL</translation>
+        <translation>Dijeli URL</translation>
     </message>
 </context>
 <context>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="71"/>
         <source>Add comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj komentar</translation>
     </message>
 </context>
 <context>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="114"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Račun</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="98"/>
         <source>Logging out</source>
-        <translation type="unfinished"></translation>
+        <translation>Odjavljivanje</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="174"/>
@@ -189,7 +189,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Račun</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="76"/>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
-        <translation type="unfinished"></translation>
+        <translation>Učitava se još …</translation>
     </message>
 </context>
 <context>
