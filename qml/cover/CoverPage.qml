@@ -34,8 +34,8 @@ CoverBackground {
     Column {
         id: column
         anchors.centerIn: parent
-        x: Theme.paddingSmall
-        width: parent.width - Theme.paddingSmall * 2
+        x: Theme.paddingLarge
+        width: parent.width - Theme.paddingLarge * 2
         visible: appWindow.itemTitle.length > 0
 
         Label {
