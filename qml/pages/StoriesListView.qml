@@ -39,6 +39,7 @@ SilicaListView {
         appWindow.itemTitle = "";
         appWindow.itemScore = 0;
         appWindow.itemDescendants = 0;
+        appWindow.itemId = 0;
     }
 
     Connections {

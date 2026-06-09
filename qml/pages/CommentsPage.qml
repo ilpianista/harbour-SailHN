@@ -57,6 +57,7 @@ Page {
             appWindow.itemTitle = title;
             appWindow.itemScore = score;
             appWindow.itemDescendants = descendants;
+            appWindow.itemId = id;
 
             if (url && !(/^\s*$/.test(url)))
                 pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {

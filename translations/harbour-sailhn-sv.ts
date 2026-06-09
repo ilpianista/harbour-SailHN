@@ -4,32 +4,32 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="77"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="78"/>
         <source>Share</source>
         <translation>Dela</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="86"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
         <source>Reply</source>
         <translation>Svara</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="94"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="95"/>
         <source>Refresh</source>
         <translation>Uppdatera</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="106"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
         <source>Load more</source>
         <translation>Läs in mer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="122"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="123"/>
         <source>Comments</source>
         <translation>Kommentarer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="198"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="199"/>
         <source>Share url</source>
         <translation>Dela URL</translation>
     </message>
@@ -37,22 +37,22 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="58"/>
+        <location filename="../qml/cover/CoverPage.qml" line="68"/>
         <source>point</source>
         <translation>punkt</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="60"/>
+        <location filename="../qml/cover/CoverPage.qml" line="70"/>
         <source>points</source>
         <translation>punkter</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="73"/>
+        <location filename="../qml/cover/CoverPage.qml" line="83"/>
         <source>comment</source>
         <translation>kommentar</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="75"/>
+        <location filename="../qml/cover/CoverPage.qml" line="85"/>
         <source>comments</source>
         <translation>kommentarer</translation>
     </message>
@@ -187,22 +187,22 @@
 <context>
     <name>StoriesListView</name>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="68"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
         <translation>Konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="75"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="76"/>
         <source>Submit</source>
         <translation>Skicka</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="81"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="82"/>
         <source>Refresh</source>
         <translation>Uppdatera</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StoriesListView.qml" line="99"/>
+        <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
         <translation>Läser in mer…</translation>
     </message>

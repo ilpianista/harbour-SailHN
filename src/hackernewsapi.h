@@ -41,7 +41,7 @@ public:
     explicit HackerNewsAPI(QObject *parent = nullptr);
     ~HackerNewsAPI() override;
 
-    void getItem(const int id);
+    Q_INVOKABLE void getItem(const int id);
     void getStories(Stories kind);
     void getUser(const QString &id);
 

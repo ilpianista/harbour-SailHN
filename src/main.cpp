@@ -26,7 +26,9 @@
 
 #include <sailfishapp.h>
 
+#include "hackernewsapi.h"
 #include "hnmanager.h"
+#include "item.h"
 #include "newsmodel.h"
 #include "user.h"
 
@@ -38,6 +40,12 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName(QStringLiteral("harbour-sailhn"));
     QCoreApplication::setOrganizationName(QStringLiteral("it.andreascarpino"));
 
+    qmlRegisterType<HackerNewsAPI>("harbour.sailhn", 1, 0, "HackerNewsAPI");
+    qmlRegisterUncreatableType<Item>("harbour.sailhn",
+                                     1,
+                                     0,
+                                     "HNItem",
+                                     "HNItem cannot be created from QML");
     qmlRegisterType<NewsModel>("harbour.sailhn", 1, 0, "NewsModel");
     qmlRegisterType<User>("harbour.sailhn", 1, 0, "User");
 

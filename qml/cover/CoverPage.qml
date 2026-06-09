@@ -23,8 +23,18 @@
 */
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import harbour.sailhn 1.0
 
 CoverBackground {
+    HackerNewsAPI {
+        id: api
+
+        onItemFetched: {
+            appWindow.itemScore = item.score;
+            appWindow.itemDescendants = item.descendants;
+        }
+    }
+
     CoverPlaceholder {
         text: "SailHN"
         icon.source: "/usr/share/icons/hicolor/86x86/apps/harbour-sailhn.png"
@@ -87,6 +97,19 @@ CoverBackground {
             onTriggered: {
                 appWindow.activate();
                 pageStack.push(Qt.resolvedUrl("../pages/Submit.qml"));
+            }
+        }
+    }
+
+    CoverActionList {
+        id: refreshActionList
+        enabled: appWindow.itemId > 0
+
+        CoverAction {
+            iconSource: "image://theme/icon-cover-refresh"
+
+            onTriggered: {
+                api.getItem(appWindow.itemId);
             }
         }
     }
