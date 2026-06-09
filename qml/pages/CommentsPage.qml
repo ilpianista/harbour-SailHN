@@ -135,7 +135,7 @@ Page {
                 width: parent.width
                 visible: (itemText && !(/^\s*$/.test(itemText)))
                 textFormat: Text.RichText
-                text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
+                text: "<style>a:link{color: " + Theme.highlightColor + ";} * { word-wrap: break-word; } pre, code { white-space: pre-wrap; }</style>" + itemText
                 color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeMedium
                 wrapMode: Text.Wrap

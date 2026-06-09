@@ -45,7 +45,7 @@ ListItem {
         Text {
             width: parent.width
             textFormat: Text.RichText
-            text: "<style>a:link{color: " + Theme.highlightColor + ";}</style>" + itemText
+            text: "<style>a:link{color: " + Theme.highlightColor + ";} * { word-wrap: break-word; } pre, code { white-space: pre-wrap; }</style>" + itemText
             color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.Wrap
