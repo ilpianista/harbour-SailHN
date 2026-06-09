@@ -50,6 +50,10 @@ void HackerNewsAPI::getItem(const int id)
     QUrl url(API_URL + QStringLiteral("/item/%1.json").arg(id));
     QNetworkRequest req(url);
     QNetworkReply *reply = network->get(req);
+    if (!reply) {
+        qCritical() << "Cannot create network request for item" << id;
+        return;
+    }
 
     connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onGetItemResult);
 }
@@ -62,6 +66,10 @@ void HackerNewsAPI::getUser(const QString &id)
 
     QNetworkRequest req(url);
     QNetworkReply *reply = network->get(req);
+    if (!reply) {
+        qCritical() << "Cannot create network request for user" << id;
+        return;
+    }
 
     connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onGetUserResult);
 }
@@ -98,6 +106,10 @@ void HackerNewsAPI::getStories(Stories kind)
     QUrl url(API_URL + path);
     QNetworkRequest req(url);
     QNetworkReply *reply = network->get(req);
+    if (!reply) {
+        qCritical() << "Cannot create network request for stories kind" << kind;
+        return;
+    }
 
     connect(reply, &QNetworkReply::finished, this, &HackerNewsAPI::onStoriesResult);
 }

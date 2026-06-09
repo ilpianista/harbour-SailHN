@@ -107,7 +107,8 @@ void NewsModel::loadTopStories()
 
 void NewsModel::refresh(const int itemId)
 {
-    // Use a single-shot connection to avoid duplicate handlers
+    disconnect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onItemFetched);
+
     auto conn = std::make_shared<QMetaObject::Connection>();
     *conn = connect(api, &HackerNewsAPI::itemFetched, this, [this, conn](Item *item) {
         disconnect(*conn);
