@@ -9,27 +9,32 @@
         <translation>Paylaş</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="84"/>
+        <source>Copy external URL</source>
+        <translation type="unfinished">Harici URL&apos;yi kopyala</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="93"/>
         <source>Reply</source>
         <translation>Yanıtla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="95"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="101"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="113"/>
         <source>Load more</source>
         <translation>Daha fazla yükle</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="123"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="129"/>
         <source>Comments</source>
         <translation>Yorumlar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="199"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="205"/>
         <source>Share url</source>
         <translation>URL&apos;yi paylaş</translation>
     </message>

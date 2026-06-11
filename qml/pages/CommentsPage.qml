@@ -80,6 +80,12 @@ Page {
                     share.trigger();
                 }
             }
+            MenuItem {
+                text: qsTr("Copy external URL")
+                onClicked: {
+                    Clipboard.text = url;
+                }
+            }
 
             MenuItem {
                 id: reply
