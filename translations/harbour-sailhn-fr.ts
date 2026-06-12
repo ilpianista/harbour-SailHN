@@ -9,27 +9,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="84"/>
+        <source>Copy external URL</source>
+        <translation type="unfinished">Copier l&apos;URL externe</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="93"/>
         <source>Reply</source>
         <translation>Répondre</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="95"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="101"/>
         <source>Refresh</source>
         <translation>Rafraîchir</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="113"/>
         <source>Load more</source>
         <translation>Charger plus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="123"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="129"/>
         <source>Comments</source>
         <translation>Commentaires</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="199"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="205"/>
         <source>Share url</source>
         <translation type="unfinished"></translation>
     </message>
@@ -98,7 +103,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="42"/>
         <source>Commented!</source>
-        <translation>Commenté&#x202f;!</translation>
+        <translation>Commenté !</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="57"/>
@@ -212,7 +217,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="40"/>
         <source>Submitted!</source>
-        <translation>Soumis&#x202f;!</translation>
+        <translation>Soumis !</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="63"/>
