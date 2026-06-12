@@ -1,3 +1,6 @@
+* Fri Jun 12 2026 Andrea Scarpino <andrea@scarpino.dev> 0.10.5-1
+- Restore the copy external url feature
+
 * Tue Jun 09 2026 Andrea Scarpino <andrea@scarpino.dev> 0.10.4-1
 - Add a cover action to refresh item stats
 - Fix code blocks not wrapping
