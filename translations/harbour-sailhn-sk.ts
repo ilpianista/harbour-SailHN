@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="78"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdieľať</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="84"/>
@@ -16,27 +16,27 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="93"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpovedať</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="101"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnoviť</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="113"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Načítať viac</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="129"/>
         <source>Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentáre</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="205"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdieľať url odkaz</translation>
     </message>
 </context>
 <context>
@@ -44,22 +44,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="68"/>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>bod</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="70"/>
         <source>points</source>
-        <translation type="unfinished"></translation>
+        <translation>body</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="83"/>
         <source>comment</source>
-        <translation type="unfinished"></translation>
+        <translation>komentár</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="85"/>
         <source>comments</source>
-        <translation type="unfinished"></translation>
+        <translation>komentáre</translation>
     </message>
 </context>
 <context>
@@ -67,7 +67,7 @@
     <message>
         <location filename="../qml/pages/ItemWebView.qml" line="46"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdieľať url odkaz</translation>
     </message>
 </context>
 <context>
@@ -75,22 +75,22 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="61"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpovedať</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="69"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnoviť</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="81"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Načítať viac</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="97"/>
         <source>Replies</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpovede</translation>
     </message>
 </context>
 <context>
@@ -98,17 +98,17 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="40"/>
         <source>Error when sending</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba pri odosielaní</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="42"/>
         <source>Commented!</source>
-        <translation type="unfinished"></translation>
+        <translation>Okomentované!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="57"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpovedať</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="65"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="71"/>
         <source>Add comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať komentár</translation>
     </message>
 </context>
 <context>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="98"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpovedať</translation>
     </message>
 </context>
 <context>
@@ -134,49 +134,49 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="96"/>
         <source>Log out</source>
-        <translation type="unfinished"></translation>
+        <translation>Odhlásiť sa</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="155"/>
         <source>Login failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Prihlásenie zlyhalo</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="121"/>
         <location filename="../qml/pages/Settings.qml" line="122"/>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Prezývka</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="133"/>
         <location filename="../qml/pages/Settings.qml" line="134"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Heslo</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="145"/>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Prihlásiť sa</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="114"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Účet</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="98"/>
         <source>Logging out</source>
-        <translation type="unfinished"></translation>
+        <translation>Prebieha odhlasovanie</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="174"/>
         <source>User details</source>
-        <translation type="unfinished"></translation>
+        <translation>Podrobnosti o užívateľovi</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="181"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>vytvorený</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="188"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="195"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O</translation>
     </message>
 </context>
 <context>
@@ -194,22 +194,22 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Účet</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="76"/>
         <source>Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>Odoslať</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="82"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnoviť</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
-        <translation type="unfinished"></translation>
+        <translation>Načíta sa viac…</translation>
     </message>
 </context>
 <context>
@@ -217,28 +217,28 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="40"/>
         <source>Submitted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Odoslané!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="63"/>
         <location filename="../qml/pages/Submit.qml" line="109"/>
         <source>Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>Odoslať</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="71"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Nadpis</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="87"/>
         <source>Url</source>
-        <translation type="unfinished"></translation>
+        <translation>Odkaz</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="94"/>
         <source>or</source>
-        <translation type="unfinished"></translation>
+        <translation>alebo</translation>
     </message>
     <message>
         <location filename="../qml/pages/Submit.qml" line="103"/>
@@ -248,7 +248,7 @@
     <message>
         <location filename="../qml/pages/Submit.qml" line="38"/>
         <source>Error during submission</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba počas odosielania</translation>
     </message>
 </context>
 </TS>
