@@ -11,6 +11,6 @@ Comment=Hacker News unofficial client
 BackupPathList=.config/it.andreascarpino/harbour-sailhn/
 
 [X-Sailjail]
-Permissions=Internet;Secrets
+Permissions=Internet;Secrets;WebView
 OrganizationName=it.andreascarpino
 ApplicationName=harbour-sailhn

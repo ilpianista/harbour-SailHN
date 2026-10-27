@@ -16,6 +16,7 @@ URL:        https://scarpino.dev
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   sailfishsecretsdaemon-secretsplugins-default
+Requires:   sailfish-components-webview-qt5
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -26,15 +27,15 @@ BuildRequires:  desktop-file-utils
 %description
 Unofficial Hacker News client.
 
-%if "%{?vendor}" == "chum"
-PackageName: SailHN
+%if 0%{?_chum}
+Title: SailHN
 Type: desktop-application
 DeveloperName: Andrea Scarpino
 Categories:
  - Network
 Custom:
   Repo: https://github.com/ilpianista/harbour-SailHN
-Icon: https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/icons/harbour-sailhn.svg
+PackageIcon: https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/icons/harbour-sailhn.svg
 Screenshots:
  - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_1.png
  - https://raw.githubusercontent.com/ilpianista/harbour-SailHN/master/screenshots/screenshot_2.png
