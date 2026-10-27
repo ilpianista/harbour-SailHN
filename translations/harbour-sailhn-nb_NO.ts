@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="84"/>
         <source>Copy external URL</source>
-        <translation type="unfinished">Kopier ekstern nettadresse</translation>
+        <translation>Kopier ekstern nettadresse</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="93"/>

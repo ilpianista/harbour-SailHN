@@ -6,12 +6,12 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="78"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Dêlen</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="84"/>
         <source>Copy external URL</source>
-        <translation type="unfinished">Externen URL kopiëren</translation>
+        <translation>Externen URL kopiëren</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="93"/>
@@ -21,22 +21,22 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="101"/>
         <source>Refresh</source>
-        <translation>Verversen</translation>
+        <translation>Vernieven</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="113"/>
         <source>Load more</source>
-        <translation>Meer laden</translation>
+        <translation>Meêr laden</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="129"/>
         <source>Comments</source>
-        <translation>Reacties</translation>
+        <translation>Commentaren</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="205"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>URL dêlen</translation>
     </message>
 </context>
 <context>
@@ -44,22 +44,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="68"/>
         <source>point</source>
-        <translation type="unfinished">punt</translation>
+        <translation>punt</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="70"/>
         <source>points</source>
-        <translation type="unfinished">punten</translation>
+        <translation>punten</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="83"/>
         <source>comment</source>
-        <translation type="unfinished">reactie</translation>
+        <translation>commentaar</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="85"/>
         <source>comments</source>
-        <translation type="unfinished">reacties</translation>
+        <translation>commentaren</translation>
     </message>
 </context>
 <context>
@@ -67,7 +67,7 @@
     <message>
         <location filename="../qml/pages/ItemWebView.qml" line="46"/>
         <source>Share url</source>
-        <translation type="unfinished"></translation>
+        <translation>URL dêlen</translation>
     </message>
 </context>
 <context>
@@ -75,17 +75,17 @@
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="61"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Antwoord</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="69"/>
         <source>Refresh</source>
-        <translation>Verversen</translation>
+        <translation>Vernieven</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="81"/>
         <source>Load more</source>
-        <translation>Meer laden</translation>
+        <translation>Meêr laden</translation>
     </message>
     <message>
         <location filename="../qml/pages/RepliesPage.qml" line="97"/>
@@ -98,12 +98,12 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="40"/>
         <source>Error when sending</source>
-        <translation>Fout bij verzenden</translation>
+        <translation>Fout bij ’t verzenden</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="42"/>
         <source>Commented!</source>
-        <translation>Gereageerd!</translation>
+        <translation>Commentaar geplaatst!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Reply.qml" line="57"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../qml/pages/Reply.qml" line="71"/>
         <source>Add comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Commentaar toevoegen</translation>
     </message>
 </context>
 <context>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../qml/pages/ReplyDelegate.qml" line="98"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Antwoord</translation>
     </message>
 </context>
 <context>
@@ -134,12 +134,12 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="96"/>
         <source>Log out</source>
-        <translation>Uitloggen</translation>
+        <translation>Afmelden</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="155"/>
         <source>Login failed</source>
-        <translation>Inloggen mislukt</translation>
+        <translation>Aanmelding mislukt</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="121"/>
@@ -156,17 +156,17 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="145"/>
         <source>Login</source>
-        <translation>Inloggen</translation>
+        <translation>Aanmelden</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="114"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Account</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="98"/>
         <source>Logging out</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig me af te melden</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="174"/>
@@ -194,7 +194,7 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="69"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Account</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="76"/>
@@ -204,12 +204,12 @@
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="82"/>
         <source>Refresh</source>
-        <translation>Vernieuwen</translation>
+        <translation>Vernieven</translation>
     </message>
     <message>
         <location filename="../qml/pages/StoriesListView.qml" line="100"/>
         <source>Loading more…</source>
-        <translation type="unfinished"></translation>
+        <translation>Meêr laden…</translation>
     </message>
 </context>
 <context>
