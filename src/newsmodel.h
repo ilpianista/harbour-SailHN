@@ -33,6 +33,7 @@ class HackerNewsAPI;
 class NewsModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(bool hasMore READ hasMore NOTIFY hasMoreChanged)
 public:
     enum NewsRoles {
         IdRole = Qt::UserRole + 1,
@@ -67,6 +68,12 @@ public:
     Q_INVOKABLE void nextItems();
     Q_INVOKABLE void refresh(const int itemId);
 
+    bool hasMore() const;
+
+Q_SIGNALS:
+    void hasMoreChanged();
+    void loadingFinished();
+
 private:
     void loadItems();
     void onItemFetched(Item *item);
@@ -78,6 +85,7 @@ private:
     QList<int> m_ids;
     int m_start;
     int m_end;
+    int m_pending;
     bool m_hasMore;
 };
 

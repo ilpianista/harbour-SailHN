@@ -4,47 +4,42 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="81"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="88"/>
         <source>Share</source>
         <translation>பங்கு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="94"/>
         <source>Copy external URL</source>
         <translation type="unfinished">வெளிப்புற முகவரி ஐ நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="94"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="118"/>
         <source>Unvote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="94"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="118"/>
         <source>Upvote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="103"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="115"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="111"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="127"/>
-        <source>Load more</source>
-        <translation>மேலும் ஏற்றவும்</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="143"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="140"/>
         <source>Comments</source>
         <translation>கருத்துகள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="220"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="232"/>
         <source>Share url</source>
         <translation type="unfinished">முகவரி ஐப் பகிரவும்</translation>
     </message>
@@ -88,7 +83,7 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/pages/ItemWebView.qml" line="46"/>
+        <location filename="../qml/pages/ItemWebView.qml" line="55"/>
         <source>Share url</source>
         <translation type="unfinished">முகவரி ஐப் பகிரவும்</translation>
     </message>
@@ -96,22 +91,17 @@
 <context>
     <name>RepliesPage</name>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="61"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="70"/>
         <source>Reply</source>
         <translation>பதில்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="69"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="78"/>
         <source>Refresh</source>
         <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="81"/>
-        <source>Load more</source>
-        <translation>மேலும் ஏற்றவும்</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RepliesPage.qml" line="97"/>
+        <location filename="../qml/pages/RepliesPage.qml" line="96"/>
         <source>Replies</source>
         <translation>பதில்கள்</translation>
     </message>
@@ -165,7 +155,7 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="109"/>
+        <location filename="../qml/pages/Settings.qml" line="101"/>
         <source>Log out</source>
         <translation>விடுபதிகை</translation>
     </message>
@@ -207,12 +197,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="99"/>
+        <location filename="../qml/pages/Settings.qml" line="111"/>
         <source>Synchronize votes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="111"/>
+        <location filename="../qml/pages/Settings.qml" line="103"/>
         <source>Logging out</source>
         <translation type="unfinished"></translation>
     </message>
