@@ -32,6 +32,7 @@ Page {
     property int id
     property string by
     property bool dead
+    property int itemType: HNItem.Story
     property string itemText
     property var kids
     property int descendants
@@ -41,6 +42,8 @@ Page {
     property string url
     readonly property int maxCommentsForPage: 30
     property int showingCommentsCount: maxCommentsForPage
+
+    readonly property bool upvoted: manager.upvotedIds.indexOf(id) !== -1
 
     function loadComments() {
         model.loadComments(kids);
@@ -102,6 +105,17 @@ Page {
                 onClicked: {
                     model.refresh(id);
                     showingCommentsCount = maxCommentsForPage;
+                }
+            }
+
+            MenuItem {
+                text: page.upvoted ? qsTr("Unvote") : qsTr("Upvote")
+                enabled: appWindow.authenticated && !dead && by !== manager.getUsername() && itemType !== HNItem.Job
+                onClicked: {
+                    if (page.upvoted)
+                        manager.unvote(id);
+                    else
+                        manager.upvote(id);
                 }
             }
         }
@@ -169,10 +183,10 @@ Page {
 
             Label {
                 width: parent.width
-                color: Theme.secondaryColor
+                color: page.upvoted ? Theme.highlightColor : Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignRight
-                text: by + " · " + Format.formatDate(time, Formatter.DurationElapsed)
+                text: (page.upvoted ? "▲ " : "") + by + " · " + Format.formatDate(time, Formatter.DurationElapsed)
             }
 
             Separator {

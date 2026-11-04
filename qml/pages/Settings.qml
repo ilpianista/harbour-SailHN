@@ -79,6 +79,11 @@ Page {
         onLoggedUserFetched: {
             updateDetails();
         }
+        onVotesSynchronized: {
+            console.log("Votes synchronized: " + result);
+            msg.text = result ? qsTr("Votes synchronized") : qsTr("Failed to synchronize votes");
+            msg.visible = true;
+        }
     }
 
     SilicaFlickable {
@@ -99,6 +104,14 @@ Page {
                         manager.logout();
                         isAuthenticated(false);
                     });
+                }
+            }
+
+            MenuItem {
+                text: qsTr("Synchronize votes")
+                visible: appWindow.authenticated
+                onClicked: {
+                    manager.synchronizeVotes();
                 }
             }
         }

@@ -4,37 +4,47 @@
 <context>
     <name>CommentsPage</name>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="78"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="81"/>
         <source>Share</source>
         <translation>Dijeli</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="84"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="87"/>
         <source>Copy external URL</source>
         <translation type="unfinished">Kopiraj vanjski URL</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="93"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="94"/>
+        <source>Unvote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="94"/>
+        <source>Upvote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CommentsPage.qml" line="107"/>
         <source>Reply</source>
         <translation>Odgovori</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="101"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="115"/>
         <source>Refresh</source>
         <translation>Aktualiziraj</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="113"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="127"/>
         <source>Load more</source>
         <translation>Učitaj više</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="129"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="143"/>
         <source>Comments</source>
         <translation>Komentari</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CommentsPage.qml" line="205"/>
+        <location filename="../qml/pages/CommentsPage.qml" line="220"/>
         <source>Share url</source>
         <translation>Dijeli URL</translation>
     </message>
@@ -60,6 +70,19 @@
         <location filename="../qml/cover/CoverPage.qml" line="85"/>
         <source>comments</source>
         <translation>komentari</translation>
+    </message>
+</context>
+<context>
+    <name>ItemDelegate</name>
+    <message>
+        <location filename="../qml/pages/ItemDelegate.qml" line="55"/>
+        <source>Unvote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ItemDelegate.qml" line="55"/>
+        <source>Upvote</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -124,7 +147,17 @@
 <context>
     <name>ReplyDelegate</name>
     <message>
-        <location filename="../qml/pages/ReplyDelegate.qml" line="98"/>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="109"/>
+        <source>Unvote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="109"/>
+        <source>Upvote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ReplyDelegate.qml" line="120"/>
         <source>Reply</source>
         <translation>Odgovor</translation>
     </message>
@@ -132,59 +165,74 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="96"/>
+        <location filename="../qml/pages/Settings.qml" line="109"/>
         <source>Log out</source>
         <translation>Odjava</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="155"/>
+        <location filename="../qml/pages/Settings.qml" line="168"/>
         <source>Login failed</source>
         <translation>Prijava neuspjela</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="121"/>
-        <location filename="../qml/pages/Settings.qml" line="122"/>
+        <location filename="../qml/pages/Settings.qml" line="134"/>
+        <location filename="../qml/pages/Settings.qml" line="135"/>
         <source>Username</source>
         <translation>Korisničko ime</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="133"/>
-        <location filename="../qml/pages/Settings.qml" line="134"/>
+        <location filename="../qml/pages/Settings.qml" line="146"/>
+        <location filename="../qml/pages/Settings.qml" line="147"/>
         <source>Password</source>
         <translation>Lozinka</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="145"/>
+        <location filename="../qml/pages/Settings.qml" line="158"/>
         <source>Login</source>
         <translation>Prijava</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="114"/>
+        <location filename="../qml/pages/Settings.qml" line="127"/>
         <source>Account</source>
         <translation>Račun</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="98"/>
+        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <source>Votes synchronized</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="84"/>
+        <source>Failed to synchronize votes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="99"/>
+        <source>Synchronize votes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="111"/>
         <source>Logging out</source>
         <translation>Odjavljivanje</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="174"/>
+        <location filename="../qml/pages/Settings.qml" line="187"/>
         <source>User details</source>
         <translation>Podaci korisnika</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="181"/>
+        <location filename="../qml/pages/Settings.qml" line="194"/>
         <source>created</source>
         <translation>stvoreno</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="188"/>
+        <location filename="../qml/pages/Settings.qml" line="201"/>
         <source>karma</source>
         <translation>karma</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="195"/>
+        <location filename="../qml/pages/Settings.qml" line="208"/>
         <source>About</source>
         <translation>Informacije</translation>
     </message>

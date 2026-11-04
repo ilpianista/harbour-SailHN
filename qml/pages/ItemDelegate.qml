@@ -23,11 +23,14 @@
 */
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import harbour.sailhn 1.0
 
 ListItem {
     id: listItem
     width: ListView.view.width
     contentHeight: col.height + Theme.paddingSmall * 2
+
+    readonly property bool upvoted: manager.upvotedIds.indexOf(id) !== -1
 
     onClicked: {
         pageStack.push(Qt.resolvedUrl("CommentsPage.qml"), {
@@ -36,12 +39,27 @@ ListItem {
             "dead": dead,
             "descendants": descendants,
             "itemText": itemText,
+            "itemType": itemType,
             "kids": kids,
             "score": score,
             "time": time,
             "title": title,
             "url": url
         });
+    }
+
+    menu: ContextMenu {
+        enabled: appWindow.authenticated && !dead && by !== manager.getUsername() && itemType !== HNItem.Job
+
+        MenuItem {
+            text: listItem.upvoted ? qsTr("Unvote") : qsTr("Upvote")
+            onClicked: {
+                if (listItem.upvoted)
+                    manager.unvote(id);
+                else
+                    manager.upvote(id);
+            }
+        }
     }
 
     Column {
@@ -70,7 +88,15 @@ ListItem {
                 spacing: Theme.paddingSmall
 
                 Label {
-                    color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                    visible: listItem.upvoted
+                    text: "▲"
+                    color: Theme.highlightColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Label {
+                    color: listItem.upvoted ? Theme.highlightColor : (listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor)
                     font.pixelSize: Theme.fontSizeSmall
                     text: score
                     anchors.verticalCenter: parent.verticalCenter
@@ -81,7 +107,7 @@ ListItem {
                     width: Theme.iconSizeExtraSmall
                     height: Theme.iconSizeExtraSmall
                     anchors.verticalCenter: parent.verticalCenter
-                    opacity: 0.7
+                    opacity: listItem.upvoted ? 1.0 : 0.7
                 }
             }
 

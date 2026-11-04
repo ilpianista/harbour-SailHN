@@ -45,7 +45,8 @@ public:
         TextRole = Qt::UserRole + 8,
         TimeRole = Qt::UserRole + 9,
         TitleRole = Qt::UserRole + 10,
-        UrlRole = Qt::UserRole + 11
+        UrlRole = Qt::UserRole + 11,
+        TypeRole = Qt::UserRole + 12
     };
 
     explicit NewsModel(QObject *parent = nullptr);
