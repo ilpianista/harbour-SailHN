@@ -48,6 +48,7 @@ class Item : public QObject
 
 public:
     enum Type { Job, Story, Comment, Poll, PollOpt };
+    Q_ENUM(Type)
 
     explicit Item(QObject *parent = nullptr);
     ~Item() override;

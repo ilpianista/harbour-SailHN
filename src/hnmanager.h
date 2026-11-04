@@ -27,6 +27,8 @@
 
 #include <functional>
 #include <QObject>
+#include <QSet>
+#include <QVariant>
 
 #include "securesecrets.h"
 #include "user.h"
@@ -41,6 +43,7 @@ class QSettings;
 class HNManager : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QVariantList upvotedIds READ upvotedIds NOTIFY votesChanged)
 public:
     explicit HNManager(QObject *parent = nullptr);
     ~HNManager() override;
@@ -52,18 +55,35 @@ public:
     Q_INVOKABLE void logout();
     Q_INVOKABLE void submit(const QString &title, const QString &url, const QString &text);
     Q_INVOKABLE void comment(const int parentId, const QString &text);
+    Q_INVOKABLE void upvote(const int itemId);
+    Q_INVOKABLE void unvote(const int itemId);
+    Q_INVOKABLE void synchronizeVotes();
+
+    QVariantList upvotedIds() const;
 
 Q_SIGNALS:
     void authenticated(const bool result);
     void loggedUserFetched(User *user);
     void submitted(const bool result);
     void commented(const bool result);
+    void voted(const int itemId, const bool result);
+    void votesChanged();
+    void votesSynchronized(const bool result);
 
 private:
     void onAuthenticateResult();
     void onCommentResult();
     void onLoggedUserFetched(User *user);
     void onSubmitResult();
+
+    void vote(const int itemId, const QString &how);
+    void getVoteAuth(const int itemId, std::function<void(const QString &)> callback);
+    void onVoteResult(const int itemId, const QString &how);
+    void fetchUpvoted(const QString &username, const bool comments, const int page);
+    void finishSyncRequest();
+    void loadVotes();
+    void saveVotes();
+    void clearVotes();
 
     void getSubmitCSRF(std::function<void(const QString &)> callback);
     void getCommentCSRF(const int itemId, std::function<void(const QString &)> callback);
@@ -76,6 +96,12 @@ private:
     QString m_loggedUsername;
     QSettings *m_settings;
     SecureSecrets *m_secureStorage;
+    QSet<int> m_upvotedIds;
+    QSet<int> m_syncUpvotedIds;
+    int m_syncPending;
+    bool m_syncFailed;
+    bool m_synchronizing;
+    bool m_syncOnUserFetched;
 };
 
 #endif // HNMANAGER_H

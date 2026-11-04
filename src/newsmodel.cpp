@@ -66,6 +66,7 @@ QHash<int, QByteArray> NewsModel::roleNames() const
     roles[TimeRole] = "time";
     roles[TitleRole] = "title";
     roles[UrlRole] = "url";
+    roles[TypeRole] = "itemType";
     return roles;
 }
 
@@ -178,6 +179,8 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const
         return item->title();
     case UrlRole:
         return item->url();
+    case TypeRole:
+        return item->type();
     default:
         qCritical() << "Unrecognized role" << role;
     }

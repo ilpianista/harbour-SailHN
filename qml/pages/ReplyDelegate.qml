@@ -28,6 +28,9 @@ ListItem {
     id: listItem
     contentHeight: content.height
     menu: replyMenu
+
+    readonly property bool upvoted: manager.upvotedIds.indexOf(id) !== -1
+
     onClicked: {
         if (kids.length !== 0)
             pageStack.push(Qt.resolvedUrl("RepliesPage.qml"), {
@@ -59,6 +62,14 @@ ListItem {
 
             anchors.right: parent.right
             anchors.rightMargin: Theme.horizontalPageMargin
+
+            Label {
+                visible: listItem.upvoted
+                text: "▲"
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeSmall
+                anchors.verticalCenter: parent.verticalCenter
+            }
 
             Row {
                 visible: kids.length !== 0
@@ -93,6 +104,17 @@ ListItem {
         id: replyMenu
 
         enabled: manager.isAuthenticated() && !dead
+
+        MenuItem {
+            text: listItem.upvoted ? qsTr("Unvote") : qsTr("Upvote")
+            enabled: by !== manager.getUsername()
+            onClicked: {
+                if (listItem.upvoted)
+                    manager.unvote(id);
+                else
+                    manager.upvote(id);
+            }
+        }
 
         MenuItem {
             text: qsTr("Reply")

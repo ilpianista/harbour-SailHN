@@ -37,6 +37,7 @@
 #include <QRegularExpressionMatch>
 #include <QSettings>
 #include <QStandardPaths>
+#include <QStringList>
 #include <QUrlQuery>
 
 #include "hackernewsapi.h"
@@ -49,6 +50,10 @@ HNManager::HNManager(QObject *parent)
     , api(new HackerNewsAPI(this))
     , network(new QNetworkAccessManager(this))
     , m_loggedUser(nullptr)
+    , m_syncPending(0)
+    , m_syncFailed(false)
+    , m_synchronizing(false)
+    , m_syncOnUserFetched(false)
 {
     const QString settingsPath = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
                                  + QDir::separator() + QCoreApplication::applicationName()
@@ -69,6 +74,7 @@ HNManager::HNManager(QObject *parent)
     }
 
     setUsername(m_settings->value("Username").toString());
+    loadVotes();
 
     if (!getUsername().isEmpty()) {
         auto conn = std::make_shared<QMetaObject::Connection>();
@@ -137,6 +143,8 @@ void HNManager::onAuthenticateResult()
                 QUrl(BASE_URL + "/"));
             m_secureStorage->storeCookies(cookies);
 
+            m_syncOnUserFetched = true;
+
             // Use a single-shot connection to avoid duplicates
             auto conn = std::make_shared<QMetaObject::Connection>();
             *conn = connect(api, &HackerNewsAPI::userFetched, this, [this, conn](User *user) {
@@ -162,6 +170,11 @@ void HNManager::onLoggedUserFetched(User *user)
     m_loggedUser->setParent(this);
 
     Q_EMIT loggedUserFetched(user);
+
+    if (m_syncOnUserFetched) {
+        m_syncOnUserFetched = false;
+        synchronizeVotes();
+    }
 }
 
 bool HNManager::isAuthenticated() const
@@ -201,6 +214,7 @@ void HNManager::logout()
 
     m_secureStorage->clearCookies();
     m_settings->setValue("Username", QString());
+    clearVotes();
 }
 
 void HNManager::submit(const QString &title, const QString &url, const QString &text)
@@ -303,6 +317,263 @@ void HNManager::onCommentResult()
     Q_EMIT commented(res);
 
     reply->deleteLater();
+}
+
+void HNManager::upvote(const int itemId)
+{
+    vote(itemId, QLatin1String("up"));
+}
+
+void HNManager::unvote(const int itemId)
+{
+    vote(itemId, QLatin1String("un"));
+}
+
+void HNManager::vote(const int itemId, const QString &how)
+{
+    qDebug() << "Vote item with id" << itemId << "as" << how;
+
+    if (!isAuthenticated()) {
+        Q_EMIT voted(itemId, false);
+        return;
+    }
+
+    getVoteAuth(itemId, [this, itemId, how](const QString &auth) {
+        if (auth.isEmpty()) {
+            qCritical() << "Failed to obtain vote auth token for item" << itemId;
+            Q_EMIT voted(itemId, false);
+            return;
+        }
+
+        QNetworkRequest req(QUrl(BASE_URL + QLatin1String("/vote")));
+        req.setHeader(QNetworkRequest::ContentTypeHeader,
+                      QLatin1String("application/x-www-form-urlencoded"));
+
+        QUrlQuery data;
+        data.addQueryItem(QLatin1String("id"), QString::number(itemId));
+        data.addQueryItem(QLatin1String("how"), how);
+        data.addQueryItem(QLatin1String("auth"), auth);
+
+        QNetworkReply *reply = network->post(req, data.toString(QUrl::FullyEncoded).toUtf8());
+
+        connect(reply, &QNetworkReply::finished, this, [this, reply, itemId, how]() {
+            bool res = false;
+
+            if (reply->error() != QNetworkReply::NoError) {
+                qCritical() << "Cannot vote item" << itemId << reply->errorString();
+            } else {
+                const QByteArray body = reply->readAll();
+                res = !body.contains("Can't make that vote.") && !body.contains("User mismatch.")
+                      && !body.contains("You have to be logged in to vote.")
+                      && !body.contains("No such item.");
+            }
+
+            if (res) {
+                onVoteResult(itemId, how);
+            }
+
+            Q_EMIT voted(itemId, res);
+
+            reply->deleteLater();
+        });
+    });
+}
+
+void HNManager::onVoteResult(const int itemId, const QString &how)
+{
+    if (how == QLatin1String("up")) {
+        m_upvotedIds.insert(itemId);
+    } else {
+        m_upvotedIds.remove(itemId);
+    }
+
+    saveVotes();
+    Q_EMIT votesChanged();
+}
+
+void HNManager::getVoteAuth(const int itemId, std::function<void(const QString &)> callback)
+{
+    QUrl url(BASE_URL + QLatin1String("/item"));
+
+    QUrlQuery query;
+    query.addQueryItem(QLatin1String("id"), QString::number(itemId));
+    url.setQuery(query);
+
+    QNetworkRequest req(url);
+    QNetworkReply *reply = network->get(req);
+
+    connect(reply, &QNetworkReply::finished, this, [this, reply, itemId, callback]() {
+        QString auth;
+
+        if (reply->error() != QNetworkReply::NoError) {
+            qCritical() << "Cannot fetch vote auth" << reply->errorString();
+        } else {
+            const QString html = QString::fromUtf8(reply->readAll());
+            const QRegularExpression anchorRegexp(QStringLiteral("<a\\s[^>]*>"));
+            const QRegularExpression idRegexp(
+                QStringLiteral("id=['\"](?:up|un|down|undown)_%1['\"]").arg(itemId));
+            const QRegularExpression hrefRegexp(QStringLiteral("href=['\"]([^'\"]+)['\"]"));
+
+            auto anchors = anchorRegexp.globalMatch(html);
+            while (anchors.hasNext()) {
+                const QString tag = anchors.next().captured(0);
+                if (!tag.contains(idRegexp)) {
+                    continue;
+                }
+
+                const QRegularExpressionMatch hrefMatch = hrefRegexp.match(tag);
+                if (hrefMatch.hasMatch()) {
+                    QString href = hrefMatch.captured(1);
+                    href.replace(QLatin1String("&amp;"), QLatin1String("&"));
+                    auth = QUrlQuery(QUrl(href)).queryItemValue(QLatin1String("auth"));
+                }
+                break;
+            }
+        }
+
+        reply->deleteLater();
+        callback(auth);
+    });
+}
+
+QVariantList HNManager::upvotedIds() const
+{
+    QVariantList ids;
+    for (const int id : m_upvotedIds) {
+        ids.append(id);
+    }
+    return ids;
+}
+
+void HNManager::synchronizeVotes()
+{
+    if (m_synchronizing) {
+        return;
+    }
+
+    if (!isAuthenticated() || m_loggedUsername.isEmpty()) {
+        Q_EMIT votesSynchronized(false);
+        return;
+    }
+
+    qDebug() << "Synchronize votes for user" << m_loggedUsername;
+
+    m_synchronizing = true;
+    m_syncFailed = false;
+    m_syncPending = 2;
+    m_syncUpvotedIds.clear();
+
+    fetchUpvoted(m_loggedUsername, false, 1);
+    fetchUpvoted(m_loggedUsername, true, 1);
+}
+
+void HNManager::fetchUpvoted(const QString &username, const bool comments, const int page)
+{
+    QUrl url(BASE_URL + QLatin1String("/upvoted"));
+
+    QUrlQuery query;
+    query.addQueryItem(QLatin1String("id"), username);
+    if (page > 1) {
+        query.addQueryItem(QLatin1String("p"), QString::number(page));
+    }
+    if (comments) {
+        query.addQueryItem(QLatin1String("comments"), QLatin1String("t"));
+    }
+    url.setQuery(query);
+
+    QNetworkRequest req(url);
+    QNetworkReply *reply = network->get(req);
+
+    connect(reply, &QNetworkReply::finished, this, [this, reply, username, comments, page]() {
+        if (reply->error() != QNetworkReply::NoError) {
+            qCritical() << "Cannot fetch upvoted items" << reply->errorString();
+            m_syncFailed = true;
+            finishSyncRequest();
+            reply->deleteLater();
+            return;
+        }
+
+        const QString html = QString::fromUtf8(reply->readAll());
+
+        if (html.contains(QLatin1String("Please log in."))
+            || !html.contains(QLatin1String("hnmain"))) {
+            qCritical() << "Cannot fetch upvoted items: unexpected response";
+            m_syncFailed = true;
+            finishSyncRequest();
+            reply->deleteLater();
+            return;
+        }
+
+        const QRegularExpression trRegexp(QStringLiteral("<tr[^>]*>"));
+        const QRegularExpression idRegexp(QStringLiteral("\\bid=['\"]([0-9]+)['\"]"));
+
+        auto matches = trRegexp.globalMatch(html);
+        while (matches.hasNext()) {
+            const QString tag = matches.next().captured(0);
+            if (!tag.contains(QLatin1String("athing"))) {
+                continue;
+            }
+
+            const QRegularExpressionMatch idMatch = idRegexp.match(tag);
+            if (idMatch.hasMatch()) {
+                m_syncUpvotedIds.insert(idMatch.captured(1).toInt());
+            }
+        }
+
+        const bool hasMore = html.contains(QLatin1String("morelink")) && page < 50;
+        reply->deleteLater();
+
+        if (hasMore) {
+            fetchUpvoted(username, comments, page + 1);
+        } else {
+            finishSyncRequest();
+        }
+    });
+}
+
+void HNManager::finishSyncRequest()
+{
+    if (--m_syncPending > 0) {
+        return;
+    }
+
+    m_synchronizing = false;
+
+    if (!m_syncFailed) {
+        m_upvotedIds = m_syncUpvotedIds;
+        saveVotes();
+        Q_EMIT votesChanged();
+    }
+
+    Q_EMIT votesSynchronized(!m_syncFailed);
+}
+
+void HNManager::loadVotes()
+{
+    m_upvotedIds.clear();
+
+    for (const QString &id : m_settings->value("Votes/Upvoted").toStringList()) {
+        m_upvotedIds.insert(id.toInt());
+    }
+
+    Q_EMIT votesChanged();
+}
+
+void HNManager::saveVotes()
+{
+    QStringList upvoted;
+    for (const int id : m_upvotedIds) {
+        upvoted.append(QString::number(id));
+    }
+
+    m_settings->setValue("Votes/Upvoted", upvoted);
+}
+
+void HNManager::clearVotes()
+{
+    m_upvotedIds.clear();
+    saveVotes();
+    Q_EMIT votesChanged();
 }
 
 void HNManager::getSubmitCSRF(std::function<void(const QString &)> callback)
