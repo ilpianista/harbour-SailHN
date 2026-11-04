@@ -1,3 +1,9 @@
+* Wed Nov 04 2026 Andrea Scarpino <andrea@scarpino.dev> 0.11.0-1
+- Implement upvote
+- Continuous scrolling for comments
+- Defer webview loading
+- Translations update
+
 * Fri Jun 12 2026 Andrea Scarpino <andrea@scarpino.dev> 0.10.5-1
 - Restore the copy external url feature
 
