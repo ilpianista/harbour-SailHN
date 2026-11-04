@@ -31,12 +31,21 @@ WebViewPage {
 
     property string itemUrl
     property string itemTitle
+    property bool _loadStarted: false
 
     allowedOrientations: Orientation.All
 
+    onStatusChanged: {
+        if (status === PageStatus.Active && !_loadStarted && itemUrl) {
+            _loadStarted = true;
+            webView.url = itemUrl;
+        }
+    }
+
     WebView {
+        id: webView
+
         anchors.fill: parent
-        url: itemUrl
         privateMode: true
     }
 
