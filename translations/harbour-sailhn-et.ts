@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="94"/>
         <source>Copy external URL</source>
-        <translation type="unfinished">Kopeeri väline URL</translation>
+        <translation>Kopeeri väline võrguaadress</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="118"/>

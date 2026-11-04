@@ -63,6 +63,7 @@ TRANSLATIONS += \
     translations/harbour-sailhn-nb_NO.ts \
     translations/harbour-sailhn-nl_BE.ts \
     translations/harbour-sailhn-nl.ts \
+    translations/harbour-sailhn-sk.ts \
     translations/harbour-sailhn-sr.ts \
     translations/harbour-sailhn-sv.ts \
     translations/harbour-sailhn-ta.ts \

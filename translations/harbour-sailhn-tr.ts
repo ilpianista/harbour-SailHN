@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="94"/>
         <source>Copy external URL</source>
-        <translation type="unfinished">Harici URL&apos;yi kopyala</translation>
+        <translation>Harici URL&apos;yi kopyala</translation>
     </message>
     <message>
         <location filename="../qml/pages/CommentsPage.qml" line="118"/>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="103"/>
         <source>Logging out</source>
-        <translation type="unfinished"></translation>
+        <translation>Oturum kapatılıyor</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="187"/>
