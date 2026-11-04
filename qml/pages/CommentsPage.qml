@@ -40,8 +40,7 @@ Page {
     property var time
     property string title
     property string url
-    readonly property int maxCommentsForPage: 30
-    property int showingCommentsCount: maxCommentsForPage
+    property bool loadingMore: false
 
     readonly property bool upvoted: manager.upvotedIds.indexOf(id) !== -1
 
@@ -49,9 +48,17 @@ Page {
         model.loadComments(kids);
     }
 
+    function loadMoreIfNeeded() {
+        if (comments.atYEnd && !loadingMore && model.hasMore) {
+            loadingMore = true;
+            model.nextItems();
+        }
+    }
+
     allowedOrientations: Orientation.All
 
     Component.onCompleted: {
+        loadingMore = true;
         loadComments();
     }
 
@@ -104,7 +111,6 @@ Page {
                 text: qsTr("Refresh")
                 onClicked: {
                     model.refresh(id);
-                    showingCommentsCount = maxCommentsForPage;
                 }
             }
 
@@ -120,17 +126,8 @@ Page {
             }
         }
 
-        PushUpMenu {
-            visible: false
-
-            MenuItem {
-                text: qsTr("Load more")
-                onClicked: {
-                    model.nextItems();
-                    showingCommentsCount += maxCommentsForPage;
-                }
-            }
-        }
+        onAtYEndChanged: page.loadMoreIfNeeded()
+        onContentHeightChanged: page.loadMoreIfNeeded()
 
         Column {
             id: column
@@ -199,18 +196,34 @@ Page {
 
                 model: NewsModel {
                     id: model
-
-                    onRowsInserted: {
-                        if (kids.length > showingCommentsCount)
-                            comments.pushUpMenu.visible = true;
-                    }
                 }
 
                 delegate: ReplyDelegate {}
             }
+
+            Item {
+                width: parent.width
+                height: page.loadingMore ? Theme.itemSizeSmall : 0
+                visible: page.loadingMore
+
+                BusyIndicator {
+                    anchors.centerIn: parent
+                    size: BusyIndicatorSize.Small
+                    running: page.loadingMore
+                }
+            }
         }
 
         VerticalScrollDecorator {}
+    }
+
+    Connections {
+        target: model
+
+        onLoadingFinished: {
+            page.loadingMore = false;
+            page.loadMoreIfNeeded();
+        }
     }
 
     ShareAction {

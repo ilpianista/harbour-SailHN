@@ -37,6 +37,7 @@ NewsModel::NewsModel(QObject *parent)
     , api(new HackerNewsAPI(this))
     , m_start(0)
     , m_end(MAX_ITEMS)
+    , m_pending(0)
     , m_hasMore(true)
 {
     connect(api, &HackerNewsAPI::storiesFetched, this, &NewsModel::onStoriesFetched);
@@ -124,12 +125,15 @@ void NewsModel::loadComments(const QList<int> &kids)
 {
     reset();
     m_ids = kids;
+    m_hasMore = m_end < m_ids.size();
+    Q_EMIT hasMoreChanged();
     loadItems();
 }
 
 void NewsModel::nextItems()
 {
     if (!m_hasMore) {
+        Q_EMIT loadingFinished();
         return;
     }
 
@@ -139,9 +143,15 @@ void NewsModel::nextItems()
     if (m_end >= m_ids.size()) {
         m_end = m_ids.size();
         m_hasMore = false;
+        Q_EMIT hasMoreChanged();
     }
 
     loadItems();
+}
+
+bool NewsModel::hasMore() const
+{
+    return m_hasMore;
 }
 
 QVariant NewsModel::data(const QModelIndex &index, int role) const
@@ -192,17 +202,25 @@ void NewsModel::onItemFetched(Item *item)
 {
     if (item->deleted()) {
         delete item;
-        return;
+    } else {
+        beginInsertRows(QModelIndex(), backing.size(), backing.size());
+        backing.append(item);
+        endInsertRows();
     }
 
-    beginInsertRows(QModelIndex(), backing.size(), backing.size());
-    backing.append(item);
-    endInsertRows();
+    if (m_pending > 0) {
+        --m_pending;
+        if (m_pending == 0) {
+            Q_EMIT loadingFinished();
+        }
+    }
 }
 
 void NewsModel::onStoriesFetched(QList<int> ids)
 {
     m_ids = ids;
+    m_hasMore = m_end < m_ids.size();
+    Q_EMIT hasMoreChanged();
     loadItems();
 }
 
@@ -219,15 +237,24 @@ void NewsModel::reset()
 
     m_start = 0;
     m_end = MAX_ITEMS;
-    m_hasMore = true;
+    m_pending = 0;
+    m_hasMore = false;
     m_ids.clear();
+
+    Q_EMIT hasMoreChanged();
 
     connect(api, &HackerNewsAPI::itemFetched, this, &NewsModel::onItemFetched);
 }
 
 void NewsModel::loadItems()
 {
-    QList<int> limited = m_ids.mid(m_start, m_end - m_start);
+    const QList<int> limited = m_ids.mid(m_start, m_end - m_start);
+    if (limited.isEmpty()) {
+        Q_EMIT loadingFinished();
+        return;
+    }
+
+    m_pending += limited.size();
     for (const int id : limited) {
         api->getItem(id);
     }
